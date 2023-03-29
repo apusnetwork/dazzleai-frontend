@@ -32,7 +32,8 @@ export default function Pricing(): JSX.Element {
   return <WebsiteLayout
     title="Pricing"
     description='Check prices of getimg.ai AI Creative Suite.'
-    canonical='/pricing'>
+    canonical='/pricing'
+    footer={false}>
 
 
     <div className={styles._hero}>
