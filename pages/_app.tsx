@@ -206,7 +206,7 @@ function App({ children }: Props): JSX.Element {
           </p>
           <br />
           <div id='google-login' />
-          <Divider text="or use email" />
+          {/* <Divider text="or use email" />
 
           <form onSubmit={handleLogin}>
             <Input
@@ -240,7 +240,7 @@ function App({ children }: Props): JSX.Element {
                 Forgot your password?
               </a>
             </Link>
-          </span>
+          </span> */}
 
         </div>
       </AuthModal>
@@ -256,14 +256,14 @@ function App({ children }: Props): JSX.Element {
           <div id='google-login' />
           <small className='license'>By signing up, you agree to our <a href="/legal/terms-of-service" target="_blank">Terms of Service</a> and <a href="/legal/privacy-policy" target="_blank">Privacy Policy</a>.</small>
 
-          <span className='login-foot'>
+          {/* <span className='login-foot'>
             <span>
               Already have an account?{' '}
               <a href='#' onClick={() => dispatch(updateAuthState('login'))}>
                 Log in
               </a>
             </span>
-          </span>
+          </span> */}
         </div>
       </AuthModal>
       <AuthModal
