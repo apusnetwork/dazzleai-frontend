@@ -49,9 +49,8 @@ export function WebsiteHeader({ fixed = false }): JSX.Element {
           </Button>
         </div>
         <div className={[styles.header_right, open ? styles.mobile_menu : ''].join(' ')}>
-          <ActiveLink activeClassName={styles.active} href="/editor"><a className={styles.header_link}>AI Editor</a></ActiveLink>
+          {/* <ActiveLink activeClassName={styles.active} href="/editor"><a className={styles.header_link}>AI Editor</a></ActiveLink>
           <ActiveLink activeClassName={styles.active} href="/text-to-image"><a className={styles.header_link}>Text to Image</a></ActiveLink>
-          {/* <ActiveLink activeClassName={styles.active} href="/chat"><a className={styles.header_link}>Chat</a></ActiveLink> */}
           <ActiveLink activeClassName={styles.active} href="/dreambooth/models"><a className={styles.header_link}>DreamBooth <span className={styles.new}>new</span></a></ActiveLink>
           <ActiveLink activeClassName={styles.active} href="/guides"><a className={styles.header_link}>Guides</a></ActiveLink>
           <a className={styles.header_link} href='https://discord.gg/5KsUXSzVwS' target='_blank' rel='noreferrer'>
@@ -65,7 +64,7 @@ export function WebsiteHeader({ fixed = false }): JSX.Element {
                 </clipPath>
               </defs>
             </svg>
-          </a>
+          </a> */}
 
           {
             user.id ?
