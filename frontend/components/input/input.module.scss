@@ -1,0 +1,359 @@
+@import "frontend/styles/vars";
+
+._ {
+  position: relative;
+  width: 100%;
+  margin: 0 0 18px 0;
+
+  @include mobile {
+    margin: 0 0 9px 0;
+  }
+}
+
+.label {
+  font-size: 13px;
+  color: rgb(215, 216, 219);
+  display: block;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.input_label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-left: 1px;
+  font-size: 13px;
+  transition: 120ms ease-in-out;
+
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+._input {
+  margin: 12px 0 0 0;
+  position: relative;
+}
+
+.with_label {
+  padding: 22px 0 0 0;
+
+  .chevron {
+    top: 26px;
+  }
+
+  .password_show {
+    top: 12px;
+    color: rgba($color, 0.6);
+  }
+
+  .number {
+    top: 21px;
+  }
+}
+
+.input {
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  display: block;
+  border-radius: 4px;
+  border: 1px solid $input-border;
+  background: rgb(30, 32, 34);
+  appearance: none;
+  outline: none;
+  color: rgb(214, 216, 218);
+  ;
+  padding: 3px 14px;
+  transition: 360ms ease-in-out;
+  box-shadow: 0 0 0 2px transparent;
+  display: flex;
+  align-items: center;
+  font-family: "Inter", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,
+    Apple Color Emoji, Segoe UI Emoji;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba(lighten($primary, 6%), 0.3);
+    border: 1px solid lighten($primary, 6%);
+
+    &+.label {
+      color: lighten($primary, 3%);
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+
+  &::placeholder {
+    color: rgb(100, 100, 102);
+    font-weight: 400;
+  }
+
+  &:disabled {
+    background: $bg3;
+    cursor: not-allowed;
+  }
+}
+
+.password_show {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  color: darken($input-border, 30%);
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  appearance: none;
+  border: none;
+  background: none;
+  width: 42px;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.icon {
+  position: absolute;
+  left: 6px;
+  top: 7px;
+  color: rgb(100, 100, 102);
+}
+
+.with_icon {
+  padding-left: 28px !important;
+}
+
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.xs {
+  min-height: 24px;
+  font-size: 12px;
+  line-height: 12px;
+  padding: 1px 4px;
+  text-align: center;
+}
+
+.sm {
+  min-height: 28px;
+  font-size: 12px;
+  padding: 3px 14px;
+
+}
+
+.md {
+  min-height: 36px;
+  font-size: 14px;
+  padding: 3px 12px;
+}
+
+.lg {
+  min-height: 46px;
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+._info {
+  min-height: 24px;
+}
+
+.info {
+  font-size: 11px;
+  padding: 3px 0 0 1px;
+  font-weight: 400;
+  display: flex;
+  width: 100%;
+  color: rgba($color, 0.6);
+
+  svg {
+    flex-shrink: 0;
+    margin-right: 3px;
+    margin-top: 2px;
+  }
+}
+
+.error {
+  color: $danger;
+  font-size: 11px;
+  line-height: 11px;
+  padding: 6px 0 0 3px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  width: 100%;
+}
+
+.input_error {
+  border: 1px solid rgba($danger, 0.4) !important;
+
+  &:focus {
+    box-shadow: 0 0 0 2px rgba($danger, 0.1) !important;
+  }
+
+  // & + .label {
+  //   color: $danger !important;
+
+  //   &:hover {
+  //     opacity: 1;
+  //   }
+  // }
+}
+
+.number {
+  position: absolute;
+  top: 0;
+  right: 1px;
+  display: grid;
+  grid-template-rows: 50% 50%;
+  width: 16px;
+
+  button {
+    width: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0;
+    border: 0;
+    outline: 0;
+    background: rgba(#d3d3d5, 0.4);
+    border-left: 1px solid rgba(#d3d3d5, 0.4);
+    cursor: pointer;
+
+    &:first-of-type {
+      border-top-right-radius: 3px;
+      border-bottom: 1px solid rgba(#d3d3d5, 0.4);
+    }
+
+    &:last-of-type {
+      border-bottom-right-radius: 3px;
+      border-top: 1px solid rgba(#d3d3d5, 0.4);
+    }
+
+    svg {
+      flex-shrink: 0;
+      color: rgba($dark-font, 0.3);
+    }
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+}
+
+.number_sm {
+  height: 26px;
+
+  svg {
+    width: 7px;
+    height: 7px;
+  }
+}
+
+.number_md {
+  height: 34px;
+
+  svg {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+.number_lg {
+  height: 46px;
+
+  svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+.textarea {
+  padding-top: 9px;
+  font-size: 14px;
+  line-height: 19px;
+  appearance: none;
+  resize: none;
+  line-height: 160%;
+}
+
+.textarea_lg {
+  padding-top: 9px;
+  font-size: 17px;
+  line-height: 160%;
+
+  @include mobile {
+    font-size: 15px;
+  }
+}
+
+.color {
+  padding-left: 36px;
+}
+
+.color_handle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border: 1px solid $input-border;
+  border-radius: 100%;
+  left: 9px;
+  top: 30px;
+}
+
+.picker {
+  position: absolute;
+  z-index: 9999;
+  top: 54px;
+}
+
+.color_picker {
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 3px 12px 0px !important;
+}
+
+.no-border {
+  border: 0;
+  padding-left: 0;
+  padding-top: 0;
+
+  &:focus {
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.no-margin {
+  margin: 0;
+  margin-top: -12px;
+}
+
+
+
+.bold {
+  font-weight: 500;
+
+  &::placeholder {
+    font-weight: 500;
+  }
+}
+
+.font-15 {
+  font-size: 15px;
+}

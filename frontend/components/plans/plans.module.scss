@@ -1,0 +1,167 @@
+@import "frontend/styles/vars";
+
+.checkout,
+.pricing {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 12px 24px 0px 24px;
+  border-radius: 12px;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: 100%;
+  margin: 0 auto 0 auto;
+  gap: 24px;
+  justify-content: center;
+
+  @include mobile {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+  }
+}
+
+
+.plan {
+
+  color: $color;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px 24px 24px;
+  border: 1px solid $input-border;
+  border-radius: 16px;
+  ;
+  background: $bg;
+  flex-shrink: 0;
+
+  @include mobile {
+    width: 100%;
+  }
+
+  .name {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    opacity: 0.8;
+
+    @include mobile {
+      text-align: left;
+    }
+  }
+
+  .price {
+    margin: 6px 0 16px 0;
+    text-align: center;
+
+    .value {
+      font-size: 24px;
+      font-weight: 600;
+
+      .decimal {
+        font-size: 14px;
+        margin-top: 3px;
+        margin-left: 3px;
+      }
+    }
+
+    @include mobile {
+      text-align: left;
+    }
+  }
+
+  .features {
+    padding: 0 0 0px 0;
+    font-size: 14px;
+    color: rgba($color, 0.9);
+
+    .credits {
+      padding-bottom: 6px;
+      font-weight: 500;
+    }
+
+    .feature {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      word-wrap: break-word;
+      padding: 6px 0;
+      color: rgba($color, 0.8);
+    }
+  }
+
+  .period {
+    font-size: 12px;
+    color: rgba($color, 0.5);
+    text-align: center;
+    padding: 8px 0 0 0;
+  }
+}
+
+.check {
+  flex-shrink: 0;
+  margin-right: 9px;
+  stroke-width: 4px;
+  color: rgba($primary, 1);
+}
+
+.x {
+  flex-shrink: 0;
+  margin-right: 9px;
+  stroke-width: 2px;
+  color: rgba($danger, 1);
+}
+
+
+.popular {
+  position: relative;
+  background-image: linear-gradient(to bottom, rgba($primary, 0.15) 70%, rgba($bg, 1));
+  border-color: rgba($primary, 1);
+}
+
+
+._once {
+  padding: 120px 0;
+}
+
+.once {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  max-width: 600px;
+  margin: 0 auto;
+  color: $color;
+  display: flex;
+  border: 1px solid rgba($input-border, 0.6);
+  border-radius: 16px;
+  ;
+  background: rgba($bg, 0.5);
+  padding: 64px;
+  color: $color;
+  position: relative;
+
+  .title {
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    opacity: 0.9;
+    margin: 0;
+  }
+
+
+  @include mobile {
+    flex-direction: column;
+    padding: 24px;
+    margin: 0 24px;
+    gap: 18px
+  }
+
+}

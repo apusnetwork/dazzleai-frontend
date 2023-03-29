@@ -1,0 +1,126 @@
+@import "frontend/styles/vars";
+
+
+._ {
+  min-height: 80vh;
+}
+
+.head {
+  padding: 24px 24px 0 24px;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(272px, 1fr));
+  grid-gap: 32px 32px;
+  padding: 12px 24px 24px 24px;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+
+.new_project {
+  appearance: none;
+  background: $bg2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: left;
+  min-height: 200px;
+
+
+  .icon {
+    color: $color;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $primary;
+    border-radius: 6px;
+
+  }
+
+  .name,
+  .date,
+  .text {
+    display: block;
+  }
+}
+
+.project {
+  border: 1px solid $border;
+  border-radius: 4px;
+  transition: linear 120ms;
+
+  ._meta {
+    background: $bg2;
+    border-top: 1px solid $border;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+  }
+
+  .meta {
+    flex-shrink: 0;
+    flex-grow: 1;
+  }
+
+  .actions {
+    display: none;
+    margin-left: auto;
+  }
+
+  .name {
+    color: $color;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+
+  .date {
+    font-size: 12px;
+    line-height: 16px;
+    margin-top: 3px;
+    color: rgba($color, 0.5);
+    font-weight: 400;
+
+  }
+
+  &:hover {
+    border-color: 1px solid $primary;
+    box-shadow: 0 0 0 1px $primary;
+
+    .actions {
+      display: flex;
+      gap: 9px;
+    }
+  }
+}
+
+._preview {
+  width: 100%;
+  height: 170px;
+  position: relative;
+  padding: 12px;
+  background-image: url("data:image/svg+xml,%3Csvg width='9' height='9' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='rgb(84, 84, 84)' fill-opacity='1' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='1'/%3E%3C/g%3E%3C/svg%3E");
+
+
+  .preview {
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+  }
+}

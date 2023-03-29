@@ -1,0 +1,562 @@
+@import "frontend/styles/vars";
+
+
+.image {
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  max-width: 512px;
+  margin-left: auto;
+  margin-right: auto;
+  background: $bg3;
+
+  .loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $bg3;
+  }
+}
+
+
+.img {
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+
+  span,
+  img {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .img_hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 12px;
+    display: none;
+    align-content: space-between;
+    justify-content: space-between;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 12px;
+    display: none;
+    transition: 90ms linear;
+    z-index: 1;
+    opacity: 0;
+
+    @include mobile {
+      flex-direction: row;
+    }
+  }
+
+  .hoverable {
+    display: flex;
+  }
+
+  .img_hover_row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+
+    @include mobile {
+      flex-direction: column;
+      width: initial;
+    }
+  }
+
+  .btn_group {
+    display: flex;
+    gap: 12px;
+
+  }
+
+  &:hover {
+    .img_hover {
+      opacity: 1;
+    }
+  }
+}
+
+
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+
+// modal
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+._overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  z-index: 99999999;
+  background: rgba(0, 0, 0, 0.5);
+  transition: 130ms ease-in-out;
+
+  // animation: fade-in 240ms ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(3px);
+  transform: translate3d(0, 0, 0);
+  transition: 80ms ease-in-out;
+  animation: fade-in 240ms ease-in-out;
+}
+
+._modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  overflow-y: scroll;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @include mobile {
+    padding: 9px;
+    width: 100%;
+  }
+}
+
+.modal {
+  flex-shrink: 0;
+  border-radius: 6px;
+  height: 100%;
+  width: 100%;
+  padding: 24px;
+
+  animation: slide-in 180ms ease-in-out;
+
+  @include mobile {
+    width: 100%;
+    padding: 36px 0 0 0;
+  }
+
+}
+
+.modal_image {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 90vh;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba($bg, 0.94);
+  backdrop-filter: blur(12px);
+  transform: translate3d(0, 0, 0);
+  border: 1px solid $border;
+  border-radius: 12px;
+
+
+
+  @include mobile {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+.close {
+  position: absolute;
+  right: 24px;
+  top: 24px;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: rgba($bg, 0.94);
+  backdrop-filter: blur(12px);
+  color: $color;
+  border: 1px solid $border;
+  outline: none;
+  transition: none;
+  border-radius: 6px;
+  box-shadow: 0 12px 24px 0 rgb(62 64 83 / 12%), 0 3px 9px 0 rgb(0 0 0 / 3%);
+  z-index: 99999999;
+
+
+
+  svg {
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background: $bg2;
+  }
+
+
+  @include mobile {
+    right: 12px;
+    top: 6px;
+  }
+}
+
+
+
+// image view
+
+.view {
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 24px;
+  margin: 0 auto;
+
+  @include mobile {
+    display: block;
+    padding: 0;
+  }
+}
+
+
+.view_head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @include mobile {
+    display: block;
+    padding: 12px 12px;
+  }
+}
+
+.title {
+  font-size: 18px;
+  line-height: 140%;
+  font-weight: 500;
+  color: $color;
+  margin: 5px 0 0 0;
+  flex-shrink: 1;
+
+  b {
+    font-weight: 800;
+    color: $color;
+  }
+
+}
+
+.view_buttons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  flex-wrap: wrap;
+  max-width: 50%;
+
+  @include mobile {
+    display: none;
+  }
+}
+
+._view_image {
+  display: flex;
+  justify-content: center;
+  border-radius: 9px;
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid $border;
+  background: $bg2;
+
+  @include mobile {
+    border-radius: 0;
+    padding: 24px 12px;
+    border-left: none;
+    border-right: none;
+  }
+}
+
+.view_image_bg {
+  background-size: 100% 100%;
+  width: 50%;
+  height: 80%;
+  position: absolute;
+  top: 10%;
+  left: 25%;
+  filter: blur(100px);
+  transform: translate3d(0, 0, 0);
+  opacity: 0.6;
+}
+
+
+.view_image {
+  display: flex;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  max-width: 512px;
+
+  img {
+    max-height: 512px;
+  }
+}
+
+.content {
+  max-width: 1200px;
+  padding: 24px;
+  margin: 0 auto;
+
+  @include mobile {
+    padding: 12px;
+  }
+}
+
+
+.prompt {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 140%;
+  color: $color;
+  margin: 0;
+
+  @include mobile {
+    font-size: 18px;
+  }
+}
+
+.params {
+  list-style: none;
+  margin: 0 0;
+  padding: 12px 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.param {
+  display: flex;
+  align-items: flex-start;
+  flex-shrink: 0;
+  color: $color;
+  gap: 9px;
+
+  .label {
+    font-size: 15px;
+    font-weight: 400;
+    color: rgba($color, 0.8);
+    margin: 3px 0 0 0;
+    line-height: 140%;
+
+    @include mobile {
+      font-size: 14px;
+      margin: 2px 0 0 0;
+
+    }
+
+  }
+
+  .value {
+    margin: 0;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+
+    a {
+      text-decoration: underline;
+      color: rgba($color, 1);
+      font-weight: 400;
+
+    }
+
+    @include mobile {
+      font-size: 18px;
+    }
+  }
+}
+
+.sharer {
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  background: $bg;
+  border: 1px solid $border;
+  border-radius: 9px;
+  margin: 100px auto 0 auto;
+}
+
+._sharer_image {
+  display: flex;
+  justify-content: center;
+  background: $bg2;
+  padding-bottom: 24px;
+  border-bottom: 1px solid $border;
+  border-top-right-radius: 9px;
+  border-top-left-radius: 9px;
+}
+
+.sharer_image {
+  width: 200px;
+  margin-top: -48px;
+  border-radius: 6px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.sharer_body {
+  padding: 24px;
+  text-align: center;
+
+  h3 {
+    font-weight: 500;
+    font-size: 24px;
+    margin: 0;
+  }
+
+  @include mobile {
+    h3 {
+      font-size: 21px;
+    }
+  }
+}
+
+.sharer_links {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  gap: 12px;
+  padding: 32px 0;
+}
+
+.sharer_link {
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100%;
+  transition: 100ms ease-in-out;
+  flex-shrink: 0;
+
+  @include mobile {
+    width: 56px;
+    height: 56px;
+  }
+
+  img {
+    width: 24px;
+    height: 24px;
+
+    @include mobile {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  &.fb {
+    background: rgba(#1778F2, 0.1);
+  }
+
+  &.pi {
+    background: rgba(#f0002a, 0.1);
+  }
+
+  &.tw {
+    background: rgba(#1da1f2, 0.1);
+  }
+
+  &.re {
+    background: rgba(#FF5700, 0.1);
+  }
+
+  &:hover {
+    &.fb {
+      background: rgba(#1778F2, 0.3);
+    }
+
+    &.pi {
+      background: rgba(#f0002a, 0.3);
+    }
+
+    &.tw {
+      background: rgba(#1da1f2, 0.3);
+    }
+
+    &.re {
+      background: rgba(#FF5700, 0.3);
+    }
+  }
+}
+
+.copy_btn {
+  margin-top: 34px;
+
+  @include mobile {
+    margin-top: 12px;
+  }
+}
+
+.mobile_sharer {
+  display: none;
+  justify-content: flex-end;
+  padding-top: 12px;
+  padding-right: 12px;
+  flex-wrap: wrap;
+  gap: 9px;
+
+  @include mobile {
+    display: flex;
+    width: 100% !important;
+  }
+}

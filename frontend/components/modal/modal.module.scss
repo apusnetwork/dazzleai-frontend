@@ -1,0 +1,283 @@
+@import 'frontend/styles/vars';
+
+@keyframes slide-in {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+._overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  z-index: 999999;
+  background: rgba(0, 0, 0, 0.05);
+  transition: 130ms ease-in-out;
+  overflow: hidden;
+  // animation: fade-in 240ms ease-in-out;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(4px);
+  transition: 80ms ease-in-out;
+  overflow: hidden;
+  //animation: fade-in 240ms ease-in-out;
+}
+
+._ {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: scroll !important;
+  padding: 6px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include mobile {
+    padding: 9px;
+  }
+}
+
+
+.modal {
+  background: $bg2;
+  width: 420px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 32px;
+  box-shadow: 0 12px 24px 0 rgb(62 64 83 / 12%), 0 3px 9px 0 rgb(0 0 0 / 3%);
+  //animation: slide-in 180ms ease-in-out;
+
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include mobile {
+    width: 100%;
+    margin-top: 0px;
+
+  }
+}
+
+
+.auth {
+  border: 1px solid $border;
+  background: $bg;
+  box-shadow: 0 12px 24px 0 rgba(18, 18, 23, 0.24), 0 3px 9px 0 rgb(0 0 0 / 24%);
+
+}
+
+.xl {
+  width: calc(100vw - 48px);
+  height: calc(100vh - 48px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  top: -12px;
+
+  .body {
+    overflow: scroll;
+    flex-grow: 1;
+  }
+
+  .foot {
+    width: 100%;
+    align-self: flex-end;
+  }
+
+  @include mobile {
+    width: 100%;
+    top: 12px;
+  }
+
+}
+
+.lg {
+  width: calc(100vw - 300px);
+  min-height: calc(100vh - 150px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  .body {
+    overflow: scroll;
+    flex-grow: 1;
+  }
+
+  .foot {
+    width: 100%;
+    align-self: flex-end;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.md {
+  width: calc(50vw);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  .body {
+    overflow: scroll;
+    flex-grow: 1;
+  }
+
+  .foot {
+    width: 100%;
+    align-self: flex-end;
+  }
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.head {
+  padding: 18px;
+  background: $bg2;
+  border-bottom: 1px solid $border;
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  @include mobile {
+    padding: 12px 9px;
+  }
+}
+
+.title {
+  font-size: 16px;
+  color: $color;
+  font-weight: 500;
+}
+
+.close {
+  position: absolute;
+  right: 18px;
+  top: 17px;
+  margin-left: auto;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  outline: none;
+  transition: 200ms ease-in-out;
+  border-radius: 6px;
+  color: rgba($color, 0.5);
+
+  svg {
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    background: $bg3;
+  }
+
+  &:active {
+    background: none;
+  }
+
+  @include mobile {
+    right: 9px;
+    top: 11px;
+  }
+}
+
+.body {
+  padding: 12px 18px;
+  overflow: hidden;
+
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  p {
+    font-size: 13px;
+    color: rgba($color, 0.6);
+    line-height: 160%;
+  }
+
+  ul {
+    padding: 0 20px;
+    font-size: 13px;
+    color: rgba($color, 0.6);
+
+    li {
+      margin: 6px 0;
+    }
+  }
+
+  b,
+  strong {
+    font-weight: 600;
+  }
+
+  @include mobile {
+    padding: 12px 9px;
+  }
+}
+
+.foot {
+  padding: 12px 18px;
+  border-top: 1px solid $border;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  background: $bg2;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+
+  @include mobile {
+    padding: 12px 9px;
+  }
+}

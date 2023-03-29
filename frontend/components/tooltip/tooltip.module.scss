@@ -1,0 +1,97 @@
+@import "frontend/styles/vars";
+
+._ {
+  display: inline-flex;
+  position: relative;
+  margin: 0;
+  align-items: center;
+  justify-content: flex-end;
+  z-index: 999999999999;
+  flex-basis: auto;
+
+  &:hover {
+
+    .tooltip {
+      display: flex;
+    }
+  }
+}
+
+._tooltip {
+  position: relative;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.tooltip {
+  position: absolute;
+  display: none;
+  flex-basis: auto;
+  flex-shrink: 0;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  word-wrap: nowrap;
+  padding: 6px 6px;
+  top: 48px;
+  border-radius: 4px;
+  background: $bg2;
+  border: 1px solid $border;
+  z-index: 999999999999;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.12), 0 0px 24px rgba(0, 0, 0, 0.09);
+
+  span {
+    font-size: 11px;
+    line-height: 11px;
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+    color: rgba($color, 0.8);
+    width: 100%;
+    display: block;
+    word-wrap: nowrap;
+  }
+}
+
+.content {
+  flex-shrink: 0;
+  ;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  appearance: none;
+  border-radius: 3px;
+  cursor: pointer;
+
+  font-weight: 900;
+  color: white;
+  font-size: 12px;
+
+  svg {
+    pointer-events: none;
+  }
+}
+
+.left {
+  .tooltip {
+    left: -36px;
+  }
+}
+
+.right {
+  .tooltip {
+    left: initial;
+    right: 0px;
+  }
+}
+
+
+.button {
+  .tooltip {
+    top: 40px
+  }
+}

@@ -1,0 +1,91 @@
+@import 'frontend/styles/vars';
+
+@keyframes slide-in-right {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slide-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateY(0px);
+  }
+}
+
+._ {
+  position: fixed;
+  bottom: 0px;
+  width: 400px;
+  padding: 12px 24px;
+  z-index: 999999;
+
+  @include mobile {
+    width: 100%;
+  }
+}
+
+.right {
+  right: 0;
+
+  .message {
+    animation: slide-in-right 180ms ease-in-out;
+  }
+}
+
+.left {
+  left: 0;
+
+  .message {
+    animation: slide-in-left 180ms ease-in-out;
+  }
+}
+
+.message {
+  width: 100%;
+  margin: 12px 0;
+  background: $bg2;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  border: 1px solid $border;
+  box-shadow: 0 0 9px rgba(0, 0, 0, 0.03), 0 3px 6px rgba(0, 0, 0, 0.03);
+  border-radius: 4px;
+  padding: 12px;
+}
+
+
+
+.icon {
+  transform: translateY(3px);
+  margin-right: 9px;
+}
+
+.info {
+  // background: $primary;
+  color: $warning;
+}
+
+.danger {
+  // background: $danger;
+  color: $danger;
+}
+
+.success {
+  // background: $success;
+  color: $success;
+}
+
+.text {
+  font-size: 13px;
+  line-height: 160%;
+  color: rgba($color, 0.7);
+  font-weight: 500;
+}

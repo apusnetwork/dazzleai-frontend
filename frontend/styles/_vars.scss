@@ -1,0 +1,51 @@
+$color: rgb(247, 248, 248);
+;
+$bg: rgb(31, 32, 35);
+;
+$bg2: rgb(35, 36, 38);
+$bg3: rgb(48, 50, 54);
+//$bg: 
+
+$primary: #fc0878;
+$primary: #000;
+$primary: #5866e6;
+$primary: #2355f7;
+$secondary: $primary;
+
+$accent: $primary;
+
+// $primary: rgb(245, 78, 56);
+
+$danger: rgb(235, 87, 87);
+
+$warning: rgb(248, 186, 15);
+$success: rgb(20, 165, 97);
+$info: rgb(92, 153, 253);
+$sidebar: rgb(249, 243, 244);
+
+$input-border: rgb(60, 63, 68);
+$border: rgb(239, 241, 244);
+$border: rgb(48, 50, 54);
+// $dark-font: rgb(13, 26, 59);
+$dark: #3c4149;
+$dark-font: rgb(60, 65, 73);
+
+// orange version
+
+// $primary: rgb(0, 0, 0);
+// $primary: rgb(64, 76, 242);
+// $sidebar: rgb(249, 245, 243);
+// $border: rgb(237, 226, 223);
+// $dark-font: rgb(15, 13, 13);
+
+@mixin medium {
+  @media only screen and (max-width: 1100px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media only screen and (max-width: 800px) {
+    @content;
+  }
+}
