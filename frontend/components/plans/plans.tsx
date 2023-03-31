@@ -21,15 +21,6 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
   const [cta, setCta] = useState('Subscribe now')
   const [checkoutMethod, setCheckoutMethod] = useState('stripe');
 
-
-  useEffect(() => {
-    window.rewardful && window.rewardful('ready', function () {
-      if (window.Rewardful.referral) {
-        setReferral(window.Rewardful.referral)
-      }
-    });
-  }, []);
-
   useEffect(() => {
     if (user.requestStatus === 'idle' || user.requestStatus === 'loading') return
     if (user.id && user.plan !== 'free') {

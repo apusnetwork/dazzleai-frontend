@@ -79,15 +79,6 @@ export default function WebsiteLayout({ children, title, description, robots, ca
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0,  maximum-scale=1.0" />
         {robots ? <meta name="robots" content={robots} /> : null}
-        {process.env.NODE_ENV === 'production' ?
-          <>
-            <Script defer data-domain="getimg.ai" src="https://plausible.io/js/plausible.js"></Script>
-            <Script dangerouslySetInnerHTML={{ __html: `window.plausible = window.plausible || function() {(window.plausible.q = window.plausible.q || []).push(arguments)}` }} ></Script>
-            <Script dangerouslySetInnerHTML={{ __html: `(function(w,r){w._rwq=r;w[r]=w[r]||function(){(w[r].q=w[r].q||[]).push(arguments)}})(window,'rewardful');` }} ></Script>
-            <Script async src='https://r.wdfl.co/rw.js' data-rewardful='a63dc5'></Script>
-          </>
-          : null}
-        <Script src="https://accounts.google.com/gsi/client" async defer></Script>
       </Head>
       <WebsiteHeader fixed />
       {

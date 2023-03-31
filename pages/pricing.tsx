@@ -12,14 +12,6 @@ export default function Pricing(): JSX.Element {
   const dispatch = useAppDispatch();
   const [referral, setReferral] = useState('');
 
-  useEffect(() => {
-    window.rewardful && window.rewardful('ready', function () {
-      if (window.Rewardful.referral) {
-        setReferral(window.Rewardful.referral)
-      }
-    });
-  }, []);
-
   function handleAuth(e: React.MouseEvent) {
     if (!user.id) {
       e.preventDefault()

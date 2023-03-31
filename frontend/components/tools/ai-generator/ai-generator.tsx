@@ -668,7 +668,7 @@ export default function AiGenerator(): JSX.Element {
 
       <div className={styles._controls}>
         <div className={styles.controls}>
-          <div className={styles._tabs}>
+          {/* <div className={styles._tabs}>
             <div className={styles.tabs}>
               <Tabs>
                 <Tab onClick={() => setMode('generate')} active={mode === 'generate'}>Generate</Tab>
@@ -676,7 +676,7 @@ export default function AiGenerator(): JSX.Element {
                 <Tab onClick={() => setMode('mix')} active={mode === 'mix'}>Mix</Tab>
               </Tabs>
             </div>
-          </div>
+          </div> */}
           <div className={styles._parameters}>
             <div className={styles.parameters}>
               {
@@ -817,7 +817,7 @@ export default function AiGenerator(): JSX.Element {
                   : null}
 
 
-              {
+              {/* {
                 mode === 'mix' ?
                   <Collapse icon={<Image />} title="Images" style='plain' openByDefault>
                     <div className={styles.mixer_images}>
@@ -896,7 +896,7 @@ export default function AiGenerator(): JSX.Element {
                     }
                   </Collapse>
                   : null
-              }
+              } */}
 
               <Collapse icon={<SlidersHorizontal />} title="Generation Parameters" style='plain'>
                 <div style={{ height: 12 }}></div>
@@ -991,7 +991,7 @@ export default function AiGenerator(): JSX.Element {
 
               </Collapse>
 
-              <Collapse icon={<Settings />} title="Advanced" style='plain'>
+              {/* <Collapse icon={<Settings />} title="Advanced" style='plain'>
                 {
                   mode === 'generate' ?
                     <>
@@ -1050,7 +1050,7 @@ export default function AiGenerator(): JSX.Element {
                 <small className='small'>You can always upscale and enhance faces after generating images.</small>
 
 
-              </Collapse>
+              </Collapse> */}
             </div>
           </div>
           <form className={styles.actions} onSubmit={generate}>
