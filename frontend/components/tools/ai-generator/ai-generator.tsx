@@ -27,12 +27,11 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import Masonry from 'react-masonry-css';
 import OutsideClickHandler from 'react-outside-click-handler';
 import styles from './ai-generator.module.scss';
-
-
-
+import NodesSelect from '../../select/nodes';
 
 interface StateI {
   model: string
+  node: string
   prompt: string
   negativePrompt: string
   steps: number
@@ -64,8 +63,10 @@ export default function AiGenerator(): JSX.Element {
   const [dragging, setDragging] = useState<string | undefined>(undefined)
   const [loader, setLoader] = useState(false)
   const [models, setModels] = useState<ModelI[]>([]);
+  const [nodes, setNodes] = useState<NodeI[]>([])
   const [state, setState] = useState<StateI>({
     model: '',
+    node: '',
     prompt: '',
     negativePrompt: 'Disfigured, cartoon, blurry',
     steps: 25,
@@ -101,6 +102,11 @@ export default function AiGenerator(): JSX.Element {
     setModels([...res.data]);
   }
 
+  async function getNodes() {
+    const res = await axios.get('/api/nodes?status=active');
+    setNodes([...res.data]);
+  }
+
   async function getImages() {
     if (!pagination.hasMore) return
     let hasMore = true;
@@ -113,7 +119,6 @@ export default function AiGenerator(): JSX.Element {
       setImages([]);
     } finally {
       setPagination({ loading: false, hasMore: hasMore });
-
     }
   }
 
@@ -121,7 +126,6 @@ export default function AiGenerator(): JSX.Element {
     setState({
       ...state,
       [e.target.name]: e.target.value,
-
     })
   }
 
@@ -170,7 +174,7 @@ export default function AiGenerator(): JSX.Element {
       // set loader
       setState(s => ({ ..._.set<StateI>(s, id + '.loading', true) }))
       const data = new FormData();
-      data.append('image', files[0]);
+      data.append('file', files[0]);
 
       const res = await axios.post('/api/images', data);
       const img = res.data
@@ -195,8 +199,8 @@ export default function AiGenerator(): JSX.Element {
           baseSize = 512
         }
 
-        let width = img.width;
-        let height = img.height;
+        let width = img.width || 512;
+        let height = img.height || 512;
         const ratio = width / height;
         if (ratio > 1) {
           // horizontal
@@ -262,7 +266,6 @@ export default function AiGenerator(): JSX.Element {
     // @ts-ignore
     setState(s => ({ ...s, image: { ...s.image, ...image }, width: Math.min(image.width, 1024), height: Math.min(image.height, 1024) }))
     message(dispatch, { text: 'Copied init image.', type: 'success' })
-
   }
 
   async function copyParams(image: ImageI) {
@@ -334,10 +337,10 @@ export default function AiGenerator(): JSX.Element {
       return
     }
 
-    if (user && user.credits < credits) {
-      dispatch(updateAuthState('credits'));
-      return
-    }
+    // if (user && user.credits < credits) {
+    //   dispatch(updateAuthState('credits'));
+    //   return
+    // }
 
     if (!user.id) {
       dispatch(updateAuthState('register'));
@@ -536,8 +539,6 @@ export default function AiGenerator(): JSX.Element {
     const m = urlParams.get('model');
     if (m) {
       setState(s => ({ ...s, model: m }))
-    } else {
-      setState(s => ({ ...s, model: 'model-SG161222/Realistic_Vision_V1.3' }))
     }
 
     const img = urlParams.get('img') || urlParams.get('init-img');
@@ -555,6 +556,7 @@ export default function AiGenerator(): JSX.Element {
 
   useEffect(() => {
     getModels()
+    getNodes()
     init();
   }, []);
 
@@ -690,6 +692,16 @@ export default function AiGenerator(): JSX.Element {
                   : null
               }
               {
+                mode === 'generate' ?
+                  <NodesSelect
+                    id='node'
+                    models={nodes}
+                    value={state.node}
+                    onChange={handleChange}
+                  />
+                  : null
+              }
+              {
                 mode === 'generate' || mode === 'edit' ?
 
                   <Collapse icon={<Edit3 />} title={mode === 'edit' ? 'Instruction' : 'Prompt'} style='plain' openByDefault>
@@ -706,13 +718,13 @@ export default function AiGenerator(): JSX.Element {
                       size='md'
                       noInfo
                     />
-                    {
+                    {/* {
                       mode === 'generate' ?
                         <div className={styles.random}>
                           <Button htmlType='button' size='xs' type='default' onClick={getRandomPrompt}><Shuffle /> Random</Button>
                         </div>
                         : <div />
-                    }
+                    } */}
                     <Input
                       label='Negative prompt'
                       id='negativePrompt'
@@ -793,7 +805,7 @@ export default function AiGenerator(): JSX.Element {
                           />
 
                           : null}
-                        {
+                        {/* {
                           state.controlnet === 'none' || state.model === 'stable-diffusion-v2.1' || (selectedModel && selectedModel.params.base_model && selectedModel.params.base_model.startsWith('stabilityai/stable-diffusion-2-1'))
                             ?
                             <>
@@ -810,7 +822,7 @@ export default function AiGenerator(): JSX.Element {
                               </Tip>
                             </>
                             : <div />
-                        }
+                        } */}
                       </>
                     }
                   </Collapse>
@@ -1140,7 +1152,7 @@ export default function AiGenerator(): JSX.Element {
           <div style={{ height: 24 }}></div>
 
         </InfiniteScroll>
-        <TextToImageOnboardingModal />
+        {/* <TextToImageOnboardingModal /> */}
       </div>
       {
         selectedImage !== undefined ?

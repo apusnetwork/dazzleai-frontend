@@ -1,36 +1,7 @@
 import axiosInstance, { handleApiError } from '@/frontend/utils/axios'
-import { setCookie } from '@/frontend/utils/cookie';
+import { AuthHeaderKey, setCookie } from '@/frontend/utils/cookie';
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { NextRequest, NextResponse } from 'next/server';
-
-interface UserResponse {
-  id: string;
-  referralCode: string;
-  additionalCredits: number;
-  monthlyCredits: number;
-  plan: string;
-  billingPeriod: string;
-  currentPeriodStartAt: string;
-  currentPeriodEndAt: string;
-  subscriptionStatus: string;
-  cancelAtEnd: boolean;
-  name: string;
-  hasBetaAccess: boolean;
-  status: string;
-  createdAt: string;
-  email: string;
-  firstName: string;
-  credits: number;
-  isPaid: boolean;
-}
-
-interface RemoteUserInfoResponse {
-  avatar: string;
-  google_id: string;
-  nickname: string;
-  twitter_id: string;
-  user_id: string;
-}
+import { RemoteUserInfoResponse, UserResponse } from '../me';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
@@ -43,7 +14,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         Authorization: `Bearer ${loginRes.data.token}`,
       }
     })
-    setCookie(res, 'token', loginRes.data.token, {
+    setCookie(res, AuthHeaderKey, loginRes.data.token, {
       maxAge: 60 * 60 * 24 * 7,
       path: '/',
       sameSite: 'lax',
@@ -61,7 +32,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       cancelAtEnd: false,
       name: userRes.data.nickname,
       hasBetaAccess: false,
-      status: '',
+      status: 'active',
       createdAt: '',
       email: '',
       firstName: '',

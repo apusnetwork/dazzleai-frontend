@@ -26,37 +26,37 @@ export default function ModelSelect({ onChange, models, value, id }: ModelSelect
   }
 
   const allModels = [
-    {
-      id: 'stable-diffusion-v2.1',
-      name: 'Stable Diffusion v2.1',
-      params: {
-        description: 'Latest text-to-image model from StabilityAI',
-        author: 'stability.ai',
-        author_url: 'https://stability.ai/',
-        images: [
-          'https://img.getimg.ai/generated/img-9jjtCkXWwKjZe9wElBEly2.png',
-          'https://img.getimg.ai/generated/img-YkfgHICXA8YFGEzbWC36kS.png',
-          'https://img.getimg.ai/generated/img-q9tOtcskhqYjxvpFdvE5c2.png',
-          'https://img.getimg.ai/generated/img-vU4xLUCrxSBSA6ky8cXtuP.png'
-        ]
-      },
-    },
-    {
-      id: 'stable-diffusion-v1.5',
-      name: 'Stable Diffusion v1.5',
-      params: {
-        description: 'Text-to-image model from StabilityAI',
-        author: 'stability.ai',
-        author_url: 'https://stability.ai/',
+    // {
+    //   id: 'stable-diffusion-v2.1',
+    //   name: 'Stable Diffusion v2.1',
+    //   params: {
+    //     description: 'Latest text-to-image model from StabilityAI',
+    //     author: 'stability.ai',
+    //     author_url: 'https://stability.ai/',
+    //     images: [
+    //       'https://img.getimg.ai/generated/img-9jjtCkXWwKjZe9wElBEly2.png',
+    //       'https://img.getimg.ai/generated/img-YkfgHICXA8YFGEzbWC36kS.png',
+    //       'https://img.getimg.ai/generated/img-q9tOtcskhqYjxvpFdvE5c2.png',
+    //       'https://img.getimg.ai/generated/img-vU4xLUCrxSBSA6ky8cXtuP.png'
+    //     ]
+    //   },
+    // },
+    // {
+    //   id: 'stable-diffusion-v1.5',
+    //   name: 'Stable Diffusion v1.5',
+    //   params: {
+    //     description: 'Text-to-image model from StabilityAI',
+    //     author: 'stability.ai',
+    //     author_url: 'https://stability.ai/',
 
-        images: [
-          'https://img.getimg.ai/generated/img-gOyyHvmiu4Fjl21f6ucKav.png',
-          'https://img.getimg.ai/generated/img-G99O7IbVKSyyH9XyOMzlxA.png',
-          'https://img.getimg.ai/generated/img-Kzpf5VdKQCQkbGFwew5y2q.png',
-          'https://img.getimg.ai/generated/img-8VpR28yCp2Bq1T3wfrxeeM.png',
-        ]
-      },
-    },
+    //     images: [
+    //       'https://img.getimg.ai/generated/img-gOyyHvmiu4Fjl21f6ucKav.png',
+    //       'https://img.getimg.ai/generated/img-G99O7IbVKSyyH9XyOMzlxA.png',
+    //       'https://img.getimg.ai/generated/img-Kzpf5VdKQCQkbGFwew5y2q.png',
+    //       'https://img.getimg.ai/generated/img-8VpR28yCp2Bq1T3wfrxeeM.png',
+    //     ]
+    //   },
+    // },
     ...models
   ]
 
@@ -109,7 +109,7 @@ export default function ModelSelect({ onChange, models, value, id }: ModelSelect
                   <div className={styles.model}>
                     <div className={styles.model_images}>
                       {
-                        v.params.images && v.params.images.map((im: string, i: number) => (
+                        v.params.images && v.params.images?.map((im: string, i: number) => (
                           <Image src={im} key={i} width={100} height={100} loader={cloudflareLoader} />
 
                         ))

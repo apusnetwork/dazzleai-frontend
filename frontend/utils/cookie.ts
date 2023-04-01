@@ -3,6 +3,8 @@
 import { serialize, parse, CookieSerializeOptions } from 'cookie'
 import { NextApiRequest, NextApiResponse } from 'next'
 
+export const AuthHeaderKey = "getimgauth"
+
 /**
  * This sets `cookie` using the `res` object
  */
@@ -26,4 +28,8 @@ export const setCookie = (
 export const getCookie = (req: NextApiRequest, name: string) => {
   const cookies = parse(req.headers.cookie || '')
   return cookies[name]
+}
+
+export const deleteCookie = (res: NextApiResponse, name: string) => {
+  res.setHeader('Set-Cookie', serialize(name, '', { maxAge: -1 }))
 }

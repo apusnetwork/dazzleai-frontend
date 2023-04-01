@@ -1,15 +1,10 @@
-$color: rgb(247, 248, 248);
-;
-$bg: rgb(31, 32, 35);
-;
-$bg2: rgb(35, 36, 38);
-$bg3: rgb(48, 50, 54);
+$color: rgb(0, 0, 0);
+$bg: rgb(255, 255, 255);
+$bg2: rgb(251, 251, 252);
+$bg3: rgb(238, 237, 236);
 //$bg: 
 
-$primary: #fc0878;
-$primary: #000;
-$primary: #5866e6;
-$primary: #2355f7;
+$primary: #1024F0;
 $secondary: $primary;
 
 $accent: $primary;
@@ -21,22 +16,12 @@ $danger: rgb(235, 87, 87);
 $warning: rgb(248, 186, 15);
 $success: rgb(20, 165, 97);
 $info: rgb(92, 153, 253);
-$sidebar: rgb(249, 243, 244);
+$sidebar: rgb(240, 240, 240);
 
-$input-border: rgb(60, 63, 68);
-$border: rgb(239, 241, 244);
-$border: rgb(48, 50, 54);
-// $dark-font: rgb(13, 26, 59);
-$dark: #3c4149;
-$dark-font: rgb(60, 65, 73);
-
-// orange version
-
-// $primary: rgb(0, 0, 0);
-// $primary: rgb(64, 76, 242);
-// $sidebar: rgb(249, 245, 243);
-// $border: rgb(237, 226, 223);
-// $dark-font: rgb(15, 13, 13);
+$input-border: rgb(200, 200, 200);
+$border: rgb(220, 220, 220);
+$dark: rgb(60, 60, 60);
+$dark-font: rgb(40, 45, 53);
 
 @mixin medium {
   @media only screen and (max-width: 1100px) {

@@ -1,7 +1,8 @@
-import { getCookie } from '@/frontend/utils/cookie';
+import axiosInstance, { handleApiError } from '@/frontend/utils/axios';
+import { AuthHeaderKey, getCookie } from '@/frontend/utils/cookie';
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-interface UserResponse {
+export interface UserResponse {
   id: string;
   referralCode: string;
   additionalCredits: number;
@@ -22,7 +23,46 @@ interface UserResponse {
   isPaid: boolean;
 }
 
+
+export interface RemoteUserInfoResponse {
+  avatar: string;
+  google_id: string;
+  nickname: string;
+  twitter_id: string;
+  user_id: string;
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const token = getCookie(req, 'token')
-  res.status(401).json({ "message": "Authentication is required!" })
+  try {
+    const token = getCookie(req, AuthHeaderKey)
+    const userRes = await axiosInstance.get<RemoteUserInfoResponse>('/api/userinfo', {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      }
+    })
+    const resData: UserResponse = {
+      id: userRes.data.user_id,
+      referralCode: '',
+      additionalCredits: 0,
+      monthlyCredits: 0,
+      plan: '',
+      billingPeriod: '',
+      currentPeriodStartAt: '',
+      currentPeriodEndAt: '',
+      subscriptionStatus: '',
+      cancelAtEnd: false,
+      name: userRes.data.nickname,
+      hasBetaAccess: false,
+      status: 'active',
+      createdAt: '',
+      email: '',
+      firstName: '',
+      credits: 0,
+      isPaid: false,
+    }
+    res.status(200).json(resData)
+  } catch (e: any) {
+    const { status, message } = handleApiError(e)
+    res.status(status).json({ message })
+  }
 }

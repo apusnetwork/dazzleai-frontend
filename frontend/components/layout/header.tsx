@@ -34,7 +34,7 @@ export function WebsiteHeader({ fixed = false }): JSX.Element {
         <h1>
           <Link href="/">
             <a className={styles.website_logo}>
-              <img src="/logo-white.svg" className={styles.header_logo} alt="getimg.ai" height={20} width={104} />
+              <img src="/logo-blue.png" className={styles.header_logo} alt="getimg.ai" height={20} width={104} />
             </a>
           </Link>
         </h1>
@@ -120,7 +120,7 @@ function HeaderUser(): JSX.Element {
                 {user.name}
               </div>
               <ul className={styles.user_menu}>
-                <li>
+                {/* <li>
                   <Link href="/gallery?mode=generator">
                     <a>
                       <Grid size={16} />
@@ -135,7 +135,7 @@ function HeaderUser(): JSX.Element {
                       Settings
                     </a>
                   </Link>
-                </li>
+                </li> */}
                 <li>
                   <Link href="/legal/privacy-policy">
                     <a>

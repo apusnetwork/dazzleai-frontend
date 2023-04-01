@@ -213,6 +213,30 @@
   }
 }
 
+
+.nodes_list {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 12px;
+  overflow: hidden;
+  padding: 3px;
+
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @include medium {
+    grid-template-columns: repeat(1, 1fr);
+
+  }
+
+  @include mobile {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
 ._model {
   border: 1px solid $border;
   box-shadow: 0 0 0 1px transparent;
@@ -237,6 +261,32 @@
   @include mobile {
     margin: 0px auto;
     max-width: 300px;
+  }
+}
+
+
+._node {
+  border: 1px solid $border;
+  box-shadow: 0 0 0 1px transparent;
+  border-radius: 4px;
+  transition: 120ms ease-in-out;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  &:hover {
+    box-shadow: 0 0 0 1px $border, 0 2px 3px rgba(0, 0, 0, 0.1);
+  }
+
+  &.checked {
+    border: 1px solid $primary;
+    box-shadow: 0 0 0 1px $primary;
+    background: rgba($primary, 0.06);
+  }
+
+  @include mobile {
+    margin: 0px auto;
   }
 }
 
@@ -271,7 +321,7 @@
 
 .model_info {
   padding: 9px;
-  color: $color;
+  color: $bg;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

@@ -7,7 +7,7 @@ const axiosInstance = axios.create({
 
 export function handleApiError(error: AxiosError) {
   const status = error.response ? error.response.status : 500
-  let message = error.response?.data ? JSON.stringify(error.response.data) : 'Unknown Error'
+  let message = error.response?.data ? error.response?.data : error.stack ?? 'Unknown Error'
 
   return { status, message }
 }
