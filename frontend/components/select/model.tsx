@@ -121,9 +121,9 @@ export default function ModelSelect({ onChange, models, value, id }: ModelSelect
                         <div className={styles.model_name}>
                           {v.name}
                         </div>
-                        <div className={styles.model_desc}>
+                        {/* <div className={styles.model_desc}>
                           {v.params.description || `Your own DreamBooth model. Modifer to invoke style "${v.params.instance_prompt}"`}
-                        </div>
+                        </div> */}
                       </div>
                       {
                         v.params.author_url ? <div className={styles.model_author}>
