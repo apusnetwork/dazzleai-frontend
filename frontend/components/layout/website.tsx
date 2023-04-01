@@ -42,7 +42,7 @@ export default function WebsiteLayout({ children, title, description, robots, ca
   if (!description) {
     description = ''
   }
-  title += " | getimg.ai"
+  title += ""
 
   let imgURL = image ? image : "/social-image-3.png"
   if (imgURL.startsWith('/')) {

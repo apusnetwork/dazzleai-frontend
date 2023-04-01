@@ -47,7 +47,8 @@ export default function Breadcrumbs({ items, type = 'default' }: BreadcrumbsProp
                 "@type": "ListItem",
                 "position": i + 1,
                 "name": item.title,
-                "item": "https://getimg.ai" + item.href
+                // "item": "https://getimg.ai" + item.href
+                "item": "/" + item.href
               }
             ))
 

@@ -198,7 +198,7 @@ export default function ImageView(props: ImageI) {
               <b className={styles.label}>
                 Diffusion sampler:
               </b>
-              <p className={styles.value}>{schedulerNames[params.scheduler || 'ddim']}</p>
+              <p className={styles.value}>{(schedulerNames as any)[params.scheduler || 'ddim']}</p>
             </li>
             : null}
           {params.upscale || params.enhance_face ?

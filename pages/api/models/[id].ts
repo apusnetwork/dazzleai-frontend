@@ -1,7 +1,7 @@
 import axiosInstance, { handleApiError } from '@/frontend/utils/axios';
 import { AuthHeaderKey, getCookie } from '@/frontend/utils/cookie';
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { RemoteTask, TaskInfo } from '../tasks'
+import { RemoteTask, TaskInfo, mapRemoteTaskToTaskInfo } from '../tasks'
 
 interface ImageGenerationRequest {
   batch_count: number;
@@ -68,41 +68,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         Authorization: `Bearer ${token}`,
       }
     })
-    const resData: TaskInfo[] = [
-      {
-        id: createRes.data.task_id,
-        tool: req.body.tool,
-        userId: createRes.data.user_id,
-        user: {
-          id: createRes.data.user_id,
-          referralCode: '',
-          additionalCredits: 0,
-          monthlyCredits: 0,
-          plan: '',
-          billingPeriod: '',
-          currentPeriodStartAt: '',
-          currentPeriodEndAt: '',
-          subscriptionStatus: '',
-          cancelAtEnd: false,
-          name: '',
-          hasBetaAccess: false,
-          status: '',
-          createdAt: '',
-          email: '',
-          firstName: '',
-          credits: 0,
-          isPaid: false,
-        },
-        createdAt: '',
-        model: req.query.id as string,
-        params: req.body as TaskInfo['params'],
-        acceptedImageId: null,
-        startedAt: null,
-        finishedAt: null,
-        status: createRes.data.status,
-      }
-    ]
-    res.status(200).json(resData)
+    res.status(200).json(mapRemoteTaskToTaskInfo(createRes.data))
   } catch (e: any) {
     const { status, message } = handleApiError(e)
     res.status(status).json({ message })

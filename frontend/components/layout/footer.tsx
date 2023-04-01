@@ -13,7 +13,7 @@ export default function WebsiteFooter(): JSX.Element {
           <div>
             <Link href="/">
               <a>
-                <img src="/logo-white.svg" className={styles.header_logo} alt="getimg.ai" height={20} width={104} />
+                <img src="/logo-white.svg" className={styles.header_logo} alt="" height={20} width={104} />
               </a>
             </Link>
           </div>

@@ -34,7 +34,7 @@ export function WebsiteHeader({ fixed = false }): JSX.Element {
         <h1>
           <Link href="/">
             <a className={styles.website_logo}>
-              <img src="/logo-blue.png" className={styles.header_logo} alt="getimg.ai" height={20} width={104} />
+              <img src="/logo-blue.png" className={styles.header_logo} alt="" height={20} width={104} />
             </a>
           </Link>
         </h1>

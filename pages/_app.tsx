@@ -49,8 +49,8 @@ function App({ children }: Props): JSX.Element {
 
 
   function initGoogle() {
-    const google = window.google;
-    if (!window.google) return
+    const google = (window as any).google;
+    if (!(window as any).google) return
     google.accounts.id.initialize({
       // client_id: "1089732682872-c6fieght7qb8su25cdfr5isi506v01lg.apps.googleusercontent.com",
       client_id: "1080163930978-2885m14p291dt08tej4p7f4bldtbpsj7.apps.googleusercontent.com",
@@ -136,7 +136,7 @@ function App({ children }: Props): JSX.Element {
     const script = document.createElement('script')
     script.src = 'https://accounts.google.com/gsi/client'
     script.onload = () => {
-      const google = window.google // Now you can access window.google
+      const google = (window as any).google // Now you can access window.google
       initGoogle() // Assuming this is defined somewhere else
     }
     document.body.appendChild(script)
@@ -294,7 +294,7 @@ function App({ children }: Props): JSX.Element {
             <Link href='/referrals'>
               <a onClick={() => dispatch(updateAuthState(undefined))}>
                 <Gift size={14} strokeWidth={1} />
-                Earn credits by sharing getimg.ai with friends.
+                Earn credits by sharing dazzle.ai with friends.
               </a>
             </Link>
             <a href={`/api/billing/checkout${referral ? `?referral=${referral}` : ''}`} onClick={() => dispatch(updateAuthState(undefined))}>

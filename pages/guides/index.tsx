@@ -6,7 +6,7 @@ export default function GuideOverviewPage() {
   return (
     <GuideLayout
       title="Guides"
-      description="Explore our guides and examples how to use getimg.ai"
+      description="Explore our guides and examples how to use dazzle.ai"
       breadcrumbs={[
         { title: "Guides", href: '/guides' }
       ]}

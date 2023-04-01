@@ -37,7 +37,7 @@ interface TaskInfoModel {
   lastUsedAt: string;
 }
 
-interface TaskInfo {
+export interface TaskInfo {
   id: string;
   userId: string;
   acceptedImageId: string | null;

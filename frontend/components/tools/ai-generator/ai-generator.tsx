@@ -796,7 +796,7 @@ export default function AiGenerator(): JSX.Element {
                       </>
                       :
                       <>
-                        {state.model !== 'stable-diffusion-v2.1' && (selectedModel && selectedModel.params.base_model && selectedModel.params.base_model.startsWith('stabilityai/stable-diffusion-2-1') ? false : true) ?
+                        {/* {state.model !== 'stable-diffusion-v2.1' && (selectedModel && selectedModel.params.base_model && selectedModel.params.base_model.startsWith('stabilityai/stable-diffusion-2-1') ? false : true) ?
 
                           <ControlnetSelect
                             id='controlnet'
@@ -804,7 +804,7 @@ export default function AiGenerator(): JSX.Element {
                             onChange={handleChange}
                           />
 
-                          : null}
+                          : null} */}
                         {/* {
                           state.controlnet === 'none' || state.model === 'stable-diffusion-v2.1' || (selectedModel && selectedModel.params.base_model && selectedModel.params.base_model.startsWith('stabilityai/stable-diffusion-2-1'))
                             ?
