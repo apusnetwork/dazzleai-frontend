@@ -68,7 +68,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         Authorization: `Bearer ${token}`,
       }
     })
-    res.status(200).json(mapRemoteTaskToTaskInfo(createRes.data))
+    res.status(200).json([mapRemoteTaskToTaskInfo(createRes.data)])
   } catch (e: any) {
     const { status, message } = handleApiError(e)
     res.status(status).json({ message })
