@@ -71,6 +71,13 @@ export default function ImageView(props: ImageI) {
     h = 'Mixed Image.'
   }
 
+  const [websiteHost, setWebsiteHost] = useState<string>("");
+  useEffect(() => {
+    if (window) {
+      setWebsiteHost(window.location.protocol + "//" + window.location.host)
+    }
+  }, [])
+
   return (
     <div className={styles.view}>
       <div className={styles.view_head}>
@@ -89,7 +96,7 @@ export default function ImageView(props: ImageI) {
             <Maximize strokeWidth={1.5} />
             Open in AI Editor
           </Button> */}
-          <ImageSharer url={`/img/${id}`} imageSrc={url} imageWidth={width} imageHeight={height} type="primary" />
+          <ImageSharer url={`${websiteHost}/img/${id}`} imageSrc={url} imageWidth={width} imageHeight={height} type="primary" />
         </div>
       </div>
       <div className={styles._view_image}>
@@ -123,7 +130,7 @@ export default function ImageView(props: ImageI) {
           <Maximize strokeWidth={1.5} />
           Open in AI Editor
         </Button> */}
-        <ImageSharer size='sm' type="primary" url={`/img/${id}`} imageSrc={url} imageWidth={width} imageHeight={height} />
+        <ImageSharer size='sm' type="primary" url={`${websiteHost}/img/${id}`} imageSrc={url} imageWidth={width} imageHeight={height} />
       </div>
 
       <div className={styles.content}>
