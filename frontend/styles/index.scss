@@ -73,16 +73,17 @@ a {
 .login-h {
   font-size: 26px;
   font-weight: 600;
-  margin: 0px 0 0  0;
+  margin: 0px 0 0 0;
 
   @include mobile {
     font-size: 21px;
   }
 }
+
 .login-p {
   font-size: 14px !important;
   font-weight: 400;
-  margin: 2px 0 9px  0;
+  margin: 2px 0 9px 0;
   color: rgba($color, 0.76) !important;
 
   a {
@@ -90,12 +91,12 @@ a {
   }
 
   @include mobile {
-    font-size: 13px !important 
+    font-size: 13px !important
   }
 }
 
 .login-foot {
-  margin: 18px 0 0 0 ;
+  margin: 18px 0 0 0;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -162,7 +163,7 @@ a {
   @include mobile {
     margin: 30px 0;
   }
-  
+
 }
 
 .hero {
@@ -184,6 +185,7 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+
 .center-r {
   margin-left: auto;
 }
@@ -195,14 +197,15 @@ a {
   letter-spacing: -0.02em;
   font-weight: 600;
   margin: 0px 0 24px 0;
-  color: #fff;;
+  color: #fff;
+  ;
   background-image: linear-gradient(to left top, rgb(255, 255, 255) 30%, rgba(255, 255, 255, 0.7));
   background-size: 100%;
   background-clip: text;
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -moz-background-clip: text;
-  -webkit-text-fill-color: transparent; 
+  -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 
   @include mobile {
@@ -222,7 +225,7 @@ a {
 
   b {
     font-weight: 800;
-    color:$color;
+    color: $color;
   }
 
   @include mobile {
@@ -245,7 +248,7 @@ a {
   line-height: 120%;
   font-weight: 500;
   color: $color;
-  padding:  12px 0;
+  padding: 12px 0;
   margin: 0;
 }
 
@@ -348,6 +351,7 @@ a {
 
   @include mobile {
     grid-template-columns: 1fr;
+
     .grid-line {
       display: none;
     }
@@ -366,6 +370,7 @@ a {
 .grid-v-center {
   align-items: center;
 }
+
 .grid-v-center {
   justify-content: center;
 }
@@ -377,11 +382,14 @@ a {
 .gap {
   gap: 24px;
 }
+
 .gap-2 {
   gap: 48px;
 }
+
 .gap-3 {
   gap: 72px;
+
   @include mobile {
     gap: 24px;
   }
@@ -390,15 +398,16 @@ a {
 .grid-3-4 {
   display: grid;
   grid-template-columns: 3fr 4fr;
-  
+
   @include mobile {
     display: block;
   }
 }
+
 .grid-4-3 {
   display: grid;
   grid-template-columns: 4fr 3fr;
-  
+
   @include mobile {
     display: block;
   }
@@ -408,11 +417,12 @@ a {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 24px;
-  
+
   @include mobile {
     display: block;
   }
 }
+
 .grid-4 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -445,6 +455,7 @@ a {
 
 .mobile {
   display: none !important;
+
   @include mobile {
     display: initial !important;
   }
@@ -469,14 +480,17 @@ a {
   overflow: hidden;
   border-radius: 18px;
   margin-left: 120px;
-  box-shadow: 0 9px 24px rgba(0,0,0, 0.09), 0 2px 6px rgba(0,0,0, 0.05);
+  box-shadow: 0 9px 24px rgba(0, 0, 0, 0.09), 0 2px 6px rgba(0, 0, 0, 0.05);
+
   &.image-right {
     margin-left: 0;
     margin-right: 120px;
+
     @include mobile {
       margin: 0;
     }
   }
+
   &.image-center {
     margin-left: auto;
     margin-right: auto;
@@ -497,7 +511,7 @@ a {
       height: 100%;
     }
   }
-  
+
 
   .image-content {
     width: 100%;
@@ -576,12 +590,14 @@ a {
   @include mobile {
     margin: 32px 0;
     padding-left: 36px;
+
     li:before {
       --size: 26px;
       font-size: 14px;
     }
   }
 }
+
 .checklist {
   margin: 32px auto 0 auto;
   list-style: none;
@@ -591,7 +607,7 @@ a {
     padding-left: 6px;
     margin-bottom: 9px;
     padding-bottom: 12px;
-    
+
     font-size: 18px;
     color: rgba($dark, 0.6);
 
@@ -626,10 +642,11 @@ a {
   @include mobile {
     margin: 32px 0;
     padding-left: 36px;
-    
+
     li {
       font-size: 15px;
     }
+
     li:before {
       --size: 21px;
       font-size: 14px;
@@ -651,6 +668,7 @@ a {
   // box-shadow: 13px 27px -5px rgba(50, 50, 50, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
   box-shadow: -6px 12px 6px rgba(0, 0, 0, 0.01), -3px 9px 24px 9px rgba(0, 0, 0, 0.09);
   z-index: 999;
+
   p {
     color: rgba($color, 0.96);
     font-size: 14px;
@@ -692,7 +710,7 @@ a {
 
     b {
       font-weight: 500;
-      color:rgba($color, 0.9);
+      color: rgba($color, 0.9);
     }
 
     @include mobile {
@@ -743,6 +761,7 @@ a {
 .recharts-yAxis {
   user-select: none;
   transform: translateY(-12px);
+
   .recharts-cartesian-axis-tick-value {
     tspan {
       fill: $dark-font;
@@ -781,5 +800,17 @@ a {
 
 .rc-slider-handle-dragging {
 
-  box-shadow: 0 0  0 4px rgba($primary, 0.2) !important;
+  box-shadow: 0 0 0 4px rgba($primary, 0.2) !important;
+}
+
+.mobile_link_cta {
+  width: 100%;
+}
+
+.mobile_link_cta a,
+.mobile_link_cta div,
+.mobile_link_cta button {
+  height: 40px;
+  width: 100% !important;
+  font-size: 18px;
 }

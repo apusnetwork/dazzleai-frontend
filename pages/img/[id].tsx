@@ -3,11 +3,11 @@ import ImageView from 'frontend/components/image/view';
 import WebsiteLayout from 'frontend/components/layout/website';
 import { GetServerSidePropsContext, GetServerSidePropsResult } from 'next';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 
 export default function ImageSharePage(props: ImageI): JSX.Element {
   const router = useRouter();
-
 
   const prompt = props.modelTask ? (props.modelTask.params.prompt || "") : "";
   const splitted = prompt.split(/[,|.]/gi)
@@ -36,9 +36,16 @@ export default function ImageSharePage(props: ImageI): JSX.Element {
 }
 
 
-export async function getServerSideProps({ params }: GetServerSidePropsContext): Promise<GetServerSidePropsResult<ImageI>> {
+export async function getServerSideProps({ params, req }: GetServerSidePropsContext): Promise<GetServerSidePropsResult<ImageI>> {
   try {
-    const res = await axios.get(`http://localhost/api/images/${params?.id}`)
+    const host = req.headers.host;
+    const protocol = req.headers['x-forwarded-proto'] || 'http';
+    const res = await axios.get(`${protocol}://${host}/api/images/${params?.id}`, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Cookie': req.headers.cookie || '',
+      },
+    })
 
     return {
       props: res.data

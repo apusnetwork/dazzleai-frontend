@@ -76,20 +76,20 @@ export default function ImageView(props: ImageI) {
       <div className={styles.view_head}>
         <h1 className={styles.title}>{h}</h1>
         <div className={styles.view_buttons}>
-          <Button type="icon" title="Download" href={`https://getimg.ai/api/download/${props.id}`} download={`getimg_ai_${props.id}.${props.format.toLowerCase()}`}><Download /></Button>
-          {prompt ? <Button type="default" title="Generate similar" href={`https://getimg.ai/text-to-image?img=${id}`}>
+          <Button type="icon" title="Download" href={`/api/download/${props.id}`} download={`getimg_ai_${props.id}.${props.format.toLowerCase()}`}><Download /></Button>
+          {prompt ? <Button type="default" title="Generate similar" href={`/?img=${id}`} openInNewTab={true}>
             <Repeat strokeWidth={1.5} />
             Reuse parameters
           </Button> : null}
-          <Button type="default" title="Generate similar" href={`https://getimg.ai/text-to-image?init-img=${id}`}>
+          <Button type="default" title="Generate similar" href={`/?init-img=${id}`} openInNewTab={true}>
             <PhotoImagePicture strokeWidth={1.5} />
             Reuse image
           </Button>
-          <Button type="default" title="Open in AI Editor" href={`https://getimg.ai/editor/new?img=${id}`} onClick={handleEditorOpen}>
+          {/* <Button type="default" title="Open in AI Editor" href={`/editor/new?img=${id}`} onClick={handleEditorOpen}>
             <Maximize strokeWidth={1.5} />
             Open in AI Editor
-          </Button>
-          <ImageSharer url={`https://getimg.ai/img/${id}`} imageSrc={url} imageWidth={width} imageHeight={height} type="primary" />
+          </Button> */}
+          <ImageSharer url={`/img/${id}`} imageSrc={url} imageWidth={width} imageHeight={height} type="primary" />
         </div>
       </div>
       <div className={styles._view_image}>
@@ -110,20 +110,20 @@ export default function ImageView(props: ImageI) {
         </div>
       </div>
       <div className={styles.mobile_sharer}>
-        <Button size="xs" type="icon" title="Download" href={`https://getimg.ai/api/download/${props.id}`} download={`getimg_ai_${props.id}.${props.format.toLowerCase()}`}><Download /></Button>
-        {prompt ? <Button size="sm" type="default" title="Generate similar" href={`https://getimg.ai/text-to-image?img=${id}`}>
+        <Button size="xs" type="icon" title="Download" href={`/api/download/${props.id}`} download={`getimg_ai_${props.id}.${props.format.toLowerCase()}`}><Download /></Button>
+        {prompt ? <Button size="sm" type="default" title="Generate similar" href={`/?img=${id}`} openInNewTab={true}>
           <Repeat strokeWidth={1.5} />
           Reuse parameters
         </Button> : null}
-        <Button size="sm" type="default" title="Generate similar" href={`https://getimg.ai/text-to-image?init-img=${id}`}>
+        <Button size="sm" type="default" title="Generate similar" href={`/?init-img=${id}`} openInNewTab={true}>
           <PhotoImagePicture strokeWidth={1.5} />
           Reuse image
         </Button>
-        <Button size="sm" type="default" title="Open in AI Editor" href={`https://getimg.ai/editor/new?img=${id}`} onClick={handleEditorOpen}>
+        {/* <Button size="sm" type="default" title="Open in AI Editor" href={`/editor/new?img=${id}`} onClick={handleEditorOpen}>
           <Maximize strokeWidth={1.5} />
           Open in AI Editor
-        </Button>
-        <ImageSharer size='sm' type="primary" url={`https://getimg.ai/img/${id}`} imageSrc={url} imageWidth={width} imageHeight={height} />
+        </Button> */}
+        <ImageSharer size='sm' type="primary" url={`/img/${id}`} imageSrc={url} imageWidth={width} imageHeight={height} />
       </div>
 
       <div className={styles.content}>
@@ -220,12 +220,12 @@ export default function ImageView(props: ImageI) {
             </b>
             <p className={styles.value}>{(_model && _model.name) || modelsMap[model]}</p>
           </li>
-          <li className={styles.param}>
+          {/* <li className={styles.param}>
             <b className={styles.label}>
               Created:
             </b>
             <p className={styles.value}>{dayjs(createdAt).format('MMMM D, YYYY h:mm A')}</p>
-          </li>
+          </li> */}
         </ul>
 
       </div>

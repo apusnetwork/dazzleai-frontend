@@ -482,7 +482,7 @@ export default function AiGenerator(): JSX.Element {
 
         const generatedImages: ImageI[] = [];
         for (const task of tasks.data) {
-          if (task.status === 'succeeded' && task.images && task.images.length) {
+          if (task.status === 'succeed' && task.images && task.images.length) {
             generatedImages.push(...task.images.map((im: any) => ({ ...im, modelTask: task })))
           }
           if (task.status === 'failed') {

@@ -82,7 +82,7 @@ export default function ImageSharer({ url, imageSrc, imageWidth, imageHeight, ty
                       </div>
                     </div>
                     <div className={styles.sharer_body}>
-                      <h3>Share this with your social Community</h3>
+                      {/* <h3>Share this with your social Community</h3>
                       <div className={styles.sharer_links}>
                         <a href={`https://www.facebook.com/sharer/sharer.php?u=${url}?ref=fb-share`} target="_blank" rel="nofollow noreferrer" className={[styles.sharer_link, styles.fb].join(' ')}>
                           <img src="/social/f_logo_blue.png" loading="lazy" alt="" />
@@ -96,11 +96,11 @@ export default function ImageSharer({ url, imageSrc, imageWidth, imageHeight, ty
                         <a href={`http://pinterest.com/pin/create/button/?url=${url}&media=${imageSrc}`} target="_blank" rel="nofollow noreferrer" className={[styles.sharer_link, styles.pi].join(' ')}>
                           <img src="/social/pinterest.png" loading="lazy" alt="" />
                         </a>
-                      </div>
+                      </div> */}
                       <InputRow>
                         <Input
                           id="link-copy"
-                          label="or copy link"
+                          label=""
                           value={url}
                           disableInfo
                         />

@@ -5,6 +5,25 @@ const axiosInstance = axios.create({
 })
 
 
+axiosInstance.interceptors.request.use(function (config) {
+  console.log('Request:', config.method?.toUpperCase(), config.url, config.params, config.data);
+  return config;
+}, function (error) {
+  console.log('Request error:', error);
+  return Promise.reject(error);
+});
+
+axiosInstance.interceptors.response.use(
+  response => {
+    console.log(response.data);
+    return response;
+  },
+  error => {
+    console.error('Response error:', error);
+    return Promise.reject(error);
+  }
+);
+
 export function handleApiError(error: AxiosError) {
   const status = error.response ? error.response.status : 500
   let message = error.response?.data ? error.response?.data : error.stack ?? 'Unknown Error'

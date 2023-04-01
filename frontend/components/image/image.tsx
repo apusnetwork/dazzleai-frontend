@@ -132,7 +132,7 @@ function GeneratedImage({
                   : null
               }
             </div>
-            <div className={styles.btn_group}>
+            {/* <div className={styles.btn_group}>
               {
                 (image.width <= 1024 && image.height <= 1024)
                   && actions.includes('upscale')
@@ -174,7 +174,7 @@ function GeneratedImage({
                   </Tooltip>
                   : null
               }
-            </div>
+            </div> */}
           </div>
           <div className={styles.img_hover_row}>
             <div className={styles.btn_group}>
@@ -204,7 +204,7 @@ function GeneratedImage({
                   </Button>
                   : null
               }
-              {
+              {/* {
                 actions.includes('like') ?
                   <Button
                     onClick={e => { e.stopPropagation(); likeImage() }}
@@ -216,7 +216,7 @@ function GeneratedImage({
 
                   </Button>
                   : null
-              }
+              } */}
             </div>
           </div>
         </div>

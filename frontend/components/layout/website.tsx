@@ -46,7 +46,7 @@ export default function WebsiteLayout({ children, title, description, robots, ca
 
   let imgURL = image ? image : "/social-image-3.png"
   if (imgURL.startsWith('/')) {
-    imgURL = 'https://getimg.ai' + imgURL
+    imgURL = '' + imgURL
   }
 
   return (
@@ -63,9 +63,7 @@ export default function WebsiteLayout({ children, title, description, robots, ca
         <meta name="twitter:image" content={imgURL} />
         <meta name="twitter:site" content="@getimg_ai" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="og:type" property="og:type" content="website" />
-        <meta property="og:url" content={`https://getimg.ai${canonical}`} />
-        <link rel="canonical" href={`https://getimg.ai${canonical}`} />
+        <meta name="og:type" property="og:type" content="website" />]
 
         <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />

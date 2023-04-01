@@ -6,6 +6,7 @@ import styles from './button.module.scss';
 
 
 interface ButtonProps {
+  openInNewTab?: boolean
   type?: "primary" | "default" | "danger" | "icon" | "accent" | "accent-border" | "google" | "link" | "icon-active" | "transparent";
   htmlType?: "button" | "submit" | "reset";
   size?: "xs" | "sm" | "md" | "lg" | "xl";
@@ -21,7 +22,7 @@ interface ButtonProps {
 }
 
 
-export default function Button({ type = "primary", htmlType, size = "md", href, loading,
+export default function Button({ openInNewTab = false, type = "primary", htmlType, size = "md", href, loading,
   disabled, fullWidth, children, onClick, errorFor = [], title, download }: ButtonProps): JSX.Element {
 
   const errors = useAppSelector(selectErrors)
@@ -55,7 +56,7 @@ export default function Button({ type = "primary", htmlType, size = "md", href, 
   return (
     <div className={[styles._, fullWidth ? styles._full_width : ''].join(' ').trim()}>
       {
-        href && href.startsWith("http") ?
+        openInNewTab ?
           <a className={className} onClick={onClick} href={href} target={!download ? "_blank" : ''} rel="noopener noreferrer" title={title} download={download}>
             {children}
           </a>

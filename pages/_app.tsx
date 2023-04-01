@@ -199,6 +199,12 @@ function App({ children }: Props): JSX.Element {
           </p>
           <br />
           <div id='google-login' />
+
+          <div className="mobile_link_cta" style={{ marginTop: 14 }}>
+            <Button size="md" type="primary" fullWidth>
+              MetaMask
+            </Button>
+          </div>
           {/* <Divider text="or use email" />
 
           <form onSubmit={handleLogin}>
@@ -247,6 +253,12 @@ function App({ children }: Props): JSX.Element {
           <h2 className='login-h'>Create an account</h2>
           <p className='login-p'>Get 100 image credits every month for free!</p>
           <div id='google-login' />
+
+          <div className="mobile_link_cta" style={{ marginTop: 14 }}>
+            <Button size="md" type="primary" fullWidth>
+              MetaMask
+            </Button>
+          </div>
           <small className='license'>By signing up, you agree to our <a href="/legal/terms-of-service" target="_blank">Terms of Service</a> and <a href="/legal/privacy-policy" target="_blank">Privacy Policy</a>.</small>
 
           {/* <span className='login-foot'>
