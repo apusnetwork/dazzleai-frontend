@@ -29,7 +29,7 @@ axiosInstance.interceptors.response.use((response)=>{
     console.log(response.data);
     return response;
 }, (error)=>{
-    console.error("Response error:", error);
+    console.error("Response error:", error.response.status, error.response.data);
     return Promise.reject(error);
 });
 function handleApiError(error) {

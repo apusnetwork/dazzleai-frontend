@@ -96,7 +96,7 @@ export default function ImageView(props: ImageI) {
             <Maximize strokeWidth={1.5} />
             Open in AI Editor
           </Button> */}
-          <ImageSharer url={`${websiteHost}/img/${id}`} imageSrc={url} imageWidth={width} imageHeight={height} type="primary" />
+          <ImageSharer id={id} url={`${websiteHost}/img/${id}`} imageSrc={url} imageWidth={width} imageHeight={height} type="primary" />
         </div>
       </div>
       <div className={styles._view_image}>
@@ -130,7 +130,7 @@ export default function ImageView(props: ImageI) {
           <Maximize strokeWidth={1.5} />
           Open in AI Editor
         </Button> */}
-        <ImageSharer size='sm' type="primary" url={`${websiteHost}/img/${id}`} imageSrc={url} imageWidth={width} imageHeight={height} />
+        <ImageSharer size='sm' id={id} type="primary" url={`${websiteHost}/img/${id}`} imageSrc={url} imageWidth={width} imageHeight={height} />
       </div>
 
       <div className={styles.content}>

@@ -40,7 +40,7 @@ export async function getServerSideProps({ params, req }: GetServerSidePropsCont
   try {
     const host = req.headers.host;
     const protocol = req.headers['x-forwarded-proto'] || 'http';
-    const res = await axios.get(`${protocol}://${host}/api/images/${params?.id}`, {
+    const res = await axios.get(`${protocol}://${host}/api/images/shared/${params?.id}`, {
       headers: {
         'Content-Type': 'application/json',
         'Cookie': req.headers.cookie || '',

@@ -9,9 +9,11 @@ import Button from "../button/button";
 import { InputRow } from "../form/form";
 import Input from "../input/input";
 import styles from './image.module.scss';
+import axios from "axios";
 
 
 interface ImageSharerProps {
+  id: string
   url: string
   imageSrc: string
   imageWidth: number
@@ -23,7 +25,7 @@ interface ImageSharerProps {
 
 
 
-export default function ImageSharer({ url, imageSrc, imageWidth, imageHeight, type = 'icon', size = 'md' }: ImageSharerProps) {
+export default function ImageSharer({ id, url, imageSrc, imageWidth, imageHeight, type = 'icon', size = 'md' }: ImageSharerProps) {
   const dispatch = useAppDispatch()
   const [modal, setModal] = useState(false);
 
@@ -54,7 +56,12 @@ export default function ImageSharer({ url, imageSrc, imageWidth, imageHeight, ty
 
   return (
     <>
-      <Button size={size} type={type} onClick={() => setModal(true)}><ShareAlt />Share</Button>
+      <Button size={size} type={type} onClick={() => {
+        setModal(true)
+        axios.put(`/api/images/${id}`, {
+          is_shared: true,
+        })
+      }}><ShareAlt />Share</Button>
 
 
       {

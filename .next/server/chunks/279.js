@@ -54,9 +54,10 @@ module.exports = {
 /***/ }),
 
 /***/ 5903:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": () => (/* binding */ ImageSharer)
 /* harmony export */ });
@@ -70,13 +71,16 @@ module.exports = {
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var react_outside_click_handler__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(2279);
 /* harmony import */ var react_outside_click_handler__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_outside_click_handler__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _utils_cloudflare__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(4201);
+/* harmony import */ var _utils_cloudflare__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(4201);
 /* harmony import */ var _basic_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(2492);
 /* harmony import */ var _button_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4820);
 /* harmony import */ var _form_form__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(1061);
 /* harmony import */ var _input_input__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(9580);
-/* harmony import */ var _image_module_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(9755);
-/* harmony import */ var _image_module_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_image_module_scss__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _image_module_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(9755);
+/* harmony import */ var _image_module_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_image_module_scss__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(9648);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_10__]);
+axios__WEBPACK_IMPORTED_MODULE_10__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
 
@@ -89,7 +93,8 @@ module.exports = {
 
 
 
-function ImageSharer({ url , imageSrc , imageWidth , imageHeight , type ="icon" , size ="md"  }) {
+
+function ImageSharer({ id , url , imageSrc , imageWidth , imageHeight , type ="icon" , size ="md"  }) {
     const dispatch = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useAppDispatch */ .T)();
     const { 0: modal , 1: setModal  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
     function handleCopy() {
@@ -128,25 +133,30 @@ function ImageSharer({ url , imageSrc , imageWidth , imageHeight , type ="icon" 
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_button_button__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
                 size: size,
                 type: type,
-                onClick: ()=>setModal(true),
+                onClick: ()=>{
+                    setModal(true);
+                    axios__WEBPACK_IMPORTED_MODULE_10__["default"].put(`/api/images/${id}`, {
+                        is_shared: true
+                    });
+                },
                 children: [
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_6__/* .ShareAlt */ .rsq, {}),
                     "Share"
                 ]
             }),
             modal === true ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_10___default()._overlay),
+                className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_11___default()._overlay),
                 children: [
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_10___default().overlay)
+                        className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_11___default().overlay)
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_10___default()._modal),
+                        className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_11___default()._modal),
                         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                            className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_10___default().modal),
+                            className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_11___default().modal),
                             children: [
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("button", {
-                                    className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_10___default().close),
+                                    className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_11___default().close),
                                     onClick: ()=>setModal(false),
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_6__/* .XCloseDelete */ .Ch3, {
                                         size: 14
@@ -156,23 +166,23 @@ function ImageSharer({ url , imageSrc , imageWidth , imageHeight , type ="icon" 
                                     onOutsideClick: ()=>setModal(false),
                                     display: "contents",
                                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_10___default().sharer),
+                                        className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_11___default().sharer),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_10___default()._sharer_image),
+                                                className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_11___default()._sharer_image),
                                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                    className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_10___default().sharer_image),
+                                                    className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_11___default().sharer_image),
                                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_3___default()), {
                                                         src: imageSrc,
                                                         width: imageWidth,
                                                         height: imageHeight,
                                                         alt: "",
-                                                        loader: _utils_cloudflare__WEBPACK_IMPORTED_MODULE_11__/* .cloudflareLoader */ .O
+                                                        loader: _utils_cloudflare__WEBPACK_IMPORTED_MODULE_12__/* .cloudflareLoader */ .O
                                                     })
                                                 })
                                             }),
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_10___default().sharer_body),
+                                                className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_11___default().sharer_body),
                                                 children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_form_form__WEBPACK_IMPORTED_MODULE_8__/* .InputRow */ .Aq, {
                                                     children: [
                                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_input_input__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
@@ -182,7 +192,7 @@ function ImageSharer({ url , imageSrc , imageWidth , imageHeight , type ="icon" 
                                                             disableInfo: true
                                                         }),
                                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                                            className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_10___default().copy_btn),
+                                                            className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_11___default().copy_btn),
                                                             children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_button_button__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
                                                                 onClick: handleCopy,
                                                                 children: [
@@ -206,6 +216,8 @@ function ImageSharer({ url , imageSrc , imageWidth , imageHeight , type ="icon" 
     });
 };
 
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ }),
 
@@ -235,8 +247,8 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _image_module_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(9755);
 /* harmony import */ var _image_module_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_image_module_scss__WEBPACK_IMPORTED_MODULE_12__);
 /* harmony import */ var _sharer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(5903);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_1__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_5__]);
-([axios__WEBPACK_IMPORTED_MODULE_1__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_5__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_1__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_5__, _sharer__WEBPACK_IMPORTED_MODULE_11__]);
+([axios__WEBPACK_IMPORTED_MODULE_1__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_5__, _sharer__WEBPACK_IMPORTED_MODULE_11__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -353,6 +365,7 @@ function ImageView(props) {
                                 ]
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_sharer__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
+                                id: id,
                                 url: `${websiteHost}/img/${id}`,
                                 imageSrc: url,
                                 imageWidth: width,
@@ -424,6 +437,7 @@ function ImageView(props) {
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_sharer__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
                         size: "sm",
+                        id: id,
                         type: "primary",
                         url: `${websiteHost}/img/${id}`,
                         imageSrc: url,

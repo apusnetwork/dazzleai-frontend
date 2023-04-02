@@ -8,21 +8,39 @@ import stream from 'stream';
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const token = getCookie(req, AuthHeaderKey)
-    const imagesRes = await axiosInstance.get<RemoteImage[]>('/api/images', {
-      params: {
-        ids: req.query.id,
-        limit: req.query.take,
-        offset: req.query.skip,
-      },
-      headers: {
-        Authorization: `Bearer ${token}`,
-      }
-    })
-    if (imagesRes.data.length === 0) {
-      res.status(404).json({ message: 'Image not found' })
-      return
+    let headersConfig: any = {}
+    if (token) {
+      headersConfig['Authorization'] = `Bearer ${token}`
     }
-    res.status(200).json(mapRemoteImageToGeneratedImage(imagesRes.data[0]))
+    if (req.method === "GET") {
+      const imagesRes = await axiosInstance.get<RemoteImage[]>('/api/images', {
+        params: {
+          ids: req.query.id,
+          limit: req.query.take,
+          offset: req.query.skip,
+        },
+        headers: headersConfig,
+      })
+      if (imagesRes.data.length === 0) {
+        res.status(404).json({ message: 'Image not found' })
+        return
+      }
+      res.status(200).json(mapRemoteImageToGeneratedImage(imagesRes.data[0]))
+    } else if (req.method === "PUT") {
+      console.log({
+        image_id: req.query.id,
+        ...req.body
+      },)
+      await axiosInstance.post('/api/images/update', {
+        image_id: req.query.id,
+        ...req.body
+      }, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        }
+      })
+      res.status(200).json({ messgage: "ok" })
+    }
   } catch (e: any) {
     const { status, message } = handleApiError(e)
     res.status(status).json({ message })

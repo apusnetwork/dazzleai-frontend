@@ -52,23 +52,43 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_fro
 async function handler(req, res) {
     try {
         const token = (0,_frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .getCookie */ .ej)(req, _frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .AuthHeaderKey */ .qf);
-        const imagesRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .Z.get("/api/images", {
-            params: {
-                ids: req.query.id,
-                limit: req.query.take,
-                offset: req.query.skip
-            },
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        });
-        if (imagesRes.data.length === 0) {
-            res.status(404).json({
-                message: "Image not found"
-            });
-            return;
+        let headersConfig = {};
+        if (token) {
+            headersConfig["Authorization"] = `Bearer ${token}`;
         }
-        res.status(200).json((0,_images__WEBPACK_IMPORTED_MODULE_2__.mapRemoteImageToGeneratedImage)(imagesRes.data[0]));
+        if (req.method === "GET") {
+            const imagesRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .Z.get("/api/images", {
+                params: {
+                    ids: req.query.id,
+                    limit: req.query.take,
+                    offset: req.query.skip
+                },
+                headers: headersConfig
+            });
+            if (imagesRes.data.length === 0) {
+                res.status(404).json({
+                    message: "Image not found"
+                });
+                return;
+            }
+            res.status(200).json((0,_images__WEBPACK_IMPORTED_MODULE_2__.mapRemoteImageToGeneratedImage)(imagesRes.data[0]));
+        } else if (req.method === "PUT") {
+            console.log({
+                image_id: req.query.id,
+                ...req.body
+            });
+            await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .Z.post("/api/images/update", {
+                image_id: req.query.id,
+                ...req.body
+            }, {
+                headers: {
+                    Authorization: `Bearer ${token}`
+                }
+            });
+            res.status(200).json({
+                messgage: "ok"
+            });
+        }
     } catch (e) {
         const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .z)(e);
         res.status(status).json({
