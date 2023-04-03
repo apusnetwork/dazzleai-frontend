@@ -494,14 +494,14 @@ export default function AiGenerator(): JSX.Element {
           let modelTasks: any[] = []
           for (let i = 0; i < generatedImages.length; i++) {
             const image = generatedImages[i]
-            if (body.seed) {
-              const seedIndex = im.findIndex(i => i.seed && image.modelTask.params.seed && i.seed.toString() === image.modelTask.params.seed.toString());
-              if (seedIndex > -1) {
-                im[seedIndex] = image
-              }
-            } else {
-              im[pendingIds.length + i - 1] = image
-            }
+            // if (body.seed) {
+            //   const seedIndex = im.findIndex(i => i.seed && image.modelTask.params.seed && i.seed.toString() === image.modelTask.params.seed.toString());
+            //   if (seedIndex > -1) {
+            //     im[seedIndex] = image
+            //   }
+            // } else {
+            im[pendingIds.length + i - 1] = image
+            // }
             modelTasks.push(image.modelTask)
           }
           pendingIds = pendingIds.filter(id => {
