@@ -25,9 +25,23 @@ _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependenci
 
 
 
+const defaultParam = {
+    batch_count: 1,
+    cfg_scale: 1,
+    denoising_strength: 0,
+    height: 512,
+    width: 512,
+    image: "",
+    model: "",
+    negative_prompt: "",
+    prompt: "",
+    sampler: "",
+    seed: 0,
+    steps: 0
+};
 function mapRemoteImageToGeneratedImage(image) {
     const { task  } = image;
-    const { param  } = task;
+    const { param =defaultParam  } = task;
     // const { _model } = task.task_id;
     return {
         id: image.image_id,
