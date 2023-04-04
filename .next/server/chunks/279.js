@@ -525,7 +525,7 @@ function ImageView(props) {
                                     })
                                 ]
                             }) : null,
-                            params.seed && (model.includes("stable-diffusion") || model === "image-mixer" || model.startsWith("model-")) ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+                            params.seed ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
                                 className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_12___default().param),
                                 children: [
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("b", {

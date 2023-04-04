@@ -176,7 +176,8 @@ export default function ImageView(props: ImageI) {
               <p className={styles.value}>{params.num_inference_steps}</p>
             </li>
             : null}
-          {params.seed && (model.includes('stable-diffusion') || model === 'image-mixer' || model.startsWith('model-')) ?
+          {/* {params.seed && (model.includes('stable-diffusion') || model === 'image-mixer' || model.startsWith('model-')) ? */}
+          {params.seed ?
             <li className={styles.param}>
               <b className={styles.label}>
                 Seed:

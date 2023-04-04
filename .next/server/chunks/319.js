@@ -58,14 +58,14 @@ function mapRemoteImageToGeneratedImage(image) {
         createdAt: "",
         modelTask: {
             id: task.task_id,
-            model: task.task_id,
+            model: param.model,
             params: {
                 seed: param.seed,
                 tool: param.sampler,
                 width: param.width,
                 height: param.height,
                 prompt: param.prompt,
-                scheduler: param.sampler,
+                scheduler: "",
                 num_images: param.batch_count,
                 started_at: "",
                 enhance_face: false,
@@ -74,8 +74,8 @@ function mapRemoteImageToGeneratedImage(image) {
                 num_inference_steps: param.steps
             },
             _model: {
-                id: task.task_id,
-                name: task.task_id,
+                id: "",
+                name: task.param?.model ?? "",
                 params: {
                     author: "",
                     images: [],

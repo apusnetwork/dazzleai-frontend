@@ -47,8 +47,8 @@ function mapParamsToRequest(params, model, node) {
         node,
         prompt: params.prompt,
         // sampler: params.scheduler,
-        sampler: "",
-        seed: 0,
+        sampler: params.sampler,
+        seed: Number.isNaN(params.seed) ? 0 : Number(params.seed),
         steps: params.num_inference_steps,
         width: params.width
     };

@@ -1006,7 +1006,7 @@ export default function AiGenerator(): JSX.Element {
 
               </Collapse>
 
-              {/* <Collapse icon={<Settings />} title="Advanced" style='plain'>
+              <Collapse icon={<Settings />} title="Advanced" style='plain'>
                 {
                   mode === 'generate' ?
                     <>
@@ -1027,10 +1027,10 @@ export default function AiGenerator(): JSX.Element {
                         onChange={handleChange}
                         noInfo
                       />
-                      <Tip id='sampler' title="Sampler">
+                      {/* <Tip id='sampler' title="Sampler">
                         Use DPM-Solver++ for fastest generation.
-                      </Tip>
-                      {state.model !== 'stable-diffusion-v2.1' && (selectedModel && selectedModel.params.base_model && selectedModel.params.base_model.startsWith('stabilityai/stable-diffusion-2-1') ? false : true) ?
+                      </Tip> */}
+                      {/* {state.model !== 'stable-diffusion-v2.1' && (selectedModel && selectedModel.params.base_model && selectedModel.params.base_model.startsWith('stabilityai/stable-diffusion-2-1') ? false : true) ?
                         <>
                           <Switch
                             id='skipControlnetProcessing'
@@ -1041,11 +1041,11 @@ export default function AiGenerator(): JSX.Element {
                           />
                           <div style={{ height: 12 }} />
                         </>
-                        : null}
+                        : null} */}
                     </>
                     : <div />}
 
-                <Switch
+                {/* <Switch
                   id='enhanceFace'
                   value={state.enhanceFace}
                   values={['false', 'true']}
@@ -1062,10 +1062,10 @@ export default function AiGenerator(): JSX.Element {
                 />
                 <div style={{ height: 12 }} />
 
-                <small className='small'>You can always upscale and enhance faces after generating images.</small>
+                <small className='small'>You can always upscale and enhance faces after generating images.</small> */}
 
 
-              </Collapse> */}
+              </Collapse>
             </div>
           </div>
           <form className={styles.actions} onSubmit={generate}>

@@ -32,6 +32,8 @@ interface GeneratorParams {
   negative_prompt: string;
   image_url: string;
   strength: number;
+  seed: string;
+  sampler: string;
 }
 
 function mapParamsToRequest(params: GeneratorParams, model: string, node: string): ImageGenerationRequest {
@@ -46,8 +48,8 @@ function mapParamsToRequest(params: GeneratorParams, model: string, node: string
     node,
     prompt: params.prompt,
     // sampler: params.scheduler,
-    sampler: "",
-    seed: 0,
+    sampler: params.sampler,
+    seed: Number.isNaN(params.seed) ? 0 : Number(params.seed),
     steps: params.num_inference_steps,
     width: params.width,
   };
