@@ -11,6 +11,7 @@ import { schedulerNames } from "utils/schedulers";
 import Button from "../button/button";
 import styles from './image.module.scss';
 import ImageSharer from "./sharer";
+import { useRouter } from "next/router";
 
 
 const modelsMap: Record<string, string> = {
@@ -32,6 +33,9 @@ const modelsMap: Record<string, string> = {
 
 
 export default function ImageView(props: ImageI) {
+  const router = useRouter();
+  const isSharing = router.pathname.indexOf('/img/') != -1
+  const shareParam = isSharing ? '&shared=true' : ''
   const [state, setState] = useState(props);
   const user = useAppSelector(selectUser);
   const dispatch = useAppDispatch();
@@ -84,11 +88,11 @@ export default function ImageView(props: ImageI) {
         <h1 className={styles.title}>{h}</h1>
         <div className={styles.view_buttons}>
           <Button type="icon" title="Download" href={`/api/download/${props.id}`} download={`getimg_ai_${props.id}.${props.format.toLowerCase()}`}><Download /></Button>
-          {prompt ? <Button type="default" title="Generate similar" href={`/?img=${id}`} openInNewTab={true}>
+          {prompt ? <Button type="default" title="Generate similar" href={`/?img=${id}${shareParam}`} openInNewTab={true}>
             <Repeat strokeWidth={1.5} />
             Reuse parameters
           </Button> : null}
-          <Button type="default" title="Generate similar" href={`/?init-img=${id}`} openInNewTab={true}>
+          <Button type="default" title="Generate similar" href={`/?init-img=${id}${shareParam}`} openInNewTab={true}>
             <PhotoImagePicture strokeWidth={1.5} />
             Reuse image
           </Button>
@@ -118,11 +122,11 @@ export default function ImageView(props: ImageI) {
       </div>
       <div className={styles.mobile_sharer}>
         <Button size="xs" type="icon" title="Download" href={`/api/download/${props.id}`} download={`getimg_ai_${props.id}.${props.format.toLowerCase()}`}><Download /></Button>
-        {prompt ? <Button size="sm" type="default" title="Generate similar" href={`/?img=${id}`} openInNewTab={true}>
+        {prompt ? <Button size="sm" type="default" title="Generate similar" href={`/?img=${id}${shareParam}`} openInNewTab={true}>
           <Repeat strokeWidth={1.5} />
           Reuse parameters
         </Button> : null}
-        <Button size="sm" type="default" title="Generate similar" href={`/?init-img=${id}`} openInNewTab={true}>
+        <Button size="sm" type="default" title="Generate similar" href={`/?init-img=${id}${shareParam}`} openInNewTab={true}>
           <PhotoImagePicture strokeWidth={1.5} />
           Reuse image
         </Button>

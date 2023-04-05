@@ -14,11 +14,11 @@ export default function AiGeneratorPage(): JSX.Element {
   const user = useAppSelector(selectUser);
   const userState = useAppSelector(selectUserStatus);
 
-  useEffect(() => {
-    if ((userState === 'failed' || userState === 'completed') && !user.id) {
-      dispatch(updateAuthState('register'));
-    }
-  }, [userState, user.id]);
+  // useEffect(() => {
+  //   if ((userState === 'failed' || userState === 'completed') && !user.id) {
+  //     dispatch(updateAuthState('register'));
+  //   }
+  // }, [userState, user.id]);
 
   return <WebsiteLayout
     title="Generate photo-realistic images from text using Stable Diffusion"

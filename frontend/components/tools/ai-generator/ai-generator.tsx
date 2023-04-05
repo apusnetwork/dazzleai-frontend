@@ -73,7 +73,7 @@ export default function AiGenerator(): JSX.Element {
     guidanceScale: 9,
     imageGuidance: 1.5,
     seed: undefined,
-    numImages: 4,
+    numImages: 1,
     enhanceFace: 'false',
     upscale: 'false',
     width: 512,
@@ -342,15 +342,15 @@ export default function AiGenerator(): JSX.Element {
     //   return
     // }
 
-    if (!user.id) {
-      dispatch(updateAuthState('register'));
-      return
-    }
+    // if (!user.id) {
+    //   dispatch(updateAuthState('register'));
+    //   return
+    // }
 
-    if (user.status !== 'active') {
-      message(dispatch, { text: 'Please verify your account!', type: 'info' })
-      return
-    }
+    // if (user.status !== 'active') {
+    //   message(dispatch, { text: 'Please verify your account!', type: 'info' })
+    //   return
+    // }
 
     if (state.image && state.image.loading) {
       message(dispatch, { text: 'Please wait until image is fully loaded!', type: 'info' })
@@ -517,9 +517,13 @@ export default function AiGenerator(): JSX.Element {
       dispatch(updateCredits(-1 * credits))
 
     } catch (e: any) {
-      if (e && e.response && e.response.data) dispatch(addErrors(e.response.data))
+      if (e && e.response && e.response.status === 401) {
+        dispatch(updateAuthState('register'));
+      } else {
+        if (e && e.response && e.response.data) dispatch(addErrors(e.response.data))
+        message(dispatch, { text: 'Something went wrong!', type: 'danger' })
+      }
       setImages(im => im.filter(i => !i.loading))
-      message(dispatch, { text: 'Something went wrong!', type: 'danger' })
     } finally {
       setLoader(false);
     }
@@ -547,8 +551,10 @@ export default function AiGenerator(): JSX.Element {
     const img = urlParams.get('img') || urlParams.get('init-img');
     if (!img) return
 
+    const isShared = urlParams.get('shared') !== null
+
     try {
-      const res = await axios.get('/api/images/' + img);
+      const res = await axios.get(`/api/images/${isShared ? 'shared/' : ''}` + img);
       if (urlParams.has('img')) {
         copyParams(res.data)
       } else if (urlParams.has('init-img')) {
@@ -1080,11 +1086,12 @@ export default function AiGenerator(): JSX.Element {
               size='lg'
               errorFor={['prompt']}
             >
-              {
+              {/* {
                 user.id ?
                   <>Generat{loader ? 'ing' : 'e ' + state.numImages + (state.numImages === 1 ? ' image' : ' images')}&nbsp;  <small className={styles.keyboard}><Command /> + G</small></>
                   : <>Create free account</>
-              }
+              } */}
+              {<>Generat{loader ? 'ing' : 'e ' + state.numImages + (state.numImages === 1 ? ' image' : ' images')}&nbsp;  <small className={styles.keyboard}><Command /> + G</small></>}
             </Button>
           </form>
         </div>
