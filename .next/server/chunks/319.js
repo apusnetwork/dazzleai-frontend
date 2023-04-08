@@ -65,11 +65,11 @@ function mapRemoteImageToGeneratedImage(image) {
                 width: param.width,
                 height: param.height,
                 prompt: param.prompt,
-                scheduler: "",
+                scheduler: param.sampler,
                 num_images: param.batch_count,
                 started_at: "",
                 enhance_face: false,
-                guidance_scale: 0,
+                guidance_scale: param.cfg_scale,
                 negative_prompt: param.negative_prompt,
                 num_inference_steps: param.steps
             },

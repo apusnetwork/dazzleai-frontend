@@ -39,7 +39,7 @@ interface GeneratorParams {
 function mapParamsToRequest(params: GeneratorParams, model: string, node: string): ImageGenerationRequest {
   return {
     batch_count: params.num_images,
-    cfg_scale: 0,
+    cfg_scale: params.guidance_scale,
     denoising_strength: 0,
     height: params.height,
     image: params.image_url,
@@ -47,8 +47,7 @@ function mapParamsToRequest(params: GeneratorParams, model: string, node: string
     negative_prompt: params.negative_prompt,
     node,
     prompt: params.prompt,
-    // sampler: params.scheduler,
-    sampler: params.sampler,
+    sampler: params.scheduler,
     seed: Number.isNaN(params.seed) ? 0 : Number(params.seed),
     steps: params.num_inference_steps,
     width: params.width,

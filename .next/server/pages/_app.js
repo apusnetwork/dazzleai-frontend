@@ -285,6 +285,10 @@ function App({ children  }) {
                                 size: "md",
                                 type: "primary",
                                 fullWidth: true,
+                                onClick: ()=>(0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
+                                        type: "success",
+                                        text: "Comming Soon!"
+                                    }),
                                 children: "MetaMask"
                             })
                         })
@@ -319,6 +323,10 @@ function App({ children  }) {
                                 size: "md",
                                 type: "primary",
                                 fullWidth: true,
+                                onClick: ()=>(0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
+                                        type: "success",
+                                        text: "Comming Soon!"
+                                    }),
                                 children: "MetaMask"
                             })
                         }),

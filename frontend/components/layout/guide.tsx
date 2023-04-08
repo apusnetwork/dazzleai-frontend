@@ -122,7 +122,7 @@ export default function GuideLayout({ children, title, description, robots, cano
             </li>
             <li>
               <ActiveLink activeClassName={styles.guide_link_active} href='/guides/interactive-guide-to-stable-diffusion-guidance-scale-parameter'>
-                <a className={styles.guide_link}><AdjustHorizontalSettings /> Guidance scale</a>
+                <a className={styles.guide_link}><AdjustHorizontalSettings /> CFG scale</a>
               </ActiveLink>
             </li>
             <li>

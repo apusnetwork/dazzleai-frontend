@@ -201,7 +201,7 @@ function App({ children }: Props): JSX.Element {
           <div id='google-login' />
 
           <div className="mobile_link_cta" style={{ marginTop: 14 }}>
-            <Button size="md" type="primary" fullWidth>
+            <Button size="md" type="primary" fullWidth onClick={() => message(dispatch, { type: 'success', text: "Comming Soon!" })}>
               MetaMask
             </Button>
           </div>
@@ -255,7 +255,7 @@ function App({ children }: Props): JSX.Element {
           <div id='google-login' />
 
           <div className="mobile_link_cta" style={{ marginTop: 14 }}>
-            <Button size="md" type="primary" fullWidth>
+            <Button size="md" type="primary" fullWidth onClick={() => message(dispatch, { type: 'success', text: "Comming Soon!" })}>
               MetaMask
             </Button>
           </div>

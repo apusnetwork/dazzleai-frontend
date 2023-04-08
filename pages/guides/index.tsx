@@ -13,7 +13,7 @@ export default function GuideOverviewPage() {
       canonical='/guides'
     >
       <Link href='/guides/interactive-guide-to-stable-diffusion-steps-parameter'><a>Interactive guide to Stable Diffusion steps parameter</a></Link><br />
-      <Link href='/guides/interactive-guide-to-stable-diffusion-guidance-scale-parameter'><a>Guide to Stable Diffusion guidance scale parameter</a></Link><br />
+      <Link href='/guides/interactive-guide-to-stable-diffusion-guidance-scale-parameter'><a>Guide to Stable Diffusion cfg scale parameter</a></Link><br />
       <Link href='/guides/guide-to-negative-prompts-in-stable-diffusion'><a>Guide to negative prompts in Stable Diffusion</a></Link><br />
       <Link href='/guides/guide-to-seed-parameter-in-stable-diffusion'><a>Guide to seed parameter in Stable Diffusion</a></Link><br />
 

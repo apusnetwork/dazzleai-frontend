@@ -59,7 +59,7 @@ export default function WebsiteLayout({ children, title, description, robots, ca
         <meta name="twitter:title" property="twitter:title" content={title} />
         <meta name="og:description" property="og:description" content={description} />
         <meta name="twitter:description" content={description} />
-        <meta property="og:image" content={imgURL} />
+        <meta name="og:image" property="og:image" content={imgURL} />
         <meta name="twitter:image" content={imgURL} />
         <meta name="twitter:site" content="@getimg_ai" />
         <meta name="twitter:card" content="summary_large_image" />
@@ -78,6 +78,7 @@ export default function WebsiteLayout({ children, title, description, robots, ca
         <meta name="viewport" content="width=device-width, initial-scale=1.0,  maximum-scale=1.0" />
         {robots ? <meta name="robots" content={robots} /> : null}
       </Head>
+      <Messages />
       <WebsiteHeader fixed />
       {
         user.id && (user.status === 'verify' || user.status === 'created') ?
@@ -105,7 +106,6 @@ export default function WebsiteLayout({ children, title, description, robots, ca
           </div>
           : null
       }
-      <Messages />
 
     </div >
   )

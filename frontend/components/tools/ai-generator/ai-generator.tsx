@@ -296,6 +296,7 @@ export default function AiGenerator(): JSX.Element {
       if (params.negative_prompt) newState.negativePrompt = params.negative_prompt;
       if (params.strength) newState.strength = params.strength;
       if (params.controlnet) newState.controlnet = params.controlnet;
+      if (params.seed) newState.seed = params.seed;
       if (params.image_url) {
         newState.image = {
           ...s.image,
@@ -924,7 +925,7 @@ export default function AiGenerator(): JSX.Element {
                 <Slider
                   label={`Number of images: ${state.numImages}`}
                   min={1}
-                  max={10}
+                  max={4}
                   step={1}
                   value={state.numImages}
                   onChange={n => setState({ ...state, numImages: n as number })}
@@ -959,7 +960,7 @@ export default function AiGenerator(): JSX.Element {
                     onChange={n => setState({ ...state, steps: n as number })}
                   />
                   <Slider
-                    label={`Guidance scale: ${state.guidanceScale}`}
+                    label={`CFG scale: ${state.guidanceScale}`}
                     min={0}
                     max={20}
                     step={1}
@@ -983,15 +984,15 @@ export default function AiGenerator(): JSX.Element {
                 }
                 {
                   state.guidanceScale > 14 ?
-                    <Tip id='guidance-scale-low' title="Guidance scale">
-                      High guidance scale may result in a loss of quality. We recommend values in 7-12 range. Learn more <a href='/guides/interactive-guide-to-stable-diffusion-guidance-scale-parameter' target="_blank">here</a>.
+                    <Tip id='guidance-scale-low' title="CFG scale">
+                      High cfg scale may result in a loss of quality. We recommend values in 7-12 range. Learn more <a href='/guides/interactive-guide-to-stable-diffusion-guidance-scale-parameter' target="_blank">here</a>.
                     </Tip>
                     : <div />
                 }
                 {
                   state.guidanceScale < 6 ?
-                    <Tip id='guidance-scale-hight' title="Guidance scale">
-                      Low guidance scale value may result in bad prompt interpretation. We recommend values in 7-12 range. Learn more <a href='/guides/interactive-guide-to-stable-diffusion-guidance-scale-parameter' target="_blank">here</a>.
+                    <Tip id='guidance-scale-hight' title="CFG scale">
+                      Low cfg scale value may result in bad prompt interpretation. We recommend values in 7-12 range. Learn more <a href='/guides/interactive-guide-to-stable-diffusion-guidance-scale-parameter' target="_blank">here</a>.
                     </Tip>
                     : <div />
                 }

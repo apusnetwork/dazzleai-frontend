@@ -402,6 +402,7 @@ function WebsiteLayout({ children , title , description , robots , canonical =""
                         content: description
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                        name: "og:image",
                         property: "og:image",
                         content: imgURL
                     }),
@@ -475,6 +476,7 @@ function WebsiteLayout({ children , title , description , robots , canonical =""
                     }) : null
                 ]
             }),
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_message_message__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {}),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_header__WEBPACK_IMPORTED_MODULE_10__/* .WebsiteHeader */ .x, {
                 fixed: true
             }),
@@ -518,8 +520,7 @@ function WebsiteLayout({ children , title , description , robots , canonical =""
                         children: "Accept all"
                     })
                 ]
-            }) : null,
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_message_message__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {})
+            }) : null
         ]
     });
 };

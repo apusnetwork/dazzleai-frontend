@@ -524,6 +524,9 @@ function Messages({ type ="right"  }) {
             (_message_module_scss__WEBPACK_IMPORTED_MODULE_4___default()._),
             (_message_module_scss__WEBPACK_IMPORTED_MODULE_4___default())[type]
         ].join(" "),
+        style: {
+            zIndex: 99999
+        },
         children: messages.map((m, i)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Message, {
                 ...m
             }, m.id || i))

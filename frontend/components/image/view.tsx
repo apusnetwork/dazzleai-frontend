@@ -151,7 +151,7 @@ export default function ImageView(props: ImageI) {
           {params.guidance_scale ?
             <li className={styles.param}>
               <b className={styles.label}>
-                Guidance scale:
+                CFG scale:
               </b>
               <p className={styles.value}>{modelTask.params.guidance_scale}</p>
             </li>
