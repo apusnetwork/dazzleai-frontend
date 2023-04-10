@@ -58,6 +58,7 @@
   max-height: 100vh;
   overflow: scroll !important;
   padding: 6px;
+  padding-top: 76px;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -70,6 +71,7 @@
 
   @include mobile {
     padding: 9px;
+    padding-top: 79px;
   }
 }
 
