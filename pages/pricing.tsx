@@ -23,7 +23,7 @@ export default function Pricing(): JSX.Element {
 
   return <WebsiteLayout
     title="Pricing"
-    description='Check prices of getimg.ai AI Creative Suite.'
+    description='Check prices of dazzle.ai AI Creative Suite.'
     canonical='/pricing'
     footer={false}>
 
@@ -32,7 +32,7 @@ export default function Pricing(): JSX.Element {
       <div className={styles.hero}>
         <h1 className='h2'>Pricing</h1>
         <p className='p'>
-          Use getimg.ai for free with 100 monthly credits.<br />
+          Use dazzle.ai for free with 100 monthly credits.<br />
           Create more. Pay less.<br />
         </p>
       </div>
