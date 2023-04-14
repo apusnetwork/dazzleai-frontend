@@ -66,12 +66,12 @@ export default function Pricing(): JSX.Element {
       </FaqQuestion>
       <FaqQuestion question='What if I decide to cancel?'>
         <p>
-          If you no longer wish to use getimg.ai, you can cancel your subscription anytime. When canceled, you will still be able to use your credits for the remaining of the current billing cycle.
+          If you no longer wish to use dazzle.ai, you can cancel your subscription anytime. When canceled, you will still be able to use your credits for the remaining of the current billing cycle.
         </p>
       </FaqQuestion>
       <FaqQuestion question='What payment options do you offer?'>
         <p>
-          We accept all major credit cards and debit cards. However, if you wish to use another payment method and plan to spend at least $5,000 anually, <a href="mailto:hi@getimg.ai">contact us</a> to start the process.
+          We accept all major credit cards and debit cards. However, if you wish to use another payment method and plan to spend at least $5,000 anually, <a href="mailto:hi@dazzle.ai">contact us</a> to start the process.
         </p>
       </FaqQuestion>
       <FaqQuestion question='Will my unused credits roll over to the next month?'>

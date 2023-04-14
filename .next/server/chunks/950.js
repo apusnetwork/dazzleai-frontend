@@ -50,7 +50,7 @@ function WebsiteFooter() {
                             className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_3___default().socials),
                             children: [
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
-                                    href: "https://instagram.com/getimg.ai",
+                                    href: "https://instagram.com/dazzle.ai",
                                     target: "_blank",
                                     rel: "noreferrer",
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_2__/* .InstagramSocial */ .Nfr, {
@@ -294,7 +294,7 @@ function WebsiteFooter() {
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
-                                        href: "mailto:hi@getimg.ai",
+                                        href: "mailto:hi@dazzle.ai",
                                         children: "Email"
                                     })
                                 })

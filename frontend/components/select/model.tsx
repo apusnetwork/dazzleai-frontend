@@ -34,10 +34,10 @@ export default function ModelSelect({ onChange, models, value, id }: ModelSelect
     //     author: 'stability.ai',
     //     author_url: 'https://stability.ai/',
     //     images: [
-    //       'https://img.getimg.ai/generated/img-9jjtCkXWwKjZe9wElBEly2.png',
-    //       'https://img.getimg.ai/generated/img-YkfgHICXA8YFGEzbWC36kS.png',
-    //       'https://img.getimg.ai/generated/img-q9tOtcskhqYjxvpFdvE5c2.png',
-    //       'https://img.getimg.ai/generated/img-vU4xLUCrxSBSA6ky8cXtuP.png'
+    //       'https://img.dazzle.ai/generated/img-9jjtCkXWwKjZe9wElBEly2.png',
+    //       'https://img.dazzle.ai/generated/img-YkfgHICXA8YFGEzbWC36kS.png',
+    //       'https://img.dazzle.ai/generated/img-q9tOtcskhqYjxvpFdvE5c2.png',
+    //       'https://img.dazzle.ai/generated/img-vU4xLUCrxSBSA6ky8cXtuP.png'
     //     ]
     //   },
     // },
@@ -50,10 +50,10 @@ export default function ModelSelect({ onChange, models, value, id }: ModelSelect
     //     author_url: 'https://stability.ai/',
 
     //     images: [
-    //       'https://img.getimg.ai/generated/img-gOyyHvmiu4Fjl21f6ucKav.png',
-    //       'https://img.getimg.ai/generated/img-G99O7IbVKSyyH9XyOMzlxA.png',
-    //       'https://img.getimg.ai/generated/img-Kzpf5VdKQCQkbGFwew5y2q.png',
-    //       'https://img.getimg.ai/generated/img-8VpR28yCp2Bq1T3wfrxeeM.png',
+    //       'https://img.dazzle.ai/generated/img-gOyyHvmiu4Fjl21f6ucKav.png',
+    //       'https://img.dazzle.ai/generated/img-G99O7IbVKSyyH9XyOMzlxA.png',
+    //       'https://img.dazzle.ai/generated/img-Kzpf5VdKQCQkbGFwew5y2q.png',
+    //       'https://img.dazzle.ai/generated/img-8VpR28yCp2Bq1T3wfrxeeM.png',
     //     ]
     //   },
     // },

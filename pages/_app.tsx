@@ -158,7 +158,7 @@ function App({ children }: Props): JSX.Element {
     // posthog.init('phc_UZBRYEnPfTrmBlX04oJZ0OaQdnpXrU5ZrpGgWrMEEuH', {
     //   api_host: 'https://app.posthog.com',
     //   loaded: (posthog) => {
-    //     if (process.env.NODE_ENV !== 'production' || window.location.hostname !== 'getimg.ai') posthog.opt_out_capturing()
+    //     if (process.env.NODE_ENV !== 'production' || window.location.hostname !== 'dazzle.ai') posthog.opt_out_capturing()
     //   },
     //   autocapture: false,
     // })

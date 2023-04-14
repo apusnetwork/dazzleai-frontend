@@ -20,7 +20,7 @@ export default function WebsiteFooter(): JSX.Element {
           <div className={styles.socials}>
 
 
-            <a href='https://instagram.com/getimg.ai' target='_blank' rel='noreferrer'>
+            <a href='https://instagram.com/dazzle.ai' target='_blank' rel='noreferrer'>
               <InstagramSocial strokeWidth={1.5} size={22} color='#ffffff' />
             </a>
             <a href='https://twitter.com/getimg_ai' target='_blank' rel='noreferrer'>
@@ -140,7 +140,7 @@ export default function WebsiteFooter(): JSX.Element {
               </Link>
             </li>
             <li>
-              <a href="mailto:hi@getimg.ai">
+              <a href="mailto:hi@dazzle.ai">
                 Email
               </a>
             </li>

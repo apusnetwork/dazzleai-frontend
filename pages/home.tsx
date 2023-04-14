@@ -47,7 +47,7 @@ export default function HomePage({ exampleArt }: { exampleArt: ImageI[] }): JSX.
           {isSSR ? <span>{TEXTS[0]}&nbsp;</span> : <TextTransition text={TEXTS[index % TEXTS.length] + ' '} springConfig={presets.wobbly} />}<i>with the power of&nbsp;<span>AI</span>.</i>
         </>
       }
-      subtitle="getimg.ai is a suite of magical AI tools. Generate original images at scale, modify photos, expand pictures beyond their original borders, or create custom AI models."
+      subtitle="dazzle.ai is a suite of magical AI tools. Generate original images at scale, modify photos, expand pictures beyond their original borders, or create custom AI models."
       cta={
         <>
           <Button
@@ -63,41 +63,41 @@ export default function HomePage({ exampleArt }: { exampleArt: ImageI[] }): JSX.
       visual={
         <ImageGridVisual
           images={[
-            "https://img.getimg.ai/generated/img-YkfgHICXA8YFGEzbWC36kS.png",
-            "https://img.getimg.ai/generated/img-WcykmlaekkgasgzP70JQTD.png",
-            "https://img.getimg.ai/generated/img-uiSqi31mkxo5PabcADdlXX.png",
-            "https://img.getimg.ai/generated/img-TdRuGZy3YmIBXvPmqU6lpz.png",
-            "https://img.getimg.ai/generated/img-kWY1RGIowDFHObYWrqKEuX.png",
-            "https://img.getimg.ai/generated/img-pflMQRap58h9aCuMEEekHf.png",
-            "https://img.getimg.ai/generated/img-mz3jpmlQzO8enprS6Z5IUk.png",
-            "https://img.getimg.ai/generated/img-aD3ZVFuZOQykjCugaqYZLa.png",
-            "https://img.getimg.ai/generated/img-q9tOtcskhqYjxvpFdvE5c2.png",
-            "https://img.getimg.ai/generated/img-nCU8xt4kkugIc6gMvDqWVF.png",
-            "https://img.getimg.ai/generated/img-M30VWmdBvEYfVrdNmp5RFW.png",
-            "https://img.getimg.ai/generated/img-RgNQfTcfAo4fhUlgdkV2pC.png",
-            "https://img.getimg.ai/generated/img-aHbNRGbgmNutEKIOHdTQ2t.png",
-            "https://img.getimg.ai/generated/img-DjVseuFs8N2CikjWGgXM0T.png",
-            "https://img.getimg.ai/generated/img-KrV9CmArl69eDiCteWECiq.png",
-            "https://img.getimg.ai/generated/img-GgOSvUjkqVGiJoacFvZNsG.png",
-            "https://img.getimg.ai/generated/img-l3zHjbrXFdWc78rwi0YPPN.png",
-            "https://img.getimg.ai/generated/img-jYjnraZM46IaWERJsWQEw5.png",
-            "https://img.getimg.ai/generated/img-RpLjpqFAgmJCIqPTuH004k.png",
-            "https://img.getimg.ai/generated/img-afDC6nRaihw1IidGRKib8J.png",
-            "https://img.getimg.ai/generated/img-5lxSExuwWStJCuwd4OjIn6.png",
-            "https://img.getimg.ai/generated/img-hoT72XlOTiNoUcWPamhr9v.png",
-            "https://img.getimg.ai/generated/img-iZLVCR0qAlWXNVmAPGlKrT.png",
-            "https://img.getimg.ai/generated/img-UWssaEWdUjqK1DXwJywwKe.png",
-            "https://img.getimg.ai/generated/img-WIBwVTR1rF74J3tVc8C2dE.png",
-            "https://img.getimg.ai/generated/img-9jjtCkXWwKjZe9wElBEly2.png",
-            "https://img.getimg.ai/generated/img-MX8g0VKpK3LZUEulhywQE7.png",
-            "https://img.getimg.ai/generated/img-gMNOEgET3EwFuQuPUCpw4G.png",
-            "https://img.getimg.ai/generated/img-i77g0LU68dD7As1cNlm7gR.png",
-            "https://img.getimg.ai/generated/img-Azk6WKhpgaMAoMweR2HkUy.png",
-            "https://img.getimg.ai/generated/img-XfKva6OJ994qNrzifh58vo.png",
-            "https://img.getimg.ai/generated/img-9Sdzb5s1Fgx92yjH8emmS9.png",
-            "https://img.getimg.ai/generated/img-56NIBOvrjSaKS45vxomR6n.png",
-            "https://img.getimg.ai/generated/img-Xcw19IKMv7yPiqDyASeju1.png",
-            "https://img.getimg.ai/generated/img-D6bW4s9IlEg71b6mtMz6pn.png",
+            "https://img.dazzle.ai/generated/img-YkfgHICXA8YFGEzbWC36kS.png",
+            "https://img.dazzle.ai/generated/img-WcykmlaekkgasgzP70JQTD.png",
+            "https://img.dazzle.ai/generated/img-uiSqi31mkxo5PabcADdlXX.png",
+            "https://img.dazzle.ai/generated/img-TdRuGZy3YmIBXvPmqU6lpz.png",
+            "https://img.dazzle.ai/generated/img-kWY1RGIowDFHObYWrqKEuX.png",
+            "https://img.dazzle.ai/generated/img-pflMQRap58h9aCuMEEekHf.png",
+            "https://img.dazzle.ai/generated/img-mz3jpmlQzO8enprS6Z5IUk.png",
+            "https://img.dazzle.ai/generated/img-aD3ZVFuZOQykjCugaqYZLa.png",
+            "https://img.dazzle.ai/generated/img-q9tOtcskhqYjxvpFdvE5c2.png",
+            "https://img.dazzle.ai/generated/img-nCU8xt4kkugIc6gMvDqWVF.png",
+            "https://img.dazzle.ai/generated/img-M30VWmdBvEYfVrdNmp5RFW.png",
+            "https://img.dazzle.ai/generated/img-RgNQfTcfAo4fhUlgdkV2pC.png",
+            "https://img.dazzle.ai/generated/img-aHbNRGbgmNutEKIOHdTQ2t.png",
+            "https://img.dazzle.ai/generated/img-DjVseuFs8N2CikjWGgXM0T.png",
+            "https://img.dazzle.ai/generated/img-KrV9CmArl69eDiCteWECiq.png",
+            "https://img.dazzle.ai/generated/img-GgOSvUjkqVGiJoacFvZNsG.png",
+            "https://img.dazzle.ai/generated/img-l3zHjbrXFdWc78rwi0YPPN.png",
+            "https://img.dazzle.ai/generated/img-jYjnraZM46IaWERJsWQEw5.png",
+            "https://img.dazzle.ai/generated/img-RpLjpqFAgmJCIqPTuH004k.png",
+            "https://img.dazzle.ai/generated/img-afDC6nRaihw1IidGRKib8J.png",
+            "https://img.dazzle.ai/generated/img-5lxSExuwWStJCuwd4OjIn6.png",
+            "https://img.dazzle.ai/generated/img-hoT72XlOTiNoUcWPamhr9v.png",
+            "https://img.dazzle.ai/generated/img-iZLVCR0qAlWXNVmAPGlKrT.png",
+            "https://img.dazzle.ai/generated/img-UWssaEWdUjqK1DXwJywwKe.png",
+            "https://img.dazzle.ai/generated/img-WIBwVTR1rF74J3tVc8C2dE.png",
+            "https://img.dazzle.ai/generated/img-9jjtCkXWwKjZe9wElBEly2.png",
+            "https://img.dazzle.ai/generated/img-MX8g0VKpK3LZUEulhywQE7.png",
+            "https://img.dazzle.ai/generated/img-gMNOEgET3EwFuQuPUCpw4G.png",
+            "https://img.dazzle.ai/generated/img-i77g0LU68dD7As1cNlm7gR.png",
+            "https://img.dazzle.ai/generated/img-Azk6WKhpgaMAoMweR2HkUy.png",
+            "https://img.dazzle.ai/generated/img-XfKva6OJ994qNrzifh58vo.png",
+            "https://img.dazzle.ai/generated/img-9Sdzb5s1Fgx92yjH8emmS9.png",
+            "https://img.dazzle.ai/generated/img-56NIBOvrjSaKS45vxomR6n.png",
+            "https://img.dazzle.ai/generated/img-Xcw19IKMv7yPiqDyASeju1.png",
+            "https://img.dazzle.ai/generated/img-D6bW4s9IlEg71b6mtMz6pn.png",
           ]}
         />
       }
@@ -160,7 +160,7 @@ export default function HomePage({ exampleArt }: { exampleArt: ImageI[] }): JSX.
     <FeatureRow
       caption="DreamBooth"
       title="Create your custom AI model"
-      text="Get a personalized AI model. It's as easy as uploading 10 pictures. Whether you want to create AI avatars for yourself or your team, need to render beautiful images of your product in different scenarios, or just want to have your own AI model to generate ideas with your style. We've got you covered. Every model is hosted on getimg.ai and available to use in seconds."
+      text="Get a personalized AI model. It's as easy as uploading 10 pictures. Whether you want to create AI avatars for yourself or your team, need to render beautiful images of your product in different scenarios, or just want to have your own AI model to generate ideas with your style. We've got you covered. Every model is hosted on dazzle.ai and available to use in seconds."
       visual={
         <video src={"/videos/dreambooth-2.mp4"} autoPlay loop muted playsInline />
       }
@@ -179,7 +179,7 @@ export default function HomePage({ exampleArt }: { exampleArt: ImageI[] }): JSX.
           Most of the time, simple prompts are not enough to get excellent results. But writing good prompts can be learned. You can start by reading <a target="_blank" rel="noreferrer noopener" href='https://cdn.openart.ai/assets/Stable%20Diffusion%20Prompt%20Book%20From%20OpenArt%2011-13.pdf'>OpenArt prompt book</a>.
         </p>
       </FaqQuestion>
-      <FaqQuestion question='Is getimg.ai really free?'>
+      <FaqQuestion question='Is dazzle.ai really free?'>
         <p>Yes, it is. You can generate 100 images for free every month. Just create an account.</p>
         <p>Additionally, you can earn more credits by referring friends and followers.
         </p>

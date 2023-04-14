@@ -283,7 +283,7 @@ export default function CreateDreamBoothModelPage(): JSX.Element {
             id='type'
             value="avatar"
             selectedValue={state.type}
-            imageSrc='https://img.getimg.ai/generated/img-h68FLuIFyyJsVFGiZFYjtd.png'
+            imageSrc='https://img.dazzle.ai/generated/img-h68FLuIFyyJsVFGiZFYjtd.png'
             title='Avatar'
             description='Transform yourself into anything'
             onChange={handleSelect}
@@ -292,7 +292,7 @@ export default function CreateDreamBoothModelPage(): JSX.Element {
             id='type'
             value="product"
             selectedValue={state.type}
-            imageSrc='https://img.getimg.ai/generated/img-mt4rTAldHhkUzf1X7HDePI.png'
+            imageSrc='https://img.dazzle.ai/generated/img-mt4rTAldHhkUzf1X7HDePI.png'
             title='Product shot'
             description='Capture objects in many scenerios'
             onChange={handleSelect}
@@ -301,7 +301,7 @@ export default function CreateDreamBoothModelPage(): JSX.Element {
             id='type'
             value="style"
             selectedValue={state.type}
-            imageSrc='https://img.getimg.ai/generated/img-sd31sMjVAoHjOqAXhGhO66.png'
+            imageSrc='https://img.dazzle.ai/generated/img-sd31sMjVAoHjOqAXhGhO66.png'
             title='Style'
             description='Replicate custom art style'
             onChange={handleSelect}
@@ -346,7 +346,7 @@ export default function CreateDreamBoothModelPage(): JSX.Element {
             id='base_model'
             value="runwayml/stable-diffusion-v1-5"
             selectedValue={state.base_model}
-            imageSrc='https://img.getimg.ai/generated/img-HEtP4lhQ16nxnsckEbnuQE.png'
+            imageSrc='https://img.dazzle.ai/generated/img-HEtP4lhQ16nxnsckEbnuQE.png'
             title='Stable Diffusion 1.5'
             onChange={handleSelect}
             size='md'
@@ -355,7 +355,7 @@ export default function CreateDreamBoothModelPage(): JSX.Element {
             id='base_model'
             value="stabilityai/stable-diffusion-2-1-base"
             selectedValue={state.base_model}
-            imageSrc='https://img.getimg.ai/generated/img-AkwqwLLzKt7VYKEYryC1oL.png'
+            imageSrc='https://img.dazzle.ai/generated/img-AkwqwLLzKt7VYKEYryC1oL.png'
             title='Stable Diffusion 2.1'
             onChange={handleSelect}
             size='md'
@@ -364,7 +364,7 @@ export default function CreateDreamBoothModelPage(): JSX.Element {
             id='base_model'
             value="SG161222/Realistic_Vision_V1.3"
             selectedValue={state.base_model}
-            imageSrc='https://img.getimg.ai/generated/img-hRYMVhHAAYtT35ZWKznGpb.png'
+            imageSrc='https://img.dazzle.ai/generated/img-hRYMVhHAAYtT35ZWKznGpb.png'
             title='Realistic Vision'
             onChange={handleSelect}
             size='md'
@@ -373,7 +373,7 @@ export default function CreateDreamBoothModelPage(): JSX.Element {
             id='base_model'
             value="wavymulder/Analog-Diffusion"
             selectedValue={state.base_model}
-            imageSrc='https://img.getimg.ai/generated/img-iuhi1mBbZYZMPw51kXWbW1.png'
+            imageSrc='https://img.dazzle.ai/generated/img-iuhi1mBbZYZMPw51kXWbW1.png'
             title='Analog'
             onChange={handleSelect}
             size='md'
@@ -382,7 +382,7 @@ export default function CreateDreamBoothModelPage(): JSX.Element {
             id='base_model'
             value="prompthero/openjourney"
             selectedValue={state.base_model}
-            imageSrc='https://img.getimg.ai/generated/img-VGm6rClhXMOcSac0pCFukK.png'
+            imageSrc='https://img.dazzle.ai/generated/img-VGm6rClhXMOcSac0pCFukK.png'
             title='Openjourney'
             onChange={handleSelect}
             size='md'
@@ -622,7 +622,7 @@ export default function CreateDreamBoothModelPage(): JSX.Element {
             id='name'
             value={state.name}
             onChange={handleChange}
-            info='Used to identify your model in getimg.ai tools. It does not affect training.'
+            info='Used to identify your model in dazzle.ai tools. It does not affect training.'
             // size='lg'
             placeholder='e.g. Self Diffusion'
           />
@@ -637,7 +637,7 @@ export default function CreateDreamBoothModelPage(): JSX.Element {
           Before submitting, please note that:
         </p>
         <ul className={styles.help_list}>
-          <li>You&apos;ll get model hosted on getimg.ai ready to use at any time and files to use the model on your own machine.</li>
+          <li>You&apos;ll get model hosted on dazzle.ai ready to use at any time and files to use the model on your own machine.</li>
           <li>Quality of the model mostly depends on quality of used images.</li>
           <li>We do not offer refunds, as we start incurring costs immediately.</li>
           <li>We delete uploaded images as soon as training is finished.</li>

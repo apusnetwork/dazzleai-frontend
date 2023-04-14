@@ -43,9 +43,9 @@ export default function GuideLayout({ children, title, description, robots, cano
   if (!description) {
     description = ''
   }
-  const metaTitle = title + " | getimg.ai"
+  const metaTitle = title + " | dazzle.ai"
 
-  const imgURL = image ? image : "https://getimg.ai/social-image-2.png"
+  const imgURL = image ? image : "https://dazzle.ai/social-image-2.png"
 
   return (
     <div className={styles.guide_layout}>
@@ -62,8 +62,8 @@ export default function GuideLayout({ children, title, description, robots, cano
         <meta name="twitter:site" content="@getimg_ai" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="og:type" property="og:type" content="website" />
-        <meta property="og:url" content={`https://getimg.ai${canonical}`} />
-        <link rel="canonical" href={`https://getimg.ai${canonical}`} />
+        <meta property="og:url" content={`https://dazzle.ai${canonical}`} />
+        <link rel="canonical" href={`https://dazzle.ai${canonical}`} />
 
         <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
         <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
