@@ -32,14 +32,14 @@ export default function Pricing(): JSX.Element {
       <div className={styles.hero}>
         <h1 className='h2'>Pricing</h1>
         <p className='p'>
-          Use dazzle.ai for free with 100 monthly credits.<br />
+          Use dazzle.ai for free with 50 credits Start.<br />
           Create more. Pay less.<br />
         </p>
       </div>
     </div>
 
     <Plans type='checkout' />
-    <div className='container f-center small'>Training custom DreamBooth model requires one-time payment of 2000 image credits.</div>
+    {/* <div className='container f-center small'>Training custom DreamBooth model requires one-time payment of 2000 image credits.</div>
     <div style={{ height: 24 }} />
     <Faq>
       <FaqQuestion question='How do image credits work?'>
@@ -85,7 +85,7 @@ export default function Pricing(): JSX.Element {
         </p>
       </FaqQuestion>
 
-    </Faq>
+    </Faq> */}
 
   </WebsiteLayout >
 }

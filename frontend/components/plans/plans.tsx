@@ -68,42 +68,27 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
         <div className={styles.plans}>
           <div className={[styles.plan].join(' ')}>
             <div className={styles.name}>
-              Basic
+              Free
             </div>
             <div className={styles.price}>
-              <span className={styles.value}>$12/mo</span>
+              <span className={styles.value}>$0/mo</span>
             </div>
 
-            <Button disabled={user.plan === 'basic'} size="md" type="default" href={href('basic')} onClick={(e) => handleClick(e, 'basic')} fullWidth>
-              {user.plan === 'basic' ? <><CheckGoodYes size={14} /> Active</> : cta}
+            <Button disabled={user.plan === 'basic'} size="md" type="default" href={href('basic')} fullWidth>
+              {user.credits != 0 ? <><CheckGoodYes size={14} />Received!</> : 'Signup now'}
             </Button>
 
             <Divider />
 
             <div className={styles.features}>
               <div className={styles.credits}>
-                3 000 images /mo
+                50 credits new user
               </div>
               <div className={styles.feature}>
-                <Check /> 2 active DreamBooth models
+                <Check /> 20 credits Inviting a user
               </div>
               <div className={styles.feature}>
-                <Check /> Text To Image
-              </div>
-              <div className={styles.feature}>
-                <Check /> AI Editor
-              </div>
-              <div className={styles.feature}>
-                <Check /> 20+ AI models
-              </div>
-              <div className={styles.feature}>
-                <Check /> Quality up to 1M pixels
-              </div>
-              <div className={styles.feature}>
-                <Check /> 4x Upscaling
-              </div>
-              <div className={styles.feature}>
-                <Check /> Premium GPUs
+                <Check /> Use images commercially
               </div>
             </div>
 
@@ -113,7 +98,7 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
               Starter
             </div>
             <div className={styles.price}>
-              <span className={styles.value}>$29/mo</span>
+              <span className={styles.value}>$4.9/500 Credits</span>
             </div>
 
             <Button disabled={user.plan === 'starter'} size="md" type="default" href={href('starter')} onClick={(e) => handleClick(e, 'starter')} fullWidth>
@@ -124,23 +109,19 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
 
             <div className={styles.features}>
               <div className={styles.credits}>
-                12 000 images /mo
+                &lt;$0.01 per image
               </div>
-
               <div className={styles.feature}>
-                <Check /> 6 active DreamBooth models
+                <Check /> 20 credits Inviting a user
+              </div>
+              <div className={styles.feature}>
+                <Check /> 20 credits Inviting a user
               </div>
               <div className={styles.feature}>
                 <Check /> Text To Image
               </div>
               <div className={styles.feature}>
-                <Check /> AI Editor
-              </div>
-              <div className={styles.feature}>
                 <Check /> 20+ AI models
-              </div>
-              <div className={styles.feature}>
-                <Check /> Quality up to 1M pixels
               </div>
               <div className={styles.feature}>
                 <Check /> 4x Upscaling
@@ -156,7 +137,7 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
               Hobby
             </div>
             <div className={styles.price}>
-              <span className={styles.value}>$49/mo</span>
+              <span className={styles.value}>$9.9/1050 Credits</span>
             </div>
 
             <Button type={user.plan === 'hobby' ? 'default' : 'primary'} disabled={user.plan === 'hobby'} size="md" href={href('hobby')} onClick={(e) => handleClick(e, 'hobby')} fullWidth>
@@ -167,23 +148,60 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
 
             <div className={styles.features}>
               <div className={styles.credits}>
-                24 000 images /mo
+                &lt;$0.01 per image
               </div>
 
               <div className={styles.feature}>
-                <Check /> 12 active DreamBooth models
+                <Check /> 20 credits Inviting a user
+              </div>
+              <div className={styles.feature}>
+                <Check /> Use images commercially
               </div>
               <div className={styles.feature}>
                 <Check /> Text To Image
               </div>
               <div className={styles.feature}>
-                <Check /> AI Editor
-              </div>
-              <div className={styles.feature}>
                 <Check /> 20+ AI models
               </div>
               <div className={styles.feature}>
-                <Check /> Quality up to 1M pixels
+                <Check /> 4x Upscaling
+              </div>
+              <div className={styles.feature}>
+                <Check /> Premium GPUs
+              </div>
+            </div>
+
+          </div>
+          <div className={[styles.plan].join(' ')}>
+            <div className={styles.name}>
+              Basic
+            </div>
+            <div className={styles.price}>
+              <span className={styles.value}>$19.9/mo</span>
+            </div>
+
+            <Button disabled={user.plan === 'basic'} size="md" href={href('basic')} onClick={(e) => handleClick(e, 'basic')} type="default" fullWidth>
+              {user.plan === 'basic' ? <><CheckGoodYes size={14} /> Active</> : cta}
+            </Button>
+
+            <Divider />
+
+            <div className={styles.features}>
+              <div className={styles.credits}>
+                4000 Credits per month
+              </div>
+
+              <div className={styles.feature}>
+                <Check /> 20 credits Inviting a user
+              </div>
+              <div className={styles.feature}>
+                <Check /> Use images commercially
+              </div>
+              <div className={styles.feature}>
+                <Check /> Text To Image
+              </div>
+              <div className={styles.feature}>
+                <Check /> 20+ AI models
               </div>
               <div className={styles.feature}>
                 <Check /> 4x Upscaling
@@ -199,7 +217,7 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
               Pro
             </div>
             <div className={styles.price}>
-              <span className={styles.value}>$99/mo</span>
+              <span className={styles.value}>$29.9/mo</span>
             </div>
 
             <Button disabled={user.plan === 'pro'} size="md" href={href('pro')} onClick={(e) => handleClick(e, 'pro')} type="default" fullWidth>
@@ -210,23 +228,20 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
 
             <div className={styles.features}>
               <div className={styles.credits}>
-                60 000 images /mo
+                6500 Credits per month
               </div>
 
               <div className={styles.feature}>
-                <Check /> 30 active DreamBooth models
+                <Check /> 20 credits Inviting a user
+              </div>
+              <div className={styles.feature}>
+                <Check /> Use images commercially
               </div>
               <div className={styles.feature}>
                 <Check /> Text To Image
               </div>
               <div className={styles.feature}>
-                <Check /> AI Editor
-              </div>
-              <div className={styles.feature}>
                 <Check /> 20+ AI models
-              </div>
-              <div className={styles.feature}>
-                <Check /> Quality up to 1M pixels
               </div>
               <div className={styles.feature}>
                 <Check /> 4x Upscaling
@@ -234,7 +249,6 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
               <div className={styles.feature}>
                 <Check /> Premium GPUs
               </div>
-
             </div>
 
           </div>

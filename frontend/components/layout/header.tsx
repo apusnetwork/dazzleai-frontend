@@ -69,9 +69,9 @@ export function WebsiteHeader({ fixed = false }): JSX.Element {
           {
             user.id ?
               <>
-                {/* <div className={styles.mobile_link_cta}>
+                <div className={styles.mobile_link_cta}>
                   <Button href='/pricing'>Upgrade now</Button>
-                </div> */}
+                </div>
                 <HeaderUser />
 
               </>

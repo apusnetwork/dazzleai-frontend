@@ -170,13 +170,13 @@ function Plans({ type ="pricing"  }) {
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                 className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().name),
-                                children: "Basic"
+                                children: "Free"
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                 className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().price),
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                     className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().value),
-                                    children: "$12/mo"
+                                    children: "$0/mo"
                                 })
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
@@ -184,16 +184,15 @@ function Plans({ type ="pricing"  }) {
                                 size: "md",
                                 type: "default",
                                 href: href("basic"),
-                                onClick: (e)=>handleClick(e, "basic"),
                                 fullWidth: true,
-                                children: user.plan === "basic" ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+                                children: user.credits != 0 ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
                                     children: [
                                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_7__/* .CheckGoodYes */ .y$4, {
                                             size: 14
                                         }),
-                                        " Active"
+                                        "Received!"
                                     ]
-                                }) : cta
+                                }) : "Signup now"
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_divider_divider__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {}),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -201,55 +200,20 @@ function Plans({ type ="pricing"  }) {
                                 children: [
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().credits),
-                                        children: "3 000 images /mo"
+                                        children: "50 credits new user"
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 2 active DreamBooth models"
+                                            " 20 credits Inviting a user"
                                         ]
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " Text To Image"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " AI Editor"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 20+ AI models"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " Quality up to 1M pixels"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 4x Upscaling"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " Premium GPUs"
+                                            " Use images commercially"
                                         ]
                                     })
                                 ]
@@ -269,7 +233,7 @@ function Plans({ type ="pricing"  }) {
                                 className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().price),
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                     className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().value),
-                                    children: "$29/mo"
+                                    children: "$4.9/500 Credits"
                                 })
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
@@ -294,13 +258,20 @@ function Plans({ type ="pricing"  }) {
                                 children: [
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().credits),
-                                        children: "12 000 images /mo"
+                                        children: "<$0.01 per image"
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 6 active DreamBooth models"
+                                            " 20 credits Inviting a user"
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
+                                            " 20 credits Inviting a user"
                                         ]
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -314,21 +285,7 @@ function Plans({ type ="pricing"  }) {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " AI Editor"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
                                             " 20+ AI models"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " Quality up to 1M pixels"
                                         ]
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -363,7 +320,7 @@ function Plans({ type ="pricing"  }) {
                                 className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().price),
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                     className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().value),
-                                    children: "$49/mo"
+                                    children: "$9.9/1050 Credits"
                                 })
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
@@ -388,13 +345,20 @@ function Plans({ type ="pricing"  }) {
                                 children: [
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().credits),
-                                        children: "24 000 images /mo"
+                                        children: "<$0.01 per image"
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 12 active DreamBooth models"
+                                            " 20 credits Inviting a user"
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
+                                            " Use images commercially"
                                         ]
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -408,13 +372,6 @@ function Plans({ type ="pricing"  }) {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " AI Editor"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
                                             " 20+ AI models"
                                         ]
                                     }),
@@ -422,7 +379,86 @@ function Plans({ type ="pricing"  }) {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " Quality up to 1M pixels"
+                                            " 4x Upscaling"
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
+                                            " Premium GPUs"
+                                        ]
+                                    })
+                                ]
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                        className: [
+                            (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().plan)
+                        ].join(" "),
+                        children: [
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().name),
+                                children: "Basic"
+                            }),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().price),
+                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                    className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().value),
+                                    children: "$19.9/mo"
+                                })
+                            }),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
+                                disabled: user.plan === "basic",
+                                size: "md",
+                                href: href("basic"),
+                                onClick: (e)=>handleClick(e, "basic"),
+                                type: "default",
+                                fullWidth: true,
+                                children: user.plan === "basic" ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
+                                    children: [
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_7__/* .CheckGoodYes */ .y$4, {
+                                            size: 14
+                                        }),
+                                        " Active"
+                                    ]
+                                }) : cta
+                            }),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_divider_divider__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {}),
+                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().features),
+                                children: [
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().credits),
+                                        children: "4000 Credits per month"
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
+                                            " 20 credits Inviting a user"
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
+                                            " Use images commercially"
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
+                                            " Text To Image"
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
+                                            " 20+ AI models"
                                         ]
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -456,7 +492,7 @@ function Plans({ type ="pricing"  }) {
                                 className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().price),
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                     className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().value),
-                                    children: "$99/mo"
+                                    children: "$29.9/mo"
                                 })
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
@@ -481,13 +517,20 @@ function Plans({ type ="pricing"  }) {
                                 children: [
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().credits),
-                                        children: "60 000 images /mo"
+                                        children: "6500 Credits per month"
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 30 active DreamBooth models"
+                                            " 20 credits Inviting a user"
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
+                                            " Use images commercially"
                                         ]
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -501,21 +544,7 @@ function Plans({ type ="pricing"  }) {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " AI Editor"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
                                             " 20+ AI models"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " Quality up to 1M pixels"
                                         ]
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {

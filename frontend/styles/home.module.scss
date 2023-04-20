@@ -1,0 +1,341 @@
+@import "frontend/styles/vars";
+
+.banner {
+  min-height: 52px;
+  background: rgba($accent, 0.05);
+  margin: 18px auto 12px auto;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 24px;
+  font-weight: 500;
+  color: $accent;
+  text-align: left;
+
+  span {
+    margin-right: 12px;
+  }
+
+  @include mobile {
+    display: none;
+    width: 100%;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+
+.bg {
+  background-color: rgb(22, 23, 24);
+  background-image: radial-gradient(ellipse 70% 50% at 50% 150vh, rgba($primary, 0.5), rgba(255, 255, 255, 0));
+}
+
+._hero {
+  text-align: center;
+  background: radial-gradient(ellipse 70% 90% at 50% -20%, rgba($primary, 0.3), rgba(255, 255, 255, 0));
+  margin-top: -69px;
+  padding-top: 69px;
+}
+
+.hero {
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 0 24px 0;
+
+  @include mobile {
+    padding: 64px 24px 24px 24px;
+  }
+}
+
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 42px;
+
+  small {
+    margin-top: 16px;
+    font-size: 12px;
+    color: rgba($color, 0.5);
+
+    @include mobile {
+      margin-top: 9px;
+    }
+  }
+}
+
+
+.tools {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 64px 24px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  justify-content: center;
+
+  @include mobile {
+    display: block;
+    padding: 32px 24px;
+    ;
+  }
+}
+
+.tool {
+  display: block;
+  background: rgba($bg, 0.8);
+  backdrop-filter: blur(4px);
+  border: 1px solid $border;
+  border-radius: 12px;
+  color: $color;
+  transition: 120ms linear;
+  overflow: hidden;
+  padding: 24px 24px 0 24px;
+
+  &:hover {
+    transform: translateY(-3px);
+    border-color: $primary;
+
+    button {
+      background: $accent;
+      color: white;
+      border-color: $accent;
+    }
+
+    button svg {
+      transition: 120ms linear;
+      transform: translateX(3px);
+    }
+  }
+
+  @include mobile {
+    margin-bottom: 24px;
+  }
+}
+
+.tool1 {
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M9 0h2v20H9V0zm25.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm-20 20l1.732 1-10 17.32-1.732-1 10-17.32zM58.16 4.134l1 1.732-17.32 10-1-1.732 17.32-10zm-40 40l1 1.732-17.32 10-1-1.732 17.32-10zM80 9v2H60V9h20zM20 69v2H0v-2h20zm79.32-55l-1 1.732-17.32-10L82 4l17.32 10zm-80 80l-1 1.732-17.32-10L2 84l17.32 10zm96.546-75.84l-1.732 1-10-17.32 1.732-1 10 17.32zm-100 100l-1.732 1-10-17.32 1.732-1 10 17.32zM38.16 24.134l1 1.732-17.32 10-1-1.732 17.32-10zM60 29v2H40v-2h20zm19.32 5l-1 1.732-17.32-10L62 24l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM111 40h-2V20h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zM40 49v2H20v-2h20zm19.32 5l-1 1.732-17.32-10L42 44l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM91 60h-2V40h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm24.026 3.294l1 1.732-17.32 10-1-1.732 17.32-10zM39.32 74l-1 1.732-17.32-10L22 64l17.32 10zm16.546 4.16l-1.732 1-10-17.32 1.732-1 10 17.32zM71 80h-2V60h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm24.026 3.294l1 1.732-17.32 10-1-1.732 17.32-10zM120 89v2h-20v-2h20zm-84.134 9.16l-1.732 1-10-17.32 1.732-1 10 17.32zM51 100h-2V80h2v20zm3.134.84l1.732 1-10 17.32-1.732-1 10-17.32zm24.026 3.294l1 1.732-17.32 10-1-1.732 17.32-10zM100 109v2H80v-2h20zm19.32 5l-1 1.732-17.32-10 1-1.732 17.32 10zM31 120h-2v-20h2v20z' fill='%235858e6' fill-opacity='0.09' fill-rule='evenodd'/%3E%3C/svg%3E"),
+    radial-gradient(ellipse 100% 100% at 0% 5%, rgba(rgb(14, 14, 14), 1), rgba($bg, 0));
+}
+
+.tool2 {
+  background-image: url("data:image/svg+xml,<svg id='patternId' width='100%' height='100%' xmlns='http://www.w3.org/2000/svg'><defs><pattern id='a' patternUnits='userSpaceOnUse' width='23.07' height='40' patternTransform='scale(2) rotate(0)'><rect x='0' y='0' width='100%' height='100%' fill='hsla(0, 0%, 100%, 0)'/><path d='M17.62 0l-6.07 10.5m2.74 4.76L8.22 4.75m-5.48 0h12.13M.01 0h23.07M6.07 20L0 9.5m2.74-4.75l-6.07 10.5m-5.48 0H3.33m8.2 4.75L0 .02-11.54 20m40.68 0L23.07 9.5m2.74-4.75l-6.06 10.5m-5.49 0H26.4M34.6 20L23.08.02 11.53 20m-5.46 0L0 30.51m2.74 4.75l-6.07-10.5m-5.48 0H3.33m8.2-4.75L0 40l-11.54-19.98zM17.6 40l-6.06-10.5m2.74-4.76L8.2 35.25m-5.48 0h12.13M0 40h23.07L11.54 20.01m17.6 0l-6.07 10.5m2.74 4.75l-6.06-10.5m-5.49 0H26.4M11.53 20h23.08L23.07 40'  stroke-linecap='square' stroke-width='1' stroke='hsla(240, 74%, 62%, 0.1)' fill='none'/></pattern></defs><rect width='800%' height='800%' transform='translate(0,0)' fill='url(%23a)'/></svg>"),
+    radial-gradient(ellipse 100% 100% at 0% 5%, rgba(rgb(14, 14, 14), 1), rgba($bg, 0));
+}
+
+.tool3 {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill-rule='evenodd'%3E%3Cg id='church-on-sunday' fill='hsla(240, 74%, 62%, 0.1)' fill-opacity='1'%3E%3Cpath d='M77.17 0H80v2.83l-.1.1A39.9 39.9 0 0 1 74.64 20a39.9 39.9 0 0 1 5.24 17.06l.11.11v2.89c-.01 6.9-1.8 13.79-5.35 19.94A39.96 39.96 0 0 1 80 79.94V80h-2.83L66.84 69.66a39.83 39.83 0 0 1-24.1 10.25l.09.09h-5.66l.1-.1c-8.7-.58-17.22-4-24.1-10.23L2.82 80H0V79.94c.01-6.9 1.8-13.8 5.35-19.94A39.96 39.96 0 0 1 0 40.06V37.17l.1-.1A39.9 39.9 0 0 1 5.36 20 39.9 39.9 0 0 1 .1 2.94L0 2.83V0h2.83l-.1.1a39.83 39.83 0 0 1 24.1 10.24L37.18 0H40c0 6.92-1.78 13.83-5.35 20A39.96 39.96 0 0 1 40 40c0-6.92 1.78-13.83 5.35-20A39.96 39.96 0 0 1 40 0h2.83l10.33 10.34A39.83 39.83 0 0 1 77.26.09L77.17 0zm.77 77.94c-.3-5.52-1.8-11-4.49-16a40.18 40.18 0 0 1-5.17 6.34l9.66 9.66zm-12.52-9.7l-6.83-6.83-5.46 5.46-1.41 1.41-9.66 9.66c8.4-.45 16.69-3.68 23.36-9.7zm-23.07 6.58l7.99-7.98a40.05 40.05 0 0 1-3.79-4.9 37.88 37.88 0 0 0-4.2 12.88zM47.68 60a37.98 37.98 0 0 0 4.07 5.42L57.17 60l-5.42-5.42A38 38 0 0 0 47.68 60zm2.66-6.84a40.06 40.06 0 0 0-3.79 4.9 37.88 37.88 0 0 1-4.2-12.88l7.99 7.98zm1.38-1.44l1.41 1.41 5.46 5.46 6.83-6.84a37.85 37.85 0 0 0-23.36-9.7l9.66 9.67zM60 60l6.87 6.87A38.1 38.1 0 0 0 72.32 60a38.11 38.11 0 0 0-5.45-6.87L60 60zm-14.65 0a39.9 39.9 0 0 0-5.24 17.06l-.11.11-.1-.1A39.9 39.9 0 0 0 34.64 60a39.9 39.9 0 0 0 5.24-17.06l.11-.11.1.1A39.9 39.9 0 0 0 45.36 60zm9.23-48.25a37.85 37.85 0 0 1 23.36-9.7l-9.66 9.67-1.41 1.41-5.46 5.46-6.83-6.84zm13.67 13.67L62.83 20l5.42-5.42A38 38 0 0 1 72.32 20a37.98 37.98 0 0 1-4.07 5.42zm5.2-3.47a40.05 40.05 0 0 1-3.79 4.89l7.99 7.98c-.61-4.45-2.01-8.82-4.2-12.87zm-6.58 4.92l1.41 1.41 9.66 9.66a37.85 37.85 0 0 1-23.36-9.7l6.83-6.83 5.46 5.46zM53.13 13.13L60 20l-6.87 6.87A38.11 38.11 0 0 1 47.68 20a38.1 38.1 0 0 1 5.45-6.87zm-1.41-1.41l-9.66-9.66c.3 5.52 1.8 11 4.49 16a40.18 40.18 0 0 1 5.17-6.34zm-9.66 26.22c.3-5.52 1.8-11 4.49-16a40.18 40.18 0 0 0 5.17 6.34l-9.66 9.66zm26.22 13.78l9.66-9.66c-.3 5.52-1.8 11-4.49 16a40.18 40.18 0 0 0-5.17-6.34zm8.98-11.81L66.84 50.34a39.83 39.83 0 0 0-24.1-10.25l10.42-10.43a39.83 39.83 0 0 0 24.1 10.25zm-7.6-26.75a40.06 40.06 0 0 1 3.79 4.9 37.88 37.88 0 0 0 4.2-12.88l-7.99 7.98zm-31.72 28.9c-8.4.45-16.69 3.68-23.36 9.7l6.83 6.83 5.46-5.46 1.41-1.41 9.66-9.66zM22.83 60l5.42 5.42c1.54-1.7 2.9-3.52 4.07-5.42a38 38 0 0 0-4.07-5.42L22.83 60zm5.45 8.28l-1.41-1.41-5.46-5.46-6.83 6.84a37.85 37.85 0 0 0 23.36 9.7l-9.66-9.67zm9.37 6.54l-7.99-7.98a40.05 40.05 0 0 0 3.79-4.9 37.88 37.88 0 0 1 4.2 12.88zM20 60l-6.87-6.87A38.11 38.11 0 0 0 7.68 60a38.11 38.11 0 0 0 5.45 6.87L20 60zm17.26-19.9L26.84 29.65a39.83 39.83 0 0 1-24.1 10.25l10.42 10.43a39.83 39.83 0 0 1 24.1-10.25zm-35.2 1.96l9.66 9.66a40.18 40.18 0 0 0-5.17 6.33c-2.7-5-4.2-10.47-4.5-16zm4.49 19.89c-2.7 5-4.2 10.47-4.5 16l9.67-9.67a40.18 40.18 0 0 1-5.17-6.33zm31.1-16.77c-.61 4.45-2.01 8.82-4.2 12.87a40.06 40.06 0 0 0-3.79-4.89l7.99-7.98zm-4.2-23.23c2.7 5 4.2 10.47 4.5 16l-9.67-9.67c1.97-1.97 3.7-4.1 5.17-6.33zm-14.86-.54l6.83 6.84a37.85 37.85 0 0 1-23.36 9.7l9.66-9.67 1.41-1.41 5.46-5.46zm-8.25 5.43l-7.99 7.98c.61-4.45 2.01-8.82 4.2-12.87a40.04 40.04 0 0 0 3.79 4.89zm1.41-1.42A37.99 37.99 0 0 1 7.68 20a38 38 0 0 1 4.07-5.42L17.17 20l-5.42 5.42zm-5.2-7.37a40.04 40.04 0 0 1 3.79-4.89L2.35 5.18c.61 4.45 2.01 8.82 4.2 12.87zm6.58-4.92l-1.41-1.41-9.66-9.66a37.85 37.85 0 0 1 23.36 9.7l-6.83 6.83-5.46-5.46zm13.74 13.74L20 20l6.87-6.87A38.1 38.1 0 0 1 32.32 20a38.1 38.1 0 0 1-5.45 6.87zm6.58-8.82a40.18 40.18 0 0 0-5.17-6.33l9.66-9.66c-.3 5.52-1.8 11-4.49 16z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E"),
+    radial-gradient(ellipse 100% 100% at 0% 5%, rgba(rgb(14, 14, 14), 1), rgba($bg, 0));
+}
+
+.tool_content {
+  padding: 0;
+  text-align: center;
+}
+
+.tool_title {
+  font-size: 21px;
+  font-weight: 500;
+  color: $color;
+  margin: 0;
+
+  @include mobile {
+    font-size: 20px;
+  }
+}
+
+.tool_desc {
+  font-size: 14px;
+  margin: 6px 0 0 0;
+  font-weight: 400;
+  color: rgba($color, 0.8);
+
+  @include mobile {
+    font-size: 14px;
+  }
+}
+
+.tool_cta {
+  padding: 24px 0;
+  display: flex;
+  justify-content: center;
+
+  button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: 240ms ease-in-out;
+    outline: none;
+    padding: 3px 32px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    overflow: hidden;
+    user-select: none;
+    background: none;
+    border: 1px solid $color;
+    color: rgba($color, 1);
+    transition: 240ms linear;
+    height: 36px;
+    font-size: 13px;
+    line-height: 13px;
+  }
+}
+
+
+._showcase {
+  padding-top: 124px;
+  ;
+
+  @include mobile {
+    padding-top: 32px;
+  }
+}
+
+.showcase {
+  padding-bottom: 32px;
+  text-align: center;
+
+  @include mobile {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  h3 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #fff;
+    ;
+    background-image: linear-gradient(225deg, rgb(255, 255, 255) 30%, rgba(255, 255, 255, 0.5));
+    background-size: 100%;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-text-fill-color: transparent;
+    margin: 0;
+
+    @include mobile {
+      font-size: 21px;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    color: rgba($color, 0.7);
+    font-weight: 400;
+    margin: 6px;
+
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+
+}
+
+.infinite {
+  overflow: hidden !important;
+}
+
+.grid {
+  display: flex;
+  margin-left: -12px;
+  /* gutter size offset */
+  width: auto;
+  padding: 0 24px 24px 24px;
+  overflow: hidden;
+
+  @include mobile {
+    padding: 12px;
+    margin-left: -6px;
+  }
+}
+
+
+
+.column {
+  padding-left: 12px;
+  /* gutter size */
+  background-clip: padding-box;
+  overflow: hidden;
+
+  @include mobile {
+    padding-left: 6px;
+  }
+}
+
+.art {
+  margin-bottom: 12px;
+  overflow: hidden;
+  border-radius: 6px;
+  position: relative;
+  display: flex;
+
+
+  @include mobile {
+    margin-bottom: 12px;
+  }
+
+  &:hover {
+    .description {
+      opacity: 1;
+    }
+  }
+
+}
+
+.image {
+  width: 100%;
+}
+
+.description {
+  background: rgba($bg2, 0.9);
+  padding: 12px;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  opacity: 0;
+  transition: 140ms ease-in;
+  color: $color;
+
+  b {
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  p {
+    font-size: 14px;
+    margin: 3px 0 0 0;
+  }
+}
+
+.faq {
+  max-width: 800px;
+  margin: 0 auto;
+  padding-bottom: 120px;
+
+  .tool {
+    &:hover {
+      transform: none;
+      border-color: $border;
+    }
+
+  }
+}
