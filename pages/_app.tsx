@@ -1,7 +1,6 @@
 import store from '@/frontend/redux/store';
 import { AppProps } from 'next/dist/shared/lib/router/router';
 import Router, { useRouter } from 'next/router';
-import posthog from 'posthog-js';
 import Script from 'next/script';
 
 import { useEffect, useLayoutEffect, useState } from "react";
@@ -30,6 +29,7 @@ import { getUser, loginGoogle, loginUser, registerUser } from '@/frontend/redux/
 import { selectUser, selectUserStatus } from '@/frontend/redux/user/slice';
 import { Coins, Gift } from 'lucide-react';
 import Link from 'next/link';
+import Cookies from 'js-cookie';
 
 dayjs.extend(relativeTime)
 
@@ -70,49 +70,20 @@ function App({ children }: Props): JSX.Element {
   }
 
   async function googleLogin(response: any) {
-    const res = await dispatch(loginGoogle({ token: response.credential }))
+    function getLoginRequest() {
+      return {
+        token: response.credential,
+        from_img: sessionStorage.getItem('from_img') || undefined,
+        from_user: sessionStorage.getItem('from_user') || undefined,
+      }
+    }
+    const res = await dispatch(loginGoogle(getLoginRequest()))
     if (res.meta.requestStatus === 'fulfilled') {
       dispatch(updateAuthState(undefined));
       message(dispatch, { type: 'success', text: 'Sucesfully Logged In!' })
       window.scrollTo({ top: 0 })
     }
   }
-
-  // async function handleLogin(e: React.FormEvent<HTMLFormElement>) {
-  //   e.preventDefault();
-
-  //   const res = await dispatch(loginUser({ ...state }))
-  //   if (res.meta.requestStatus === 'fulfilled') {
-  //     dispatch(updateAuthState(undefined))
-  //     posthog.capture('Login', { provider: 'email' })
-  //     posthog.identify(res.payload.id, {
-  //       email: res.payload.email,
-  //       name: res.payload.name,
-  //       plan: res.payload.plan,
-  //       status: res.payload.status,
-  //       subscriptionStatus: res.payload.subscriptionStatus
-  //     })
-  //     window.scrollTo({ top: 0 })
-  //   }
-  // }
-  // async function handleRegister(e: React.FormEvent<HTMLFormElement>) {
-  //   e.preventDefault();
-
-  //   const res = await dispatch(registerUser({ ...state }))
-  //   if (res.meta.requestStatus === 'fulfilled') {
-  //     dispatch(updateAuthState(undefined))
-  //     posthog.capture('Login', { provider: 'email' })
-  //     posthog.capture('Regsiter', { provider: 'email' })
-  //     posthog.identify(res.payload.id, {
-  //       email: res.payload.email,
-  //       name: res.payload.name,
-  //       plan: res.payload.plan,
-  //       status: res.payload.status,
-  //       subscriptionStatus: res.payload.subscriptionStatus
-  //     })
-  //     window.scrollTo({ top: 0 })
-  //   }
-  // }
 
   useEffect(() => {
     if (authState === 'login' || authState === 'register' || !user.id) initGoogle()
@@ -142,29 +113,11 @@ function App({ children }: Props): JSX.Element {
     document.body.appendChild(script)
 
     if (user.requestStatus === 'idle' || user.requestStatus === 'failed') {
-      dispatch(getUser()).then(res => {
-        if (res.meta.requestStatus === 'fulfilled') {
-          posthog.identify(res.payload.id, {
-            email: res.payload.email,
-            name: res.payload.name,
-            plan: res.payload.plan,
-            status: res.payload.status,
-            subscriptionStatus: res.payload.subscriptionStatus
-          })
-        }
-      });
+      dispatch(getUser())
     }
 
-    // posthog.init('phc_UZBRYEnPfTrmBlX04oJZ0OaQdnpXrU5ZrpGgWrMEEuH', {
-    //   api_host: 'https://app.posthog.com',
-    //   loaded: (posthog) => {
-    //     if (process.env.NODE_ENV !== 'production' || window.location.hostname !== 'dazzle.ai') posthog.opt_out_capturing()
-    //   },
-    //   autocapture: false,
-    // })
-
     function handleRouteChange() {
-      posthog.capture('$pageview')
+      // posthog.capture('$pageview')
     }
 
     Router.events.on('routeChangeComplete', handleRouteChange)

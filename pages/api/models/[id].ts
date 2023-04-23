@@ -17,6 +17,7 @@ interface ImageGenerationRequest {
   seed: number;
   steps: number;
   width: number;
+  checkpoint: string;
 }
 
 interface GeneratorParams {
@@ -34,6 +35,7 @@ interface GeneratorParams {
   strength: number;
   seed: string;
   sampler: string;
+  checkpoint: string;
 }
 
 function mapParamsToRequest(params: GeneratorParams, model: string, node: string): ImageGenerationRequest {
@@ -44,6 +46,7 @@ function mapParamsToRequest(params: GeneratorParams, model: string, node: string
     height: params.height,
     image: params.image_url,
     model,
+    checkpoint: model, // TODO: pass checkpoint or lora by model type in params 
     negative_prompt: params.negative_prompt,
     node,
     prompt: params.prompt,

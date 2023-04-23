@@ -5,10 +5,17 @@ import { RemoteUserInfoResponse, UserResponse } from '../me';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
-    const loginRes = await axiosInstance.post('/login', {
+    const remoteReq: any = {
       "google_id_token": req.body.token,
       "login_type": "google"
-    })
+    }
+    if ('from_img' in req.body) {
+      remoteReq["from_img"] = req.body.from_img
+    }
+    if ('from_url' in req.body) {
+      remoteReq["from_url"] = req.body.from_url
+    }
+    const loginRes = await axiosInstance.post('/login', remoteReq)
     const userRes = await axiosInstance.get<RemoteUserInfoResponse>('/api/userinfo', {
       headers: {
         Authorization: `Bearer ${loginRes.data.token}`,

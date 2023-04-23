@@ -49,7 +49,7 @@ module.exports = {
 /* harmony export */ });
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _frontend_components_basic_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2492);
+/* harmony import */ var _frontend_components_basic_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(7337);
 /* harmony import */ var _frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3464);
 /* harmony import */ var _frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3137);
 /* harmony import */ var _input_input_module_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9475);

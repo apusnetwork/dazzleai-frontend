@@ -242,7 +242,7 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var react_outside_click_handler__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(react_outside_click_handler__WEBPACK_IMPORTED_MODULE_8__);
 /* harmony import */ var _active_link_active_link__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(8990);
 /* harmony import */ var _avatar_avatar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(3227);
-/* harmony import */ var _basic_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(2492);
+/* harmony import */ var _basic_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(7337);
 /* harmony import */ var _button_button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(4820);
 /* harmony import */ var _layout_module_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(2171);
 /* harmony import */ var _layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_layout_module_scss__WEBPACK_IMPORTED_MODULE_13__);
@@ -475,7 +475,7 @@ __webpack_async_result__();
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3464);
 /* harmony import */ var _frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3137);
-/* harmony import */ var _basic_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2492);
+/* harmony import */ var _basic_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7337);
 /* harmony import */ var _message_module_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3746);
 /* harmony import */ var _message_module_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_message_module_scss__WEBPACK_IMPORTED_MODULE_4__);
 

@@ -1,6 +1,6 @@
 "use strict";
-exports.id = 725;
-exports.ids = [725];
+exports.id = 378;
+exports.ids = [378];
 exports.modules = {
 
 /***/ 2378:
@@ -16,7 +16,8 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axio
 axios__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 const axiosInstance = axios__WEBPACK_IMPORTED_MODULE_0__["default"].create({
-    baseURL: "http://dazzleapi.ap-southeast-1.elasticbeanstalk.com"
+    // baseURL: 'http://dazzleapi.ap-southeast-1.elasticbeanstalk.com',
+    baseURL: "https://api.dazzleai.network"
 });
 axiosInstance.interceptors.request.use(function(config) {
     console.log("Request:", config.method?.toUpperCase(), config.url, config.params, config.data);
@@ -44,42 +45,6 @@ function handleApiError(error) {
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
-
-/***/ }),
-
-/***/ 9110:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "d8": () => (/* binding */ setCookie),
-/* harmony export */   "ej": () => (/* binding */ getCookie),
-/* harmony export */   "kT": () => (/* binding */ deleteCookie),
-/* harmony export */   "qf": () => (/* binding */ AuthHeaderKey)
-/* harmony export */ });
-/* harmony import */ var cookie__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(4802);
-/* harmony import */ var cookie__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(cookie__WEBPACK_IMPORTED_MODULE_0__);
-// utils/cookies.ts
-
-const AuthHeaderKey = "getimgauth";
-/**
- * This sets `cookie` using the `res` object
- */ const setCookie = (res, name, value, options = {})=>{
-    const stringValue = typeof value === "object" ? "j:" + JSON.stringify(value) : String(value);
-    if (typeof options.maxAge === "number") {
-        options.expires = new Date(Date.now() + options.maxAge * 1000);
-    }
-    res.setHeader("Set-Cookie", (0,cookie__WEBPACK_IMPORTED_MODULE_0__.serialize)(name, stringValue, options));
-};
-const getCookie = (req, name)=>{
-    const cookies = (0,cookie__WEBPACK_IMPORTED_MODULE_0__.parse)(req.headers.cookie || "");
-    return cookies[name];
-};
-const deleteCookie = (res, name)=>{
-    res.setHeader("Set-Cookie", (0,cookie__WEBPACK_IMPORTED_MODULE_0__.serialize)(name, "", {
-        maxAge: -1
-    }));
-};
-
 
 /***/ })
 

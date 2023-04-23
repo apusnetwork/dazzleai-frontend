@@ -93,7 +93,7 @@ function GeneratedImage({
           <div className={styles.img_hover_row}>
             <div className={styles.btn_group}>
               {
-                (image.modelTask.model.includes('stable-diffusion') || image.modelTask.model.includes('model-') || image.modelTask.model === 'instruct-pix2pix' || image.modelTask.model === 'image-mixer')
+                (image.modelTask.model?.includes('stable-diffusion') || image.modelTask.model?.includes('model-') || image.modelTask.model === 'instruct-pix2pix' || image.modelTask.model === 'image-mixer')
                   && actions.includes('copy_params')
                   && onCopyParams
                   ?
@@ -113,7 +113,7 @@ function GeneratedImage({
                   : null
               }
               {
-                (image.modelTask.model.includes('stable-diffusion') || image.modelTask.model.includes('model-') || image.modelTask.model === 'instruct-pix2pix' || image.modelTask.model === 'image-mixer')
+                (image.modelTask.model?.includes('stable-diffusion') || image.modelTask.model?.includes('model-') || image.modelTask.model === 'instruct-pix2pix' || image.modelTask.model === 'image-mixer')
                   && actions.includes('copy_image')
                   && onCopyImage
                   ?

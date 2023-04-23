@@ -1,5 +1,5 @@
-exports.id = 758;
-exports.ids = [758];
+exports.id = 578;
+exports.ids = [578];
 exports.modules = {
 
 /***/ 6115:
@@ -63,7 +63,7 @@ module.exports = {
 
 /***/ }),
 
-/***/ 2492:
+/***/ 7337:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -94,7 +94,7 @@ __webpack_require__.d(__webpack_exports__, {
   "Ch3": () => (/* reexport */ XCloseDelete)
 });
 
-// UNUSED EXPORTS: AccessibilityHandicapDisabilityHandicapWheelchair, AccountSearchUserPerson, AccountUserPersonRound, AccountUserPersonSquare, ActivityGraph, AdAnnouncementMegaphone, AddCirclePlus, AddPlus, AddPlusNewSquareBoxSquare, AdjustVeticalSettings, AirportPlaneTravel, AlertCirlcleError, AlertOctagonError, AlphabetA, AlphabetB, AlphabetC, AlphabetD, AlphabetE, AlphabetF, AlphabetG, AlphabetH, AlphabetI, AlphabetJ, AlphabetK, AlphabetL, AlphabetM, AlphabetN, AlphabetO, AlphabetP, AlphabetQ, AlphabetR, AlphabetS, AlphabetT, AlphabetU, AlphabetV, AlphabetW, AlphabetX, AlphabetY, AlphabetZ, AnalyticsGraphChart, ApiIntegrationConnection, Apps, Archive, ArrowBottomLeft, ArrowBottomRight, ArrowDown, ArrowDropdownCaretSortSelectArrow, ArrowLeft, ArrowLeftCaretSortSelect, ArrowRightCaretSortSelect, ArrowTopLeft, ArrowTopRight, ArrowUp, ArrowUpPushupCaretSortSelectArrow, AsteriskStar, AttachmentClipHook, Badge, BadgeVerified, BankFinancial, Basicons, BasketballBallSports, BatteryCharging, BatteryEmpty, BatteryFull, BatteryHalf, BedDoubleHotel, BedSingleHotel, BikerCycle, Blockchain, Bluetooth, BluetoothOff, BookNotePaper, BookmarkSave, BranchGitFork, BrowserChrome, CalculatorComputeMath, CalculatorComputeMathAlt, CalendarAppointmentDate, CalendarDateAppointmentTime, CameraApertureCaptureLens, CameraOffPhoto, CameraPhoto, Car, CaretSortSelectArrow, CaretSortSelectArrowAlt, ChartUpArrow, Chatbot, CheckBox, ChevronLeftArrow, ChevronUpArrow, ChevronsLeftArrows, ChevronsRightArrows, Chip, ClockTime, CodeTechDev, CoffeeTeaCup, CoffeeTeaCupAlt, CommentChatMessage, CommentChatMessageAlt, CommentCircleAltChatMessage, CommentCircleChatMessage, CommentSquareAltChatMessage, CommentSquareChatMessage, CompressArrowsConverge, Cone, ConnectLinkCategory, ConnectionSignalWifi, CourseDiary, CreditCardDebit, Crop, CrosshairTargetCenter, CrosshairTargetCenterAlt, CursorAltPointerMouse, CursorPointerMouse, CutScissors, DataServer, Delete, DesktopComputerMac, DesktopMacComputer, DiscountPercent, DollarCurrency, DownTurnArrow, DownloadAlt, DownloadCloud, DragHorizontal, DragVertical, EditWrite, EditWriteAlt, EducationSchool, EmailMessageInbox, EmojiAngelSmileyHappy, EmojiSmileyAngryMad, EmojiSmileyBaby, EmojiSmileyDizzyHappy, EmojiSmileyHappyFace, EmojiSmileyMehSad, EmojiSmileySadFace, EmojiSmileySurprisedShockedAmazed, EmojiSmileyWinkHappy, EnterArrowLeft, EntryLogin, Error, EuroCurrency, ExpandArrows, FaceId, FaceMask, FaceMaskAlt, FaceMaskAlt2, FacebookSocial, FastFoward, Filter, FilterAlt, FireTrendHot, FlagCountry, FocusCameraPlusAdd, FolderAddFile, FolderFileProject, Forward, FuelGasStation, GamingPad, GenderFemale, GenderMale, Gif, Gift, GlobeWorldEarth, HarddriveHarddisk, HashtagTrendingNumber, HeadphoneEarphoneMusic, HeadphoneEarphoneMusicAlt, HealthCrossFirstaid, HeartLoveLike, HelpQuestion, HomeHouse, HospitalClinic, InboxMail, InfinityLoop, LaptopComputer, LaunchLinkOpen, LightningEnergy, Link, LinkedinSocial, LoadingSpinner, LocationPin, LocationPinAlt, LockOpen, LockPrivacy, MagicWand, MapLocation, MarkerCreatePen, MastercardCreditDebit, MaximizeExpand, MedalWinnerGold, MediaCast, MediaFilmVideo, MediaFilmVideoAlt, MicrophoneMusicTalk, MicrophoneOffMusicTalk, MinimizeCollapse, MobilePhone, ModelDiamond, MoneyAltCashCurrency, MoneyCashCurrency, MoonNight, MoreHorizontal, MoreVertical, Mouse, MusicNote, NairaCurrencyMoney, NextArrowForward, NotificationBellAlarm, NotificationOffBellAlarm, PaperFile, PaperNote, Pause, Percentage, PhoneCall, PieChart, Pin, PlanetSaturnSpace, Play, PlugConnect, PoundCurrencyMoney, PreviousArrowBackward, Print, Puzzle, RainCloudWeather, ReceiptPayment, Redo, Reply, ReplyAll, Rewind, RightTurnArrow, RoadmapTimeline, RocketLaunch, Save, SaveAlt, Search, SecurityPasswordKey, SecurityShieldAlt, SecurityShieldPrivacyBad, SendMessageDm, SettingsAccountMore, ShopStore, ShoppingAltBag, ShoppingBag, ShoppingCart, Shuffle, ShuffleAlt, SketchDiamond, SnapchatSocial, SnowflakesWeatherCold, SparkleStar, SquareBoxUncheck, StarRatings, Stop, SubtractCircleMinusRemove, SubtractMinusRemove, SunDay, Swim, TagPriceDiscount, TheaterMask, ThumbsDown, ThumbsUp, ThunderstormWeather, TicketPass, TiktokSocial, ToogleLeft, ToogleRight, TramTrainTransport, TrashAltDeleteBin, UmbrellaInsurance, Undo, UpTurnArrow, UploadAlt, UploadCloud, UploadShare, Usb, UserAccountProfile, UserAddAccountProfile, UserGroupAccounts, UserRemoveAccountProfile, VideoCameraMedia, VolumeDown, VolumeMute, VolumeUp, Wallet, Watch, WifiConnection, WifiOffConnection, WorkAltBag, WorkBag, XCircleCloseDelete, XOctagonError, XSquareCloseDelete, YoutubeVideo, YuanCurrencyMoney, ZoomIn, ZoomOut
+// UNUSED EXPORTS: AccessibilityHandicapDisabilityHandicapWheelchair, AccountSearchUserPerson, AccountUserPersonRound, AccountUserPersonSquare, ActivityGraph, AdAnnouncementMegaphone, AddCirclePlus, AddPlus, AddPlusNewSquareBoxSquare, AdjustVeticalSettings, AirportPlaneTravel, AlertCirlcleError, AlertOctagonError, AlphabetA, AlphabetB, AlphabetC, AlphabetD, AlphabetE, AlphabetF, AlphabetG, AlphabetH, AlphabetI, AlphabetJ, AlphabetK, AlphabetL, AlphabetM, AlphabetN, AlphabetO, AlphabetP, AlphabetQ, AlphabetR, AlphabetS, AlphabetT, AlphabetU, AlphabetV, AlphabetW, AlphabetX, AlphabetY, AlphabetZ, AnalyticsGraphChart, ApiIntegrationConnection, Apps, Archive, ArrowBottomLeft, ArrowBottomRight, ArrowDown, ArrowDropdownCaretSortSelectArrow, ArrowLeft, ArrowLeftCaretSortSelect, ArrowRightCaretSortSelect, ArrowTopLeft, ArrowTopRight, ArrowUp, ArrowUpPushupCaretSortSelectArrow, AsteriskStar, AttachmentClipHook, Badge, BadgeVerified, BankFinancial, Basicons, BasketballBallSports, BatteryCharging, BatteryEmpty, BatteryFull, BatteryHalf, BedDoubleHotel, BedSingleHotel, BikerCycle, Blockchain, Bluetooth, BluetoothOff, BookNotePaper, BookmarkSave, BranchGitFork, BrowserChrome, CalculatorComputeMath, CalculatorComputeMathAlt, CalendarAppointmentDate, CalendarDateAppointmentTime, CameraApertureCaptureLens, CameraOffPhoto, CameraPhoto, Car, CaretSortSelectArrow, CaretSortSelectArrowAlt, ChartUpArrow, Chatbot, CheckBox, ChevronLeftArrow, ChevronUpArrow, ChevronsLeftArrows, ChevronsRightArrows, Chip, ClockTime, CodeTechDev, CoffeeTeaCup, CoffeeTeaCupAlt, CommentChatMessage, CommentChatMessageAlt, CommentCircleAltChatMessage, CommentCircleChatMessage, CommentSquareAltChatMessage, CommentSquareChatMessage, CompressArrowsConverge, Cone, ConnectLinkCategory, ConnectionSignalWifi, CourseDiary, CreditCardDebit, Crop, CrosshairTargetCenter, CrosshairTargetCenterAlt, CursorAltPointerMouse, CursorPointerMouse, CutScissors, DataServer, Delete, DesktopComputerMac, DesktopMacComputer, DiscountPercent, DollarCurrency, DownTurnArrow, DownloadAlt, DownloadCloud, DragHorizontal, DragVertical, EditWrite, EditWriteAlt, EducationSchool, EmailMessageInbox, EmojiAngelSmileyHappy, EmojiSmileyAngryMad, EmojiSmileyBaby, EmojiSmileyDizzyHappy, EmojiSmileyHappyFace, EmojiSmileyMehSad, EmojiSmileySadFace, EmojiSmileySurprisedShockedAmazed, EmojiSmileyWinkHappy, EnterArrowLeft, EntryLogin, Error, EuroCurrency, ExpandArrows, FaceId, FaceMask, FaceMaskAlt, FaceMaskAlt2, FacebookSocial, FastFoward, Filter, FilterAlt, FireTrendHot, FlagCountry, FocusCameraPlusAdd, FolderAddFile, FolderFileProject, Forward, FuelGasStation, GamingPad, GenderFemale, GenderMale, Gif, Gift, GlobeWorldEarth, HarddriveHarddisk, HashtagTrendingNumber, HeadphoneEarphoneMusic, HeadphoneEarphoneMusicAlt, HealthCrossFirstaid, HeartLoveLike, HelpQuestion, HomeHouse, HospitalClinic, InboxMail, InfinityLoop, LaptopComputer, LaunchLinkOpen, LightningEnergy, Link, LinkedinSocial, LoadingSpinner, LocationPin, LocationPinAlt, LockOpen, LockPrivacy, MagicWand, MapLocation, MarkerCreatePen, MastercardCreditDebit, MaximizeExpand, MedalWinnerGold, MediaCast, MediaFilmVideo, MediaFilmVideoAlt, MicrophoneMusicTalk, MicrophoneOffMusicTalk, MinimizeCollapse, MobilePhone, ModelDiamond, MoneyAltCashCurrency, MoneyCashCurrency, MoonNight, MoreHorizontal, MoreVertical, Mouse, MusicNote, NairaCurrencyMoney, NextArrowForward, NotificationBellAlarm, NotificationOffBellAlarm, PaperFile, PaperNote, Pause, Percentage, PhoneCall, PieChart, Pin, PlanetSaturnSpace, Play, PlugConnect, PoundCurrencyMoney, PreviousArrowBackward, Print, Puzzle, QuestionCircle, RainCloudWeather, ReceiptPayment, Redo, Reply, ReplyAll, Rewind, RightTurnArrow, RoadmapTimeline, RocketLaunch, Save, SaveAlt, Search, SecurityPasswordKey, SecurityShieldAlt, SecurityShieldPrivacyBad, SendMessageDm, SettingsAccountMore, ShopStore, ShoppingAltBag, ShoppingBag, ShoppingCart, Shuffle, ShuffleAlt, SketchDiamond, SnapchatSocial, SnowflakesWeatherCold, SparkleStar, SquareBoxUncheck, StarRatings, Stop, SubtractCircleMinusRemove, SubtractMinusRemove, SunDay, Swim, TagPriceDiscount, TheaterMask, ThumbsDown, ThumbsUp, ThunderstormWeather, TicketPass, TiktokSocial, ToogleLeft, ToogleRight, TramTrainTransport, TrashAltDeleteBin, UmbrellaInsurance, Undo, UpTurnArrow, UploadAlt, UploadCloud, UploadShare, Usb, UserAccountProfile, UserAddAccountProfile, UserGroupAccounts, UserRemoveAccountProfile, VideoCameraMedia, VolumeDown, VolumeMute, VolumeUp, Wallet, Watch, WifiConnection, WifiOffConnection, WorkAltBag, WorkBag, XCircleCloseDelete, XOctagonError, XSquareCloseDelete, YoutubeVideo, YuanCurrencyMoney, ZoomIn, ZoomOut
 
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
@@ -9860,7 +9860,35 @@ function AlphabetL({ color ="currentColor" , size =24 , fill ="none" , strokeWid
     });
 };
 
+;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/QuestionCircle.tsx
+
+
+function QuestionCircle_Puzzle({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =2 , className ="" , style ={}  }) {
+    return /*#__PURE__*/ _jsxs("svg", {
+        className: className,
+        style: style,
+        width: size,
+        height: size,
+        fill: fill,
+        stroke: color,
+        strokeWidth: strokeWidth,
+        viewBox: "64 64 896 896",
+        focusable: "false",
+        "data-icon": "question-circle",
+        "aria-hidden": "true",
+        children: [
+            /*#__PURE__*/ _jsx("path", {
+                d: "M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z"
+            }),
+            /*#__PURE__*/ _jsx("path", {
+                d: "M623.6 316.7C593.6 290.4 554 276 512 276s-81.6 14.5-111.6 40.7C369.2 344 352 380.7 352 420v7.6c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V420c0-44.1 43.1-80 96-80s96 35.9 96 80c0 31.1-22 59.6-56.1 72.7-21.2 8.1-39.2 22.3-52.1 40.9-13.1 19-19.9 41.8-19.9 64.9V620c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-22.7a48.3 48.3 0 0130.9-44.8c59-22.7 97.1-74.7 97.1-132.5.1-39.3-17.1-76-48.3-103.3zM472 732a40 40 0 1080 0 40 40 0 10-80 0z"
+            })
+        ]
+    });
+};
+
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/index.tsx
+
 
 
 
@@ -10199,8 +10227,11 @@ function AlphabetL({ color ="currentColor" , size =24 , fill ="none" , strokeWid
 /* harmony import */ var _frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3137);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1664);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _button_module_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6115);
-/* harmony import */ var _button_module_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_button_module_scss__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _button_module_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6115);
+/* harmony import */ var _button_module_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_button_module_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+
 
 
 
@@ -10208,6 +10239,20 @@ function AlphabetL({ color ="currentColor" , size =24 , fill ="none" , strokeWid
 
 
 function Button({ openInNewTab =false , type ="primary" , htmlType , size ="md" , href , loading , disabled , fullWidth , children , onClick , errorFor =[] , title , download  }) {
+    const { 0: hrefStr , 1: setHrefStr  } = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)("");
+    (0,react__WEBPACK_IMPORTED_MODULE_5__.useEffect)(()=>{
+        if (href) {
+            if (typeof href === "string") {
+                setHrefStr(href);
+            } else {
+                href.then((href)=>{
+                    setHrefStr(href);
+                });
+            }
+        }
+    }, [
+        href
+    ]);
     const errors = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_2__/* .useAppSelector */ .C)(_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_3__/* .selectErrors */ .i2);
     let hasError = false;
     if (errors && errorFor.length) {
@@ -10224,30 +10269,30 @@ function Button({ openInNewTab =false , type ="primary" , htmlType , size ="md" 
         loaderSize = 16;
     }
     const className = [
-        (_button_module_scss__WEBPACK_IMPORTED_MODULE_5___default().btn),
-        (_button_module_scss__WEBPACK_IMPORTED_MODULE_5___default())[type],
-        (_button_module_scss__WEBPACK_IMPORTED_MODULE_5___default())[size],
-        disabled ? (_button_module_scss__WEBPACK_IMPORTED_MODULE_5___default().disabled) : "",
-        fullWidth ? (_button_module_scss__WEBPACK_IMPORTED_MODULE_5___default().full_width) : "",
-        loading ? (_button_module_scss__WEBPACK_IMPORTED_MODULE_5___default().loading) : "",
-        hasError ? (_button_module_scss__WEBPACK_IMPORTED_MODULE_5___default().error) : "", 
+        (_button_module_scss__WEBPACK_IMPORTED_MODULE_6___default().btn),
+        (_button_module_scss__WEBPACK_IMPORTED_MODULE_6___default())[type],
+        (_button_module_scss__WEBPACK_IMPORTED_MODULE_6___default())[size],
+        disabled ? (_button_module_scss__WEBPACK_IMPORTED_MODULE_6___default().disabled) : "",
+        fullWidth ? (_button_module_scss__WEBPACK_IMPORTED_MODULE_6___default().full_width) : "",
+        loading ? (_button_module_scss__WEBPACK_IMPORTED_MODULE_6___default().loading) : "",
+        hasError ? (_button_module_scss__WEBPACK_IMPORTED_MODULE_6___default().error) : "", 
     ].join(" ").trim();
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
         className: [
-            (_button_module_scss__WEBPACK_IMPORTED_MODULE_5___default()._),
-            fullWidth ? (_button_module_scss__WEBPACK_IMPORTED_MODULE_5___default()._full_width) : ""
+            (_button_module_scss__WEBPACK_IMPORTED_MODULE_6___default()._),
+            fullWidth ? (_button_module_scss__WEBPACK_IMPORTED_MODULE_6___default()._full_width) : ""
         ].join(" ").trim(),
         children: openInNewTab ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
             className: className,
             onClick: onClick,
-            href: href,
+            href: hrefStr,
             target: !download ? "_blank" : "",
             rel: "noopener noreferrer",
             title: title,
             download: download,
             children: children
         }) : href ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_4___default()), {
-            href: href,
+            href: hrefStr,
             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                 className: className,
                 onClick: onClick,
@@ -10263,11 +10308,11 @@ function Button({ openInNewTab =false , type ="primary" , htmlType , size ="md" 
             children: [
                 type === "google" ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                     src: "/images/google-logo.png",
-                    className: (_button_module_scss__WEBPACK_IMPORTED_MODULE_5___default().google_logo)
+                    className: (_button_module_scss__WEBPACK_IMPORTED_MODULE_6___default().google_logo)
                 }) : "",
                 loading ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                     className: [
-                        (_button_module_scss__WEBPACK_IMPORTED_MODULE_5___default().loader)
+                        (_button_module_scss__WEBPACK_IMPORTED_MODULE_6___default().loader)
                     ].join(" ").trim(),
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_loader_loader__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
                         type: type,

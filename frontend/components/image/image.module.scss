@@ -539,8 +539,13 @@
   }
 }
 
+.china_attention {
+  color: $dark;
+  margin-top: 0;
+}
+
 .copy_btn {
-  margin-top: 34px;
+  margin-top: 12px;
 
   @include mobile {
     margin-top: 12px;

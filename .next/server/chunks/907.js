@@ -43,7 +43,7 @@ module.exports = {
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_outside_click_handler__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(2279);
 /* harmony import */ var react_outside_click_handler__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_outside_click_handler__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _basic_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2492);
+/* harmony import */ var _basic_icons__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7337);
 /* harmony import */ var _modal_module_scss__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3728);
 /* harmony import */ var _modal_module_scss__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_modal_module_scss__WEBPACK_IMPORTED_MODULE_5__);
 

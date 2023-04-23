@@ -91,7 +91,9 @@ export interface RemoteImage {
       denoising_strength: number;
       height: number;
       image: string;
-      model: string;
+      model?: string;
+      lora: string;
+      checkpoint: string;
       negative_prompt: string;
       prompt: string;
       sampler: string;
@@ -115,6 +117,8 @@ const defaultParam = {
   width: 512,
   image: '',
   model: '',
+  lora: "",
+  checkpoint: '',
   negative_prompt: '',
   prompt: '',
   sampler: '',
@@ -142,7 +146,7 @@ export function mapRemoteImageToGeneratedImage(image: RemoteImage): GeneratedIma
     createdAt: '',
     modelTask: {
       id: task.task_id,
-      model: param.model,
+      model: param.checkpoint,
       params: {
         seed: param.seed,
         tool: param.sampler,

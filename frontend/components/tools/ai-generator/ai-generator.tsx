@@ -49,6 +49,7 @@ interface StateI {
   images: MixingImageI[]
   controlnet: string
   skipControlnetProcessing: string
+  checkpoint: string
 }
 
 export default function AiGenerator(): JSX.Element {
@@ -66,6 +67,7 @@ export default function AiGenerator(): JSX.Element {
   const [nodes, setNodes] = useState<NodeI[]>([])
   const [state, setState] = useState<StateI>({
     model: '',
+    checkpoint: '',
     node: '',
     prompt: '',
     negativePrompt: 'Disfigured, cartoon, blurry',
@@ -78,7 +80,7 @@ export default function AiGenerator(): JSX.Element {
     upscale: 'false',
     width: 512,
     height: 512,
-    scheduler: 'dpmsolver++',
+    scheduler: 'DPM2',
     strength: 0.5,
     controlnet: 'none',
     skipControlnetProcessing: 'false',
@@ -549,8 +551,17 @@ export default function AiGenerator(): JSX.Element {
       setState(s => ({ ...s, model: m }))
     }
 
+    // remember source of signup
+    const from_user = urlParams.get('ref')
+    if (from_user) {
+      sessionStorage.setItem('from_user', from_user)
+    }
+
     const img = urlParams.get('img') || urlParams.get('init-img');
     if (!img) return
+    if (img) {
+      sessionStorage.setItem('from_img', img)
+    }
 
     const isShared = urlParams.get('shared') !== null
 
@@ -1021,14 +1032,24 @@ export default function AiGenerator(): JSX.Element {
                         label='Sampler'
                         id='scheduler'
                         options={[
-                          { value: 'euler_a', key: 'Euler Ancestral' },
-                          { value: 'euler', key: 'Euler' },
-                          { value: 'lms', key: 'LMS' },
-                          { value: 'dpmsolver++', key: 'DPM-Solver++' },
-                          { value: 'pndm', key: 'PLMS' },
-                          { value: 'ddim', key: 'DDIM' },
-                          { value: 'kdpm2', key: 'DPM Karras' },
-                          { value: 'kdpm2_a', key: 'DPM Karras Ancestral' },
+                          { key: "Euler a", value: "Euler a" },
+                          { key: "Euler", value: "Euler" },
+                          { key: "LMS", value: "LMS" },
+                          { key: "Heun", value: "Heun" },
+                          { key: "DPM2", value: "DPM2" },
+                          { key: "DPM2 a", value: "DPM2 a" },
+                          { key: "DPM++ 2S a", value: "DPM++ 2S a" },
+                          { key: "DPM++ 2M", value: "DPM++ 2M" },
+                          { key: "DPM++ SDE", value: "DPM++ SDE" },
+                          { key: "DPM fast", value: "DPM fast" },
+                          { key: "DPM adaptive", value: "DPM adaptive" },
+                          { key: "LMS Karras", value: "LMS Karras" },
+                          { key: "DPM2 Karras", value: "DPM2 Karras" },
+                          { key: "DPM2 a Karras", value: "DPM2 a Karras" },
+                          { key: "DPM++ 2S a Karras", value: "DPM++ 2S a Karras" },
+                          { key: "DPM++ 2M Karras", value: "DPM++ 2M Karras" },
+                          { key: "DPM++ SDE Karras", value: "DPM++ SDE Karras" },
+                          { key: "DDIM", value: "DDIM" },
                         ]}
                         value={state.scheduler}
                         onChange={handleChange}

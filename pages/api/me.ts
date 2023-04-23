@@ -30,6 +30,11 @@ export interface RemoteUserInfoResponse {
   nickname: string;
   twitter_id: string;
   user_id: string;
+  credit: {
+    credit: number
+    free_credit: number
+    free_credit_exp: number
+  }
 }
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
@@ -57,7 +62,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       createdAt: '',
       email: '',
       firstName: '',
-      credits: 0,
+      credits: userRes.data.credit.credit,
       isPaid: false,
     }
     res.status(200).json(resData)

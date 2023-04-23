@@ -89,17 +89,16 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3779);
 /* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2423);
 /* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(lucide_react__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var posthog_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(8315);
-/* harmony import */ var posthog_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(posthog_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6689);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _basic_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(2492);
-/* harmony import */ var _button_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(4820);
-/* harmony import */ var _divider_divider__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(3294);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _basic_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7337);
+/* harmony import */ var _button_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4820);
+/* harmony import */ var _divider_divider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(3294);
 /* harmony import */ var _plans_module_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(4693);
 /* harmony import */ var _plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_plans_module_scss__WEBPACK_IMPORTED_MODULE_10__);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_3__]);
-_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(9648);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_3__, axios__WEBPACK_IMPORTED_MODULE_9__]);
+([_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_3__, axios__WEBPACK_IMPORTED_MODULE_9__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -111,13 +110,20 @@ _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_3__ = (__webpack_async_depen
 
 
 
+function href(productitemname) {
+    return axios__WEBPACK_IMPORTED_MODULE_9__["default"].post("/api/billing/checkout", {
+        currency: "usd",
+        productitemname,
+        quantity: "1"
+    }).then((r)=>r.data.Url);
+}
 function Plans({ type ="pricing"  }) {
     const user = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useAppSelector */ .C)(_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_3__/* .selectUser */ .dy);
     const dispatch = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useAppDispatch */ .T)();
-    const { 0: referral , 1: setReferral  } = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)("");
-    const { 0: cta , 1: setCta  } = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)("Subscribe now");
-    const { 0: checkoutMethod , 1: setCheckoutMethod  } = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)("stripe");
-    (0,react__WEBPACK_IMPORTED_MODULE_6__.useEffect)(()=>{
+    const { 0: referral , 1: setReferral  } = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)("");
+    const { 0: cta , 1: setCta  } = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)("Buy now");
+    const { 0: checkoutMethod , 1: setCheckoutMethod  } = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)("stripe");
+    (0,react__WEBPACK_IMPORTED_MODULE_5__.useEffect)(()=>{
         if (user.requestStatus === "idle" || user.requestStatus === "loading") return;
         if (user.id && user.plan !== "free") {
             setCta("Upgrade now");
@@ -125,38 +131,27 @@ function Plans({ type ="pricing"  }) {
     }, [
         user
     ]);
-    (0,react__WEBPACK_IMPORTED_MODULE_6__.useEffect)(()=>{
+    (0,react__WEBPACK_IMPORTED_MODULE_5__.useEffect)(()=>{
         if (user.requestStatus === "idle" || user.requestStatus === "loading") return;
         if (user.id && user.plan !== "free") {
             setCta("Upgrade now");
         }
-        posthog_js__WEBPACK_IMPORTED_MODULE_5___default().onFeatureFlags(()=>{
-            if (posthog_js__WEBPACK_IMPORTED_MODULE_5___default().getFeatureFlag("checkout-method") === "getimg") {
-                setCheckoutMethod("getimg");
-            } else {
-                setCheckoutMethod("stripe");
-            }
-        });
     }, [
         user
     ]);
-    function href(plan) {
-        if (checkoutMethod === "getimg") {
-            return user.plan === "free" || !user.plan || user.plan.includes("appsumo-") ? `/billing/checkout?plan=${plan}${referral ? `&referral=${referral}` : ""}` : "/api/billing/portal";
-        } else {
-            return user.plan === "free" || !user.plan || user.plan.includes("appsumo-") ? `/api/billing/checkout?plan=${plan}${referral ? `&referral=${referral}` : ""}` : "/api/billing/portal";
-        }
-    }
-    function handleClick(e, plan) {
+    async function handleClick(e, plan) {
         if (!user.id) {
             e.preventDefault();
             dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .updateAuthState */ .FA)("login"));
             return;
         }
-        (posthog_js__WEBPACK_IMPORTED_MODULE_5___default()) && posthog_js__WEBPACK_IMPORTED_MODULE_5___default().capture("Checkout", {
-            plan: plan
-        });
     }
+    const { 0: href500 , 1: setHref500  } = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)("");
+    const { 0: href1050 , 1: setHref1050  } = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)("");
+    (0,react__WEBPACK_IMPORTED_MODULE_5__.useEffect)(()=>{
+        href("500Credits").then(setHref500);
+        href("1050Credits").then(setHref1050);
+    }, []);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
             className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default())[type],
@@ -179,28 +174,30 @@ function Plans({ type ="pricing"  }) {
                                     children: "$0/mo"
                                 })
                             }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
                                 disabled: user.plan === "basic",
                                 size: "md",
                                 type: "default",
-                                href: href("basic"),
                                 fullWidth: true,
                                 children: user.credits != 0 ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
                                     children: [
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_7__/* .CheckGoodYes */ .y$4, {
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_6__/* .CheckGoodYes */ .y$4, {
                                             size: 14
                                         }),
                                         "Received!"
                                     ]
                                 }) : "Signup now"
                             }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_divider_divider__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {}),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_divider_divider__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {}),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                 className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().features),
                                 children: [
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().credits),
-                                        children: "50 credits new user"
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
+                                            " 50 credits new user"
+                                        ]
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
@@ -227,7 +224,7 @@ function Plans({ type ="pricing"  }) {
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                 className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().name),
-                                children: "Starter"
+                                children: "500 Credits"
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                 className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().price),
@@ -236,23 +233,23 @@ function Plans({ type ="pricing"  }) {
                                     children: "$4.9/500 Credits"
                                 })
                             }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
                                 disabled: user.plan === "starter",
                                 size: "md",
                                 type: "default",
-                                href: href("starter"),
-                                onClick: (e)=>handleClick(e, "starter"),
+                                href: href500,
+                                onClick: (e)=>handleClick(e, "500Credits"),
                                 fullWidth: true,
                                 children: user.plan === "starter" ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
                                     children: [
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_7__/* .CheckGoodYes */ .y$4, {
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_6__/* .CheckGoodYes */ .y$4, {
                                             size: 14
                                         }),
                                         " Active"
                                     ]
                                 }) : cta
                             }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_divider_divider__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {}),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_divider_divider__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {}),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                 className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().features),
                                 children: [
@@ -261,10 +258,10 @@ function Plans({ type ="pricing"  }) {
                                         children: "<$0.01 per image"
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
+                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().credits),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 20 credits Inviting a user"
+                                            " 50 credits new user"
                                         ]
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -278,28 +275,7 @@ function Plans({ type ="pricing"  }) {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " Text To Image"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 20+ AI models"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 4x Upscaling"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " Premium GPUs"
+                                            " Use images commercially"
                                         ]
                                     })
                                 ]
@@ -314,7 +290,7 @@ function Plans({ type ="pricing"  }) {
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                 className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().name),
-                                children: "Hobby"
+                                children: "1050 Credits"
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                 className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().price),
@@ -323,23 +299,23 @@ function Plans({ type ="pricing"  }) {
                                     children: "$9.9/1050 Credits"
                                 })
                             }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
                                 type: user.plan === "hobby" ? "default" : "primary",
                                 disabled: user.plan === "hobby",
                                 size: "md",
-                                href: href("hobby"),
-                                onClick: (e)=>handleClick(e, "hobby"),
+                                href: href1050,
+                                onClick: (e)=>handleClick(e, "1050Credits"),
                                 fullWidth: true,
                                 children: user.plan === "hobby" ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
                                     children: [
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_7__/* .CheckGoodYes */ .y$4, {
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_6__/* .CheckGoodYes */ .y$4, {
                                             size: 14
                                         }),
                                         " Active"
                                     ]
                                 }) : cta
                             }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_divider_divider__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {}),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_divider_divider__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {}),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                 className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().features),
                                 children: [
@@ -348,90 +324,11 @@ function Plans({ type ="pricing"  }) {
                                         children: "<$0.01 per image"
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 20 credits Inviting a user"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " Use images commercially"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " Text To Image"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 20+ AI models"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 4x Upscaling"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " Premium GPUs"
-                                        ]
-                                    })
-                                ]
-                            })
-                        ]
-                    }),
-                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: [
-                            (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().plan)
-                        ].join(" "),
-                        children: [
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().name),
-                                children: "Basic"
-                            }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().price),
-                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                                    className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().value),
-                                    children: "$19.9/mo"
-                                })
-                            }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
-                                disabled: user.plan === "basic",
-                                size: "md",
-                                href: href("basic"),
-                                onClick: (e)=>handleClick(e, "basic"),
-                                type: "default",
-                                fullWidth: true,
-                                children: user.plan === "basic" ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-                                    children: [
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_7__/* .CheckGoodYes */ .y$4, {
-                                            size: 14
-                                        }),
-                                        " Active"
-                                    ]
-                                }) : cta
-                            }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_divider_divider__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {}),
-                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().features),
-                                children: [
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().credits),
-                                        children: "4000 Credits per month"
+                                        children: [
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
+                                            " 50 credits new user"
+                                        ]
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
@@ -445,120 +342,6 @@ function Plans({ type ="pricing"  }) {
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
                                             " Use images commercially"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " Text To Image"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 20+ AI models"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 4x Upscaling"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " Premium GPUs"
-                                        ]
-                                    })
-                                ]
-                            })
-                        ]
-                    }),
-                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: [
-                            (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().plan)
-                        ].join(" "),
-                        children: [
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().name),
-                                children: "Pro"
-                            }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().price),
-                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                                    className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().value),
-                                    children: "$29.9/mo"
-                                })
-                            }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
-                                disabled: user.plan === "pro",
-                                size: "md",
-                                href: href("pro"),
-                                onClick: (e)=>handleClick(e, "pro"),
-                                type: "default",
-                                fullWidth: true,
-                                children: user.plan === "pro" ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-                                    children: [
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_7__/* .CheckGoodYes */ .y$4, {
-                                            size: 14
-                                        }),
-                                        " Active"
-                                    ]
-                                }) : cta
-                            }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_divider_divider__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {}),
-                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().features),
-                                children: [
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().credits),
-                                        children: "6500 Credits per month"
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 20 credits Inviting a user"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " Use images commercially"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " Text To Image"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 20+ AI models"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 4x Upscaling"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " Premium GPUs"
                                         ]
                                     })
                                 ]
@@ -570,7 +353,7 @@ function Plans({ type ="pricing"  }) {
         })
     });
 };
-const Check = ()=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_7__/* .CheckGoodYes */ .y$4, {
+const Check = ()=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_6__/* .CheckGoodYes */ .y$4, {
         size: 16,
         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().check),
         strokeWidth: 2

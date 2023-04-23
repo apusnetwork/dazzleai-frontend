@@ -104,6 +104,9 @@ export default function ImageSharer({ id, url, imageSrc, imageWidth, imageHeight
                           <img src="/social/pinterest.png" loading="lazy" alt="" />
                         </a>
                       </div> */}
+                      <div>
+                        <p className={styles.china_attention}>Attention: Our service is not currently available for users in China due to technical limitations.</p>
+                      </div>
                       <InputRow>
                         <Input
                           id="link-copy"

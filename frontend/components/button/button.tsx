@@ -3,6 +3,7 @@ import { useAppSelector } from '@/frontend/redux/hooks';
 import { selectErrors } from '@/frontend/redux/info/slice';
 import Link from 'next/link';
 import styles from './button.module.scss';
+import { useEffect, useState } from 'react';
 
 
 interface ButtonProps {
@@ -10,7 +11,7 @@ interface ButtonProps {
   type?: "primary" | "default" | "danger" | "icon" | "accent" | "accent-border" | "google" | "link" | "icon-active" | "transparent";
   htmlType?: "button" | "submit" | "reset";
   size?: "xs" | "sm" | "md" | "lg" | "xl";
-  href?: string;
+  href?: string | Promise<string>;
   loading?: boolean;
   disabled?: boolean;
   fullWidth?: boolean;
@@ -24,6 +25,19 @@ interface ButtonProps {
 
 export default function Button({ openInNewTab = false, type = "primary", htmlType, size = "md", href, loading,
   disabled, fullWidth, children, onClick, errorFor = [], title, download }: ButtonProps): JSX.Element {
+  const [hrefStr, setHrefStr] = useState<string>("")
+
+  useEffect(() => {
+    if (href) {
+      if (typeof href === 'string') {
+        setHrefStr(href)
+      } else {
+        href.then(href => {
+          setHrefStr(href)
+        })
+      }
+    }
+  }, [href])
 
   const errors = useAppSelector(selectErrors)
   let hasError = false;
@@ -57,11 +71,11 @@ export default function Button({ openInNewTab = false, type = "primary", htmlTyp
     <div className={[styles._, fullWidth ? styles._full_width : ''].join(' ').trim()}>
       {
         openInNewTab ?
-          <a className={className} onClick={onClick} href={href} target={!download ? "_blank" : ''} rel="noopener noreferrer" title={title} download={download}>
+          <a className={className} onClick={onClick} href={hrefStr} target={!download ? "_blank" : ''} rel="noopener noreferrer" title={title} download={download}>
             {children}
           </a>
           : href ?
-            <Link href={href}>
+            <Link href={hrefStr}>
               <a className={className} onClick={onClick} title={title}>
                 {children}
               </a>

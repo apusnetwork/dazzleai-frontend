@@ -1,13 +1,12 @@
 import axios from "axios";
 import dayjs from "dayjs";
-import { Download, PhotoImagePicture } from '@/frontend/components/basic-icons';
+import { Download, PhotoImagePicture, QuestionCircle } from '@/frontend/components/basic-icons';
 import { useAppDispatch, useAppSelector } from "@/frontend/redux/hooks";
 import { updateAuthState } from "@/frontend/redux/info/slice";
 import { selectUser } from "@/frontend/redux/user/slice";
 import { Maximize, Repeat } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { schedulerNames } from "utils/schedulers";
 import Button from "../button/button";
 import styles from './image.module.scss';
 import ImageSharer from "./sharer";
@@ -137,6 +136,23 @@ export default function ImageView(props: ImageI) {
         <ImageSharer size='sm' id={id} type="primary" url={`${websiteHost}/img/${id}`} imageSrc={url} imageWidth={width} imageHeight={height} />
       </div>
 
+      {/* <div className={styles.content}>
+        <ul className={styles.params}>
+          <li className={styles.param}>
+            <b className={styles.label}>
+              Author By:
+            </b>
+            <p className={styles.value}>{props.user_id}</p>
+          </li>
+          <li className={styles.param}>
+            <b className={styles.label}>
+              Generated with nodes of the community
+            </b>
+            <p className={styles.value}><QuestionCircle /></p>
+          </li>
+        </ul>
+      </div> */}
+
       <div className={styles.content}>
         <p className={styles.prompt}>{prompt}</p>
 
@@ -205,14 +221,12 @@ export default function ImageView(props: ImageI) {
               <p className={styles.value}>{params.inpaint_prompt}</p>
             </li>
             : null}
-          {model.includes('stable-diffusion') || model.startsWith('model-') ?
-            <li className={styles.param}>
-              <b className={styles.label}>
-                Diffusion sampler:
-              </b>
-              <p className={styles.value}>{(schedulerNames as any)[params.scheduler || 'ddim']}</p>
-            </li>
-            : null}
+          <li className={styles.param}>
+            <b className={styles.label}>
+              Diffusion sampler:
+            </b>
+            <p className={styles.value}>{params.scheduler}</p>
+          </li>
           {params.upscale || params.enhance_face ?
             <li className={styles.param}>
               <b className={styles.label}>
