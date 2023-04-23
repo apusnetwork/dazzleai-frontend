@@ -29,11 +29,13 @@ export default function NodesSelect({ onChange, models, value, id }: ModelSelect
 
   const selected = allModels.find(m => m.id === value)
 
+  console.log(models, value)
+
   return (
     <div className={styles._model_select}>
       <div onClick={() => setOpen(true)}>
         <div className={[styles.selected_model].join(' ')}>
-          Node: {selected ? selected.name : "Undefined"}
+          Node: {selected ? selected.name : "All"}
           <div className={styles.arrow}>
             <ChevronDownArrow size={16} strokeWidth={3} />
           </div>

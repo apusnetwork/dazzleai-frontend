@@ -20,7 +20,7 @@ import { addErrors, clearErrors, message, updateAuthState } from '@/frontend/red
 import { selectUser, updateCredits } from '@/frontend/redux/user/slice';
 import cookies from 'js-cookie';
 import _ from 'lodash';
-import { Command, Edit3, Image, PlusCircle, Settings, Shuffle, SlidersHorizontal, Trash2, X } from 'lucide-react';
+import { Command, Edit3, Image, Newspaper, PlusCircle, Settings, Shuffle, SlidersHorizontal, Trash2, X } from 'lucide-react';
 import { useEffect, useState } from "react";
 import Dropzone from 'react-dropzone';
 import InfiniteScroll from 'react-infinite-scroll-component';
@@ -30,8 +30,8 @@ import styles from './ai-generator.module.scss';
 import NodesSelect from '../../select/nodes';
 
 interface StateI {
-  model: string
-  node: string
+  model: string // when model type is lora, this is the model name, when model type is checkpoint, this is the model_file_name
+  node: string // the model should be run on this node
   prompt: string
   negativePrompt: string
   steps: number
@@ -49,7 +49,6 @@ interface StateI {
   images: MixingImageI[]
   controlnet: string
   skipControlnetProcessing: string
-  checkpoint: string
 }
 
 export default function AiGenerator(): JSX.Element {
@@ -67,7 +66,6 @@ export default function AiGenerator(): JSX.Element {
   const [nodes, setNodes] = useState<NodeI[]>([])
   const [state, setState] = useState<StateI>({
     model: '',
-    checkpoint: '',
     node: '',
     prompt: '',
     negativePrompt: 'Disfigured, cartoon, blurry',
@@ -102,11 +100,17 @@ export default function AiGenerator(): JSX.Element {
   async function getModels() {
     const res = await axios.get('/api/models?status=active&public=true');
     setModels([...res.data]);
+    if (res.data?.length && state.model === '') {
+      setState(s => ({ ...s, model: res.data[0].id }))
+    }
   }
 
   async function getNodes() {
     const res = await axios.get('/api/nodes?status=active');
     setNodes([...res.data]);
+    if (res.data?.length && state.node === "") {
+      setState(s => ({ ...s, node: res.data[0].id }))
+    }
   }
 
   async function getImages() {
@@ -246,6 +250,63 @@ export default function AiGenerator(): JSX.Element {
       ...state,
       prompt: res.data.prompt
     })
+  }
+
+  async function importCivitai() {
+    // read from clipboard
+    const text = await navigator.clipboard.readText();
+    /* map
+a cute kitten made out of metal, (cyborg:1.1), ([tail | detailed wire]:1.3), (intricate details), hdr, (intricate details, hyperdetailed:1.2), cinematic shot, vignette, centered
+Negative prompt: (deformed, distorted, disfigured:1.3), poorly drawn, bad anatomy, wrong anatomy, extra limb, missing limb, floating limbs, (mutated hands and fingers:1.4), disconnected limbs, mutation, mutated, ugly, disgusting, blurry, amputation, flowers, human, man, woman
+ENSD: 31337, Size: 768x1024, Seed: 1791574510, Model: Deliberate, Steps: 26, Sampler: Euler a, CFG scale: 6.5, Model hash: 9aba26abdf
+into state
+*/
+    try {
+
+      const lines = text.split('\n')
+      const prompt = lines[0].trim()
+      const negativePrompt = lines[1].replace('Negative prompt: ', '').trim()
+      const configLine = lines[lines.length - 1];
+      const keyValuePairs = configLine.split(', ');
+      setState(s => {
+        const newState: Partial<StateI> = {};
+        keyValuePairs.forEach((pair) => {
+          const [key, value] = pair.split(': ');
+
+          switch (key) {
+            // case "Model":
+            //   state.model = value;
+            //   break;
+            case "Seed":
+              newState.seed = value;
+              break;
+            case "Size":
+              const [width, height] = value.split('x');
+              newState.width = parseInt(width);
+              newState.height = parseInt(height);
+            case "Steps":
+              newState.steps = parseInt(value);
+              break;
+            case "CFG scale":
+              newState.guidanceScale = parseFloat(value);
+              break;
+            case "Sampler":
+              newState.scheduler = value;
+            // Add more cases for the other keys
+            default:
+              console.log(`Unknown key: ${key}`);
+          }
+        });
+        return {
+          ...s,
+          ...newState,
+          prompt,
+          negativePrompt,
+        }
+      })
+    } catch (e) {
+      dispatch(addErrors({ message: 'Invalid civitai config' }))
+    }
   }
 
   async function upscale(image: ImageI) {
@@ -739,6 +800,9 @@ export default function AiGenerator(): JSX.Element {
                       size='md'
                       noInfo
                     />
+                    <div className={styles.random}>
+                      <Button htmlType='button' size='xs' type='default' onClick={importCivitai}><Shuffle /> Import Civitai</Button>
+                    </div>
                     {/* {
                       mode === 'generate' ?
                         <div className={styles.random}>
@@ -758,96 +822,97 @@ export default function AiGenerator(): JSX.Element {
                   : null
               }
               {
-                mode === 'generate' || mode === 'edit' ?
-                  <Collapse icon={<Image />} title="Image" style='plain'>
-                    <div className={styles.upload} onDrop={e => handleDrop(e, 'image')} onDragOver={allowDrop}>
-                      <Dropzone
-                        accept={{ 'image/png': ['.png'], 'image/jpeg': ['.jpeg', '.jpg'] }}
-                        multiple={false}
-                        onDropAccepted={(f) => handleUpload('image', f)}
-                        disabled={state.image.loading}
-                      >
-                        {({ getRootProps, getInputProps }) => (
-                          <div {...getRootProps()} className={styles._dropzone}>
-                            <div className={styles.dropzone}>
-                              <input {...getInputProps()} />
-                              {
-                                state.image.url ?
-                                  <div className={styles.dropzone_image}>
-                                    <img src={state.image.url} alt="" />
-                                  </div>
-                                  :
-                                  <p>Drag an image here, or click to select one.</p>
-                              }
-                              {state.image.loading ? <div className={styles.image_loader}>
-                                <Loader text='' size={20} />
-                              </div> : null}
-                            </div>
-                          </div>
-                        )}
-                      </Dropzone>
-                      {state.image.url ?
-                        <div className={styles.upload_delete}>
-                          <Button
-                            onClick={() => setState(s => ({ ..._.set<StateI>(s, `image`, {}) }))}
-                            type='icon'
-                            size='xs'
-                          >
-                            <Trash2 />
-                          </Button>
-                        </div>
-                        : <div />}
-                    </div>
-                    <div style={{ height: 12 }} />
-                    {mode === 'edit' ?
-                      <>
-                        <Slider
-                          label={`Image guidance: ${state.imageGuidance}`}
-                          min={1}
-                          max={3}
-                          step={0.1}
-                          value={state.imageGuidance}
-                          onChange={n => setState({ ...state, imageGuidance: n as number })}
-                        />
-                        <Tip id='image-guidance' title="Image guidance">
-                          Image guidance decides how strongly does the original image should be preserved. Higher image guidance encourages to
-                          generate images that are closely linked to the source, usually at the expense of lower
-                          image quality.
-                        </Tip>
-                      </>
-                      :
-                      <>
-                        {/* {state.model !== 'stable-diffusion-v2.1' && (selectedModel && selectedModel.params.base_model && selectedModel.params.base_model.startsWith('stabilityai/stable-diffusion-2-1') ? false : true) ?
+                // mode === 'generate' || mode === 'edit' ?
+                // {<Collapse icon={<Image />} title="Image" style='plain'>
+                //   <div className={styles.upload} onDrop={e => handleDrop(e, 'image')} onDragOver={allowDrop}>
+                //     <Dropzone
+                //       accept={{ 'image/png': ['.png'], 'image/jpeg': ['.jpeg', '.jpg'] }}
+                //       multiple={false}
+                //       onDropAccepted={(f) => handleUpload('image', f)}
+                //       disabled={state.image.loading}
+                //     >
+                //       {({ getRootProps, getInputProps }) => (
+                //         <div {...getRootProps()} className={styles._dropzone}>
+                //           <div className={styles.dropzone}>
+                //             <input {...getInputProps()} />
+                //             {
+                //               state.image.url ?
+                //                 <div className={styles.dropzone_image}>
+                //                   <img src={state.image.url} alt="" />
+                //                 </div>
+                //                 :
+                //                 <p>Drag an image here, or click to select one.</p>
+                //             }
+                //             {state.image.loading ? <div className={styles.image_loader}>
+                //               <Loader text='' size={20} />
+                //             </div> : null}
+                //           </div>
+                //         </div>
+                //       )}
+                //     </Dropzone>
+                //     {state.image.url ?
+                //       <div className={styles.upload_delete}>
+                //         <Button
+                //           onClick={() => setState(s => ({ ..._.set<StateI>(s, `image`, {}) }))}
+                //           type='icon'
+                //           size='xs'
+                //         >
+                //           <Trash2 />
+                //         </Button>
+                //       </div>
+                //       : <div />}
+                //   </div>
+                //   <div style={{ height: 12 }} />
+                //   {mode === 'edit' ?
+                //     <>
+                //       <Slider
+                //         label={`Image guidance: ${state.imageGuidance}`}
+                //         min={1}
+                //         max={3}
+                //         step={0.1}
+                //         value={state.imageGuidance}
+                //         onChange={n => setState({ ...state, imageGuidance: n as number })}
+                //       />
+                //       <Tip id='image-guidance' title="Image guidance">
+                //         Image guidance decides how strongly does the original image should be preserved. Higher image guidance encourages to
+                //         generate images that are closely linked to the source, usually at the expense of lower
+                //         image quality.
+                //       </Tip>
+                //     </>
+                //     :
+                //     <>
+                //       {/* {state.model !== 'stable-diffusion-v2.1' && (selectedModel && selectedModel.params.base_model && selectedModel.params.base_model.startsWith('stabilityai/stable-diffusion-2-1') ? false : true) ?
 
-                          <ControlnetSelect
-                            id='controlnet'
-                            value={state.controlnet}
-                            onChange={handleChange}
-                          />
+                //         <ControlnetSelect
+                //           id='controlnet'
+                //           value={state.controlnet}
+                //           onChange={handleChange}
+                //         />
 
-                          : null} */}
-                        {/* {
-                          state.controlnet === 'none' || state.model === 'stable-diffusion-v2.1' || (selectedModel && selectedModel.params.base_model && selectedModel.params.base_model.startsWith('stabilityai/stable-diffusion-2-1'))
-                            ?
-                            <>
-                              <Slider
-                                label={`Strength: ${state.strength}`}
-                                min={state.steps * 0.01 < 1 ? Math.round(1 / state.steps * 100) / 100 : 0.01}
-                                max={1.0}
-                                step={0.01}
-                                value={state.strength}
-                                onChange={n => setState({ ...state, strength: n as number })}
-                              />
-                              <Tip id='strength' title="Strength">
-                                Strength represents the similarity between generated output and the init image. Setting low strength values will result in images similar to the input. High strength will produce more diverse outputs that closer resemble the prompt.
-                              </Tip>
-                            </>
-                            : <div />
-                        } */}
-                      </>
-                    }
-                  </Collapse>
-                  : null}
+                //         : null} */}
+                //       {/* {
+                //         state.controlnet === 'none' || state.model === 'stable-diffusion-v2.1' || (selectedModel && selectedModel.params.base_model && selectedModel.params.base_model.startsWith('stabilityai/stable-diffusion-2-1'))
+                //           ?
+                //           <>
+                //             <Slider
+                //               label={`Strength: ${state.strength}`}
+                //               min={state.steps * 0.01 < 1 ? Math.round(1 / state.steps * 100) / 100 : 0.01}
+                //               max={1.0}
+                //               step={0.01}
+                //               value={state.strength}
+                //               onChange={n => setState({ ...state, strength: n as number })}
+                //             />
+                //             <Tip id='strength' title="Strength">
+                //               Strength represents the similarity between generated output and the init image. Setting low strength values will result in images similar to the input. High strength will produce more diverse outputs that closer resemble the prompt.
+                //             </Tip>
+                //           </>
+                //           : <div />
+                //       } */}
+                //     </>
+                //   }
+                // </Collapse>}
+                // : null
+              }
 
 
               {/* {

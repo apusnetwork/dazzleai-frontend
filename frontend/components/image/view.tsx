@@ -91,10 +91,10 @@ export default function ImageView(props: ImageI) {
             <Repeat strokeWidth={1.5} />
             Reuse parameters
           </Button> : null}
-          <Button type="default" title="Generate similar" href={`/?init-img=${id}${shareParam}`} openInNewTab={true}>
+          {/* <Button type="default" title="Generate similar" href={`/?init-img=${id}${shareParam}`} openInNewTab={true}>
             <PhotoImagePicture strokeWidth={1.5} />
             Reuse image
-          </Button>
+          </Button> */}
           {/* <Button type="default" title="Open in AI Editor" href={`/editor/new?img=${id}`} onClick={handleEditorOpen}>
             <Maximize strokeWidth={1.5} />
             Open in AI Editor
@@ -125,10 +125,10 @@ export default function ImageView(props: ImageI) {
           <Repeat strokeWidth={1.5} />
           Reuse parameters
         </Button> : null}
-        <Button size="sm" type="default" title="Generate similar" href={`/?init-img=${id}${shareParam}`} openInNewTab={true}>
+        {/* <Button size="sm" type="default" title="Generate similar" href={`/?init-img=${id}${shareParam}`} openInNewTab={true}>
           <PhotoImagePicture strokeWidth={1.5} />
           Reuse image
-        </Button>
+        </Button> */}
         {/* <Button size="sm" type="default" title="Open in AI Editor" href={`/editor/new?img=${id}`} onClick={handleEditorOpen}>
           <Maximize strokeWidth={1.5} />
           Open in AI Editor
@@ -197,7 +197,7 @@ export default function ImageView(props: ImageI) {
             </li>
             : null}
           {/* {params.seed && (model.includes('stable-diffusion') || model === 'image-mixer' || model.startsWith('model-')) ? */}
-          {params.seed ?
+          {params.seed > 0 ?
             <li className={styles.param}>
               <b className={styles.label}>
                 Seed:

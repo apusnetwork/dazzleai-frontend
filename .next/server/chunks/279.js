@@ -365,18 +365,6 @@ function ImageView(props) {
                                     "Reuse parameters"
                                 ]
                             }) : null,
-                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_button_button__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
-                                type: "default",
-                                title: "Generate similar",
-                                href: `/?init-img=${id}${shareParam}`,
-                                openInNewTab: true,
-                                children: [
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_basic_icons__WEBPACK_IMPORTED_MODULE_2__/* .PhotoImagePicture */ .UO2, {
-                                        strokeWidth: 1.5
-                                    }),
-                                    "Reuse image"
-                                ]
-                            }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_sharer__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {
                                 id: id,
                                 url: `${websiteHost}/img/${id}`,
@@ -435,19 +423,6 @@ function ImageView(props) {
                             "Reuse parameters"
                         ]
                     }) : null,
-                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_button_button__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
-                        size: "sm",
-                        type: "default",
-                        title: "Generate similar",
-                        href: `/?init-img=${id}${shareParam}`,
-                        openInNewTab: true,
-                        children: [
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_basic_icons__WEBPACK_IMPORTED_MODULE_2__/* .PhotoImagePicture */ .UO2, {
-                                strokeWidth: 1.5
-                            }),
-                            "Reuse image"
-                        ]
-                    }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_sharer__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {
                         size: "sm",
                         id: id,
@@ -538,7 +513,7 @@ function ImageView(props) {
                                     })
                                 ]
                             }) : null,
-                            params.seed ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+                            params.seed > 0 ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
                                 className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_12___default().param),
                                 children: [
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("b", {
