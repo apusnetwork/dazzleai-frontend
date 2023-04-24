@@ -21,6 +21,7 @@ interface ImageGenerationRequest {
 }
 
 interface GeneratorParams {
+  node: string;
   tool: string;
   num_inference_steps: number;
   guidance_scale: number;
@@ -38,7 +39,7 @@ interface GeneratorParams {
   checkpoint: string;
 }
 
-function mapParamsToRequest(params: GeneratorParams, model: string, node: string): ImageGenerationRequest {
+function mapParamsToRequest(params: GeneratorParams, model: string): ImageGenerationRequest {
   return {
     batch_count: params.num_images,
     cfg_scale: params.guidance_scale,
@@ -48,7 +49,7 @@ function mapParamsToRequest(params: GeneratorParams, model: string, node: string
     model,
     checkpoint: model, // TODO: pass checkpoint or lora by model type in params 
     negative_prompt: params.negative_prompt,
-    node,
+    node: params.node,
     prompt: params.prompt,
     sampler: params.scheduler,
     seed: Number.isNaN(params.seed) ? 0 : Number(params.seed),
@@ -62,12 +63,7 @@ function mapParamsToRequest(params: GeneratorParams, model: string, node: string
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const token = getCookie(req, AuthHeaderKey)
-    const nodeRes = await axiosInstance.get('/api/nodes', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
-    const createRes = await axiosInstance.post<RemoteTask>('/api/tasks/create', mapParamsToRequest(req.body as GeneratorParams, req.query.id as string, nodeRes.data[0].domain), {
+    const createRes = await axiosInstance.post<RemoteTask>('/api/tasks/create', mapParamsToRequest(req.body as GeneratorParams, req.query.id as string), {
       headers: {
         Authorization: `Bearer ${token}`,
       }

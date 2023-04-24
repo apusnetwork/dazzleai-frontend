@@ -35,7 +35,7 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_fro
 
 
 
-function mapParamsToRequest(params, model, node) {
+function mapParamsToRequest(params, model) {
     return {
         batch_count: params.num_images,
         cfg_scale: params.guidance_scale,
@@ -45,7 +45,7 @@ function mapParamsToRequest(params, model, node) {
         model,
         checkpoint: model,
         negative_prompt: params.negative_prompt,
-        node,
+        node: params.node,
         prompt: params.prompt,
         sampler: params.scheduler,
         seed: Number.isNaN(params.seed) ? 0 : Number(params.seed),
@@ -57,12 +57,7 @@ function mapParamsToRequest(params, model, node) {
 async function handler(req, res) {
     try {
         const token = (0,_frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .getCookie */ .ej)(req, _frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .AuthHeaderKey */ .qf);
-        const nodeRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .Z.get("/api/nodes", {
-            headers: {
-                Authorization: `Bearer ${token}`
-            }
-        });
-        const createRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .Z.post("/api/tasks/create", mapParamsToRequest(req.body, req.query.id, nodeRes.data[0].domain), {
+        const createRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .Z.post("/api/tasks/create", mapParamsToRequest(req.body, req.query.id), {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -90,7 +85,7 @@ __webpack_async_result__();
 var __webpack_require__ = require("../../../webpack-api-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [378,145], () => (__webpack_exec__(9497)));
+var __webpack_exports__ = __webpack_require__.X(0, [725,145], () => (__webpack_exec__(9497)));
 module.exports = __webpack_exports__;
 
 })();

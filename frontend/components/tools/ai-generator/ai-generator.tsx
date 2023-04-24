@@ -108,9 +108,9 @@ export default function AiGenerator(): JSX.Element {
   async function getNodes() {
     const res = await axios.get('/api/nodes?status=active');
     setNodes([...res.data]);
-    if (res.data?.length && state.node === "") {
-      setState(s => ({ ...s, node: res.data[0].id }))
-    }
+    // if (res.data?.length && state.node === "") {
+    //   setState(s => ({ ...s, node: res.data[0].id }))
+    // }
   }
 
   async function getImages() {
