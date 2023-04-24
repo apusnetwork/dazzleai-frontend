@@ -66,7 +66,7 @@ export default function AiGenerator(): JSX.Element {
   const [nodes, setNodes] = useState<NodeI[]>([])
   const [state, setState] = useState<StateI>({
     model: '',
-    node: '',
+    node: 'all',
     prompt: '',
     negativePrompt: 'Disfigured, cartoon, blurry',
     steps: 25,
@@ -107,7 +107,7 @@ export default function AiGenerator(): JSX.Element {
 
   async function getNodes() {
     const res = await axios.get('/api/nodes?status=active');
-    setNodes([...res.data]);
+    setNodes([{ id: "all", name: "All", domain: "" }, ...res.data]);
     // if (res.data?.length && state.node === "") {
     //   setState(s => ({ ...s, node: res.data[0].id }))
     // }
@@ -284,6 +284,7 @@ into state
               const [width, height] = value.split('x');
               newState.width = parseInt(width);
               newState.height = parseInt(height);
+              break;
             case "Steps":
               newState.steps = parseInt(value);
               break;
@@ -536,6 +537,7 @@ into state
 
       window.scrollTo({ top: window.innerWidth < 700 ? window.innerHeight : 0, behavior: 'smooth' });
 
+      body.node = nodes.find(v => v.id === state.node)?.domain || state.node;
 
       const pendingTasks = await axios.post('/api/models/' + model, body);
 

@@ -29,8 +29,6 @@ export default function NodesSelect({ onChange, models, value, id }: ModelSelect
 
   const selected = allModels.find(m => m.id === value)
 
-  console.log(models, value)
-
   return (
     <div className={styles._model_select}>
       <div onClick={() => setOpen(true)}>

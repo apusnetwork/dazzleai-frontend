@@ -63,6 +63,9 @@ function mapParamsToRequest(params: GeneratorParams, model: string): ImageGenera
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const token = getCookie(req, AuthHeaderKey)
+    if (req.body.node === 'all') {
+      req.body.node = ""
+    }
     const createRes = await axiosInstance.post<RemoteTask>('/api/tasks/create', mapParamsToRequest(req.body as GeneratorParams, req.query.id as string), {
       headers: {
         Authorization: `Bearer ${token}`,

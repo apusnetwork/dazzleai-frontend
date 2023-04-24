@@ -57,6 +57,9 @@ function mapParamsToRequest(params, model) {
 async function handler(req, res) {
     try {
         const token = (0,_frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .getCookie */ .ej)(req, _frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .AuthHeaderKey */ .qf);
+        if (req.body.node === "all") {
+            req.body.node = "";
+        }
         const createRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .Z.post("/api/tasks/create", mapParamsToRequest(req.body, req.query.id), {
             headers: {
                 Authorization: `Bearer ${token}`
