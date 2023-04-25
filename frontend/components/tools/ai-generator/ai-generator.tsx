@@ -283,7 +283,13 @@ into state
             case "Size":
               const [width, height] = value.split('x');
               newState.width = parseInt(width);
+              if (newState.width > 1024) {
+                newState.width = 1024
+              }
               newState.height = parseInt(height);
+              if (newState.height > 1024) {
+                newState.height = 1024
+              }
               break;
             case "Steps":
               newState.steps = parseInt(value);
@@ -350,7 +356,7 @@ into state
         setMode('generate')
       }
       if (params.prompt) newState.prompt = params.prompt;
-      if (_model && !_model.id.includes('/')) newState.prompt = newState.prompt.replace(_model.params.instance_prompt + ', ', '')
+      // if (_model && !_model.id.includes('/')) newState.prompt = newState.prompt.replace(_model.params.instance_prompt + ', ', '')
       if (params.guidance_scale) newState.guidanceScale = params.guidance_scale;
       if (params.image_guidance_scale) newState.imageGuidance = params.image_guidance_scale;
       if (params.width) newState.width = params.width;
@@ -1174,6 +1180,12 @@ into state
               loading={loader}
               size='lg'
               errorFor={['prompt']}
+              onClick={e => {
+                window && (window as any)?.gtag('event', 'generate', {
+                  'event_category': 'consume',
+                  'event_label': ''
+                });;
+              }}
             >
               {/* {
                 user.id ?

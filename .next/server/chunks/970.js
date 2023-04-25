@@ -140,6 +140,10 @@ function Plans({ type ="pricing"  }) {
         user
     ]);
     async function handleClick(e, plan) {
+        window && window?.gtag("event", "begin_checkout", {
+            "event_category": "ecommerce",
+            "event_label": plan
+        });
         if (!user.id) {
             e.preventDefault();
             dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .updateAuthState */ .FA)("login"));
@@ -196,14 +200,7 @@ function Plans({ type ="pricing"  }) {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().credits),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 50 credits new user"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 20 credits Inviting a user"
+                                            " 25 credits new user"
                                         ]
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -261,14 +258,7 @@ function Plans({ type ="pricing"  }) {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().credits),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 50 credits new user"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 20 credits Inviting a user"
+                                            " 25 credits new user"
                                         ]
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -327,14 +317,7 @@ function Plans({ type ="pricing"  }) {
                                         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().credits),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 50 credits new user"
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
-                                            " 20 credits Inviting a user"
+                                            " 25 credits new user"
                                         ]
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {

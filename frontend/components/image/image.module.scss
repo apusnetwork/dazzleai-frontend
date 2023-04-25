@@ -361,6 +361,16 @@
   }
 }
 
+.content {
+  max-width: 1200px;
+  padding: 24px;
+  margin: 0 auto;
+  text-align: right;
+
+  @include mobile {
+    padding: 12px;
+  }
+}
 
 .prompt {
   font-size: 20px;

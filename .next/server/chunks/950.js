@@ -471,7 +471,22 @@ function WebsiteLayout({ children , title , description , robots , canonical =""
                     robots ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
                         name: "robots",
                         content: robots
-                    }) : null
+                    }) : null,
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
+                        async: true,
+                        src: "https://www.googletagmanager.com/gtag/js?id=G-EEYE7M0G1Y"
+                    }),
+                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
+                        dangerouslySetInnerHTML: {
+                            __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-EEYE7M0G1Y');
+          `
+                        }
+                    })
                 ]
             }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_header__WEBPACK_IMPORTED_MODULE_9__/* .WebsiteHeader */ .x, {

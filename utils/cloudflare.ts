@@ -6,5 +6,5 @@ export const cloudflareLoader = ({ src, width, quality }: ImageLoaderProps): str
     params.push(`quality=${quality}`);
   }
   const paramsString = params.join(",");
-  return `https://getimg.ai/cdn-cgi/image/${paramsString}/${src}`;
+  return src;
 };

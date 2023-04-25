@@ -30,6 +30,10 @@ export default function ImageSharer({ id, url, imageSrc, imageWidth, imageHeight
   const [modal, setModal] = useState(false);
 
   function handleCopy() {
+    window && (window as any)?.gtag('event', 'copy', {
+      'event_category': 'spread',
+      'event_label': ''
+    });
     if (!navigator.clipboard) {
       const textArea = document.getElementById("link-copy");
       if (!textArea) return
@@ -58,6 +62,10 @@ export default function ImageSharer({ id, url, imageSrc, imageWidth, imageHeight
     <>
       <Button size={size} type={type} onClick={() => {
         setModal(true)
+        window && (window as any)?.gtag('event', 'share', {
+          'event_category': 'spread',
+          'event_label': ''
+        });
         axios.put(`/api/images/${id}`, {
           is_shared: true,
         })

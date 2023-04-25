@@ -136,22 +136,27 @@ export default function ImageView(props: ImageI) {
         <ImageSharer size='sm' id={id} type="primary" url={`${websiteHost}/img/${id}`} imageSrc={url} imageWidth={width} imageHeight={height} />
       </div>
 
-      {/* <div className={styles.content}>
+      <div className={styles.content}>
         <ul className={styles.params}>
-          <li className={styles.param}>
+          {/* <li className={styles.param}>
             <b className={styles.label}>
               Author By:
             </b>
             <p className={styles.value}>{props.user_id}</p>
-          </li>
-          <li className={styles.param}>
+          </li> */}
+          <li className={styles.param} style={{
+            justifyContent: 'flex-end'
+          }}>
             <b className={styles.label}>
               Generated with nodes of the community
             </b>
-            <p className={styles.value}><QuestionCircle /></p>
+            <p className={styles.value}><QuestionCircle style={{
+              width: 16,
+              height: 16,
+            }} color="#999999" fill="#999999" /></p>
           </li>
         </ul>
-      </div> */}
+      </div>
 
       <div className={styles.content}>
         <p className={styles.prompt}>{prompt}</p>

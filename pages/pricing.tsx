@@ -32,7 +32,7 @@ export default function Pricing(): JSX.Element {
       <div className={styles.hero}>
         <h1 className='h2'>Pricing</h1>
         <p className='p'>
-          Use dazzle.ai for free with 50 credits Start.<br />
+          Use dazzle.ai for free with 25 credits Start.<br />
           Create more. Pay less.<br />
         </p>
       </div>

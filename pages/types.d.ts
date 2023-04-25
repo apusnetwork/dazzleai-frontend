@@ -11,5 +11,6 @@ declare global {
     google: any
     rewardful: any
     Rewardful: any
+    ga: any
   }
 }

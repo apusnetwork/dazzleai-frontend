@@ -99,6 +99,10 @@ function ImageSharer({ id , url , imageSrc , imageWidth , imageHeight , type ="i
     const dispatch = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useAppDispatch */ .T)();
     const { 0: modal , 1: setModal  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
     function handleCopy() {
+        window && window?.gtag("event", "copy", {
+            "event_category": "spread",
+            "event_label": ""
+        });
         if (!navigator.clipboard) {
             const textArea = document.getElementById("link-copy");
             if (!textArea) return;
@@ -136,6 +140,10 @@ function ImageSharer({ id , url , imageSrc , imageWidth , imageHeight , type ="i
                 type: type,
                 onClick: ()=>{
                     setModal(true);
+                    window && window?.gtag("event", "share", {
+                        "event_category": "spread",
+                        "event_label": ""
+                    });
                     axios__WEBPACK_IMPORTED_MODULE_10__["default"].put(`/api/images/${id}`, {
                         is_shared: true
                     });
@@ -434,6 +442,35 @@ function ImageView(props) {
                     })
                 ]
             }),
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_12___default().content),
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("ul", {
+                    className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_12___default().params),
+                    children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
+                        className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_12___default().param),
+                        style: {
+                            justifyContent: "flex-end"
+                        },
+                        children: [
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("b", {
+                                className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_12___default().label),
+                                children: "Generated with nodes of the community"
+                            }),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
+                                className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_12___default().value),
+                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_basic_icons__WEBPACK_IMPORTED_MODULE_2__/* .QuestionCircle */ .I1x, {
+                                    style: {
+                                        width: 16,
+                                        height: 16
+                                    },
+                                    color: "#999999",
+                                    fill: "#999999"
+                                })
+                            })
+                        ]
+                    })
+                })
+            }),
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                 className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_12___default().content),
                 children: [
@@ -622,7 +659,7 @@ const cloudflareLoader = ({ src , width , quality  })=>{
         params.push(`quality=${quality}`);
     }
     const paramsString = params.join(",");
-    return `https://getimg.ai/cdn-cgi/image/${paramsString}/${src}`;
+    return src;
 };
 
 

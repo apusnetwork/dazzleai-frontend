@@ -168,13 +168,6 @@ module.exports = require("dayjs");
 
 /***/ }),
 
-/***/ 2423:
-/***/ ((module) => {
-
-module.exports = require("lucide-react");
-
-/***/ }),
-
 /***/ 3280:
 /***/ ((module) => {
 

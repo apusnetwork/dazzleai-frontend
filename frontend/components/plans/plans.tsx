@@ -45,6 +45,10 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
   }, [user])
 
   async function handleClick(e: React.MouseEvent, plan: string) {
+    window && (window as any)?.gtag('event', 'begin_checkout', {
+      'event_category': 'ecommerce',
+      'event_label': plan
+    });
     if (!user.id) {
       e.preventDefault()
       dispatch(updateAuthState('login'))
@@ -81,11 +85,11 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
 
             <div className={styles.features}>
               <div className={styles.credits}>
-                <Check /> 50 credits new user
+                <Check /> 25 credits new user
               </div>
-              <div className={styles.feature}>
+              {/* <div className={styles.feature}>
                 <Check /> 20 credits Inviting a user
-              </div>
+              </div> */}
               <div className={styles.feature}>
                 <Check /> Use images commercially
               </div>
@@ -108,11 +112,11 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
                 &lt;$0.01 per image
               </div>
               <div className={styles.credits}>
-                <Check /> 50 credits new user
+                <Check /> 25 credits new user
               </div>
-              <div className={styles.feature}>
+              {/* <div className={styles.feature}>
                 <Check /> 20 credits Inviting a user
-              </div>
+              </div> */}
               <div className={styles.feature}>
                 <Check /> Use images commercially
               </div>
@@ -134,11 +138,11 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
                 &lt;$0.01 per image
               </div>
               <div className={styles.credits}>
-                <Check /> 50 credits new user
+                <Check /> 25 credits new user
               </div>
-              <div className={styles.feature}>
+              {/* <div className={styles.feature}>
                 <Check /> 20 credits Inviting a user
-              </div>
+              </div> */}
               <div className={styles.feature}>
                 <Check /> Use images commercially
               </div>
