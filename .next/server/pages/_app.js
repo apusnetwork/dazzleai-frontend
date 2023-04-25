@@ -1,3 +1,4 @@
+"use strict";
 (() => {
 var exports = {};
 exports.id = 888;
@@ -7,7 +8,6 @@ exports.modules = {
 /***/ 8054:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -40,7 +40,6 @@ __webpack_async_result__();
 /***/ 5656:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -73,8 +72,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(lucide_react__WEBPACK_IMPORTED_MODULE_16__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(1664);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var _frontend_components_message_message__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(3919);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__, axios__WEBPACK_IMPORTED_MODULE_6__, _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_11__, _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_15__]);
 ([_frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__, axios__WEBPACK_IMPORTED_MODULE_6__, _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_11__, _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_15__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -199,6 +200,7 @@ function App({ children  }) {
     }, []);
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_message_message__WEBPACK_IMPORTED_MODULE_18__/* ["default"] */ .Z, {}),
             children,
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_modal_modal__WEBPACK_IMPORTED_MODULE_10__/* .AuthModal */ .Q, {
                 show: authState === "login",
@@ -395,18 +397,9 @@ __webpack_async_result__();
 
 /***/ }),
 
-/***/ 4298:
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = __webpack_require__(699)
-
-
-/***/ }),
-
 /***/ 5184:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("@reduxjs/toolkit");
 
 /***/ }),
@@ -414,7 +407,6 @@ module.exports = require("@reduxjs/toolkit");
 /***/ 1635:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("dayjs");
 
 /***/ }),
@@ -422,7 +414,6 @@ module.exports = require("dayjs");
 /***/ 4195:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("dayjs/plugin/relativeTime");
 
 /***/ }),
@@ -430,7 +421,6 @@ module.exports = require("dayjs/plugin/relativeTime");
 /***/ 2423:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("lucide-react");
 
 /***/ }),
@@ -438,7 +428,6 @@ module.exports = require("lucide-react");
 /***/ 3280:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/app-router-context.js");
 
 /***/ }),
@@ -446,7 +435,6 @@ module.exports = require("next/dist/shared/lib/app-router-context.js");
 /***/ 2796:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/head-manager-context.js");
 
 /***/ }),
@@ -454,7 +442,6 @@ module.exports = require("next/dist/shared/lib/head-manager-context.js");
 /***/ 4014:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/i18n/normalize-locale-path.js");
 
 /***/ }),
@@ -462,7 +449,6 @@ module.exports = require("next/dist/shared/lib/i18n/normalize-locale-path.js");
 /***/ 8524:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/is-plain-object.js");
 
 /***/ }),
@@ -470,7 +456,6 @@ module.exports = require("next/dist/shared/lib/is-plain-object.js");
 /***/ 8020:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/mitt.js");
 
 /***/ }),
@@ -478,7 +463,6 @@ module.exports = require("next/dist/shared/lib/mitt.js");
 /***/ 4406:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/page-path/denormalize-page-path.js");
 
 /***/ }),
@@ -486,7 +470,6 @@ module.exports = require("next/dist/shared/lib/page-path/denormalize-page-path.j
 /***/ 4964:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/router-context.js");
 
 /***/ }),
@@ -494,7 +477,6 @@ module.exports = require("next/dist/shared/lib/router-context.js");
 /***/ 1751:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix.js");
 
 /***/ }),
@@ -502,7 +484,6 @@ module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix.js")
 /***/ 299:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/format-next-pathname-info.js");
 
 /***/ }),
@@ -510,7 +491,6 @@ module.exports = require("next/dist/shared/lib/router/utils/format-next-pathname
 /***/ 3938:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/format-url.js");
 
 /***/ }),
@@ -518,7 +498,6 @@ module.exports = require("next/dist/shared/lib/router/utils/format-url.js");
 /***/ 9565:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/get-asset-path-from-route.js");
 
 /***/ }),
@@ -526,7 +505,6 @@ module.exports = require("next/dist/shared/lib/router/utils/get-asset-path-from-
 /***/ 5789:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/get-next-pathname-info.js");
 
 /***/ }),
@@ -534,7 +512,6 @@ module.exports = require("next/dist/shared/lib/router/utils/get-next-pathname-in
 /***/ 1428:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/is-dynamic.js");
 
 /***/ }),
@@ -542,7 +519,6 @@ module.exports = require("next/dist/shared/lib/router/utils/is-dynamic.js");
 /***/ 8854:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/parse-path.js");
 
 /***/ }),
@@ -550,7 +526,6 @@ module.exports = require("next/dist/shared/lib/router/utils/parse-path.js");
 /***/ 1292:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/parse-relative-url.js");
 
 /***/ }),
@@ -558,7 +533,6 @@ module.exports = require("next/dist/shared/lib/router/utils/parse-relative-url.j
 /***/ 4567:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/path-has-prefix.js");
 
 /***/ }),
@@ -566,7 +540,6 @@ module.exports = require("next/dist/shared/lib/router/utils/path-has-prefix.js")
 /***/ 979:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/querystring.js");
 
 /***/ }),
@@ -574,7 +547,6 @@ module.exports = require("next/dist/shared/lib/router/utils/querystring.js");
 /***/ 3297:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slash.js");
 
 /***/ }),
@@ -582,7 +554,6 @@ module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slas
 /***/ 6052:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/resolve-rewrites.js");
 
 /***/ }),
@@ -590,7 +561,6 @@ module.exports = require("next/dist/shared/lib/router/utils/resolve-rewrites.js"
 /***/ 4226:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/route-matcher.js");
 
 /***/ }),
@@ -598,7 +568,6 @@ module.exports = require("next/dist/shared/lib/router/utils/route-matcher.js");
 /***/ 5052:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/route-regex.js");
 
 /***/ }),
@@ -606,7 +575,6 @@ module.exports = require("next/dist/shared/lib/router/utils/route-regex.js");
 /***/ 9232:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/dist/shared/lib/utils.js");
 
 /***/ }),
@@ -614,7 +582,6 @@ module.exports = require("next/dist/shared/lib/utils.js");
 /***/ 1853:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("next/router");
 
 /***/ }),
@@ -622,7 +589,6 @@ module.exports = require("next/router");
 /***/ 6689:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("react");
 
 /***/ }),
@@ -630,7 +596,6 @@ module.exports = require("react");
 /***/ 6405:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("react-dom");
 
 /***/ }),
@@ -638,7 +603,6 @@ module.exports = require("react-dom");
 /***/ 2279:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("react-outside-click-handler");
 
 /***/ }),
@@ -646,7 +610,6 @@ module.exports = require("react-outside-click-handler");
 /***/ 6022:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("react-redux");
 
 /***/ }),
@@ -654,7 +617,6 @@ module.exports = require("react-redux");
 /***/ 997:
 /***/ ((module) => {
 
-"use strict";
 module.exports = require("react/jsx-runtime");
 
 /***/ }),
@@ -662,7 +624,6 @@ module.exports = require("react/jsx-runtime");
 /***/ 9648:
 /***/ ((module) => {
 
-"use strict";
 module.exports = import("axios");;
 
 /***/ })
@@ -674,7 +635,7 @@ module.exports = import("axios");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [952,664,578,907,970], () => (__webpack_exec__(5656)));
+var __webpack_exports__ = __webpack_require__.X(0, [952,664,578,907,970,533], () => (__webpack_exec__(5656)));
 module.exports = __webpack_exports__;
 
 })();

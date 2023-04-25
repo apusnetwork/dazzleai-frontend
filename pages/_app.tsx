@@ -30,6 +30,7 @@ import { selectUser, selectUserStatus } from '@/frontend/redux/user/slice';
 import { Coins, Gift } from 'lucide-react';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
+import Messages from '@/frontend/components/message/message';
 
 dayjs.extend(relativeTime)
 
@@ -135,6 +136,7 @@ function App({ children }: Props): JSX.Element {
 
   return (
     <>
+      <Messages />
       {children}
 
       <AuthModal

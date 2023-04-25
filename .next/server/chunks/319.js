@@ -42,7 +42,7 @@ const defaultParam = {
     steps: 0
 };
 function mapRemoteImageToGeneratedImage(image) {
-    const { task  } = image;
+    const { task , model_id , seed , image_id  } = image;
     const { param =defaultParam  } = task;
     // const { _model } = task.task_id;
     return {
@@ -62,7 +62,7 @@ function mapRemoteImageToGeneratedImage(image) {
             id: task.task_id,
             model: param.checkpoint || param.lora || param.model || "",
             params: {
-                seed: param.seed,
+                seed: seed,
                 tool: param.sampler,
                 width: param.width,
                 height: param.height,
@@ -77,7 +77,7 @@ function mapRemoteImageToGeneratedImage(image) {
             },
             _model: {
                 id: "",
-                name: task.param?.model ?? "",
+                name: (param.model ?? model_id) ?? "",
                 params: {
                     author: "",
                     images: [],

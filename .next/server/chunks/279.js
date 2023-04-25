@@ -590,7 +590,7 @@ function ImageView(props) {
                                     }),
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
                                         className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_12___default().value),
-                                        children: _model && _model.name || modelsMap[model]
+                                        children: _model && _model.name
                                     })
                                 ]
                             })

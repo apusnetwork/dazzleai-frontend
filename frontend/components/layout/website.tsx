@@ -78,7 +78,6 @@ export default function WebsiteLayout({ children, title, description, robots, ca
         <meta name="viewport" content="width=device-width, initial-scale=1.0,  maximum-scale=1.0" />
         {robots ? <meta name="robots" content={robots} /> : null}
       </Head>
-      <Messages />
       <WebsiteHeader fixed />
       {
         user.id && (user.status === 'verify' || user.status === 'created') ?

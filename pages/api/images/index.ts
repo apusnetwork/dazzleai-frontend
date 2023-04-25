@@ -78,6 +78,8 @@ export interface RemoteImage {
   image_id: string;
   image_url: string;
   is_shared: boolean;
+  seed: number;
+  model_id: string;
   task: {
     extra: {
       progress: number;
@@ -128,7 +130,7 @@ const defaultParam = {
 
 
 export function mapRemoteImageToGeneratedImage(image: RemoteImage): GeneratedImage {
-  const { task } = image;
+  const { task, model_id, seed, image_id } = image;
   const { param = defaultParam } = task;
   // const { _model } = task.task_id;
   return {
@@ -148,7 +150,7 @@ export function mapRemoteImageToGeneratedImage(image: RemoteImage): GeneratedIma
       id: task.task_id,
       model: param.checkpoint || param.lora || param.model || "",
       params: {
-        seed: param.seed,
+        seed: seed,
         tool: param.sampler,
         width: param.width,
         height: param.height,
@@ -163,7 +165,7 @@ export function mapRemoteImageToGeneratedImage(image: RemoteImage): GeneratedIma
       },
       _model: {
         id: '',
-        name: task.param?.model ?? '',
+        name: param.model ?? model_id ?? '',
         params: {
           author: '',
           images: [],

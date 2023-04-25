@@ -16,7 +16,7 @@ import Switch from '@/frontend/components/switch/switch';
 import { Tab, Tabs } from '@/frontend/components/tabs/tabs';
 import Textarea from '@/frontend/components/textarea/textarea';
 import { useAppDispatch, useAppSelector } from "@/frontend/redux/hooks";
-import { addErrors, clearErrors, message, updateAuthState } from '@/frontend/redux/info/slice';
+import { addErrors, addMessage, clearErrors, message, updateAuthState } from '@/frontend/redux/info/slice';
 import { selectUser, updateCredits } from '@/frontend/redux/user/slice';
 import cookies from 'js-cookie';
 import _ from 'lodash';
@@ -295,7 +295,7 @@ into state
               newState.scheduler = value;
             // Add more cases for the other keys
             default:
-              console.log(`Unknown key: ${key}`);
+              message(dispatch, { type: "info", text: `Unknown key: ${key}` })
           }
         });
         return {

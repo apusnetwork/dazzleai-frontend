@@ -12,6 +12,7 @@ import Avatar from '../avatar/avatar';
 import { LogoutExit, MenuHambuger, PaperFileText, SecurityShield, SettingsAccountMore, XCloseDelete } from '../basic-icons';
 import Button from '../button/button';
 import styles from './layout.module.scss';
+import Cookies from 'js-cookie';
 
 
 declare global {
@@ -153,7 +154,10 @@ function HeaderUser(): JSX.Element {
                   </Link>
                 </li>
                 <li>
-                  <a onClick={() => dispatch(logoutUser())}>
+                  <a onClick={() => {
+                    Cookies.remove('getimgauth')
+                    dispatch(logoutUser())
+                  }}>
                     <LogoutExit size={16} />
                     Log Out
                   </a>

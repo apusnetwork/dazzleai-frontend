@@ -329,14 +329,12 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6689);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var _button_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4820);
-/* harmony import */ var _message_message__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(3919);
-/* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(860);
-/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(4333);
-/* harmony import */ var _layout_module_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(2171);
-/* harmony import */ var _layout_module_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_layout_module_scss__WEBPACK_IMPORTED_MODULE_11__);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_3__, js_cookie__WEBPACK_IMPORTED_MODULE_4__, _header__WEBPACK_IMPORTED_MODULE_10__]);
-([_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_3__, js_cookie__WEBPACK_IMPORTED_MODULE_4__, _header__WEBPACK_IMPORTED_MODULE_10__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
-
+/* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(860);
+/* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(4333);
+/* harmony import */ var _layout_module_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(2171);
+/* harmony import */ var _layout_module_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_layout_module_scss__WEBPACK_IMPORTED_MODULE_10__);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_3__, js_cookie__WEBPACK_IMPORTED_MODULE_4__, _header__WEBPACK_IMPORTED_MODULE_9__]);
+([_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_3__, js_cookie__WEBPACK_IMPORTED_MODULE_4__, _header__WEBPACK_IMPORTED_MODULE_9__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -371,7 +369,7 @@ function WebsiteLayout({ children , title , description , robots , canonical =""
         imgURL = "" + imgURL;
     }
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_11___default().website_layout),
+        className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_10___default().website_layout),
         children: [
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_5___default()), {
                 children: [
@@ -476,30 +474,29 @@ function WebsiteLayout({ children , title , description , robots , canonical =""
                     }) : null
                 ]
             }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_message_message__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {}),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_header__WEBPACK_IMPORTED_MODULE_10__/* .WebsiteHeader */ .x, {
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_header__WEBPACK_IMPORTED_MODULE_9__/* .WebsiteHeader */ .x, {
                 fixed: true
             }),
             user.id && (user.status === "verify" || user.status === "created") ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_11___default().banner),
+                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_10___default().banner),
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                     children: "Please verify your account."
                 })
             }) : null,
             user.id && user.status === "ban" ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                 className: [
-                    (_layout_module_scss__WEBPACK_IMPORTED_MODULE_11___default().banner),
-                    (_layout_module_scss__WEBPACK_IMPORTED_MODULE_11___default().banner_danger)
+                    (_layout_module_scss__WEBPACK_IMPORTED_MODULE_10___default().banner),
+                    (_layout_module_scss__WEBPACK_IMPORTED_MODULE_10___default().banner_danger)
                 ].join(" "),
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                     children: "You have been banned."
                 })
             }) : null,
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("main", {
-                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_11___default().website),
+                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_10___default().website),
                 children: children
             }),
-            footer ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_footer__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {}) : null,
+            footer ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_footer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {}) : null,
             showCookieBar ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                 className: "cookies-notification",
                 children: [

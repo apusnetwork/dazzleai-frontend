@@ -244,7 +244,7 @@ export default function ImageView(props: ImageI) {
             <b className={styles.label}>
               Model:
             </b>
-            <p className={styles.value}>{(_model && _model.name) || modelsMap[model]}</p>
+            <p className={styles.value}>{_model && _model.name}</p>
           </li>
           {/* <li className={styles.param}>
             <b className={styles.label}>

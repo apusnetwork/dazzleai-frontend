@@ -1,5 +1,5 @@
-exports.id = 579;
-exports.ids = [579];
+exports.id = 333;
+exports.ids = [333];
 exports.modules = {
 
 /***/ 7428:
@@ -93,27 +93,6 @@ module.exports = {
 	"_user_menu": "layout__user_menu__Ae_Yz",
 	"user_menu": "layout_user_menu__5d86o",
 	"user_menu_name": "layout_user_menu_name__t5PDn"
-};
-
-
-/***/ }),
-
-/***/ 3746:
-/***/ ((module) => {
-
-// Exports
-module.exports = {
-	"_": "message____00fOW",
-	"right": "message_right__1WgXZ",
-	"message": "message_message__B0ov4",
-	"slide-in-right": "message_slide-in-right___LxHX",
-	"left": "message_left__1Oovl",
-	"slide-in-left": "message_slide-in-left__3rj2S",
-	"icon": "message_icon__YhFJy",
-	"info": "message_info__FVtXy",
-	"danger": "message_danger__CeYoS",
-	"success": "message_success__TSmML",
-	"text": "message_text__qCkh_"
 };
 
 
@@ -244,10 +223,12 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _avatar_avatar__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(3227);
 /* harmony import */ var _basic_icons__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(7337);
 /* harmony import */ var _button_button__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(4820);
-/* harmony import */ var _layout_module_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(2171);
-/* harmony import */ var _layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_layout_module_scss__WEBPACK_IMPORTED_MODULE_13__);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_3__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_4__]);
-([_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_3__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_4__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var _layout_module_scss__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(2171);
+/* harmony import */ var _layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_layout_module_scss__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(9915);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_3__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_4__, js_cookie__WEBPACK_IMPORTED_MODULE_13__]);
+([_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_3__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_4__, js_cookie__WEBPACK_IMPORTED_MODULE_13__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -268,19 +249,19 @@ function WebsiteHeader({ fixed =false  }) {
     const { 0: open , 1: setOpen  } = (0,react__WEBPACK_IMPORTED_MODULE_7__.useState)(false);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("header", {
         className: [
-            open ? (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().mobile_header) : ""
+            open ? (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().mobile_header) : ""
         ].join(" "),
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().website_header) + (fixed ? " " + (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().fixed) : ""),
+            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().website_header) + (fixed ? " " + (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().fixed) : ""),
             children: [
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h1", {
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
                         href: "/",
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
-                            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().website_logo),
+                            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().website_logo),
                             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                 src: "/logo-blue.png",
-                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().header_logo),
+                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().header_logo),
                                 alt: "",
                                 height: 20,
                                 width: 104
@@ -289,7 +270,7 @@ function WebsiteHeader({ fixed =false  }) {
                     })
                 }),
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().hamburger),
+                    className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().hamburger),
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_12__/* ["default"] */ .Z, {
                         type: "icon",
                         size: "lg",
@@ -299,13 +280,13 @@ function WebsiteHeader({ fixed =false  }) {
                 }),
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                     className: [
-                        (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().header_right),
-                        open ? (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().mobile_menu) : ""
+                        (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().header_right),
+                        open ? (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().mobile_menu) : ""
                     ].join(" "),
                     children: user.id ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().mobile_link_cta),
+                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().mobile_link_cta),
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_12__/* ["default"] */ .Z, {
                                     href: "/pricing",
                                     children: "Upgrade now"
@@ -316,21 +297,21 @@ function WebsiteHeader({ fixed =false  }) {
                     }) : /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_active_link_active_link__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
-                                activeClassName: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().active),
+                                activeClassName: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().active),
                                 href: "/pricing",
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
-                                    className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().header_link),
+                                    className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().header_link),
                                     children: "Pricing"
                                 })
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                 onClick: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .updateAuthState */ .FA)("login")),
                                 href: "#",
-                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().header_link),
+                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().header_link),
                                 children: "Log in"
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().mobile_link_cta),
+                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().mobile_link_cta),
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_12__/* ["default"] */ .Z, {
                                     onClick: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .updateAuthState */ .FA)("register")),
                                     children: "Create free account"
@@ -348,10 +329,10 @@ function HeaderUser() {
     const user = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useAppSelector */ .C)(_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_4__/* .selectUser */ .dy);
     const dispatch = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useAppDispatch */ .T)();
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("section", {
-        className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default()._header_user),
+        className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default()._header_user),
         children: [
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().header_user),
+                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().header_user),
                 onClick: (e)=>{
                     e.stopPropagation();
                     setOpen(!open);
@@ -360,11 +341,11 @@ function HeaderUser() {
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().name),
+                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().name),
                                 children: user.name
                             }),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().credits),
+                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().credits),
                                 children: [
                                     "Credits: ",
                                     user.credits
@@ -373,7 +354,7 @@ function HeaderUser() {
                         ]
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().header_avatar),
+                        className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().header_avatar),
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_avatar_avatar__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {
                             name: user.name,
                             size: 36
@@ -387,14 +368,14 @@ function HeaderUser() {
                     setOpen(false);
                 },
                 children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                    className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default()._user_menu),
+                    className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default()._user_menu),
                     children: [
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().user_menu_name),
+                            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().user_menu_name),
                             children: user.name
                         }),
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
-                            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().user_menu),
+                            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_14___default().user_menu),
                             children: [
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_6___default()), {
@@ -424,7 +405,10 @@ function HeaderUser() {
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
                                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
-                                        onClick: ()=>dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_3__/* .logoutUser */ .TX)()),
+                                        onClick: ()=>{
+                                            js_cookie__WEBPACK_IMPORTED_MODULE_13__["default"].remove("getimgauth");
+                                            dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_3__/* .logoutUser */ .TX)());
+                                        },
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_11__/* .LogoutExit */ .wEM, {
                                                 size: 16
@@ -461,78 +445,6 @@ function HeaderUser() {
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
-
-/***/ }),
-
-/***/ 3919:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (/* binding */ Messages)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3464);
-/* harmony import */ var _frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3137);
-/* harmony import */ var _basic_icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(7337);
-/* harmony import */ var _message_module_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(3746);
-/* harmony import */ var _message_module_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_message_module_scss__WEBPACK_IMPORTED_MODULE_4__);
-
-
-
-
-
-function Message({ type , text  }) {
-    let Icon = _basic_icons__WEBPACK_IMPORTED_MODULE_3__/* .Info */ .kIV;
-    if (type === "success") {
-        Icon = _basic_icons__WEBPACK_IMPORTED_MODULE_3__/* .CheckGoodYes */ .y$4;
-    } else if (type === "danger") {
-        Icon = _basic_icons__WEBPACK_IMPORTED_MODULE_3__/* .AlertError */ .neR;
-    }
-    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: [
-            (_message_module_scss__WEBPACK_IMPORTED_MODULE_4___default().message)
-        ].join(" ").trim(),
-        children: [
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                className: [
-                    (_message_module_scss__WEBPACK_IMPORTED_MODULE_4___default().accent),
-                    (_message_module_scss__WEBPACK_IMPORTED_MODULE_4___default())[type]
-                ].join(" ").trim()
-            }),
-            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                className: (_message_module_scss__WEBPACK_IMPORTED_MODULE_4___default().text),
-                children: [
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Icon, {
-                        size: 16,
-                        className: [
-                            (_message_module_scss__WEBPACK_IMPORTED_MODULE_4___default().icon),
-                            (_message_module_scss__WEBPACK_IMPORTED_MODULE_4___default())[type]
-                        ].join(" ").trim()
-                    }),
-                    text
-                ]
-            })
-        ]
-    });
-}
-function Messages({ type ="right"  }) {
-    const messages = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useAppSelector */ .C)(_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .selectMessages */ .AZ);
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-        className: [
-            (_message_module_scss__WEBPACK_IMPORTED_MODULE_4___default()._),
-            (_message_module_scss__WEBPACK_IMPORTED_MODULE_4___default())[type]
-        ].join(" "),
-        style: {
-            zIndex: 99999
-        },
-        children: messages.map((m, i)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Message, {
-                ...m
-            }, m.id || i))
-    });
-};
-
 
 /***/ })
 

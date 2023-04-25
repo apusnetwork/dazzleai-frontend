@@ -34,7 +34,7 @@ export default function Messages({ type = 'right' }): JSX.Element {
   const messages = useAppSelector(selectMessages)
 
   return (
-    <div className={[styles._, styles[type]].join(' ')} style={{ zIndex: 99999 }}>
+    <div className={[styles._, styles[type]].join(' ')} style={{ zIndex: 99999999 }}>
       {
         messages.map((m, i) => (
           <Message key={m.id || i} {...m} />
