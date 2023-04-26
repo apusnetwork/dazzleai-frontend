@@ -31,6 +31,7 @@ import { Coins, Gift } from 'lucide-react';
 import Link from 'next/link';
 import Cookies from 'js-cookie';
 import Messages from '@/frontend/components/message/message';
+import ReactDOM from 'react-dom';
 
 dayjs.extend(relativeTime)
 
@@ -57,10 +58,10 @@ function App({ children }: Props): JSX.Element {
       client_id: "1080163930978-2885m14p291dt08tej4p7f4bldtbpsj7.apps.googleusercontent.com",
       callback: googleLogin
     });
-    google.accounts.id.renderButton(
-      document.getElementById("google-login"),
-      { theme: "filled_blue", size: "large", text: 'continue_with', locale: 'en_US', width: 260 }
-    );
+    // google.accounts.id.renderButton(
+    //   document.getElementById("google-login"),
+    //   { theme: "filled_blue", size: "large", text: 'continue_with', locale: 'en_US', width: 260 }
+    // );
   }
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -103,12 +104,14 @@ function App({ children }: Props): JSX.Element {
 
   }, []);
 
+  const [google, setGoogle] = useState<any>(null)
 
   useEffect(() => {
     const script = document.createElement('script')
     script.src = 'https://accounts.google.com/gsi/client'
     script.onload = () => {
       const google = (window as any).google // Now you can access window.google
+      setGoogle(google)
       initGoogle() // Assuming this is defined somewhere else
     }
     document.body.appendChild(script)
@@ -153,7 +156,14 @@ function App({ children }: Props): JSX.Element {
             </a>
           </p>
           <br />
-          <div id='google-login' />
+          {/* <div id='google-login' /> */}
+          <div className="mobile_link_cta" style={{ marginTop: 14 }}>
+            <Button size="md" type="primary" fullWidth onClick={() => {
+              google.accounts.id.prompt();
+            }}>
+              Sign in with Google
+            </Button>
+          </div>
 
           <div className="mobile_link_cta" style={{ marginTop: 14 }}>
             <Button size="md" type="primary" fullWidth onClick={() => message(dispatch, { type: 'success', text: "Comming Soon!" })}>
@@ -207,7 +217,14 @@ function App({ children }: Props): JSX.Element {
         <div className='login'>
           <h2 className='login-h'>Create an account</h2>
           <p className='login-p'>Get 100 image credits every month for free!</p>
-          <div id='google-login' />
+          {/* <div id='google-login' /> */}
+          <div className="mobile_link_cta" style={{ marginTop: 14 }}>
+            <Button size="md" type="primary" fullWidth onClick={() => {
+              google.accounts.id.prompt();
+            }}>
+              Sign in with Google
+            </Button>
+          </div>
 
           <div className="mobile_link_cta" style={{ marginTop: 14 }}>
             <Button size="md" type="primary" fullWidth onClick={() => message(dispatch, { type: 'success', text: "Comming Soon!" })}>
