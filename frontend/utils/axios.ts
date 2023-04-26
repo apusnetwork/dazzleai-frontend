@@ -20,10 +20,10 @@ axiosInstance.interceptors.response.use(
     return response;
   },
   error => {
-    window && (window as any)?.gtag('event', 'apierror', {
-      'event_category': 'error',
-      'event_label': (error as AxiosError)?.config?.url,
-    });
+    // window && (window as any)?.gtag('event', 'apierror', {
+    //   'event_category': 'error',
+    //   'event_label': (error as AxiosError)?.config?.url,
+    // });
     console.error('Response error:', error.response.status, error.response.data);
     return Promise.reject(error);
   }
