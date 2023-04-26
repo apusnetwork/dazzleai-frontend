@@ -31,6 +31,7 @@ function LegalLayout({ children , title , description , canonical  }) {
         description: description,
         canonical: canonical,
         robots: "noindex",
+        footer: false,
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
             className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_3___default().legal),
             children: [

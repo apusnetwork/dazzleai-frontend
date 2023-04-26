@@ -15,7 +15,7 @@ type LegalLayoutProps = {
 // TODO: all seo tags
 export default function LegalLayout({ children, title, description, canonical }: LegalLayoutProps): JSX.Element {
   return (
-    <WebsiteLayout title={title} description={description} canonical={canonical} robots="noindex">
+    <WebsiteLayout title={title} description={description} canonical={canonical} robots="noindex" footer={false}>
       <div className={styles.legal}>
         <nav className={styles.legal_nav}>
           <ul className={styles.nav_links}>
