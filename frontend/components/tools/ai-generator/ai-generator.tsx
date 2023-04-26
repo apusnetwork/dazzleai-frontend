@@ -100,8 +100,13 @@ export default function AiGenerator(): JSX.Element {
   async function getModels() {
     const res = await axios.get('/api/models?status=active&public=true');
     setModels([...res.data]);
-    if (res.data?.length && state.model === '') {
-      setState(s => ({ ...s, model: res.data[0].id }))
+    if (res.data?.length) {
+      setState((s: any) => {
+        if (s.model === "") {
+          return { ...s, model: res.data[0].id }
+        }
+        return s
+      })
     }
   }
 
@@ -189,49 +194,6 @@ export default function AiGenerator(): JSX.Element {
       // set image
       setState(s => ({ ..._.set<StateI>(s, id, img) }))
 
-      if (id === 'image') {
-        // resize based on model
-
-        let baseSize = 512;
-        if (state.model.startsWith('model-')) {
-          const m = models.find(x => x.id === state.model);
-          if (m) {
-            baseSize = m.params.resolution || 512
-          }
-        } else if (state.model.endsWith('v2.1')) {
-          baseSize = 768
-
-        } else {
-          baseSize = 512
-        }
-
-        let width = img.width || 512;
-        let height = img.height || 512;
-        const ratio = width / height;
-        if (ratio > 1) {
-          // horizontal
-          width = baseSize;
-          height = Math.round(baseSize / ratio / 64) * 64;
-          if (height < baseSize) {
-            height = baseSize
-            width = Math.round(baseSize * ratio / 64) * 64;
-          }
-        } else {
-          // vertical
-          height = baseSize
-          width = Math.round(ratio * height / 64) * 64
-          if (width < baseSize) {
-            width = baseSize
-            height = Math.round(height / ratio / 64) * 64
-          }
-        }
-
-        setState(s => ({
-          ...s,
-          width: width,
-          height: height
-        }))
-      }
     } catch (e: any) {
       e && e.response && e.response.data && dispatch(addErrors(e.response.data))
       message(dispatch, { "type": "danger", text: "Please try uploading again!" })
@@ -377,6 +339,7 @@ into state
         newState.images = [...params.images]
       }
 
+      console.log('copy Params', dayjs().format('HH:mm:ss:SSS'))
       return newState
     });
     message(dispatch, { text: 'Copied parameters.', type: 'success' })
@@ -611,6 +574,7 @@ into state
       const json = JSON.parse(cookieState);
       if (json['image']) delete json['image']
       if (json['images']) delete json['images']
+      console.log('setting Cookies', dayjs().format('HH:mm:ss:SSS'))
       setState(s => ({ ...s, ...json }))
     }
 
@@ -657,57 +621,57 @@ into state
   }, [user.id])
 
 
-  useEffect(() => {
-    const s = { ...state };
+  // useEffect(() => {
+  //   const s = { ...state };
 
-    let baseSize = s.width;
-    const model = s.model;
-    if (!model) return
+  //   let baseSize = s.width;
+  //   const model = s.model;
+  //   if (!model) return
 
-    if (mode === 'edit') {
-      s.negativePrompt = !s.negativePrompt || s.negativePrompt === 'Disfigured, cartoon, blurry' ? '' : s.negativePrompt
-      baseSize = 512;
-    } else if (mode === 'mix') {
-      baseSize = 640
-    } else {
-      s.negativePrompt = s.negativePrompt || 'Disfigured, cartoon, blurry'
+  //   if (mode === 'edit') {
+  //     s.negativePrompt = !s.negativePrompt || s.negativePrompt === 'Disfigured, cartoon, blurry' ? '' : s.negativePrompt
+  //     baseSize = 512;
+  //   } else if (mode === 'mix') {
+  //     baseSize = 640
+  //   } else {
+  //     s.negativePrompt = s.negativePrompt || 'Disfigured, cartoon, blurry'
 
-      if (model.startsWith('model-')) {
-        const m = models.find(x => x.id === model);
-        if (m) {
-          baseSize = m.params.resolution || 512
-        }
-      } else if (model.endsWith('v2.1')) {
-        baseSize = 768
-      } else {
-        baseSize = 512
-      }
-    }
+  //     if (model.startsWith('model-')) {
+  //       const m = models.find(x => x.id === model);
+  //       if (m) {
+  //         baseSize = m.params.resolution || 512
+  //       }
+  //     } else if (model.endsWith('v2.1')) {
+  //       baseSize = 768
+  //     } else {
+  //       baseSize = 512
+  //     }
+  //   }
 
-    const ratio = s.width / s.height;
-    if (ratio > 1) {
-      // horizontal
-      s.width = baseSize;
-      s.height = Math.round(baseSize / ratio / 64) * 64;
-    } else {
-      // vertical
-      s.height = baseSize
-      s.width = Math.round(ratio * s.height / 64) * 64
-    }
+  //   const ratio = s.width / s.height;
+  //   if (ratio > 1) {
+  //     // horizontal
+  //     s.width = baseSize;
+  //     s.height = Math.round(baseSize / ratio / 64) * 64;
+  //   } else {
+  //     // vertical
+  //     s.height = baseSize
+  //     s.width = Math.round(ratio * s.height / 64) * 64
+  //   }
 
-    setState(x => ({ ...x, ...s }))
+  //   setState(x => ({ ...x, ...s }))
 
-  }, [state.model, mode])
+  // }, [state.model, mode])
 
-  useEffect(() => {
-    if (1 / state.steps > state.strength) {
-      setState(s => ({
-        ...s,
-        strength: Math.round(1 / state.steps * 100) / 100
-      }))
-    }
+  // useEffect(() => {
+  //   if (1 / state.steps > state.strength) {
+  //     setState(s => ({
+  //       ...s,
+  //       strength: Math.round(1 / state.steps * 100) / 100
+  //     }))
+  //   }
 
-  }, [state.steps, state.strength])
+  // }, [state.steps, state.strength])
 
   useEffect(() => {
     if (!state.model) return
@@ -753,7 +717,7 @@ into state
     }
   }, [user.id, state, selectedImage, images, pagination, loader])
 
-  const selectedModel: ModelI | undefined = models.find(m => m.id === state.model)
+  // const selectedModel: ModelI | undefined = models.find(m => m.id === state.model)
 
   return (
     <div className={styles._}>
