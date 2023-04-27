@@ -590,6 +590,23 @@ into state
       sessionStorage.setItem('from_user', from_user)
     }
 
+    const model_version_id = urlParams.get('model_version_id')
+    const utm_source = urlParams.get('utm_source')
+    if (model_version_id != null && model_version_id !== "") {
+      window && (window as any)?.gtag('event', 'model_version_id', {
+        event_category: 'model_version_id',
+        event_label: model_version_id,
+        value: 1
+      });
+    }
+    if (utm_source != null && utm_source !== "") {
+      window && (window as any)?.gtag('event', 'utm_source', {
+        event_category: 'utm_source',
+        event_label: utm_source,
+        value: 1
+      });
+    }
+
     const img = urlParams.get('img') || urlParams.get('init-img');
     if (!img) return
     if (img) {
