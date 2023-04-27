@@ -69,7 +69,7 @@ function Divider({ text  }) {
             }) : null
         })
     });
-};
+}
 
 
 /***/ }),
@@ -335,7 +335,7 @@ function Plans({ type ="pricing"  }) {
             })
         })
     });
-};
+}
 const Check = ()=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_6__/* .CheckGoodYes */ .y$4, {
         size: 16,
         className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().check),

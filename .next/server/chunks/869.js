@@ -129,7 +129,7 @@ function Hero({ title , subtitle , visual , socialProof , cta  }) {
             ]
         })
     });
-};
+}
 
 
 /***/ }),

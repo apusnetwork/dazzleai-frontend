@@ -47,7 +47,7 @@ async function handler(req, res) {
             message
         });
     }
-};
+}
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });

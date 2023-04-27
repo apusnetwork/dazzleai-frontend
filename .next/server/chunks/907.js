@@ -116,7 +116,7 @@ function Modal({ show , size , title , onClose , children , actions  }) {
         ]
     }) : null;
     return /*#__PURE__*/ react_dom__WEBPACK_IMPORTED_MODULE_2___default().createPortal(modal, document.body);
-};
+}
 function AuthModal({ show , size , title , onClose , children , actions  }) {
     (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(()=>{
         if (show) {

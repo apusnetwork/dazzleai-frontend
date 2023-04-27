@@ -192,7 +192,7 @@ function Avatar({ image , name , size =30  }) {
             children: initial
         })
     });
-};
+}
 
 
 /***/ }),

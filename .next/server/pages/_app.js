@@ -274,7 +274,7 @@ function App({ children  }) {
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
                             className: "login-p",
-                            children: "Get 100 image credits every month for free!"
+                            children: "Get 25 image credits every month for free!"
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                             className: "mobile_link_cta",
@@ -504,6 +504,13 @@ module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix.js")
 
 /***/ }),
 
+/***/ 6220:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/compare-states.js");
+
+/***/ }),
+
 /***/ 299:
 /***/ ((module) => {
 
@@ -529,6 +536,13 @@ module.exports = require("next/dist/shared/lib/router/utils/get-asset-path-from-
 /***/ ((module) => {
 
 module.exports = require("next/dist/shared/lib/router/utils/get-next-pathname-info.js");
+
+/***/ }),
+
+/***/ 1897:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/is-bot.js");
 
 /***/ }),
 
@@ -658,7 +672,7 @@ module.exports = import("axios");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [952,664,578,907,970,533], () => (__webpack_exec__(5656)));
+var __webpack_exports__ = __webpack_require__.X(0, [676,664,578,907,970,533], () => (__webpack_exec__(5656)));
 module.exports = __webpack_exports__;
 
 })();

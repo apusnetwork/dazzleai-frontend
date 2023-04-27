@@ -149,7 +149,7 @@ function Input({ size ="md" , placeholder , label , id , name , error , type ="t
             }) : null
         ]
     });
-};
+}
 
 
 /***/ }),
@@ -176,7 +176,7 @@ function Label({ className , children , htmlFor  }) {
         ].join(" ").trim(),
         children: children
     });
-};
+}
 
 
 /***/ })

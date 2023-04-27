@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 353;
-exports.ids = [353,899,806];
+exports.ids = [353,806,899];
 exports.modules = {
 
 /***/ 4802:
@@ -67,7 +67,7 @@ async function handler(req, res) {
             message
         });
     }
-};
+}
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });

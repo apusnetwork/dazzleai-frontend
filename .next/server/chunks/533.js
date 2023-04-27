@@ -90,7 +90,7 @@ function Messages({ type ="right"  }) {
                 ...m
             }, m.id || i))
     });
-};
+}
 
 
 /***/ }),

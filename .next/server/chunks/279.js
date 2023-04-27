@@ -231,7 +231,7 @@ function ImageSharer({ id , url , imageSrc , imageWidth , imageHeight , type ="i
             }) : null
         ]
     });
-};
+}
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
@@ -637,7 +637,7 @@ function ImageView(props) {
             })
         ]
     });
-};
+}
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });

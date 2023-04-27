@@ -120,7 +120,7 @@ function AlphabetA({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ArrowBottomLeft.tsx
 
@@ -142,7 +142,7 @@ function ArrowBottomLeft({ color ="currentColor" , size =24 , fill ="none" , str
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/HospitalClinic.tsx
 
@@ -173,7 +173,7 @@ function HospitalClinic({ color ="currentColor" , size =24 , fill ="none" , stro
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ArrowLeftCaretSortSelect.tsx
 
@@ -195,7 +195,7 @@ function ArrowLeftCaretSortSelect({ color ="currentColor" , size =24 , fill ="no
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetV.tsx
 
@@ -217,7 +217,7 @@ function AlphabetV({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/LockPrivacy.tsx
 
@@ -252,7 +252,7 @@ function LockPrivacy({ color ="currentColor" , size =24 , fill ="none" , strokeW
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/DiscountPercent.tsx
 
@@ -274,7 +274,7 @@ function DiscountPercent({ color ="currentColor" , size =24 , fill ="none" , str
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/WorkBag.tsx
 
@@ -326,7 +326,7 @@ function WorkBag({ color ="currentColor" , size =24 , fill ="none" , strokeWidth
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Search.tsx
 
@@ -348,7 +348,7 @@ function Search({ color ="currentColor" , size =24 , fill ="none" , strokeWidth 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/SquareBoxUncheck.tsx
 
@@ -374,7 +374,7 @@ function SquareBoxUncheck({ color ="currentColor" , size =24 , fill ="none" , st
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ChevronUpArrow.tsx
 
@@ -396,7 +396,7 @@ function ChevronUpArrow({ color ="currentColor" , size =24 , fill ="none" , stro
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ArrowBottomRight.tsx
 
@@ -418,7 +418,7 @@ function ArrowBottomRight({ color ="currentColor" , size =24 , fill ="none" , st
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ArrowDown.tsx
 
@@ -440,7 +440,7 @@ function ArrowDown({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/EntryLogin.tsx
 
@@ -478,7 +478,7 @@ function EntryLogin({ color ="currentColor" , size =24 , fill ="none" , strokeWi
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ShoppingAltBag.tsx
 
@@ -516,7 +516,7 @@ function ShoppingAltBag({ color ="currentColor" , size =24 , fill ="none" , stro
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/EnterArrowLeft.tsx
 
@@ -538,7 +538,7 @@ function EnterArrowLeft({ color ="currentColor" , size =24 , fill ="none" , stro
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/BluetoothOff.tsx
 
@@ -590,7 +590,7 @@ function BluetoothOff({ color ="currentColor" , size =24 , fill ="none" , stroke
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CodeTechDev.tsx
 
@@ -628,7 +628,7 @@ function CodeTechDev({ color ="currentColor" , size =24 , fill ="none" , strokeW
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/RainCloudWeather.tsx
 
@@ -673,7 +673,7 @@ function RainCloudWeather({ color ="currentColor" , size =24 , fill ="none" , st
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MoneyCashCurrency.tsx
 
@@ -734,7 +734,7 @@ function MoneyCashCurrency({ color ="currentColor" , size =24 , fill ="none" , s
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/FolderAddFile.tsx
 
@@ -765,7 +765,7 @@ function FolderAddFile({ color ="currentColor" , size =24 , fill ="none" , strok
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CoffeeTeaCupAlt.tsx
 
@@ -787,7 +787,7 @@ function CoffeeTeaCupAlt({ color ="currentColor" , size =24 , fill ="none" , str
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetW.tsx
 
@@ -809,7 +809,7 @@ function AlphabetW({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetB.tsx
 
@@ -831,7 +831,7 @@ function AlphabetB({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetU.tsx
 
@@ -853,7 +853,7 @@ function AlphabetU({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/VideoCameraMedia.tsx
 
@@ -875,7 +875,7 @@ function VideoCameraMedia({ color ="currentColor" , size =24 , fill ="none" , st
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CalculatorComputeMathAlt.tsx
 
@@ -897,7 +897,7 @@ function CalculatorComputeMathAlt({ color ="currentColor" , size =24 , fill ="no
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Reply.tsx
 
@@ -919,7 +919,7 @@ function Reply({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/TicketPass.tsx
 
@@ -951,7 +951,7 @@ function TicketPass({ color ="currentColor" , size =24 , fill ="none" , strokeWi
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CalendarAppointmentDate.tsx
 
@@ -996,7 +996,7 @@ function CalendarAppointmentDate({ color ="currentColor" , size =24 , fill ="non
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CommentCircleChatMessage.tsx
 
@@ -1034,7 +1034,7 @@ function CommentCircleChatMessage({ color ="currentColor" , size =24 , fill ="no
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CursorPointerMouse.tsx
 
@@ -1056,7 +1056,7 @@ function CursorPointerMouse({ color ="currentColor" , size =24 , fill ="none" , 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ArrowTopRight.tsx
 
@@ -1078,7 +1078,7 @@ function ArrowTopRight({ color ="currentColor" , size =24 , fill ="none" , strok
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CalculatorComputeMath.tsx
 
@@ -1100,7 +1100,7 @@ function CalculatorComputeMath({ color ="currentColor" , size =24 , fill ="none"
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/VolumeDown.tsx
 
@@ -1131,7 +1131,7 @@ function VolumeDown({ color ="currentColor" , size =24 , fill ="none" , strokeWi
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/PaperNote.tsx
 
@@ -1153,7 +1153,7 @@ function PaperNote({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MedalWinnerGold.tsx
 
@@ -1175,7 +1175,7 @@ function MedalWinnerGold({ color ="currentColor" , size =24 , fill ="none" , str
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/XCloseDelete.tsx
 
@@ -1197,7 +1197,7 @@ function XCloseDelete({ color ="currentColor" , size =24 , fill ="none" , stroke
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetT.tsx
 
@@ -1219,7 +1219,7 @@ function AlphabetT({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ClockTime.tsx
 
@@ -1252,7 +1252,7 @@ function ClockTime({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetC.tsx
 
@@ -1274,7 +1274,7 @@ function AlphabetC({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetP.tsx
 
@@ -1296,7 +1296,7 @@ function AlphabetP({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/BatteryHalf.tsx
 
@@ -1345,7 +1345,7 @@ function BatteryHalf({ color ="currentColor" , size =24 , fill ="none" , strokeW
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetG.tsx
 
@@ -1367,7 +1367,7 @@ function AlphabetG({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MoreHorizontal.tsx
 
@@ -1411,7 +1411,7 @@ function MoreHorizontal({ color ="currentColor" , size =24 , fill ="none" , stro
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CameraOffPhoto.tsx
 
@@ -1449,7 +1449,7 @@ function CameraOffPhoto({ color ="currentColor" , size =24 , fill ="none" , stro
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ReceiptPayment.tsx
 
@@ -1494,7 +1494,7 @@ function ReceiptPayment({ color ="currentColor" , size =24 , fill ="none" , stro
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/LoadingSpinner.tsx
 
@@ -1516,7 +1516,7 @@ function LoadingSpinner({ color ="currentColor" , size =24 , fill ="none" , stro
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/UserGroupAccounts.tsx
 
@@ -1563,7 +1563,7 @@ function UserGroupAccounts({ color ="currentColor" , size =24 , fill ="none" , s
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Cone.tsx
 
@@ -1585,7 +1585,7 @@ function Cone({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =2
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Usb.tsx
 
@@ -1623,7 +1623,7 @@ function Usb({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =2 
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Chip.tsx
 
@@ -1645,7 +1645,7 @@ function Chip({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =2
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/EmojiSmileyBaby.tsx
 
@@ -1667,7 +1667,7 @@ function EmojiSmileyBaby({ color ="currentColor" , size =24 , fill ="none" , str
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Crop.tsx
 
@@ -1698,7 +1698,7 @@ function Crop({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =2
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/BankFinancial.tsx
 
@@ -1771,7 +1771,7 @@ function BankFinancial({ color ="currentColor" , size =24 , fill ="none" , strok
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/FuelGasStation.tsx
 
@@ -1816,7 +1816,7 @@ function FuelGasStation({ color ="currentColor" , size =24 , fill ="none" , stro
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/InstagramSocial.tsx
 
@@ -1856,7 +1856,7 @@ function InstagramSocial({ color ="currentColor" , size =24 , fill ="none" , str
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MediaCast.tsx
 
@@ -1878,7 +1878,7 @@ function MediaCast({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ChevronsRightArrows.tsx
 
@@ -1909,7 +1909,7 @@ function ChevronsRightArrows({ color ="currentColor" , size =24 , fill ="none" ,
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ChartUpArrow.tsx
 
@@ -1931,7 +1931,7 @@ function ChartUpArrow({ color ="currentColor" , size =24 , fill ="none" , stroke
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetF.tsx
 
@@ -1953,7 +1953,7 @@ function AlphabetF({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/LocationPin.tsx
 
@@ -1986,7 +1986,7 @@ function LocationPin({ color ="currentColor" , size =24 , fill ="none" , strokeW
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetQ.tsx
 
@@ -2008,7 +2008,7 @@ function AlphabetQ({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetS.tsx
 
@@ -2030,7 +2030,7 @@ function AlphabetS({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetD.tsx
 
@@ -2052,7 +2052,7 @@ function AlphabetD({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CommentChatMessage.tsx
 
@@ -2090,7 +2090,7 @@ function CommentChatMessage({ color ="currentColor" , size =24 , fill ="none" , 
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/FastFoward.tsx
 
@@ -2121,7 +2121,7 @@ function FastFoward({ color ="currentColor" , size =24 , fill ="none" , strokeWi
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Puzzle.tsx
 
@@ -2143,7 +2143,7 @@ function Puzzle({ color ="currentColor" , size =24 , fill ="none" , strokeWidth 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AddPlusNewSquareBoxSquare.tsx
 
@@ -2165,7 +2165,7 @@ function AddPlusNewSquareBoxSquare({ color ="currentColor" , size =24 , fill ="n
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/SendMessageDm.tsx
 
@@ -2187,7 +2187,7 @@ function SendMessageDm({ color ="currentColor" , size =24 , fill ="none" , strok
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/FolderFileProject.tsx
 
@@ -2209,7 +2209,7 @@ function FolderFileProject({ color ="currentColor" , size =24 , fill ="none" , s
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/SubtractMinusRemove.tsx
 
@@ -2234,7 +2234,7 @@ function SubtractMinusRemove({ color ="currentColor" , size =24 , fill ="none" ,
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/EmojiSmileyWinkHappy.tsx
 
@@ -2256,7 +2256,7 @@ function EmojiSmileyWinkHappy({ color ="currentColor" , size =24 , fill ="none" 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetE.tsx
 
@@ -2278,7 +2278,7 @@ function AlphabetE({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/BookNotePaper.tsx
 
@@ -2309,7 +2309,7 @@ function BookNotePaper({ color ="currentColor" , size =24 , fill ="none" , strok
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/NextArrowForward.tsx
 
@@ -2342,7 +2342,7 @@ function NextArrowForward({ color ="currentColor" , size =24 , fill ="none" , st
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetR.tsx
 
@@ -2364,7 +2364,7 @@ function AlphabetR({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/BookmarkSave.tsx
 
@@ -2386,7 +2386,7 @@ function BookmarkSave({ color ="currentColor" , size =24 , fill ="none" , stroke
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/XSquareCloseDelete.tsx
 
@@ -2421,7 +2421,7 @@ function XSquareCloseDelete({ color ="currentColor" , size =24 , fill ="none" , 
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AccessibilityHandicapDisabilityHandicapWheelchair.tsx
 
@@ -2443,7 +2443,7 @@ function AccessibilityHandicapDisabilityHandicapWheelchair({ color ="currentColo
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CreditCardDebit.tsx
 
@@ -2478,7 +2478,7 @@ function CreditCardDebit({ color ="currentColor" , size =24 , fill ="none" , str
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ShoppingBag.tsx
 
@@ -2509,7 +2509,7 @@ function ShoppingBag({ color ="currentColor" , size =24 , fill ="none" , strokeW
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/BikerCycle.tsx
 
@@ -2554,7 +2554,7 @@ function BikerCycle({ color ="currentColor" , size =24 , fill ="none" , strokeWi
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/UserRemoveAccountProfile.tsx
 
@@ -2594,7 +2594,7 @@ function UserRemoveAccountProfile({ color ="currentColor" , size =24 , fill ="no
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AdjustHorizontalSettings.tsx
 
@@ -2642,7 +2642,7 @@ function AdjustHorizontalSettings({ color ="currentColor" , size =24 , fill ="no
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/FaceMaskAlt2.tsx
 
@@ -2664,7 +2664,7 @@ function FaceMaskAlt2({ color ="currentColor" , size =24 , fill ="none" , stroke
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ChevronLeftArrow.tsx
 
@@ -2686,7 +2686,7 @@ function ChevronLeftArrow({ color ="currentColor" , size =24 , fill ="none" , st
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/RightTurnArrow.tsx
 
@@ -2708,7 +2708,7 @@ function RightTurnArrow({ color ="currentColor" , size =24 , fill ="none" , stro
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Link.tsx
 
@@ -2730,7 +2730,7 @@ function Link({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =2
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/InfinityLoop.tsx
 
@@ -2752,7 +2752,7 @@ function InfinityLoop({ color ="currentColor" , size =24 , fill ="none" , stroke
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/WifiOffConnection.tsx
 
@@ -2804,7 +2804,7 @@ function WifiOffConnection({ color ="currentColor" , size =24 , fill ="none" , s
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/FlagCountry.tsx
 
@@ -2826,7 +2826,7 @@ function FlagCountry({ color ="currentColor" , size =24 , fill ="none" , strokeW
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/SaveAlt.tsx
 
@@ -2864,7 +2864,7 @@ function SaveAlt({ color ="currentColor" , size =24 , fill ="none" , strokeWidth
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ArrowRight.tsx
 
@@ -2886,7 +2886,7 @@ function ArrowRight({ color ="currentColor" , size =24 , fill ="none" , strokeWi
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Percentage.tsx
 
@@ -2924,7 +2924,7 @@ function Percentage({ color ="currentColor" , size =24 , fill ="none" , strokeWi
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MoneyAltCashCurrency.tsx
 
@@ -2971,7 +2971,7 @@ function MoneyAltCashCurrency({ color ="currentColor" , size =24 , fill ="none" 
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/WorkAltBag.tsx
 
@@ -3009,7 +3009,7 @@ function WorkAltBag({ color ="currentColor" , size =24 , fill ="none" , strokeWi
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/BedSingleHotel.tsx
 
@@ -3040,7 +3040,7 @@ function BedSingleHotel({ color ="currentColor" , size =24 , fill ="none" , stro
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/PreviousArrowBackward.tsx
 
@@ -3073,7 +3073,7 @@ function PreviousArrowBackward({ color ="currentColor" , size =24 , fill ="none"
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ThumbsDown.tsx
 
@@ -3095,7 +3095,7 @@ function ThumbsDown({ color ="currentColor" , size =24 , fill ="none" , strokeWi
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Archive.tsx
 
@@ -3136,7 +3136,7 @@ function Archive({ color ="currentColor" , size =24 , fill ="none" , strokeWidth
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/BadgeVerified.tsx
 
@@ -3158,7 +3158,7 @@ function BadgeVerified({ color ="currentColor" , size =24 , fill ="none" , strok
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AccountSearchUserPerson.tsx
 
@@ -3198,7 +3198,7 @@ function AccountSearchUserPerson({ color ="currentColor" , size =24 , fill ="non
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MapLocation.tsx
 
@@ -3236,7 +3236,7 @@ function MapLocation({ color ="currentColor" , size =24 , fill ="none" , strokeW
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ChevronRightArrow.tsx
 
@@ -3258,7 +3258,7 @@ function ChevronRightArrow({ color ="currentColor" , size =24 , fill ="none" , s
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/EmojiSmileySurprisedShockedAmazed.tsx
 
@@ -3280,7 +3280,7 @@ function EmojiSmileySurprisedShockedAmazed({ color ="currentColor" , size =24 , 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Basicons.tsx
 
@@ -3315,7 +3315,7 @@ function Basicons({ color ="currentColor" , size =24 , fill ="none" , strokeWidt
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AddCirclePlus.tsx
 
@@ -3348,7 +3348,7 @@ function AddCirclePlus({ color ="currentColor" , size =24 , fill ="none" , strok
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Download.tsx
 
@@ -3379,7 +3379,7 @@ function Download({ color ="currentColor" , size =24 , fill ="none" , strokeWidt
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/FaceMaskAlt.tsx
 
@@ -3401,7 +3401,7 @@ function FaceMaskAlt({ color ="currentColor" , size =24 , fill ="none" , strokeW
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ArrowUpPushupCaretSortSelectArrow.tsx
 
@@ -3423,7 +3423,7 @@ function ArrowUpPushupCaretSortSelectArrow({ color ="currentColor" , size =24 , 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/XOctagonError.tsx
 
@@ -3445,7 +3445,7 @@ function XOctagonError({ color ="currentColor" , size =24 , fill ="none" , strok
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Pin.tsx
 
@@ -3467,7 +3467,7 @@ function Pin({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =2 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MagicWand.tsx
 
@@ -3489,7 +3489,7 @@ function MagicWand({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CalendarDateAppointmentTime.tsx
 
@@ -3511,7 +3511,7 @@ function CalendarDateAppointmentTime({ color ="currentColor" , size =24 , fill =
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Apps.tsx
 
@@ -3572,7 +3572,7 @@ function Apps({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =2
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CaretSortSelectArrowAlt.tsx
 
@@ -3594,7 +3594,7 @@ function CaretSortSelectArrowAlt({ color ="currentColor" , size =24 , fill ="non
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ArrowTopLeft.tsx
 
@@ -3616,7 +3616,7 @@ function ArrowTopLeft({ color ="currentColor" , size =24 , fill ="none" , stroke
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/UmbrellaInsurance.tsx
 
@@ -3638,7 +3638,7 @@ function UmbrellaInsurance({ color ="currentColor" , size =24 , fill ="none" , s
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ChevronsLeftArrows.tsx
 
@@ -3669,7 +3669,7 @@ function ChevronsLeftArrows({ color ="currentColor" , size =24 , fill ="none" , 
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CrosshairTargetCenterAlt.tsx
 
@@ -3691,7 +3691,7 @@ function CrosshairTargetCenterAlt({ color ="currentColor" , size =24 , fill ="no
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/DragVertical.tsx
 
@@ -3713,7 +3713,7 @@ function DragVertical({ color ="currentColor" , size =24 , fill ="none" , stroke
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/BatteryCharging.tsx
 
@@ -3755,7 +3755,7 @@ function BatteryCharging({ color ="currentColor" , size =24 , fill ="none" , str
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/DollarCurrency.tsx
 
@@ -3777,7 +3777,7 @@ function DollarCurrency({ color ="currentColor" , size =24 , fill ="none" , stro
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Wallet.tsx
 
@@ -3799,7 +3799,7 @@ function Wallet({ color ="currentColor" , size =24 , fill ="none" , strokeWidth 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CommentChatMessageAlt.tsx
 
@@ -3821,7 +3821,7 @@ function CommentChatMessageAlt({ color ="currentColor" , size =24 , fill ="none"
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/BasketballBallSports.tsx
 
@@ -3875,7 +3875,7 @@ function BasketballBallSports({ color ="currentColor" , size =24 , fill ="none" 
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/EmailMessageInbox.tsx
 
@@ -3910,7 +3910,7 @@ function EmailMessageInbox({ color ="currentColor" , size =24 , fill ="none" , s
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Gif.tsx
 
@@ -3932,7 +3932,7 @@ function Gif({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =2 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/EyePasswordHide.tsx
 
@@ -3970,7 +3970,7 @@ function EyePasswordHide({ color ="currentColor" , size =24 , fill ="none" , str
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/TagPriceDiscount.tsx
 
@@ -4001,7 +4001,7 @@ function TagPriceDiscount({ color ="currentColor" , size =24 , fill ="none" , st
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CoffeeTeaCup.tsx
 
@@ -4023,7 +4023,7 @@ function CoffeeTeaCup({ color ="currentColor" , size =24 , fill ="none" , stroke
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Stop.tsx
 
@@ -4049,7 +4049,7 @@ function Stop({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =2
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CourseDiary.tsx
 
@@ -4080,7 +4080,7 @@ function CourseDiary({ color ="currentColor" , size =24 , fill ="none" , strokeW
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ApiIntegrationConnection.tsx
 
@@ -4170,7 +4170,7 @@ function ApiIntegrationConnection({ color ="currentColor" , size =24 , fill ="no
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ConnectionSignalWifi.tsx
 
@@ -4208,7 +4208,7 @@ function ConnectionSignalWifi({ color ="currentColor" , size =24 , fill ="none" 
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ArrowDropdownCaretSortSelectArrow.tsx
 
@@ -4230,7 +4230,7 @@ function ArrowDropdownCaretSortSelectArrow({ color ="currentColor" , size =24 , 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/PaperFile.tsx
 
@@ -4261,7 +4261,7 @@ function PaperFile({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/DataServer.tsx
 
@@ -4320,7 +4320,7 @@ function DataServer({ color ="currentColor" , size =24 , fill ="none" , strokeWi
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ArrowRightCaretSortSelect.tsx
 
@@ -4342,7 +4342,7 @@ function ArrowRightCaretSortSelect({ color ="currentColor" , size =24 , fill ="n
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/NotificationBellAlarm.tsx
 
@@ -4373,7 +4373,7 @@ function NotificationBellAlarm({ color ="currentColor" , size =24 , fill ="none"
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ShareAlt.tsx
 
@@ -4395,7 +4395,7 @@ function ShareAlt({ color ="currentColor" , size =24 , fill ="none" , strokeWidt
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/BatteryFull.tsx
 
@@ -4458,7 +4458,7 @@ function BatteryFull({ color ="currentColor" , size =24 , fill ="none" , strokeW
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MusicNote.tsx
 
@@ -4480,7 +4480,7 @@ function MusicNote({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/EmojiAngelSmileyHappy.tsx
 
@@ -4502,7 +4502,7 @@ function EmojiAngelSmileyHappy({ color ="currentColor" , size =24 , fill ="none"
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AnalyticsGraphChart.tsx
 
@@ -4540,7 +4540,7 @@ function AnalyticsGraphChart({ color ="currentColor" , size =24 , fill ="none" ,
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Bluetooth.tsx
 
@@ -4592,7 +4592,7 @@ function Bluetooth({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/PieChart.tsx
 
@@ -4625,7 +4625,7 @@ function PieChart({ color ="currentColor" , size =24 , fill ="none" , strokeWidt
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Watch.tsx
 
@@ -4684,7 +4684,7 @@ function Watch({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/DragHorizontal.tsx
 
@@ -4743,7 +4743,7 @@ function DragHorizontal({ color ="currentColor" , size =24 , fill ="none" , stro
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ChevronDownArrow.tsx
 
@@ -4765,7 +4765,7 @@ function ChevronDownArrow({ color ="currentColor" , size =24 , fill ="none" , st
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/LaunchLinkOpen.tsx
 
@@ -4803,7 +4803,7 @@ function LaunchLinkOpen({ color ="currentColor" , size =24 , fill ="none" , stro
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Info.tsx
 
@@ -4843,7 +4843,7 @@ function Info({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =2
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MicrophoneMusicTalk.tsx
 
@@ -4865,7 +4865,7 @@ function MicrophoneMusicTalk({ color ="currentColor" , size =24 , fill ="none" ,
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/LinkedinSocial.tsx
 
@@ -4908,7 +4908,7 @@ function LinkedinSocial({ color ="currentColor" , size =24 , fill ="none" , stro
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AsteriskStar.tsx
 
@@ -4953,7 +4953,7 @@ function AsteriskStar({ color ="currentColor" , size =24 , fill ="none" , stroke
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Chatbot.tsx
 
@@ -4998,7 +4998,7 @@ function Chatbot({ color ="currentColor" , size =24 , fill ="none" , strokeWidth
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/SunDay.tsx
 
@@ -5020,7 +5020,7 @@ function SunDay({ color ="currentColor" , size =24 , fill ="none" , strokeWidth 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ZoomIn.tsx
 
@@ -5042,7 +5042,7 @@ function ZoomIn({ color ="currentColor" , size =24 , fill ="none" , strokeWidth 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AccountUserPersonSquare.tsx
 
@@ -5064,7 +5064,7 @@ function AccountUserPersonSquare({ color ="currentColor" , size =24 , fill ="non
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/UploadAlt.tsx
 
@@ -5086,7 +5086,7 @@ function UploadAlt({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ModelDiamond.tsx
 
@@ -5108,7 +5108,7 @@ function ModelDiamond({ color ="currentColor" , size =24 , fill ="none" , stroke
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/LocationPinAlt.tsx
 
@@ -5141,7 +5141,7 @@ function LocationPinAlt({ color ="currentColor" , size =24 , fill ="none" , stro
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ToogleRight.tsx
 
@@ -5172,7 +5172,7 @@ function ToogleRight({ color ="currentColor" , size =24 , fill ="none" , strokeW
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/EditWrite.tsx
 
@@ -5203,7 +5203,7 @@ function EditWrite({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MediaFilmVideo.tsx
 
@@ -5225,7 +5225,7 @@ function MediaFilmVideo({ color ="currentColor" , size =24 , fill ="none" , stro
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Save.tsx
 
@@ -5265,7 +5265,7 @@ function Save({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =2
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CutScissors.tsx
 
@@ -5287,7 +5287,7 @@ function CutScissors({ color ="currentColor" , size =24 , fill ="none" , strokeW
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/NairaCurrencyMoney.tsx
 
@@ -5309,7 +5309,7 @@ function NairaCurrencyMoney({ color ="currentColor" , size =24 , fill ="none" , 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/VolumeMute.tsx
 
@@ -5340,7 +5340,7 @@ function VolumeMute({ color ="currentColor" , size =24 , fill ="none" , strokeWi
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Badge.tsx
 
@@ -5371,7 +5371,7 @@ function Badge({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ShopStore.tsx
 
@@ -5416,7 +5416,7 @@ function ShopStore({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/GenderMale.tsx
 
@@ -5454,7 +5454,7 @@ function GenderMale({ color ="currentColor" , size =24 , fill ="none" , strokeWi
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlertError.tsx
 
@@ -5492,7 +5492,7 @@ function AlertError({ color ="currentColor" , size =24 , fill ="none" , strokeWi
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ZoomOut.tsx
 
@@ -5514,7 +5514,7 @@ function ZoomOut({ color ="currentColor" , size =24 , fill ="none" , strokeWidth
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ThumbsUp.tsx
 
@@ -5536,7 +5536,7 @@ function ThumbsUp({ color ="currentColor" , size =24 , fill ="none" , strokeWidt
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CameraApertureCaptureLens.tsx
 
@@ -5558,7 +5558,7 @@ function CameraApertureCaptureLens({ color ="currentColor" , size =24 , fill ="n
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Play.tsx
 
@@ -5580,7 +5580,7 @@ function Play({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =2
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AdAnnouncementMegaphone.tsx
 
@@ -5611,7 +5611,7 @@ function AdAnnouncementMegaphone({ color ="currentColor" , size =24 , fill ="non
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/HarddriveHarddisk.tsx
 
@@ -5633,7 +5633,7 @@ function HarddriveHarddisk({ color ="currentColor" , size =24 , fill ="none" , s
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/FaceMask.tsx
 
@@ -5655,7 +5655,7 @@ function FaceMask({ color ="currentColor" , size =24 , fill ="none" , strokeWidt
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/HashtagTrendingNumber.tsx
 
@@ -5677,7 +5677,7 @@ function HashtagTrendingNumber({ color ="currentColor" , size =24 , fill ="none"
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/RoadmapTimeline.tsx
 
@@ -5724,7 +5724,7 @@ function RoadmapTimeline({ color ="currentColor" , size =24 , fill ="none" , str
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ShuffleAlt.tsx
 
@@ -5746,7 +5746,7 @@ function ShuffleAlt({ color ="currentColor" , size =24 , fill ="none" , strokeWi
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/PhoneCall.tsx
 
@@ -5768,7 +5768,7 @@ function PhoneCall({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/PhotoImagePicture.tsx
 
@@ -5812,7 +5812,7 @@ function PhotoImagePicture({ color ="currentColor" , size =24 , fill ="none" , s
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ToogleLeft.tsx
 
@@ -5843,7 +5843,7 @@ function ToogleLeft({ color ="currentColor" , size =24 , fill ="none" , strokeWi
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MarkerCreatePen.tsx
 
@@ -5865,7 +5865,7 @@ function MarkerCreatePen({ color ="currentColor" , size =24 , fill ="none" , str
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/BatteryEmpty.tsx
 
@@ -5907,7 +5907,7 @@ function BatteryEmpty({ color ="currentColor" , size =24 , fill ="none" , stroke
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Redo.tsx
 
@@ -5938,7 +5938,7 @@ function Redo({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =2
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CursorAltPointerMouse.tsx
 
@@ -5960,7 +5960,7 @@ function CursorAltPointerMouse({ color ="currentColor" , size =24 , fill ="none"
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/HealthCrossFirstaid.tsx
 
@@ -5982,7 +5982,7 @@ function HealthCrossFirstaid({ color ="currentColor" , size =24 , fill ="none" ,
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/InboxMail.tsx
 
@@ -6004,7 +6004,7 @@ function InboxMail({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/UploadShare.tsx
 
@@ -6035,7 +6035,7 @@ function UploadShare({ color ="currentColor" , size =24 , fill ="none" , strokeW
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CheckGoodYes.tsx
 
@@ -6057,7 +6057,7 @@ function CheckGoodYes({ color ="currentColor" , size =24 , fill ="none" , stroke
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Swim.tsx
 
@@ -6100,7 +6100,7 @@ function Swim({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =2
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AddPlus.tsx
 
@@ -6122,7 +6122,7 @@ function AddPlus({ color ="currentColor" , size =24 , fill ="none" , strokeWidth
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ConnectLinkCategory.tsx
 
@@ -6191,7 +6191,7 @@ function ConnectLinkCategory({ color ="currentColor" , size =24 , fill ="none" ,
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/TheaterMask.tsx
 
@@ -6243,7 +6243,7 @@ function TheaterMask({ color ="currentColor" , size =24 , fill ="none" , strokeW
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/LightningEnergy.tsx
 
@@ -6265,7 +6265,7 @@ function LightningEnergy({ color ="currentColor" , size =24 , fill ="none" , str
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Blockchain.tsx
 
@@ -6310,7 +6310,7 @@ function Blockchain({ color ="currentColor" , size =24 , fill ="none" , strokeWi
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CommentSquareChatMessage.tsx
 
@@ -6348,7 +6348,7 @@ function CommentSquareChatMessage({ color ="currentColor" , size =24 , fill ="no
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/VolumeUp.tsx
 
@@ -6386,7 +6386,7 @@ function VolumeUp({ color ="currentColor" , size =24 , fill ="none" , strokeWidt
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MaximizeExpand.tsx
 
@@ -6417,7 +6417,7 @@ function MaximizeExpand({ color ="currentColor" , size =24 , fill ="none" , stro
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/PaperFileText.tsx
 
@@ -6469,7 +6469,7 @@ function PaperFileText({ color ="currentColor" , size =24 , fill ="none" , strok
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/StarRatings.tsx
 
@@ -6491,7 +6491,7 @@ function StarRatings({ color ="currentColor" , size =24 , fill ="none" , strokeW
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MenuHambuger.tsx
 
@@ -6538,7 +6538,7 @@ function MenuHambuger({ color ="currentColor" , size =24 , fill ="none" , stroke
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/FaceId.tsx
 
@@ -6590,7 +6590,7 @@ function FaceId({ color ="currentColor" , size =24 , fill ="none" , strokeWidth 
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/SubtractCircleMinusRemove.tsx
 
@@ -6623,7 +6623,7 @@ function SubtractCircleMinusRemove({ color ="currentColor" , size =24 , fill ="n
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/NotificationOffBellAlarm.tsx
 
@@ -6661,7 +6661,7 @@ function NotificationOffBellAlarm({ color ="currentColor" , size =24 , fill ="no
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/BranchGitFork.tsx
 
@@ -6719,7 +6719,7 @@ function BranchGitFork({ color ="currentColor" , size =24 , fill ="none" , strok
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/DownTurnArrow.tsx
 
@@ -6741,7 +6741,7 @@ function DownTurnArrow({ color ="currentColor" , size =24 , fill ="none" , strok
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/UploadCloud.tsx
 
@@ -6772,7 +6772,7 @@ function UploadCloud({ color ="currentColor" , size =24 , fill ="none" , strokeW
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CommentCircleAltChatMessage.tsx
 
@@ -6794,7 +6794,7 @@ function CommentCircleAltChatMessage({ color ="currentColor" , size =24 , fill =
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/PlugConnect.tsx
 
@@ -6845,7 +6845,7 @@ function PlugConnect({ color ="currentColor" , size =24 , fill ="none" , strokeW
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/HeartLoveLike.tsx
 
@@ -6867,7 +6867,7 @@ function HeartLoveLike({ color ="currentColor" , size =24 , fill ="none" , strok
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/DesktopMacComputer.tsx
 
@@ -6889,7 +6889,7 @@ function DesktopMacComputer({ color ="currentColor" , size =24 , fill ="none" , 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/DesktopComputerMac.tsx
 
@@ -6911,7 +6911,7 @@ function DesktopComputerMac({ color ="currentColor" , size =24 , fill ="none" , 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MediaFilmVideoAlt.tsx
 
@@ -6933,7 +6933,7 @@ function MediaFilmVideoAlt({ color ="currentColor" , size =24 , fill ="none" , s
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/UserAddAccountProfile.tsx
 
@@ -6973,7 +6973,7 @@ function UserAddAccountProfile({ color ="currentColor" , size =24 , fill ="none"
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ExpandArrows.tsx
 
@@ -6995,7 +6995,7 @@ function ExpandArrows({ color ="currentColor" , size =24 , fill ="none" , stroke
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/EuroCurrency.tsx
 
@@ -7017,7 +7017,7 @@ function EuroCurrency({ color ="currentColor" , size =24 , fill ="none" , stroke
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/UserAccountProfile.tsx
 
@@ -7050,7 +7050,7 @@ function UserAccountProfile({ color ="currentColor" , size =24 , fill ="none" , 
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CrosshairTargetCenter.tsx
 
@@ -7072,7 +7072,7 @@ function CrosshairTargetCenter({ color ="currentColor" , size =24 , fill ="none"
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/TwitterSocialTweet.tsx
 
@@ -7094,7 +7094,7 @@ function TwitterSocialTweet({ color ="currentColor" , size =24 , fill ="none" , 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AttachmentClipHook.tsx
 
@@ -7116,7 +7116,7 @@ function AttachmentClipHook({ color ="currentColor" , size =24 , fill ="none" , 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MinimizeCollapse.tsx
 
@@ -7147,7 +7147,7 @@ function MinimizeCollapse({ color ="currentColor" , size =24 , fill ="none" , st
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/EmojiSmileyMehSad.tsx
 
@@ -7169,7 +7169,7 @@ function EmojiSmileyMehSad({ color ="currentColor" , size =24 , fill ="none" , s
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/FireTrendHot.tsx
 
@@ -7191,7 +7191,7 @@ function FireTrendHot({ color ="currentColor" , size =24 , fill ="none" , stroke
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MoonNight.tsx
 
@@ -7213,7 +7213,7 @@ function MoonNight({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/HomeHouse.tsx
 
@@ -7235,7 +7235,7 @@ function HomeHouse({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CheckBox.tsx
 
@@ -7257,7 +7257,7 @@ function CheckBox({ color ="currentColor" , size =24 , fill ="none" , strokeWidt
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CameraPhoto.tsx
 
@@ -7290,7 +7290,7 @@ function CameraPhoto({ color ="currentColor" , size =24 , fill ="none" , strokeW
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/HeadphoneEarphoneMusic.tsx
 
@@ -7312,7 +7312,7 @@ function HeadphoneEarphoneMusic({ color ="currentColor" , size =24 , fill ="none
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/SparkleStar.tsx
 
@@ -7350,7 +7350,7 @@ function SparkleStar({ color ="currentColor" , size =24 , fill ="none" , strokeW
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ReplyAll.tsx
 
@@ -7381,7 +7381,7 @@ function ReplyAll({ color ="currentColor" , size =24 , fill ="none" , strokeWidt
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/EmojiSmileyHappyFace.tsx
 
@@ -7403,7 +7403,7 @@ function EmojiSmileyHappyFace({ color ="currentColor" , size =24 , fill ="none" 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetH.tsx
 
@@ -7425,7 +7425,7 @@ function AlphabetH({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MobilePhone.tsx
 
@@ -7460,7 +7460,7 @@ function MobilePhone({ color ="currentColor" , size =24 , fill ="none" , strokeW
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/DownloadAlt.tsx
 
@@ -7482,7 +7482,7 @@ function DownloadAlt({ color ="currentColor" , size =24 , fill ="none" , strokeW
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Delete.tsx
 
@@ -7504,7 +7504,7 @@ function Delete({ color ="currentColor" , size =24 , fill ="none" , strokeWidth 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/EmojiSmileySadFace.tsx
 
@@ -7526,7 +7526,7 @@ function EmojiSmileySadFace({ color ="currentColor" , size =24 , fill ="none" , 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/TrashAltDeleteBin.tsx
 
@@ -7548,7 +7548,7 @@ function TrashAltDeleteBin({ color ="currentColor" , size =24 , fill ="none" , s
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/TramTrainTransport.tsx
 
@@ -7625,7 +7625,7 @@ function TramTrainTransport({ color ="currentColor" , size =24 , fill ="none" , 
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/GamingPad.tsx
 
@@ -7647,7 +7647,7 @@ function GamingPad({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CommentSquareAltChatMessage.tsx
 
@@ -7669,7 +7669,7 @@ function CommentSquareAltChatMessage({ color ="currentColor" , size =24 , fill =
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/SecurityShieldAlt.tsx
 
@@ -7691,7 +7691,7 @@ function SecurityShieldAlt({ color ="currentColor" , size =24 , fill ="none" , s
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/UpTurnArrow.tsx
 
@@ -7713,7 +7713,7 @@ function UpTurnArrow({ color ="currentColor" , size =24 , fill ="none" , strokeW
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Gift.tsx
 
@@ -7765,7 +7765,7 @@ function Gift({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =2
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Car.tsx
 
@@ -7787,7 +7787,7 @@ function Car({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =2 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MastercardCreditDebit.tsx
 
@@ -7831,7 +7831,7 @@ function MastercardCreditDebit({ color ="currentColor" , size =24 , fill ="none"
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MoreVertical.tsx
 
@@ -7878,7 +7878,7 @@ function MoreVertical({ color ="currentColor" , size =24 , fill ="none" , stroke
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/FacebookSocial.tsx
 
@@ -7900,7 +7900,7 @@ function FacebookSocial({ color ="currentColor" , size =24 , fill ="none" , stro
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetI.tsx
 
@@ -7922,7 +7922,7 @@ function AlphabetI({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/EmojiSmileyDizzyHappy.tsx
 
@@ -7944,7 +7944,7 @@ function EmojiSmileyDizzyHappy({ color ="currentColor" , size =24 , fill ="none"
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/SecurityShield.tsx
 
@@ -7975,7 +7975,7 @@ function SecurityShield({ color ="currentColor" , size =24 , fill ="none" , stro
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ArrowUp.tsx
 
@@ -7997,7 +7997,7 @@ function ArrowUp({ color ="currentColor" , size =24 , fill ="none" , strokeWidth
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetK.tsx
 
@@ -8019,7 +8019,7 @@ function AlphabetK({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/HelpQuestion.tsx
 
@@ -8059,7 +8059,7 @@ function HelpQuestion({ color ="currentColor" , size =24 , fill ="none" , stroke
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/EyePasswordShow.tsx
 
@@ -8099,7 +8099,7 @@ function EyePasswordShow({ color ="currentColor" , size =24 , fill ="none" , str
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/EditWriteAlt.tsx
 
@@ -8133,7 +8133,7 @@ function EditWriteAlt({ color ="currentColor" , size =24 , fill ="none" , stroke
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Undo.tsx
 
@@ -8164,7 +8164,7 @@ function Undo({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =2
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CompressArrowsConverge.tsx
 
@@ -8186,7 +8186,7 @@ function CompressArrowsConverge({ color ="currentColor" , size =24 , fill ="none
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/SecurityPasswordKey.tsx
 
@@ -8208,7 +8208,7 @@ function SecurityPasswordKey({ color ="currentColor" , size =24 , fill ="none" ,
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/GenderFemale.tsx
 
@@ -8246,7 +8246,7 @@ function GenderFemale({ color ="currentColor" , size =24 , fill ="none" , stroke
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Filter.tsx
 
@@ -8268,7 +8268,7 @@ function Filter({ color ="currentColor" , size =24 , fill ="none" , strokeWidth 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/YoutubeVideo.tsx
 
@@ -8303,7 +8303,7 @@ function YoutubeVideo({ color ="currentColor" , size =24 , fill ="none" , stroke
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/EmojiSmileyAngryMad.tsx
 
@@ -8325,7 +8325,7 @@ function EmojiSmileyAngryMad({ color ="currentColor" , size =24 , fill ="none" ,
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/BedDoubleHotel.tsx
 
@@ -8370,7 +8370,7 @@ function BedDoubleHotel({ color ="currentColor" , size =24 , fill ="none" , stro
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/FilterAlt.tsx
 
@@ -8392,7 +8392,7 @@ function FilterAlt({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/TiktokSocial.tsx
 
@@ -8423,7 +8423,7 @@ function TiktokSocial({ color ="currentColor" , size =24 , fill ="none" , stroke
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/FocusCameraPlusAdd.tsx
 
@@ -8445,7 +8445,7 @@ function FocusCameraPlusAdd({ color ="currentColor" , size =24 , fill ="none" , 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ArrowLeft.tsx
 
@@ -8467,7 +8467,7 @@ function ArrowLeft({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/LogoutExit.tsx
 
@@ -8505,7 +8505,7 @@ function LogoutExit({ color ="currentColor" , size =24 , fill ="none" , strokeWi
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/LaptopComputer.tsx
 
@@ -8540,7 +8540,7 @@ function LaptopComputer({ color ="currentColor" , size =24 , fill ="none" , stro
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ThunderstormWeather.tsx
 
@@ -8571,7 +8571,7 @@ function ThunderstormWeather({ color ="currentColor" , size =24 , fill ="none" ,
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/RocketLaunch.tsx
 
@@ -8602,7 +8602,7 @@ function RocketLaunch({ color ="currentColor" , size =24 , fill ="none" , stroke
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlertCirlcleError.tsx
 
@@ -8642,7 +8642,7 @@ function AlertCirlcleError({ color ="currentColor" , size =24 , fill ="none" , s
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetJ.tsx
 
@@ -8664,7 +8664,7 @@ function AlphabetJ({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CaretSortSelectArrow.tsx
 
@@ -8686,7 +8686,7 @@ function CaretSortSelectArrow({ color ="currentColor" , size =24 , fill ="none" 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Cloud.tsx
 
@@ -8708,7 +8708,7 @@ function Cloud({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/DownloadCloud.tsx
 
@@ -8739,7 +8739,7 @@ function DownloadCloud({ color ="currentColor" , size =24 , fill ="none" , strok
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AdjustVeticalSettings.tsx
 
@@ -8761,7 +8761,7 @@ function AdjustVeticalSettings({ color ="currentColor" , size =24 , fill ="none"
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetN.tsx
 
@@ -8783,7 +8783,7 @@ function AlphabetN({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Shuffle.tsx
 
@@ -8805,7 +8805,7 @@ function Shuffle({ color ="currentColor" , size =24 , fill ="none" , strokeWidth
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Error.tsx
 
@@ -8838,7 +8838,7 @@ function Error({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AccountUserPersonRound.tsx
 
@@ -8860,7 +8860,7 @@ function AccountUserPersonRound({ color ="currentColor" , size =24 , fill ="none
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetY.tsx
 
@@ -8882,7 +8882,7 @@ function AlphabetY({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Rewind.tsx
 
@@ -8913,7 +8913,7 @@ function Rewind({ color ="currentColor" , size =24 , fill ="none" , strokeWidth 
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Pause.tsx
 
@@ -8950,7 +8950,7 @@ function Pause({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/HeadphoneEarphoneMusicAlt.tsx
 
@@ -8972,7 +8972,7 @@ function HeadphoneEarphoneMusicAlt({ color ="currentColor" , size =24 , fill ="n
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/CopyDuplicate.tsx
 
@@ -9007,7 +9007,7 @@ function CopyDuplicate({ color ="currentColor" , size =24 , fill ="none" , strok
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Forward.tsx
 
@@ -9029,7 +9029,7 @@ function Forward({ color ="currentColor" , size =24 , fill ="none" , strokeWidth
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/TrashDeleteBin.tsx
 
@@ -9067,7 +9067,7 @@ function TrashDeleteBin({ color ="currentColor" , size =24 , fill ="none" , stro
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlertOctagonError.tsx
 
@@ -9105,7 +9105,7 @@ function AlertOctagonError({ color ="currentColor" , size =24 , fill ="none" , s
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/GlobeWorldEarth.tsx
 
@@ -9152,7 +9152,7 @@ function GlobeWorldEarth({ color ="currentColor" , size =24 , fill ="none" , str
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AirportPlaneTravel.tsx
 
@@ -9213,7 +9213,7 @@ function AirportPlaneTravel({ color ="currentColor" , size =24 , fill ="none" , 
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/SnowflakesWeatherCold.tsx
 
@@ -9235,7 +9235,7 @@ function SnowflakesWeatherCold({ color ="currentColor" , size =24 , fill ="none"
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/LockOpen.tsx
 
@@ -9270,7 +9270,7 @@ function LockOpen({ color ="currentColor" , size =24 , fill ="none" , strokeWidt
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/MicrophoneOffMusicTalk.tsx
 
@@ -9292,7 +9292,7 @@ function MicrophoneOffMusicTalk({ color ="currentColor" , size =24 , fill ="none
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetX.tsx
 
@@ -9314,7 +9314,7 @@ function AlphabetX({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/SettingsAccountMore.tsx
 
@@ -9345,7 +9345,7 @@ function SettingsAccountMore({ color ="currentColor" , size =24 , fill ="none" ,
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/PoundCurrencyMoney.tsx
 
@@ -9367,7 +9367,7 @@ function PoundCurrencyMoney({ color ="currentColor" , size =24 , fill ="none" , 
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ShoppingCart.tsx
 
@@ -9416,7 +9416,7 @@ function ShoppingCart({ color ="currentColor" , size =24 , fill ="none" , stroke
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetO.tsx
 
@@ -9440,7 +9440,7 @@ function AlphabetO({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetM.tsx
 
@@ -9462,7 +9462,7 @@ function AlphabetM({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetZ.tsx
 
@@ -9484,7 +9484,7 @@ function AlphabetZ({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Mouse.tsx
 
@@ -9519,7 +9519,7 @@ function Mouse({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/PlanetSaturnSpace.tsx
 
@@ -9541,7 +9541,7 @@ function PlanetSaturnSpace({ color ="currentColor" , size =24 , fill ="none" , s
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/WifiConnection.tsx
 
@@ -9586,7 +9586,7 @@ function WifiConnection({ color ="currentColor" , size =24 , fill ="none" , stro
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/SketchDiamond.tsx
 
@@ -9608,7 +9608,7 @@ function SketchDiamond({ color ="currentColor" , size =24 , fill ="none" , strok
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/BrowserChrome.tsx
 
@@ -9630,7 +9630,7 @@ function BrowserChrome({ color ="currentColor" , size =24 , fill ="none" , strok
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/SecurityShieldPrivacyBad.tsx
 
@@ -9661,7 +9661,7 @@ function SecurityShieldPrivacyBad({ color ="currentColor" , size =24 , fill ="no
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/Print.tsx
 
@@ -9699,7 +9699,7 @@ function Print({ color ="currentColor" , size =24 , fill ="none" , strokeWidth =
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/EducationSchool.tsx
 
@@ -9737,7 +9737,7 @@ function EducationSchool({ color ="currentColor" , size =24 , fill ="none" , str
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/XCircleCloseDelete.tsx
 
@@ -9770,7 +9770,7 @@ function XCircleCloseDelete({ color ="currentColor" , size =24 , fill ="none" , 
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/SnapchatSocial.tsx
 
@@ -9792,7 +9792,7 @@ function SnapchatSocial({ color ="currentColor" , size =24 , fill ="none" , stro
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/ActivityGraph.tsx
 
@@ -9814,7 +9814,7 @@ function ActivityGraph({ color ="currentColor" , size =24 , fill ="none" , strok
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/YuanCurrencyMoney.tsx
 
@@ -9836,7 +9836,7 @@ function YuanCurrencyMoney({ color ="currentColor" , size =24 , fill ="none" , s
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/AlphabetL.tsx
 
@@ -9858,7 +9858,7 @@ function AlphabetL({ color ="currentColor" , size =24 , fill ="none" , strokeWid
             strokeLinejoin: "round"
         })
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/icons/QuestionCircle.tsx
 
@@ -9885,7 +9885,7 @@ function QuestionCircle_Puzzle({ color ="currentColor" , size =24 , fill ="none"
             })
         ]
     });
-};
+}
 
 ;// CONCATENATED MODULE: ./frontend/components/basic-icons/index.tsx
 
@@ -10324,7 +10324,7 @@ function Button({ openInNewTab =false , type ="primary" , htmlType , size ="md" 
             ]
         })
     });
-};
+}
 
 
 /***/ }),
@@ -10365,7 +10365,7 @@ function Loader({ children , size =14 , margin =0 , type ="default" , text ="Loa
             })
         ]
     });
-};
+}
 function ProgressLoader({ percent  }) {
     return /*#__PURE__*/ _jsx("div", {
         className: styles.progress,
@@ -10429,7 +10429,7 @@ class api {
                 withCredentials: true,
                 ...config
             }), thunkAPI);
-};
+}
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });

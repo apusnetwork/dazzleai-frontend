@@ -77,7 +77,7 @@ function mapRemoteImageToGeneratedImage(image) {
             },
             _model: {
                 id: "",
-                name: (param.model ?? model_id) ?? "",
+                name: param.model ?? model_id ?? "",
                 params: {
                     author: "",
                     images: [],
@@ -176,7 +176,7 @@ async function handler(req, res) {
             message
         });
     }
-};
+}
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });

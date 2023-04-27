@@ -305,7 +305,7 @@ function WebsiteFooter() {
             ]
         })
     });
-};
+}
 
 
 /***/ }),
@@ -535,7 +535,7 @@ function WebsiteLayout({ children , title , description , robots , canonical =""
             }) : null
         ]
     });
-};
+}
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });

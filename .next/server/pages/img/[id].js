@@ -49,7 +49,7 @@ function ImageSharePage(props) {
             ...props
         })
     });
-};
+}
 async function getServerSideProps({ params , req  }) {
     try {
         const host = req.headers.host;
@@ -173,6 +173,13 @@ module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix.js")
 
 /***/ }),
 
+/***/ 6220:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/compare-states.js");
+
+/***/ }),
+
 /***/ 299:
 /***/ ((module) => {
 
@@ -198,6 +205,13 @@ module.exports = require("next/dist/shared/lib/router/utils/get-asset-path-from-
 /***/ ((module) => {
 
 module.exports = require("next/dist/shared/lib/router/utils/get-next-pathname-info.js");
+
+/***/ }),
+
+/***/ 1897:
+/***/ ((module) => {
+
+module.exports = require("next/dist/shared/lib/router/utils/is-bot.js");
 
 /***/ }),
 
@@ -334,7 +348,7 @@ module.exports = import("js-cookie");;
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [952,664,675,578,333,950,61,580,279], () => (__webpack_exec__(4011)));
+var __webpack_exports__ = __webpack_require__.X(0, [676,664,675,578,333,950,61,580,279], () => (__webpack_exec__(4011)));
 module.exports = __webpack_exports__;
 
 })();

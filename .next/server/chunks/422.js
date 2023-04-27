@@ -166,7 +166,7 @@ function Select({ label , size ="md" , id , name , value , onChange , error , in
             }) : null
         ]
     });
-};
+}
 
 
 /***/ })
