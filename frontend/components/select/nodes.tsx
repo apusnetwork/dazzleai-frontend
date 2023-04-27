@@ -43,7 +43,7 @@ export default function NodesSelect({ onChange, models, value, id }: ModelSelect
       <div>
         <Modal
           onClose={() => setOpen(false)}
-          title="选择节点"
+          title="Select Node"
           show={open}
           size='lg'
         >

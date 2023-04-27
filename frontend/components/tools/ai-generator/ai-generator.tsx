@@ -1025,7 +1025,7 @@ into state
                     onChange={n => setState({ ...state, steps: n as number })}
                   />
                   <Slider
-                    label={`CFG scale: ${state.guidanceScale}`}
+                    label={`CFG Scale: ${state.guidanceScale}`}
                     min={0}
                     max={20}
                     step={1}

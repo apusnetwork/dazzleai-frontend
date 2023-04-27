@@ -503,7 +503,7 @@ function ImageView(props) {
                                 children: [
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("b", {
                                         className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_12___default().label),
-                                        children: "CFG scale:"
+                                        children: "CFG Scale:"
                                     }),
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
                                         className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_12___default().value),
