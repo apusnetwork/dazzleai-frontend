@@ -206,7 +206,7 @@ function App({ children }: Props): JSX.Element {
       >
         <div className='login'>
           <h2 className='login-h'>Create an account</h2>
-          <p className='login-p'>Get 25 image credits every month for free!</p>
+          <p className='login-p'>Get 25 image credits new user for free!</p>
           <div id='google-login' />
 
           <div className="mobile_link_cta" style={{ marginTop: 14 }}>

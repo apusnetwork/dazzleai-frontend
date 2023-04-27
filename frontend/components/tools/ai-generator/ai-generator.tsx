@@ -257,7 +257,6 @@ into state
               newState.steps = parseInt(value);
               break;
             case "CFG scale":
-              debugger
               newState.guidanceScale = parseFloat(value);
               break;
             case "Sampler":

@@ -1,13 +1,5 @@
 {
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/": "pages/index.js",
-  "/api/models": "pages/api/models.js",
-  "/api/images/[id]": "pages/api/images/[id].js",
-  "/api/nodes": "pages/api/nodes.js",
-  "/api/me": "pages/api/me.js",
-  "/api/models/[id]": "pages/api/models/[id].js",
-  "/api/images": "pages/api/images.js",
-  "/api/tasks": "pages/api/tasks.js"
+  "/_document": "pages/_document.js"
 }
