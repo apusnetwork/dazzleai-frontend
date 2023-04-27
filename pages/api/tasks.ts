@@ -92,6 +92,8 @@ type Param = {
   seed: number;
   steps: number;
   width: number;
+  lora: string;
+  checkpoint: string;
 };
 
 type TaskStatus = 'pending' | 'succeed' | 'failed';
@@ -108,15 +110,15 @@ export type RemoteTask = {
 
 export function mapRemoteTaskToTaskInfo(remoteTask: RemoteTask): TaskInfo {
   const { task_id, user_id, param, status, extra, images, node } = remoteTask;
-  const { model, prompt, negative_prompt, seed, width, height, steps, sampler } = param;
+  const { model, prompt, negative_prompt, seed, width, height, steps, sampler, cfg_scale, lora, checkpoint } = param;
   const { progress, status_msg } = extra;
   const createdAt = new Date().toISOString();
   const startedAt = new Date().toISOString();
   const finishedAt = new Date().toISOString();
   const _model: TaskInfoModel = {
-    id: model,
+    id: lora || checkpoint || model,
     userId: user_id,
-    name: model,
+    name: lora || checkpoint || model,
     status: status_msg,
     public: false,
     params: {
@@ -163,11 +165,11 @@ export function mapRemoteTaskToTaskInfo(remoteTask: RemoteTask): TaskInfo {
       width,
       height,
       prompt,
-      scheduler: 'none',
+      scheduler: sampler,
       num_images: 1,
       started_at: startedAt,
       enhance_face: false,
-      guidance_scale: 1,
+      guidance_scale: cfg_scale,
       negative_prompt,
       num_inference_steps: steps,
     },
