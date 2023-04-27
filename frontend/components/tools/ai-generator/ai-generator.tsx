@@ -257,6 +257,7 @@ into state
               newState.steps = parseInt(value);
               break;
             case "CFG scale":
+              debugger
               newState.guidanceScale = parseFloat(value);
               break;
             case "Sampler":
@@ -1008,7 +1009,7 @@ into state
                     onChange={n => setState({ ...state, steps: n as number })}
                   />
                   <Slider
-                    label={`CFG scale: ${state.guidanceScale}`}
+                    label={`CFG Scale: ${state.guidanceScale}`}
                     min={0}
                     max={20}
                     step={1}
