@@ -263,7 +263,7 @@ function App({ children  }) {
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
                             className: "login-p",
-                            children: "Get 100 image credits every month for free!"
+                            children: "Get 25 image credits every month for free!"
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                             id: "google-login"
