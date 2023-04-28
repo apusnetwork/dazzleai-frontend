@@ -43,7 +43,10 @@ const defaultParam = {
 };
 function mapRemoteImageToGeneratedImage(image) {
     const { task , model_id , seed , image_id  } = image;
-    const { param =defaultParam  } = task;
+    let { param =defaultParam  } = task;
+    if (param == null) {
+        param = defaultParam;
+    }
     // const { _model } = task.task_id;
     return {
         id: image.image_id,
