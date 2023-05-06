@@ -36,14 +36,15 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_fro
 
 
 function mapParamsToRequest(params, model) {
-    return {
+    const req = {
         batch_count: params.num_images,
         cfg_scale: params.guidance_scale,
         denoising_strength: 0,
         height: params.height,
         image: params.image_url,
         model,
-        checkpoint: model,
+        checkpoint: "",
+        lora: "",
         negative_prompt: params.negative_prompt,
         node: params.node,
         prompt: params.prompt,
@@ -52,6 +53,13 @@ function mapParamsToRequest(params, model) {
         steps: params.num_inference_steps,
         width: params.width
     };
+    if (params.type === "checkpoint") {
+        req.checkpoint = model;
+    } else if (params.type === "lora") {
+        req.checkpoint = params.checkpoint;
+        req.lora = model;
+    }
+    return req;
 }
 // {"task_id":"task-cgjs3693bbtp4v5e1360","user_id":"1909b3ed-5a68-4a96-b648-9a00cca78f5a","node":"","status":"pending"}
 async function handler(req, res) {

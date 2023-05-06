@@ -41,10 +41,12 @@ async function handler(req, res) {
                 Authorization: `Bearer ${token}`
             }
         });
-        const resData = modelRes.data.filter((v)=>v.type === "checkpoint").map((model)=>({
-                id: model.type === "checkpoint" ? model.model_file_name : model.model_id,
+        const resData = modelRes.data.filter((v)=>v.type === "checkpoint" || v.type === "lora").map((model)=>({
+                id: model.type === "checkpoint" || model.type === "lora" ? model.model_file_name : model.model_id,
                 userId: null,
                 name: model.name,
+                type: model.type,
+                checkpoint: model.checkpoint_file_name,
                 status: "",
                 public: false,
                 params: {
