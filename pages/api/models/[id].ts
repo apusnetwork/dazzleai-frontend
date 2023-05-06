@@ -18,6 +18,7 @@ interface ImageGenerationRequest {
   steps: number;
   width: number;
   checkpoint: string;
+  lora: string;
 }
 
 interface GeneratorParams {
@@ -37,17 +38,19 @@ interface GeneratorParams {
   seed: string;
   sampler: string;
   checkpoint: string;
+  type: string;
 }
 
 function mapParamsToRequest(params: GeneratorParams, model: string): ImageGenerationRequest {
-  return {
+  const req = {
     batch_count: params.num_images,
     cfg_scale: params.guidance_scale,
     denoising_strength: 0,
     height: params.height,
     image: params.image_url,
     model,
-    checkpoint: model, // TODO: pass checkpoint or lora by model type in params 
+    checkpoint: '', 
+    lora: '', 
     negative_prompt: params.negative_prompt,
     node: params.node,
     prompt: params.prompt,
@@ -56,6 +59,13 @@ function mapParamsToRequest(params: GeneratorParams, model: string): ImageGenera
     steps: params.num_inference_steps,
     width: params.width,
   };
+  if(params.type==="checkpoint"){
+    req.checkpoint=model;
+  }else if (params.type==="lora"){
+    req.checkpoint=params.checkpoint;
+    req.lora=model;
+  }
+  return req;
 }
 
 // {"task_id":"task-cgjs3693bbtp4v5e1360","user_id":"1909b3ed-5a68-4a96-b648-9a00cca78f5a","node":"","status":"pending"}

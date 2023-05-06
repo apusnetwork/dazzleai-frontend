@@ -30,7 +30,7 @@ import styles from './ai-generator.module.scss';
 import NodesSelect from '../../select/nodes';
 
 interface StateI {
-  model: string // when model type is lora, this is the model name, when model type is checkpoint, this is the model_file_name
+  model: string // model_file_name
   node: string // the model should be run on this node
   prompt: string
   negativePrompt: string
@@ -507,6 +507,8 @@ into state
       window.scrollTo({ top: window.innerWidth < 700 ? window.innerHeight : 0, behavior: 'smooth' });
 
       body.node = nodes.find(v => v.id === state.node)?.domain || state.node;
+      body.type = models.find(v => v.id === state.model)?.type;
+      body.checkpoint = models.find(v => v.id === state.model)?.checkpoint;
 
       const pendingTasks = await axios.post('/api/models/' + model, body);
 

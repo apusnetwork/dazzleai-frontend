@@ -6,6 +6,8 @@ interface Model {
   id: string;
   userId: null;
   name: string;
+  type: string;
+  checkpoint: string;
   status: string;
   public: boolean;
   params: {
@@ -32,6 +34,7 @@ interface RemoteModel {
   model_file: string;
   model_version_id: string;
   model_file_name: string;
+  checkpoint_file_name: string;
   model_file_url: string;
   model_id: string;
   name: string;
@@ -47,10 +50,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         Authorization: `Bearer ${token}`,
       }
     })
-    const resData: ModelList = modelRes.data.filter(v => v.type === "checkpoint").map((model) => ({
-      id: model.type === "checkpoint" ? model.model_file_name : model.model_id,
+    const resData: ModelList = modelRes.data.filter(v => v.type === "checkpoint"||v.type === "lora").map((model) => ({
+      id: model.type === "checkpoint"||model.type === "lora" ? model.model_file_name : model.model_id,
       userId: null,
       name: model.name,
+      type: model.type,
+      checkpoint: model.checkpoint_file_name,
       status: '',
       public: false,
       params: {
