@@ -151,7 +151,7 @@ export function mapRemoteImageToGeneratedImage(image: RemoteImage): GeneratedIma
     createdAt: '',
     modelTask: {
       id: task.task_id,
-      model: param.checkpoint || param.lora || param.model || "",
+      model: param.lora || param.checkpoint || param.model || "",
       params: {
         seed: seed,
         tool: param.sampler,
