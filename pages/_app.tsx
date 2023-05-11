@@ -81,6 +81,7 @@ function App({ children }: Props): JSX.Element {
     const res = await dispatch(loginGoogle(getLoginRequest()))
     if (res.meta.requestStatus === 'fulfilled') {
       dispatch(updateAuthState(undefined));
+      dispatch(getUser())
       message(dispatch, { type: 'success', text: 'Sucesfully Logged In!' })
       window.scrollTo({ top: 0 })
     }

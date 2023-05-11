@@ -146,6 +146,7 @@ function App({ children  }) {
         const res = await dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__/* .loginGoogle */ .z3)(getLoginRequest()));
         if (res.meta.requestStatus === "fulfilled") {
             dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .updateAuthState */ .FA)(undefined));
+            dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__/* .getUser */ .PR)());
             (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
                 type: "success",
                 text: "Sucesfully Logged In!"

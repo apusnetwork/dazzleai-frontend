@@ -371,10 +371,10 @@ into state
       return
     }
 
-    // if (user && user.credits < credits) {
-    //   dispatch(updateAuthState('credits'));
-    //   return
-    // }
+    if (user && user.credits < state.numImages) {
+      dispatch(updateAuthState('credits'));
+      return
+    }
 
     // if (!user.id) {
     //   dispatch(updateAuthState('register'));

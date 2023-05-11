@@ -38,8 +38,8 @@ axiosInstance.interceptors.response.use((response)=>{
     return Promise.reject(error);
 });
 function handleApiError(error) {
-    const status = error.response ? error.response.status : 500;
-    let message = error.response?.data ? error.response?.data : error.stack ?? "Unknown Error";
+    const status = error?.response ? error?.response?.status : 500;
+    let message = error?.response?.data ? error?.response?.data : error?.stack ?? "Unknown Error";
     return {
         status,
         message
