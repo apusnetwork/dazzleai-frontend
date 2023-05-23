@@ -5,6 +5,8 @@ export const getUser = createAsyncThunk("user/get", api.get("/api/me"));
 
 export const loginGoogle = createAsyncThunk("user/loginGoogle", api.post("/api/auth/google"));
 
+export const loginMetaMask = createAsyncThunk("user/loginMetaMask", api.post("/api/auth/metamask"));
+
 export const logoutUser = createAsyncThunk("user/logout", api.delete("/api/auth"));
 
 export const loginUser = createAsyncThunk("user/loginEmail", api.post("/api/auth"));

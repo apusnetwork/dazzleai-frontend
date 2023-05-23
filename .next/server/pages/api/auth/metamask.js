@@ -1,8 +1,8 @@
 "use strict";
 (() => {
 var exports = {};
-exports.id = 620;
-exports.ids = [620,806];
+exports.id = 124;
+exports.ids = [124,806];
 exports.modules = {
 
 /***/ 4802:
@@ -55,7 +55,7 @@ const deleteCookie = (res, name)=>{
 
 /***/ }),
 
-/***/ 4037:
+/***/ 6277:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
@@ -71,13 +71,50 @@ _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependenci
 
 async function handler(req, res) {
     try {
-        const token = (0,_frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .getCookie */ .ej)(req, _frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .AuthHeaderKey */ .qf);
-        const stripeRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .Z.post("/api/stripe/create-checkout-session", req.body, {
+        const remoteReq = {
+            "metamask_address": req.body.address,
+            "metamask_message": req.body.nonce,
+            "login_type": "metamask",
+            "metamask_signature": req.body.signature
+        };
+        if ("from_img" in req.body) {
+            remoteReq["from_img"] = req.body.from_img;
+        }
+        if ("from_url" in req.body) {
+            remoteReq["from_url"] = req.body.from_url;
+        }
+        const loginRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .Z.post("/login", remoteReq);
+        const userRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .Z.get("/api/userinfo", {
             headers: {
-                Authorization: `Bearer ${token}`
+                Authorization: `Bearer ${loginRes.data.token}`
             }
         });
-        res.status(200).json(stripeRes.data);
+        (0,_frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .setCookie */ .d8)(res, _frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .AuthHeaderKey */ .qf, loginRes.data.token, {
+            maxAge: 60 * 60 * 24 * 7,
+            path: "/",
+            sameSite: "lax"
+        });
+        const resData = {
+            id: userRes.data.user_id,
+            referralCode: "",
+            additionalCredits: 0,
+            monthlyCredits: 0,
+            plan: "",
+            billingPeriod: "",
+            currentPeriodStartAt: "",
+            currentPeriodEndAt: "",
+            subscriptionStatus: "",
+            cancelAtEnd: false,
+            name: userRes.data.nickname,
+            hasBetaAccess: false,
+            status: "active",
+            createdAt: "",
+            email: "",
+            firstName: "",
+            credits: 0,
+            isPaid: false
+        };
+        res.status(200).json(resData);
     } catch (e) {
         const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .z)(e);
         res.status(status).json({
@@ -98,7 +135,7 @@ __webpack_async_result__();
 var __webpack_require__ = require("../../../webpack-api-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [378], () => (__webpack_exec__(4037)));
+var __webpack_exports__ = __webpack_require__.X(0, [378], () => (__webpack_exec__(6277)));
 module.exports = __webpack_exports__;
 
 })();

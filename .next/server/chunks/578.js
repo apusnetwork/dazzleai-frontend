@@ -10552,6 +10552,7 @@ const selectAuthState = (state)=>state.info.authState;
 "use strict";
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "CB": () => (/* binding */ loginMetaMask),
 /* harmony export */   "PR": () => (/* binding */ getUser),
 /* harmony export */   "TX": () => (/* binding */ logoutUser),
 /* harmony export */   "z3": () => (/* binding */ loginGoogle)
@@ -10566,6 +10567,7 @@ _frontend_redux_api__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencies
 
 const getUser = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createAsyncThunk)("user/get", _frontend_redux_api__WEBPACK_IMPORTED_MODULE_1__/* ["default"].get */ .Z.get("/api/me"));
 const loginGoogle = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createAsyncThunk)("user/loginGoogle", _frontend_redux_api__WEBPACK_IMPORTED_MODULE_1__/* ["default"].post */ .Z.post("/api/auth/google"));
+const loginMetaMask = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createAsyncThunk)("user/loginMetaMask", _frontend_redux_api__WEBPACK_IMPORTED_MODULE_1__/* ["default"].post */ .Z.post("/api/auth/metamask"));
 const logoutUser = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createAsyncThunk)("user/logout", _frontend_redux_api__WEBPACK_IMPORTED_MODULE_1__/* ["default"]["delete"] */ .Z["delete"]("/api/auth"));
 const loginUser = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createAsyncThunk)("user/loginEmail", _frontend_redux_api__WEBPACK_IMPORTED_MODULE_1__/* ["default"].post */ .Z.post("/api/auth"));
 const resetUserPassword = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.createAsyncThunk)("user/resetPassword", _frontend_redux_api__WEBPACK_IMPORTED_MODULE_1__/* ["default"].put */ .Z.put("/api/auth/password?token=:token"));

@@ -3,7 +3,7 @@ import { AppProps } from 'next/dist/shared/lib/router/router';
 import Router, { useRouter } from 'next/router';
 import Script from 'next/script';
 
-import { useEffect, useLayoutEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Provider } from 'react-redux';
 
 import "@/frontend/styles/index.scss";
@@ -17,20 +17,18 @@ import "@fontsource/inter/700.css";
 import axios from 'axios';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { LockPrivacy } from '@/frontend/components/basic-icons';
 import Button from '@/frontend/components/button/button';
-import Divider from '@/frontend/components/divider/divider';
-import Input from '@/frontend/components/input/input';
 import { AuthModal } from '@/frontend/components/modal/modal';
 import Plans from '@/frontend/components/plans/plans';
 import { useAppDispatch, useAppSelector } from '@/frontend/redux/hooks';
 import { message, selectAuthState, updateAuthState } from '@/frontend/redux/info/slice';
-import { getUser, loginGoogle, loginUser, registerUser } from '@/frontend/redux/user/actions';
+import { getUser, loginGoogle, loginMetaMask } from '@/frontend/redux/user/actions';
 import { selectUser, selectUserStatus } from '@/frontend/redux/user/slice';
 import { Coins, Gift } from 'lucide-react';
 import Link from 'next/link';
-import Cookies from 'js-cookie';
 import Messages from '@/frontend/components/message/message';
+import detectEthereumProvider from '@metamask/detect-provider';
+import { ethers } from "ethers";
 
 dayjs.extend(relativeTime)
 
@@ -80,6 +78,50 @@ function App({ children }: Props): JSX.Element {
     }
     const res = await dispatch(loginGoogle(getLoginRequest()))
     if (res.meta.requestStatus === 'fulfilled') {
+      dispatch(updateAuthState(undefined));
+      dispatch(getUser())
+      message(dispatch, { type: 'success', text: 'Sucesfully Logged In!' })
+      window.scrollTo({ top: 0 })
+    }
+  }
+
+  async function metaMaskLogin() {
+    const provider = await detectEthereumProvider({ silent: true })
+    if (!provider) {
+      message(dispatch, { type: 'danger', text: "Cannot Detect MetaMask" })
+      return
+    }
+
+    let accounts = await (window as any).ethereum.request({
+      method: "eth_requestAccounts",
+    })
+    if (!accounts[0]) {
+      message(dispatch, { type: 'danger', text: "Please connect to MetaMask" })
+      return
+    }
+    const account = ethers.getAddress(accounts[0])
+    const nonceRes = await axios.post('/api/auth/nonce', { address: account })
+    if (!nonceRes.data.nonce) {
+      message(dispatch, { type: 'danger', text: "Get Nonce Failed!" })
+      return
+    }
+    const nonce = `welcome login dazzleai;${nonceRes.data.nonce}`
+    const signature = await (window as any).ethereum.request({
+      method: "personal_sign",
+      params: [nonce, account],
+    })
+    if (!signature) {
+      message(dispatch, { type: 'danger', text: "Signature Failed!" })
+      return
+    }
+    const loginRes = await dispatch(loginMetaMask({
+      address: account,
+      signature,
+      nonce,
+      from_img: sessionStorage.getItem('from_img') || undefined,
+      from_user: sessionStorage.getItem('from_user') || undefined,
+    }))
+    if (loginRes.meta.requestStatus === 'fulfilled') {
       dispatch(updateAuthState(undefined));
       dispatch(getUser())
       message(dispatch, { type: 'success', text: 'Sucesfully Logged In!' })
@@ -157,7 +199,7 @@ function App({ children }: Props): JSX.Element {
           <div id='google-login' />
 
           <div className="mobile_link_cta" style={{ marginTop: 14 }}>
-            <Button size="md" type="primary" fullWidth onClick={() => message(dispatch, { type: 'success', text: "Comming Soon!" })}>
+            <Button size="md" type="primary" fullWidth onClick={metaMaskLogin}>
               MetaMask
             </Button>
           </div>
@@ -211,7 +253,7 @@ function App({ children }: Props): JSX.Element {
           <div id='google-login' />
 
           <div className="mobile_link_cta" style={{ marginTop: 14 }}>
-            <Button size="md" type="primary" fullWidth onClick={() => message(dispatch, { type: 'success', text: "Comming Soon!" })}>
+            <Button size="md" type="primary" fullWidth onClick={metaMaskLogin}>
               MetaMask
             </Button>
           </div>

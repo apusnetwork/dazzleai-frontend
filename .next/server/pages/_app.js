@@ -73,8 +73,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(1664);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_17__);
 /* harmony import */ var _frontend_components_message_message__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(3919);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__, axios__WEBPACK_IMPORTED_MODULE_6__, _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_11__, _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_15__]);
-([_frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__, axios__WEBPACK_IMPORTED_MODULE_6__, _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_11__, _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_15__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var _metamask_detect_provider__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(3427);
+/* harmony import */ var _metamask_detect_provider__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_metamask_detect_provider__WEBPACK_IMPORTED_MODULE_19__);
+/* harmony import */ var ethers__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(8844);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__, axios__WEBPACK_IMPORTED_MODULE_6__, _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_11__, _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_15__, ethers__WEBPACK_IMPORTED_MODULE_20__]);
+([_frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__, axios__WEBPACK_IMPORTED_MODULE_6__, _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_11__, _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_15__, ethers__WEBPACK_IMPORTED_MODULE_20__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
 
 
 
@@ -145,6 +150,72 @@ function App({ children  }) {
         }
         const res = await dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__/* .loginGoogle */ .z3)(getLoginRequest()));
         if (res.meta.requestStatus === "fulfilled") {
+            dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .updateAuthState */ .FA)(undefined));
+            dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__/* .getUser */ .PR)());
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
+                type: "success",
+                text: "Sucesfully Logged In!"
+            });
+            window.scrollTo({
+                top: 0
+            });
+        }
+    }
+    async function metaMaskLogin() {
+        const provider = await _metamask_detect_provider__WEBPACK_IMPORTED_MODULE_19___default()({
+            silent: true
+        });
+        if (!provider) {
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
+                type: "danger",
+                text: "Cannot Detect MetaMask"
+            });
+            return;
+        }
+        let accounts = await window.ethereum.request({
+            method: "eth_requestAccounts"
+        });
+        if (!accounts[0]) {
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
+                type: "danger",
+                text: "Please connect to MetaMask"
+            });
+            return;
+        }
+        const account = ethers__WEBPACK_IMPORTED_MODULE_20__.ethers.getAddress(accounts[0]);
+        const nonceRes = await axios__WEBPACK_IMPORTED_MODULE_6__["default"].post("/api/auth/nonce", {
+            address: account
+        });
+        if (!nonceRes.data.nonce) {
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
+                type: "danger",
+                text: "Get Nonce Failed!"
+            });
+            return;
+        }
+        const nonce = `welcome login dazzleai;${nonceRes.data.nonce}`;
+        const signature = await window.ethereum.request({
+            method: "personal_sign",
+            params: [
+                nonce,
+                account
+            ]
+        });
+        if (!signature) {
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
+                type: "danger",
+                text: "Signature Failed!"
+            });
+            return;
+        }
+        const loginRes = await dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__/* .loginMetaMask */ .CB)({
+            address: account,
+            signature,
+            nonce,
+            from_img: sessionStorage.getItem("from_img") || undefined,
+            from_user: sessionStorage.getItem("from_user") || undefined
+        }));
+        if (loginRes.meta.requestStatus === "fulfilled") {
             dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .updateAuthState */ .FA)(undefined));
             dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__/* .getUser */ .PR)());
             (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
@@ -240,10 +311,7 @@ function App({ children  }) {
                                 size: "md",
                                 type: "primary",
                                 fullWidth: true,
-                                onClick: ()=>(0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
-                                        type: "success",
-                                        text: "Comming Soon!"
-                                    }),
+                                onClick: metaMaskLogin,
                                 children: "MetaMask"
                             })
                         })
@@ -278,10 +346,7 @@ function App({ children  }) {
                                 size: "md",
                                 type: "primary",
                                 fullWidth: true,
-                                onClick: ()=>(0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
-                                        type: "success",
-                                        text: "Comming Soon!"
-                                    }),
+                                onClick: metaMaskLogin,
                                 children: "MetaMask"
                             })
                         }),
@@ -395,6 +460,13 @@ function Frontend({ Component , pageProps  }) {
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 3427:
+/***/ ((module) => {
+
+module.exports = require("@metamask/detect-provider");
 
 /***/ }),
 
@@ -626,6 +698,13 @@ module.exports = require("react/jsx-runtime");
 /***/ ((module) => {
 
 module.exports = import("axios");;
+
+/***/ }),
+
+/***/ 8844:
+/***/ ((module) => {
+
+module.exports = import("ethers");;
 
 /***/ })
 
