@@ -364,7 +364,7 @@ function ImageView(props) {
                             prompt ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_button_button__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
                                 type: "default",
                                 title: "Generate similar",
-                                href: `/?img=${id}${shareParam}`,
+                                href: `/generate?img=${id}${shareParam}`,
                                 openInNewTab: true,
                                 children: [
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_6__.Repeat, {
@@ -422,7 +422,7 @@ function ImageView(props) {
                         size: "sm",
                         type: "default",
                         title: "Generate similar",
-                        href: `/?img=${id}${shareParam}`,
+                        href: `/generate?img=${id}${shareParam}`,
                         openInNewTab: true,
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_6__.Repeat, {

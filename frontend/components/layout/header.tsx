@@ -50,10 +50,10 @@ export function WebsiteHeader({ fixed = false }): JSX.Element {
           </Button>
         </div>
         <div className={[styles.header_right, open ? styles.mobile_menu : ''].join(' ')}>
-          {/* <ActiveLink activeClassName={styles.active} href="/editor"><a className={styles.header_link}>AI Editor</a></ActiveLink>
-          <ActiveLink activeClassName={styles.active} href="/text-to-image"><a className={styles.header_link}>Text to Image</a></ActiveLink>
-          <ActiveLink activeClassName={styles.active} href="/dreambooth/models"><a className={styles.header_link}>DreamBooth <span className={styles.new}>new</span></a></ActiveLink>
-          <ActiveLink activeClassName={styles.active} href="/guides"><a className={styles.header_link}>Guides</a></ActiveLink> */}
+          {/* {/* <ActiveLink activeClassName={styles.active} href="/editor"><a className={styles.header_link}>AI Editor</a></ActiveLink> */}
+          <ActiveLink activeClassName={styles.active} href="/generate"><a className={styles.header_link}>Generate Image</a></ActiveLink>
+          {/* <ActiveLink activeClassName={styles.active} href="/dreambooth/models"><a className={styles.header_link}>DreamBooth <span className={styles.new}>new</span></a></ActiveLink> */}
+          {/* <ActiveLink activeClassName={styles.active} href="/guides"><a className={styles.header_link}>Guides</a></ActiveLink> */}
           <a className={styles.header_link} href='https://discord.gg/BxXM6qfmwp' target='_blank' rel='noreferrer'>
             <svg xmlns="http://www.w3.org/2000/svg" width={71 / 3.2} height={55 / 3.2} viewBox="0 0 71 55" fill="#000000">
               <g clipPath="url(#clip0)">
