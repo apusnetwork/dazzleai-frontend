@@ -1,8 +1,8 @@
 @import "@/frontend/styles/vars";
 
 ._hero {
-  max-height: 80vh;
-  overflow: hidden;
+  // max-height: 80vh;
+  // overflow: hidden;
   margin-bottom: 24px;
   border-bottom: 1px solid $border;
 
@@ -17,14 +17,14 @@
 
 .hero {
   display: grid;
-  grid-template-columns: 700px 1fr;
+  grid-template-columns: 1fr;
   max-width: 1440px;
   margin: 0 auto;
   padding: 24px;
   gap: 36px;
 
   @include medium {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   @include mobile {
@@ -43,8 +43,9 @@
   .title {
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
     flex-wrap: wrap;
 
     margin: 0;
@@ -64,20 +65,33 @@
     div {
       font-style: normal;
       color: #fff;
-      ;
-      background-image: linear-gradient(225deg, rgba(#6363fa, 1) 40%, rgba(#cc53fc, 1));
+      // background-image: linear-gradient(225deg, rgba(#6363fa, 1) 40%, rgba(#cc53fc, 1));
+      color: $primary;
       background-size: 100%;
       background-clip: text;
-      text-fill-color: transparent;
-      -webkit-background-clip: text;
-      -moz-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      -moz-text-fill-color: transparent;
+      // text-fill-color: transparent;
+      // -webkit-background-clip: text;
+      // -moz-background-clip: text;
+      // -webkit-text-fill-color: transparent;
+      // -moz-text-fill-color: transparent;
     }
 
     @include mobile {
       font-size: 32px;
       flex-direction: column;
+    }
+  }
+
+  .hero_subtitle {
+    font-size: 18px;
+    line-height: 133%;
+    font-weight: 600;
+    margin: 0;
+    color: $dark-font;
+    text-align: center;
+
+    @include mobile {
+      font-size: 15px;
     }
   }
 
@@ -95,7 +109,8 @@
   }
 
   .cta {
-    padding: 48px 0 24px 0;
+    // padding: 48px 0 24px 0;
+    padding: 32px 0 40px 0;
 
     small {
       display: block;
@@ -307,19 +322,48 @@
     overflow: hidden;
     position: relative;
 
-    img {
-      width: 100%;
-      margin-top: 6px;
+    .image_wrapper {
+      display: inline-block;
+      position: relative;
+      overflow: hidden;
       border-radius: 6px;
 
-      @include mobile {
-        margin-top: 3px;
+      &::after {
+        content: "Quick Generate";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        font-size: 16px;
+        color: #ffffff;
+        height: 40px;
+        line-height: 30px;
+        text-align: center;
+        background-color: transparent;
+        backdrop-filter: blur(2px);
       }
     }
 
-    &:nth-of-type(2n) {
-      margin-top: 32px;
+    .image_badge {
+      position: absolute;
+      top: 12px;
+      right: 6px;
+      background-color: $primary;
+      color: #ffffff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 12px;
+      opacity: 0.8;
     }
+
+    img {
+      width: 100%;
+    }
+
+    // &:nth-of-type(2n) {
+    //   margin-top: 32px;
+    // }
 
     @include mobile {
       padding-left: 6px;

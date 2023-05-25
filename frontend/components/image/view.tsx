@@ -87,7 +87,7 @@ export default function ImageView(props: ImageI) {
         <h1 className={styles.title}>{h}</h1>
         <div className={styles.view_buttons}>
           <Button type="icon" title="Download" href={`/api/download/${props.id}`} download={`getimg_ai_${props.id}.${props.format.toLowerCase()}`}><Download /></Button>
-          {prompt ? <Button type="default" title="Generate similar" href={`/?img=${id}${shareParam}`} openInNewTab={true}>
+          {prompt ? <Button type="default" title="Generate similar" href={`/generate?img=${id}${shareParam}`} openInNewTab={true}>
             <Repeat strokeWidth={1.5} />
             Reuse parameters
           </Button> : null}
@@ -121,7 +121,7 @@ export default function ImageView(props: ImageI) {
       </div>
       <div className={styles.mobile_sharer}>
         <Button size="xs" type="icon" title="Download" href={`/api/download/${props.id}`} download={`getimg_ai_${props.id}.${props.format.toLowerCase()}`}><Download /></Button>
-        {prompt ? <Button size="sm" type="default" title="Generate similar" href={`/?img=${id}${shareParam}`} openInNewTab={true}>
+        {prompt ? <Button size="sm" type="default" title="Generate similar" href={`/generate?img=${id}${shareParam}`} openInNewTab={true}>
           <Repeat strokeWidth={1.5} />
           Reuse parameters
         </Button> : null}

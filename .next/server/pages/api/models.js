@@ -95,7 +95,8 @@ async function handler(req, res) {
                 createdAt: "",
                 trainingStartedAt: null,
                 trainingFinishedAt: null,
-                lastUsedAt: ""
+                lastUsedAt: "",
+                useCount: model.use_count
             }));
         res.status(200).json(resData);
     } catch (e) {

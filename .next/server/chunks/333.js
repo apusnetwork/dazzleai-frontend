@@ -281,6 +281,14 @@ function WebsiteHeader({ fixed =false  }) {
                         open ? (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().mobile_menu) : ""
                     ].join(" "),
                     children: [
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_active_link_active_link__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
+                            activeClassName: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().active),
+                            href: "/generate",
+                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
+                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().header_link),
+                                children: "Generate Image"
+                            })
+                        }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                             className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().header_link),
                             href: "https://discord.gg/BxXM6qfmwp",

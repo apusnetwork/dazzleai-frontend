@@ -16,10 +16,10 @@ export default function Hero({ title, subtitle, visual, socialProof, cta }: Hero
       <div className={styles.hero}>
         <div className={styles.content}>
           <h1 className={styles.title}>{title}</h1>
-          <h2 className={styles.subtitle}>{subtitle}</h2>
           <div className={styles.cta}>
             {cta}
           </div>
+          <h2 className={styles.hero_subtitle}>{subtitle}</h2>
           <div className={styles.social_proof}>
             {socialProof}
           </div>

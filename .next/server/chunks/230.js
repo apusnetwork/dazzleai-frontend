@@ -1,5 +1,5 @@
-exports.id = 869;
-exports.ids = [869];
+exports.id = 230;
+exports.ids = [230];
 exports.modules = {
 
 /***/ 3499:
@@ -11,6 +11,7 @@ module.exports = {
 	"hero": "website_hero__ssYjU",
 	"content": "website_content__DPLzT",
 	"title": "website_title__lStXQ",
+	"hero_subtitle": "website_hero_subtitle__syX5G",
 	"subtitle": "website_subtitle__igLVp",
 	"cta": "website_cta__vuIFI",
 	"social_proof": "website_social_proof__zvY01",
@@ -26,6 +27,8 @@ module.exports = {
 	"icon": "website_icon__Gue5X",
 	"image_grid_visual": "website_image_grid_visual__A9KrT",
 	"column": "website_column__6Z67w",
+	"image_wrapper": "website_image_wrapper__JDScv",
+	"image_badge": "website_image_badge__o4ekU",
 	"_large_cta": "website__large_cta__JWVIc",
 	"large_cta": "website_large_cta__7nFVV",
 	"faq": "website_faq__a5XCs",
@@ -35,49 +38,6 @@ module.exports = {
 	"answer": "website_answer__Ag0J3",
 	"open": "website_open__3Goe4"
 };
-
-
-/***/ }),
-
-/***/ 9477:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "n": () => (/* binding */ LargeCTA)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _website_module_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3499);
-/* harmony import */ var _website_module_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_website_module_scss__WEBPACK_IMPORTED_MODULE_1__);
-
-
-function LargeCTA({ title =/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
-    children: "Ready to get started?"
-}) , text ="Explore our tools, or create an account." , button  }) {
-    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("section", {
-        className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_1___default()._large_cta),
-        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-            className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_1___default().large_cta),
-            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                children: [
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
-                        className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_1___default().title),
-                        children: title
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
-                        className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_1___default().text),
-                        children: text
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_1___default().cta),
-                        children: button
-                    })
-                ]
-            })
-        })
-    });
-}
 
 
 /***/ }),
@@ -108,13 +68,13 @@ function Hero({ title , subtitle , visual , socialProof , cta  }) {
                             className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_1___default().title),
                             children: title
                         }),
-                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
-                            className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_1___default().subtitle),
-                            children: subtitle
-                        }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                             className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_1___default().cta),
                             children: cta
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
+                            className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_1___default().hero_subtitle),
+                            children: subtitle
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                             className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_1___default().social_proof),
@@ -141,13 +101,11 @@ function Hero({ title , subtitle , visual , socialProof , cta  }) {
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "TT": () => (/* reexport */ FeatureCard),
   "GN": () => (/* reexport */ FeatureRow),
-  "O1": () => (/* reexport */ FeaturesGrid),
   "mw": () => (/* reexport */ ImageGridVisual)
 });
 
-// UNUSED EXPORTS: SmallSocialProof, SocialProof
+// UNUSED EXPORTS: FeatureCard, FeaturesGrid, SmallSocialProof, SocialProof
 
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
@@ -189,36 +147,36 @@ function FeatureRow({ title , caption , text , visual , reverse  }) {
     });
 }
 function FeatureCard({ title , text , icon  }) {
-    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+    return /*#__PURE__*/ _jsxs("div", {
         className: [
-            (website_module_default()).feature_card
+            styles.feature_card
         ].join(" "),
         children: [
-            icon ? /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                className: (website_module_default()).icon,
+            icon ? /*#__PURE__*/ _jsx("div", {
+                className: styles.icon,
                 children: icon
             }) : null,
-            /*#__PURE__*/ jsx_runtime_.jsx("h2", {
-                className: (website_module_default()).title,
+            /*#__PURE__*/ _jsx("h2", {
+                className: styles.title,
                 children: title
             }),
-            /*#__PURE__*/ jsx_runtime_.jsx("p", {
-                className: (website_module_default()).text,
+            /*#__PURE__*/ _jsx("p", {
+                className: styles.text,
                 children: text
             })
         ]
     });
 }
 function FeaturesGrid({ title , children  }) {
-    return /*#__PURE__*/ (0,jsx_runtime_.jsxs)("section", {
-        className: (website_module_default()).features_grid,
+    return /*#__PURE__*/ _jsxs("section", {
+        className: styles.features_grid,
         children: [
-            /*#__PURE__*/ jsx_runtime_.jsx("h2", {
-                className: (website_module_default()).heading,
+            /*#__PURE__*/ _jsx("h2", {
+                className: styles.heading,
                 children: title
             }),
-            /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                className: (website_module_default()).grid,
+            /*#__PURE__*/ _jsx("div", {
+                className: styles.grid,
                 children: children
             })
         ]
@@ -272,8 +230,9 @@ function SmallSocialProof() {
 // EXTERNAL MODULE: external "react-masonry-css"
 var external_react_masonry_css_ = __webpack_require__(7125);
 var external_react_masonry_css_default = /*#__PURE__*/__webpack_require__.n(external_react_masonry_css_);
-// EXTERNAL MODULE: ./utils/cloudflare.ts
-var cloudflare = __webpack_require__(4201);
+// EXTERNAL MODULE: ./node_modules/next/link.js
+var next_link = __webpack_require__(1664);
+var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 ;// CONCATENATED MODULE: ./frontend/components/website/visuals.tsx
 
 
@@ -284,19 +243,32 @@ function ImageGridVisual({ images , columns =4  }) {
         className: (website_module_default()).image_grid_visual,
         children: /*#__PURE__*/ jsx_runtime_.jsx((external_react_masonry_css_default()), {
             breakpointCols: {
-                default: columns
+                default: columns,
+                1100: 2,
+                800: 2
             },
             className: (website_module_default()).grid,
             columnClassName: (website_module_default()).column,
-            children: images.map((i, id)=>/*#__PURE__*/ jsx_runtime_.jsx("img", {
-                    src: (0,cloudflare/* cloudflareLoader */.O)({
-                        src: i,
-                        quality: 75,
-                        width: 356
-                    }),
-                    alt: "",
-                    className: (website_module_default()).image
-                }, id))
+            children: images.map((model)=>/*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
+                    href: `/generate?img=${model.params.images[0].split("/").pop()}&shared=true`,
+                    children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: (website_module_default()).image_wrapper,
+                        children: [
+                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                                className: (website_module_default()).image_badge,
+                                children: [
+                                    model.useCount,
+                                    " runs"
+                                ]
+                            }),
+                            /*#__PURE__*/ jsx_runtime_.jsx("img", {
+                                src: model.params.images[0],
+                                alt: "",
+                                className: (website_module_default()).image
+                            }, model.id)
+                        ]
+                    })
+                }))
         })
     });
 }
@@ -306,27 +278,6 @@ function ImageGridVisual({ images , columns =4  }) {
 
 
 
-
-
-/***/ }),
-
-/***/ 4201:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "O": () => (/* binding */ cloudflareLoader)
-/* harmony export */ });
-const cloudflareLoader = ({ src , width , quality  })=>{
-    const params = [
-        `width=${width}`
-    ];
-    if (quality) {
-        params.push(`quality=${quality}`);
-    }
-    const paramsString = params.join(",");
-    return src;
-};
 
 
 /***/ }),

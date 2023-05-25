@@ -21,6 +21,7 @@ interface Model {
   trainingStartedAt: null;
   trainingFinishedAt: null;
   lastUsedAt: string;
+  useCount: number;
 }
 
 type ModelList = Model[];
@@ -38,6 +39,7 @@ interface RemoteModel {
   model_file_url: string;
   model_id: string;
   name: string;
+  use_count: number;
 }
 
 type RemoteModelList = RemoteModel[];
@@ -50,8 +52,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         Authorization: `Bearer ${token}`,
       }
     })
-    const resData: ModelList = modelRes.data.filter(v => v.type === "checkpoint"||v.type === "lora").map((model) => ({
-      id: model.type === "checkpoint"||model.type === "lora" ? model.model_file_name : model.model_id,
+    const resData: ModelList = modelRes.data.filter(v => v.type === "checkpoint" || v.type === "lora").map((model) => ({
+      id: model.type === "checkpoint" || model.type === "lora" ? model.model_file_name : model.model_id,
       userId: null,
       name: model.name,
       type: model.type,
@@ -69,6 +71,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       trainingStartedAt: null,
       trainingFinishedAt: null,
       lastUsedAt: '',
+      useCount: model.use_count,
     }))
     res.status(200).json(resData)
   } catch (e: any) {
