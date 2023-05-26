@@ -3,8 +3,7 @@
     "types": [
       "next",
       "next/types/global",
-      "node",
-      "./pages/types.d.ts"
+      "node"
     ],
     "target": "es5",
     "lib": [
@@ -40,7 +39,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "globals.d.ts"
   ],
   "exclude": [
     "node_modules"

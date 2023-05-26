@@ -6,6 +6,7 @@ import Script from 'next/script';
 import { useEffect, useState } from "react";
 import { Provider } from 'react-redux';
 
+import "@/frontend/styles/globals.css";
 import "@/frontend/styles/index.scss";
 import "rc-slider/assets/index.css";
 
@@ -27,8 +28,8 @@ import { selectUser, selectUserStatus } from '@/frontend/redux/user/slice';
 import { Coins, Gift } from 'lucide-react';
 import Link from 'next/link';
 import Messages from '@/frontend/components/message/message';
-import detectEthereumProvider from '@metamask/detect-provider';
 import { ethers } from "ethers";
+import { useMetaMask, MetaMaskContextProvider } from '@/frontend/context/metamask';
 
 dayjs.extend(relativeTime)
 
@@ -45,6 +46,13 @@ function App({ children }: Props): JSX.Element {
   const status = useAppSelector(selectUserStatus);
   const [state, setState] = useState({ name: '', email: '', password: '' })
   const [referral, setReferral] = useState('');
+  const { wallet, hasProvider, isConnecting, connectMetaMask, errorMessage } = useMetaMask()
+
+  useEffect(() => {
+    if (errorMessage) {
+      message(dispatch, { type: 'danger', text: errorMessage })
+    }
+  }, [errorMessage])
 
 
   function initGoogle() {
@@ -86,20 +94,23 @@ function App({ children }: Props): JSX.Element {
   }
 
   async function metaMaskLogin() {
-    const provider = await detectEthereumProvider({ silent: true })
-    if (!provider) {
-      message(dispatch, { type: 'danger', text: "Cannot Detect MetaMask" })
+    console.log(hasProvider)
+    if (!hasProvider) {
+      message(dispatch, { type: 'danger', text: "Redirecting to MetaMask..." })
+      setTimeout(() => {
+        window.open('https://metamask.io', "_blank")
+      }, 1000)
       return
     }
+    if (window.ethereum?.isMetaMask && wallet.accounts.length < 1) {
+      connectMetaMask()
+    }
 
-    let accounts = await (window as any).ethereum.request({
-      method: "eth_requestAccounts",
-    })
-    if (!accounts[0]) {
+    if (!wallet.accounts[0]) {
       message(dispatch, { type: 'danger', text: "Please connect to MetaMask" })
       return
     }
-    const account = ethers.getAddress(accounts[0])
+    const account = ethers.getAddress(wallet.accounts[0])
     const nonceRes = await axios.post('/api/auth/nonce', { address: account })
     if (!nonceRes.data.nonce) {
       message(dispatch, { type: 'danger', text: "Get Nonce Failed!" })
@@ -139,7 +150,7 @@ function App({ children }: Props): JSX.Element {
       return response;
     }, function (error) {
       if (error && error.code === 'ERR_NETWORK') {
-        message(dispatch, { text: 'Network error! Check your connection.', type: 'info' })
+        message(dispatch, { type: 'danger', text: 'Network error! Check your connection.' })
       }
       return Promise.reject(error);
     });
@@ -203,42 +214,6 @@ function App({ children }: Props): JSX.Element {
               MetaMask
             </Button>
           </div>
-          {/* <Divider text="or use email" />
-
-          <form onSubmit={handleLogin}>
-            <Input
-              size="lg"
-              label="Email address"
-              placeholder="Enter your email address..."
-              id="email"
-              value={state.email}
-              onChange={handleChange}
-              autoFocus
-            />
-            <Input
-              size="lg"
-              label="Password"
-              placeholder="Enter your password..."
-              id="password"
-              value={state.password}
-              onChange={handleChange}
-              type="password"
-              info="at least 8 characters long"
-            />
-            <br />
-            <Button size="lg" loading={status === 'loading'} fullWidth errorFor={['email', 'password']}>
-              <LockPrivacy size={18} />
-              Log in
-            </Button>
-          </form>
-          <span className='login-foot'>
-            <Link href="/forgot-password">
-              <a onClick={() => dispatch(updateAuthState(undefined))}>
-                Forgot your password?
-              </a>
-            </Link>
-          </span> */}
-
         </div>
       </AuthModal>
       <AuthModal
@@ -258,15 +233,6 @@ function App({ children }: Props): JSX.Element {
             </Button>
           </div>
           <small className='license'>By signing up, you agree to our <a href="/legal/terms-of-service" target="_blank">Terms of Service</a> and <a href="/legal/privacy-policy" target="_blank">Privacy Policy</a>.</small>
-
-          {/* <span className='login-foot'>
-            <span>
-              Already have an account?{' '}
-              <a href='#' onClick={() => dispatch(updateAuthState('login'))}>
-                Log in
-              </a>
-            </span>
-          </span> */}
         </div>
       </AuthModal>
       <AuthModal
@@ -312,9 +278,11 @@ function Frontend({ Component, pageProps }: AppProps): JSX.Element {
 
     <Provider store={store}>
       <Script src="https://accounts.google.com/gsi/client" defer async></Script>
-      <App>
-        <Component {...pageProps} />
-      </App>
+      <MetaMaskContextProvider>
+        <App>
+          <Component {...pageProps} />
+        </App>
+      </MetaMaskContextProvider>
     </Provider>
   )
 }

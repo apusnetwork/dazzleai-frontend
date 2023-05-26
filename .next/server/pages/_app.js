@@ -1,8 +1,8 @@
 "use strict";
 (() => {
 var exports = {};
-exports.id = 888;
-exports.ids = [888];
+exports.id = 2888;
+exports.ids = [2888];
 exports.modules = {
 
 /***/ 8054:
@@ -22,7 +22,10 @@ _user_slice__WEBPACK_IMPORTED_MODULE_2__ = (__webpack_async_dependencies__.then 
 
 
 let loggerMiddleware = (/* unused pure expression or super */ null && (undefined));
-if (false) {}
+// if (process.env.NODE_ENV !== `production`) {
+//   const { logger } = require(`redux-logger`);
+//   loggerMiddleware = logger;
+// }
 const store = (0,_reduxjs_toolkit__WEBPACK_IMPORTED_MODULE_0__.configureStore)({
     reducer: {
         info: _info_slice__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .ZP,
@@ -73,11 +76,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(1664);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_17__);
 /* harmony import */ var _frontend_components_message_message__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(3919);
-/* harmony import */ var _metamask_detect_provider__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(3427);
-/* harmony import */ var _metamask_detect_provider__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(_metamask_detect_provider__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var ethers__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(8844);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__, axios__WEBPACK_IMPORTED_MODULE_6__, _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_11__, _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_15__, ethers__WEBPACK_IMPORTED_MODULE_20__]);
-([_frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__, axios__WEBPACK_IMPORTED_MODULE_6__, _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_11__, _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_15__, ethers__WEBPACK_IMPORTED_MODULE_20__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var ethers__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(8844);
+/* harmony import */ var _frontend_context_metamask__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(1842);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__, axios__WEBPACK_IMPORTED_MODULE_6__, _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_11__, _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_15__, ethers__WEBPACK_IMPORTED_MODULE_19__]);
+([_frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__, axios__WEBPACK_IMPORTED_MODULE_6__, _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_11__, _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_15__, ethers__WEBPACK_IMPORTED_MODULE_19__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -118,6 +121,17 @@ function App({ children  }) {
         password: ""
     });
     const { 0: referral , 1: setReferral  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)("");
+    const { wallet , hasProvider , isConnecting , connectMetaMask , errorMessage  } = (0,_frontend_context_metamask__WEBPACK_IMPORTED_MODULE_20__/* .useMetaMask */ ._$)();
+    (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
+        if (errorMessage) {
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
+                type: "danger",
+                text: errorMessage
+            });
+        }
+    }, [
+        errorMessage
+    ]);
     function initGoogle() {
         const google = window.google;
         if (!window.google) return;
@@ -162,27 +176,28 @@ function App({ children  }) {
         }
     }
     async function metaMaskLogin() {
-        const provider = await _metamask_detect_provider__WEBPACK_IMPORTED_MODULE_19___default()({
-            silent: true
-        });
-        if (!provider) {
+        console.log(hasProvider);
+        if (!hasProvider) {
             (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
                 type: "danger",
-                text: "Cannot Detect MetaMask"
+                text: "Redirecting to MetaMask..."
             });
+            setTimeout(()=>{
+                window.open("https://metamask.io", "_blank");
+            }, 1000);
             return;
         }
-        let accounts = await window.ethereum.request({
-            method: "eth_requestAccounts"
-        });
-        if (!accounts[0]) {
+        if (window.ethereum?.isMetaMask && wallet.accounts.length < 1) {
+            connectMetaMask();
+        }
+        if (!wallet.accounts[0]) {
             (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
                 type: "danger",
                 text: "Please connect to MetaMask"
             });
             return;
         }
-        const account = ethers__WEBPACK_IMPORTED_MODULE_20__.ethers.getAddress(accounts[0]);
+        const account = ethers__WEBPACK_IMPORTED_MODULE_19__.ethers.getAddress(wallet.accounts[0]);
         const nonceRes = await axios__WEBPACK_IMPORTED_MODULE_6__["default"].post("/api/auth/nonce", {
             address: account
         });
@@ -239,8 +254,8 @@ function App({ children  }) {
         }, function(error) {
             if (error && error.code === "ERR_NETWORK") {
                 (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
-                    text: "Network error! Check your connection.",
-                    type: "info"
+                    type: "danger",
+                    text: "Network error! Check your connection."
                 });
             }
             return Promise.reject(error);
@@ -448,9 +463,11 @@ function Frontend({ Component , pageProps  }) {
                 defer: true,
                 async: true
             }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(App, {
-                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Component, {
-                    ...pageProps
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_context_metamask__WEBPACK_IMPORTED_MODULE_20__/* .MetaMaskContextProvider */ .e4, {
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(App, {
+                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Component, {
+                        ...pageProps
+                    })
                 })
             })
         ]
@@ -715,7 +732,7 @@ module.exports = import("ethers");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [952,664,578,907,970,533], () => (__webpack_exec__(5656)));
+var __webpack_exports__ = __webpack_require__.X(0, [2952,1664,3578,3907,2970,1842,5533], () => (__webpack_exec__(5656)));
 module.exports = __webpack_exports__;
 
 })();

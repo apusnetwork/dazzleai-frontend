@@ -103,8 +103,12 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
             <div className={styles.price}>
               <span className={styles.value}>$4.9/500 Credits</span>
             </div>
-            <Button disabled={user.plan === 'starter'} size="md" type="default" href={href500} onClick={(e) => handleClick(e, '500Credits')} fullWidth>
-              {user.plan === 'starter' ? <><CheckGoodYes size={14} /> Active</> : cta}
+            <Button size="md" type="default" href={href500} onClick={(e) => handleClick(e, '500Credits')} fullWidth>
+              {cta}
+            </Button>
+            <div style={{ height: '12px', display: 'block' }}></div>
+            <Button type="primary" size="md" href={`/usdt/500Credits`} fullWidth>
+              USDT Pay
             </Button>
             <Divider />
             <div className={styles.features}>
@@ -129,8 +133,12 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
             <div className={styles.price}>
               <span className={styles.value}>$9.9/1050 Credits</span>
             </div>
-            <Button type={user.plan === 'hobby' ? 'default' : 'primary'} disabled={user.plan === 'hobby'} size="md" href={href1050} onClick={(e) => handleClick(e, '1050Credits')} fullWidth>
-              {user.plan === 'hobby' ? <><CheckGoodYes size={14} /> Active</> : cta}
+            <Button type="default" disabled={user.plan === 'hobby'} size="md" href={href1050} onClick={(e) => handleClick(e, '1050Credits')} fullWidth>
+              {cta}
+            </Button>
+            <div style={{ height: '12px', display: 'block' }}></div>
+            <Button type="primary" size="md" href={`/usdt/1050Credits`} fullWidth>
+              USDT Pay
             </Button>
             <Divider />
             <div className={styles.features}>

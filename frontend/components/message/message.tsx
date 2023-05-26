@@ -19,7 +19,6 @@ function Message({ type, text }: InfoMessage): JSX.Element {
     <div className={[styles.message].join(' ').trim()}>
       <div className={[styles.accent, styles[type]].join(' ').trim()} />
 
-
       <div className={styles.text}>
         <Icon size={16} className={[styles.icon, styles[type]].join(' ').trim()} />
         {text}

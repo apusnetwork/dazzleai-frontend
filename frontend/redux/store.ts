@@ -4,11 +4,11 @@ import userReducer from "./user/slice";
 
 let loggerMiddleware: any = undefined;
 
-if (process.env.NODE_ENV !== `production`) {
-  const { logger } = require(`redux-logger`);
+// if (process.env.NODE_ENV !== `production`) {
+//   const { logger } = require(`redux-logger`);
 
-  loggerMiddleware = logger;
-}
+//   loggerMiddleware = logger;
+// }
 
 const store = configureStore({
   reducer: {

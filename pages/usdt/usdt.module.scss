@@ -1,0 +1,59 @@
+.deposit_page_box {
+  max-width: 540px;
+}
+
+.deposit_page_title {
+  padding: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #EFEEF1;
+}
+
+.exchange_icon_title {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #FAF9F8;
+  color: #09244B;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 42px;
+  margin: 0px auto;
+}
+
+.deposit_page_title .deposit_select_style {
+  width: 148px;
+  /*height: 44px;*/
+  border-radius: 10px;
+  background: #FAF9F8;
+}
+
+.deposit_page_content {
+  padding: 28px 45px 0 53px;
+}
+
+.deposit_page_Reminder_content {
+  font-size: 12px;
+  color: #A9A8AF;
+}
+
+.deposit_page_button {
+  /*width: 173px;*/
+  padding: 11px 40px;
+  text-align: center;
+  font-size: 19px;
+  font-weight: bold;
+  color: white;
+  background: #1024F0;
+  border-radius: 14px;
+  cursor: pointer;
+  margin-bottom: 17px;
+  margin-top: 40px;
+  /*cursor: not-allowed;*/
+}
+
+.deposit_bonus {
+  color: #1024F0;
+}

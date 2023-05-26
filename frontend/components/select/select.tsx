@@ -66,7 +66,7 @@ export default function Select({ label, size = "md", id, name, value, onChange, 
             })
           }
         </select>
-        <Label htmlFor={id} className={inputStyles.input_label}>{label}</Label>
+        {label && <Label htmlFor={id} className={inputStyles.input_label}>{label}</Label>}
         <ChevronDownArrow className={styles.chevron} size={16} />
       </div>
       {!noInfo ? <div className={inputStyles._info}>
