@@ -19,6 +19,9 @@ import { useRouter } from 'next/router';
 import IconCredits from './cashback.png';
 import axiosInstance from '@/frontend/utils/axios';
 import axios from 'axios';
+import { ethers } from 'ethers';
+import Web3 from 'web3';
+import BN from 'bn.js'
 
 function waitFor(millSeconds: number) {
   return new Promise<void>((resolve, reject) => {
@@ -43,6 +46,17 @@ async function retryPromiseWithDelay<T>(promise: Promise<T>, totalTry: number, n
   }
 }
 
+const currencyDataMap = {
+  USDT: {
+    contractAddress: "0x55d398326f99059ff775485246999027b3197955",
+    contractABI: `[{ "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "owner", "type": "address" }, { "indexed": true, "internalType": "address", "name": "spender", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "value", "type": "uint256" }], "name": "Approval", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "previousOwner", "type": "address" }, { "indexed": true, "internalType": "address", "name": "newOwner", "type": "address" }], "name": "OwnershipTransferred", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "from", "type": "address" }, { "indexed": true, "internalType": "address", "name": "to", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "value", "type": "uint256" }], "name": "Transfer", "type": "event" }, { "constant": true, "inputs": [], "name": "_decimals", "outputs": [{ "internalType": "uint8", "name": "", "type": "uint8" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "_name", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "_symbol", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "internalType": "address", "name": "owner", "type": "address" }, { "internalType": "address", "name": "spender", "type": "address" }], "name": "allowance", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "internalType": "address", "name": "spender", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "approve", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "internalType": "address", "name": "account", "type": "address" }], "name": "balanceOf", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "burn", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "decimals", "outputs": [{ "internalType": "uint8", "name": "", "type": "uint8" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "internalType": "address", "name": "spender", "type": "address" }, { "internalType": "uint256", "name": "subtractedValue", "type": "uint256" }], "name": "decreaseAllowance", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "getOwner", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "internalType": "address", "name": "spender", "type": "address" }, { "internalType": "uint256", "name": "addedValue", "type": "uint256" }], "name": "increaseAllowance", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "mint", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "name", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "owner", "outputs": [{ "internalType": "address", "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [], "name": "renounceOwnership", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "symbol", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "totalSupply", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "internalType": "address", "name": "recipient", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "transfer", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "internalType": "address", "name": "sender", "type": "address" }, { "internalType": "address", "name": "recipient", "type": "address" }, { "internalType": "uint256", "name": "amount", "type": "uint256" }], "name": "transferFrom", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": false, "inputs": [{ "internalType": "address", "name": "newOwner", "type": "address" }], "name": "transferOwnership", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }]`
+  },
+  USDC: {
+    contractAddress: "0x8ac76a51cc950d9822d68b83fe1ad97b32cd580d",
+    contractABI: `[{"inputs":[{"internalType":"address","name":"logic","type":"address"},{"internalType":"address","name":"admin","type":"address"},{"internalType":"bytes","name":"data","type":"bytes"}],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"previousAdmin","type":"address"},{"indexed":false,"internalType":"address","name":"newAdmin","type":"address"}],"name":"AdminChanged","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"implementation","type":"address"}],"name":"Upgraded","type":"event"},{"stateMutability":"payable","type":"fallback"},{"inputs":[],"name":"admin","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newAdmin","type":"address"}],"name":"changeAdmin","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"implementation","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newImplementation","type":"address"}],"name":"upgradeTo","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newImplementation","type":"address"},{"internalType":"bytes","name":"data","type":"bytes"}],"name":"upgradeToAndCall","outputs":[],"stateMutability":"payable","type":"function"},{"stateMutability":"payable","type":"receive"}]`
+  },
+}
+
 export default function HomePage(): JSX.Element {
   const dispatch = useAppDispatch();
   const { wallet } = useMetaMask()
@@ -51,6 +65,7 @@ export default function HomePage(): JSX.Element {
   const [orderID, setOrderID] = useState<string>()
   const [rxAddress, setRxAddress] = useState<string>()
   const [value, setValue] = useState<number>()
+  const [loading, setLoading] = useState(false)
   const router = useRouter();
   const productItemName = router.query.id as string
   const creditsNumber = Number.isNaN(productItemName?.replace('Credits', '')) ? 0 : Number(productItemName?.replace('Credits', ''))
@@ -102,11 +117,11 @@ export default function HomePage(): JSX.Element {
             params: [
               {
                 chainId: '0x38',
-                chainName: 'BSC Mainnet',
-                rpcUrls: ['https://bsc.publicnode.com', 'https://bsc.meowrpc.com'],
+                chainName: 'BNB Smart Chain',
+                rpcUrls: ['https://bsc-dataseed.binance.org/'],
                 nativeCurrency: {
-                  name: 'USDT',
-                  symbol: 'USDT',
+                  name: 'BNB',
+                  symbol: 'BNB',
                   decimals: 18,
                 }
               },
@@ -122,7 +137,10 @@ export default function HomePage(): JSX.Element {
     }
   }
 
+  const canDeposit = wallet?.accounts[0] && network && orderID && rxAddress && value
+
   const handleDeposit = async () => {
+    if (loading) return
     if (!wallet?.accounts[0]) {
       message(dispatch, { type: 'danger', text: 'Please Login Frist' })
       dispatch(updateAuthState('login'))
@@ -137,25 +155,26 @@ export default function HomePage(): JSX.Element {
       return
     }
     try {
-      const txHash = await window.ethereum?.request({
-        method: 'eth_sendTransaction',
-        params: [
-          {
-            from: wallet.accounts[0], // The user's active address.
-            to: rxAddress, // Required except during contract publications.
-            value: `0x${value.toString(16)}`, // Only required to send ether to the recipient from the initiating external account.
-          },
-        ],
+      setLoading(true)
+      const { contractABI, contractAddress } = currencyDataMap[currency]
+      const web3 = new Web3(window.ethereum);
+      const contract = new web3.eth.Contract(JSON.parse(contractABI), contractAddress)
+      const valueHex = (new BN(value)).mul(new BN(10).pow(new BN(16))).toString()
+      const result = await contract.methods.transfer(rxAddress, valueHex).send({
+        from: wallet.accounts[0],
       })
       message(dispatch, { type: 'success', text: 'Deposit Success, Credits will arrival later.' })
+      setLoading(false)
       router.push('/generate')
-      await retryPromiseWithDelay(axiosInstance.post('/api/crypto/update-order', {
+      await retryPromiseWithDelay(axios.post('/api/crypto/update-order', {
         orderid: orderID,
         txaddress: wallet.accounts[0],
-        txhash: txHash,
+        txhash: result.transactionHash,
       }), 3, 3, 1000)
     } catch (error: any) {
       message(dispatch, { type: 'danger', text: error.message ?? error })
+    } finally {
+      setLoading(false)
     }
   }
 
@@ -195,9 +214,9 @@ export default function HomePage(): JSX.Element {
         </div>
         <div className='px-8 pt-4'>
           <div className='h-8 leading-8 font-semibold text-gray-300'>CONSUME</div>
-          <Input size="large" placeholder={network ? "Calculating..." : ""} value={value ? value / 100 : undefined} disabled addonAfter={<Select defaultValue="USDT" size="large" className='w-32'>
+          <Input size="large" placeholder={network ? "Calculating..." : ""} value={value ? value / 100 : undefined} disabled addonAfter={<Select defaultValue="USDT" size="large" className='w-32' onChange={setCurrency}>
             <Select.Option value="USDT"><div className='flex'><img src={IconUSDT.src} className="w-6 h-6 mr-2" /> USDT</div></Select.Option>
-            <Select.Option value="USDC"><div className='flex'><img src={IconUSDC.src} className="w-6 h-6 mr-2" /> USDC</div></Select.Option>
+            {/* <Select.Option value="USDC"><div className='flex'><img src={IconUSDC.src} className="w-6 h-6 mr-2" /> USDC</div></Select.Option> */}
           </Select>} />
           <div className='flex justify-center mt-4'><div className='rounded-full flex items-center justify-center w-10 h-10' style={{
             backgroundColor: '#faf9f8'
@@ -212,8 +231,13 @@ export default function HomePage(): JSX.Element {
           {creditsNumber ? < div className='mt-2 text-xs italic opacity-75 text-gray-500'> 500 + <span className={styles.deposit_bonus}>{creditsNumber * 0.05}<sup> Bonus</sup></span> = {creditsNumber * 1.05}</div> : null}
         </div>
         <div className={styles.deposit_page_content}>
-          <p className={styles.deposit_page_button} onClick={handleDeposit}>DEPOSIT</p>
-          <p className={styles.deposit_page_Reminder_content}>Credits will auto reach your account wallet after we check your transcation on chain.</p>
+          <p className={styles.deposit_page_button} style={{
+            backgroundColor: !canDeposit ? '#828282' : "#1024F0",
+          }} onClick={handleDeposit}>{loading && <LoadingOutlined rev="" className="w-4 h-4 mr-2 leading-none" style={{
+            fontSize: 16,
+            // lineHeight: 16,
+          }} />}DEPOSIT</p>
+          <p className={styles.deposit_page_Reminder_content} >Credits will auto reach your account wallet after we check your transcation on chain.</p>
         </div>
       </div>
     </div>
