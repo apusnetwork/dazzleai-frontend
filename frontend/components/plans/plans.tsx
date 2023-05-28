@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from '@/frontend/redux/hooks';
-import { updateAuthState } from '@/frontend/redux/info/slice';
+import { message, updateAuthState } from '@/frontend/redux/info/slice';
 import { selectUser } from '@/frontend/redux/user/slice';
 import { X } from 'lucide-react';
 import { useEffect, useState } from 'react';
@@ -9,6 +9,7 @@ import Divider from '../divider/divider';
 import styles from './plans.module.scss';
 import axios from 'axios';
 import Cookies from 'js-cookie';
+import { useMetaMask } from '@/frontend/context/metamask';
 
 
 interface PlansProps {
@@ -26,9 +27,9 @@ function href(productitemname: string) {
 export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
   const user = useAppSelector(selectUser);
   const dispatch = useAppDispatch();
-  const [referral, setReferral] = useState('');
   const [cta, setCta] = useState('Buy now')
-  const [checkoutMethod, setCheckoutMethod] = useState('stripe');
+  const { wallet } = useMetaMask()
+
 
   useEffect(() => {
     if (user.requestStatus === 'idle' || user.requestStatus === 'loading') return
@@ -51,6 +52,20 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
     });
     if (!user.id) {
       e.preventDefault()
+      dispatch(updateAuthState('login'))
+      return
+    }
+  }
+
+  async function handleUSDTPay(e: React.MouseEvent, plan: string) {
+    window && (window as any)?.gtag('event', 'begin_checkout', {
+      'event_category': 'USDT payment',
+      'event_label': plan
+    });
+    if (!user.id || !wallet.accounts[0]) {
+      message(dispatch, { type: 'danger', text: 'Please connect your wallet first' })
+      e.preventDefault()
+      e.stopPropagation()
       dispatch(updateAuthState('login'))
       return
     }
@@ -103,12 +118,12 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
             <div className={styles.price}>
               <span className={styles.value}>$4.9/500 Credits</span>
             </div>
-            <Button size="md" type="default" href={href500} onClick={(e) => handleClick(e, '500Credits')} fullWidth>
+            <Button size="md" type="primary" href={href500} onClick={(e) => handleClick(e, '500Credits')} fullWidth>
               {cta}
             </Button>
             <div style={{ height: '12px', display: 'block' }}></div>
-            <Button type="primary" size="md" href={`/usdt/500Credits`} fullWidth>
-              USDT Pay
+            <Button type="primary" size="md" href={`/usdt/500Credits`} fullWidth onClick={e => handleUSDTPay(e, '500Credits')}>
+              USDT Pay <span className="font-500">+5%<sup>Bonus</sup></span>
             </Button>
             <Divider />
             <div className={styles.features}>
@@ -133,12 +148,12 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
             <div className={styles.price}>
               <span className={styles.value}>$9.9/1050 Credits</span>
             </div>
-            <Button type="default" disabled={user.plan === 'hobby'} size="md" href={href1050} onClick={(e) => handleClick(e, '1050Credits')} fullWidth>
+            <Button type="primary" disabled={user.plan === 'hobby'} size="md" href={href1050} onClick={(e) => handleClick(e, '1050Credits')} fullWidth>
               {cta}
             </Button>
             <div style={{ height: '12px', display: 'block' }}></div>
-            <Button type="primary" size="md" href={`/usdt/1050Credits`} fullWidth>
-              USDT Pay
+            <Button type="primary" size="md" href={`/usdt/1050Credits`} fullWidth onClick={e => handleUSDTPay(e, '1050Credits')}>
+              USDT Pay <span className="font-500">+5%<sup>Bonus</sup></span>
             </Button>
             <Divider />
             <div className={styles.features}>

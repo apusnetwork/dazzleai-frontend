@@ -47,6 +47,7 @@ module.exports = {
 	"header_link": "layout_header_link__K8l0U",
 	"mobile_header": "layout_mobile_header__YjsFp",
 	"mobile_link_cta": "layout_mobile_link_cta__RT0iR",
+	"image_18_badge": "layout_image_18_badge__EZ9r4",
 	"active": "layout_active__k1qos",
 	"auth_layout": "layout_auth_layout__FqvAP",
 	"auth_layout_head": "layout_auth_layout_head__BwsJw",
@@ -221,11 +222,19 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _avatar_avatar__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(3227);
 /* harmony import */ var _basic_icons__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(7337);
 /* harmony import */ var _button_button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(4820);
-/* harmony import */ var _layout_module_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(2171);
-/* harmony import */ var _layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default = /*#__PURE__*/__webpack_require__.n(_layout_module_scss__WEBPACK_IMPORTED_MODULE_13__);
+/* harmony import */ var _layout_module_scss__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(2171);
+/* harmony import */ var _layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(_layout_module_scss__WEBPACK_IMPORTED_MODULE_16__);
 /* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(9915);
+/* harmony import */ var _frontend_context_18puls__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(4993);
+/* harmony import */ var _ant_design_icons_EyeInvisibleOutlined__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(8768);
+/* harmony import */ var _ant_design_icons_EyeInvisibleOutlined__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(_ant_design_icons_EyeInvisibleOutlined__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var _ant_design_icons_EyeOutlined__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(8683);
+/* harmony import */ var _ant_design_icons_EyeOutlined__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(_ant_design_icons_EyeOutlined__WEBPACK_IMPORTED_MODULE_15__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_3__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_4__, js_cookie__WEBPACK_IMPORTED_MODULE_12__]);
 ([_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_3__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_4__, js_cookie__WEBPACK_IMPORTED_MODULE_12__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
+
 
 
 
@@ -244,21 +253,23 @@ function WebsiteHeader({ fixed =false  }) {
     const dispatch = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useAppDispatch */ .T)();
     const user = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useAppSelector */ .C)(_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_4__/* .selectUser */ .dy);
     const { 0: open , 1: setOpen  } = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(false);
+    const { setShow18Plus , show18Plus  } = (0,_frontend_context_18puls__WEBPACK_IMPORTED_MODULE_13__/* .useGlobal18Plus */ .W)();
+    console.log(setShow18Plus, show18Plus);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("header", {
         className: [
-            open ? (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().mobile_header) : ""
+            open ? (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().mobile_header) : ""
         ].join(" "),
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().website_header) + (fixed ? " " + (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().fixed) : ""),
+            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().website_header) + (fixed ? " " + (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().fixed) : ""),
             children: [
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h1", {
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_5___default()), {
                         href: "/",
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
-                            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().website_logo),
+                            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().website_logo),
                             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                 src: "/logo-blue.png",
-                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().header_logo),
+                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().header_logo),
                                 alt: "",
                                 height: 20,
                                 width: 104
@@ -267,7 +278,7 @@ function WebsiteHeader({ fixed =false  }) {
                     })
                 }),
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().hamburger),
+                    className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().hamburger),
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
                         type: "icon",
                         size: "lg",
@@ -277,20 +288,38 @@ function WebsiteHeader({ fixed =false  }) {
                 }),
                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                     className: [
-                        (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().header_right),
-                        open ? (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().mobile_menu) : ""
+                        (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().header_right),
+                        open ? (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().mobile_menu) : ""
                     ].join(" "),
                     children: [
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_active_link_active_link__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
-                            activeClassName: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().active),
+                            activeClassName: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().active),
                             href: "/generate",
                             children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
-                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().header_link),
+                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().header_link),
                                 children: "Generate Image"
                             })
                         }),
+                        /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().image_18_badge),
+                            onClick: (e)=>{
+                                e.preventDefault();
+                                e.stopPropagation();
+                                setShow18Plus((t)=>!t);
+                            },
+                            children: [
+                                "18+ ",
+                                show18Plus ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((_ant_design_icons_EyeInvisibleOutlined__WEBPACK_IMPORTED_MODULE_14___default()), {
+                                    className: "leading-0 ml-1",
+                                    rev: ""
+                                }) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((_ant_design_icons_EyeOutlined__WEBPACK_IMPORTED_MODULE_15___default()), {
+                                    className: "leading-0 ml-1",
+                                    rev: ""
+                                })
+                            ]
+                        }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
-                            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().header_link),
+                            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().header_link),
                             href: "https://discord.gg/BxXM6qfmwp",
                             target: "_blank",
                             rel: "noreferrer",
@@ -325,7 +354,7 @@ function WebsiteHeader({ fixed =false  }) {
                         user.id ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
                             children: [
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                    className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().mobile_link_cta),
+                                    className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().mobile_link_cta),
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
                                         href: "/pricing",
                                         onClick: (e)=>{
@@ -342,21 +371,21 @@ function WebsiteHeader({ fixed =false  }) {
                         }) : /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
                             children: [
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_active_link_active_link__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
-                                    activeClassName: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().active),
+                                    activeClassName: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().active),
                                     href: "/pricing",
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
-                                        className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().header_link),
+                                        className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().header_link),
                                         children: "Pricing"
                                     })
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                     onClick: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .updateAuthState */ .FA)("login")),
                                     href: "#",
-                                    className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().header_link),
+                                    className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().header_link),
                                     children: "Log in"
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                    className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().mobile_link_cta),
+                                    className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().mobile_link_cta),
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
                                         onClick: ()=>{
                                             window && window?.gtag("event", "signup", {
@@ -381,10 +410,10 @@ function HeaderUser() {
     const user = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useAppSelector */ .C)(_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_4__/* .selectUser */ .dy);
     const dispatch = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useAppDispatch */ .T)();
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("section", {
-        className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default()._header_user),
+        className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default()._header_user),
         children: [
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().header_user),
+                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().header_user),
                 onClick: (e)=>{
                     e.stopPropagation();
                     setOpen(!open);
@@ -393,11 +422,11 @@ function HeaderUser() {
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().name),
-                                children: user.name
+                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().name),
+                                children: user.name?.startsWith("0x") ? user.name.substring(0, 8) : user.name
                             }),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().credits),
+                                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().credits),
                                 children: [
                                     "Credits: ",
                                     user.credits
@@ -406,7 +435,7 @@ function HeaderUser() {
                         ]
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().header_avatar),
+                        className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().header_avatar),
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_avatar_avatar__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
                             name: user.name,
                             size: 36
@@ -420,14 +449,14 @@ function HeaderUser() {
                     setOpen(false);
                 },
                 children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                    className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default()._user_menu),
+                    className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default()._user_menu),
                     children: [
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().user_menu_name),
+                            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().user_menu_name),
                             children: user.name
                         }),
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("ul", {
-                            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_13___default().user_menu),
+                            className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().user_menu),
                             children: [
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_5___default()), {
@@ -480,6 +509,42 @@ function HeaderUser() {
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 4993:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "W": () => (/* binding */ useGlobal18Plus),
+/* harmony export */   "y": () => (/* binding */ Global18PlusContextProvider)
+/* harmony export */ });
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(997);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+/* eslint-disable @typescript-eslint/no-explicit-any */ 
+const Global18PlusContext = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_1__.createContext)({});
+const Global18PlusContextProvider = ({ children  })=>{
+    const { 0: show18Plus , 1: setShow18Plus  } = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Global18PlusContext.Provider, {
+        value: {
+            show18Plus,
+            setShow18Plus
+        },
+        children: children
+    });
+};
+const useGlobal18Plus = ()=>{
+    const context = (0,react__WEBPACK_IMPORTED_MODULE_1__.useContext)(Global18PlusContext);
+    if (context === undefined) {
+        throw new Error('useGlobal18Plus must be used within a "Global18PlusContextProvider"');
+    }
+    return context;
+};
+
 
 /***/ })
 

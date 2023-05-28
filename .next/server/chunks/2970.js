@@ -94,11 +94,13 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _basic_icons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7337);
 /* harmony import */ var _button_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4820);
 /* harmony import */ var _divider_divider__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(3294);
-/* harmony import */ var _plans_module_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(4693);
-/* harmony import */ var _plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_plans_module_scss__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _plans_module_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(4693);
+/* harmony import */ var _plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_plans_module_scss__WEBPACK_IMPORTED_MODULE_11__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(9648);
+/* harmony import */ var _frontend_context_metamask__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(1842);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_3__, axios__WEBPACK_IMPORTED_MODULE_9__]);
 ([_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_3__, axios__WEBPACK_IMPORTED_MODULE_9__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -120,9 +122,8 @@ function href(productitemname) {
 function Plans({ type ="pricing"  }) {
     const user = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useAppSelector */ .C)(_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_3__/* .selectUser */ .dy);
     const dispatch = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useAppDispatch */ .T)();
-    const { 0: referral , 1: setReferral  } = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)("");
     const { 0: cta , 1: setCta  } = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)("Buy now");
-    const { 0: checkoutMethod , 1: setCheckoutMethod  } = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)("stripe");
+    const { wallet  } = (0,_frontend_context_metamask__WEBPACK_IMPORTED_MODULE_10__/* .useMetaMask */ ._$)();
     (0,react__WEBPACK_IMPORTED_MODULE_5__.useEffect)(()=>{
         if (user.requestStatus === "idle" || user.requestStatus === "loading") return;
         if (user.id && user.plan !== "free") {
@@ -150,6 +151,22 @@ function Plans({ type ="pricing"  }) {
             return;
         }
     }
+    async function handleUSDTPay(e, plan) {
+        window && window?.gtag("event", "begin_checkout", {
+            "event_category": "USDT payment",
+            "event_label": plan
+        });
+        if (!user.id || !wallet.accounts[0]) {
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .message */ .yw)(dispatch, {
+                type: "danger",
+                text: "Please connect your wallet first"
+            });
+            e.preventDefault();
+            e.stopPropagation();
+            dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .updateAuthState */ .FA)("login"));
+            return;
+        }
+    }
     const { 0: href500 , 1: setHref500  } = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)("");
     const { 0: href1050 , 1: setHref1050  } = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)("");
     (0,react__WEBPACK_IMPORTED_MODULE_5__.useEffect)(()=>{
@@ -158,23 +175,23 @@ function Plans({ type ="pricing"  }) {
     }, []);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-            className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default())[type],
+            className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default())[type],
             children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().plans),
+                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().plans),
                 children: [
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                         className: [
-                            (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().plan)
+                            (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().plan)
                         ].join(" "),
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().name),
+                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().name),
                                 children: "Free"
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().price),
+                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().price),
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                                    className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().value),
+                                    className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().value),
                                     children: "$0/mo"
                                 })
                             }),
@@ -194,17 +211,17 @@ function Plans({ type ="pricing"  }) {
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_divider_divider__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {}),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().features),
+                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().features),
                                 children: [
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().credits),
+                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().credits),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
                                             " 25 credits new user"
                                         ]
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
+                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().feature),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
                                             " Use images commercially"
@@ -216,23 +233,23 @@ function Plans({ type ="pricing"  }) {
                     }),
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                         className: [
-                            (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().plan)
+                            (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().plan)
                         ].join(" "),
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().name),
+                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().name),
                                 children: "500 Credits"
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().price),
+                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().price),
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                                    className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().value),
+                                    className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().value),
                                     children: "$4.9/500 Credits"
                                 })
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
                                 size: "md",
-                                type: "default",
+                                type: "primary",
                                 href: href500,
                                 onClick: (e)=>handleClick(e, "500Credits"),
                                 fullWidth: true,
@@ -244,30 +261,42 @@ function Plans({ type ="pricing"  }) {
                                     display: "block"
                                 }
                             }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
+                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_button_button__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
                                 type: "primary",
                                 size: "md",
                                 href: `/usdt/500Credits`,
                                 fullWidth: true,
-                                children: "USDT Pay"
+                                onClick: (e)=>handleUSDTPay(e, "500Credits"),
+                                children: [
+                                    "USDT Pay ",
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
+                                        className: "font-500",
+                                        children: [
+                                            "+5%",
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("sup", {
+                                                children: "Bonus"
+                                            })
+                                        ]
+                                    })
+                                ]
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_divider_divider__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {}),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().features),
+                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().features),
                                 children: [
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().credits),
+                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().credits),
                                         children: "<$0.01 per image"
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().credits),
+                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().credits),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
                                             " 25 credits new user"
                                         ]
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
+                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().feature),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
                                             " Use images commercially"
@@ -279,23 +308,23 @@ function Plans({ type ="pricing"  }) {
                     }),
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                         className: [
-                            (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().plan),
-                            (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().popular)
+                            (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().plan),
+                            (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().popular)
                         ].join(" "),
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().name),
+                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().name),
                                 children: "1050 Credits"
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().price),
+                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().price),
                                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                                    className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().value),
+                                    className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().value),
                                     children: "$9.9/1050 Credits"
                                 })
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
-                                type: "default",
+                                type: "primary",
                                 disabled: user.plan === "hobby",
                                 size: "md",
                                 href: href1050,
@@ -309,30 +338,42 @@ function Plans({ type ="pricing"  }) {
                                     display: "block"
                                 }
                             }),
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
+                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_button_button__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
                                 type: "primary",
                                 size: "md",
                                 href: `/usdt/1050Credits`,
                                 fullWidth: true,
-                                children: "USDT Pay"
+                                onClick: (e)=>handleUSDTPay(e, "1050Credits"),
+                                children: [
+                                    "USDT Pay ",
+                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
+                                        className: "font-500",
+                                        children: [
+                                            "+5%",
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("sup", {
+                                                children: "Bonus"
+                                            })
+                                        ]
+                                    })
+                                ]
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_divider_divider__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {}),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().features),
+                                className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().features),
                                 children: [
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().credits),
+                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().credits),
                                         children: "<$0.01 per image"
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().credits),
+                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().credits),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
                                             " 25 credits new user"
                                         ]
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().feature),
+                                        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().feature),
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Check, {}),
                                             " Use images commercially"
@@ -349,7 +390,7 @@ function Plans({ type ="pricing"  }) {
 };
 const Check = ()=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_6__/* .CheckGoodYes */ .y$4, {
         size: 16,
-        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_10___default().check),
+        className: (_plans_module_scss__WEBPACK_IMPORTED_MODULE_11___default().check),
         strokeWidth: 2
     });
 const NoCheck = ()=>/*#__PURE__*/ _jsx(X, {

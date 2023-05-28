@@ -30,6 +30,7 @@ interface RemoteModel {
   type: string;
   author: string;
   author_url: string;
+  author_avatar: string;
   description: string;
   images: string;
   model_file: string;
@@ -40,6 +41,7 @@ interface RemoteModel {
   model_id: string;
   name: string;
   use_count: number;
+  nsfw: boolean;
 }
 
 type RemoteModelList = RemoteModel[];
@@ -66,12 +68,14 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         author_url: model.author_url,
         description: model.description,
         instance_prompt: '',
+        author_avatar: model.author_avatar,
       },
       createdAt: '',
       trainingStartedAt: null,
       trainingFinishedAt: null,
       lastUsedAt: '',
       useCount: model.use_count,
+      nsfw: model.nsfw,
     }))
     res.status(200).json(resData)
   } catch (e: any) {

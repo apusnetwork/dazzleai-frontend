@@ -193,7 +193,7 @@ export default function HomePage(): JSX.Element {
               fontSize: 18,
               color: '#09244B',
               fontWeight: 600,
-            }}>BUY SPACE</p>
+            }}>BUY CREDITS</p>
           </div>
           <Select
             style={{
@@ -222,7 +222,7 @@ export default function HomePage(): JSX.Element {
           <div className='flex justify-center mt-4'><div className='rounded-full flex items-center justify-center w-10 h-10' style={{
             backgroundColor: '#faf9f8'
           }}><SwapOutlined className='text-xl leading-none rotate-90' style={{ marginRight: -2 }} rev="" /></div></div>
-          <div className='h-8 leading-8 font-semibold text-gray-300'>BUY</div>
+          <div className='h-8 leading-8 font-semibold text-gray-300'>BUY <span className={styles.deposit_bonus}>+5%</span></div>
           <Input size="large" disabled value={creditsNumberAfterBonus || ''} addonAfter={
             <div className='flex text-base pl-1' style={{ width: 106, color: "rgba(0, 0, 0, 0.88)" }}>
               <img src={IconCredits.src} className='w-5 h-5 mr-2' />
@@ -237,8 +237,8 @@ export default function HomePage(): JSX.Element {
           }} onClick={handleDeposit}>{loading && <LoadingOutlined rev="" className="w-4 h-4 mr-2 leading-none" style={{
             fontSize: 16,
             // lineHeight: 16,
-          }} />}DEPOSIT</p>
-          <p className={styles.deposit_page_Reminder_content} >Credits will auto reach your account wallet after we check your transcation on chain.</p>
+          }} />}Approve</p>
+          <p className={styles.deposit_page_Reminder_content} >Credits will auto reach your account wallet after we check your transcation on chain.The arrival time is about 3~20 mins.</p>
         </div>
       </div>
     </div>

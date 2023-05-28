@@ -82,6 +82,8 @@
     color: rgba($color, 0.9);
 
     .credits {
+      display: flex;
+      align-items: center;
       padding-bottom: 6px;
       font-weight: 500;
     }

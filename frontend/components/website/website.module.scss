@@ -11,7 +11,7 @@
     radial-gradient(ellipse 90% 50% at 0% 100%, rgba(#9859d2, 0.1), rgba(255, 255, 255, 0));
 
   @include mobile {
-    max-height: 150vh;
+    // max-height: 150vh;
   }
 }
 
@@ -327,34 +327,63 @@
       position: relative;
       overflow: hidden;
       border-radius: 6px;
+    }
 
-      &::after {
-        content: "Quick Generate";
-        display: block;
-        position: absolute;
-        bottom: 0;
-        width: 100%;
-        font-size: 16px;
-        color: #ffffff;
-        height: 40px;
-        line-height: 30px;
-        text-align: center;
-        background-color: transparent;
-        backdrop-filter: blur(2px);
-      }
+    .image_name {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      font-size: 14px;
+      color: #ffffff;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      padding: 0 8px;
     }
 
     .image_badge {
       position: absolute;
       top: 12px;
       right: 6px;
-      background-color: $primary;
+      background-color: rgba($primary, 0.5);
       color: #ffffff;
+      backdrop-filter: blur(5px);
       padding: 2px 6px;
       border-radius: 4px;
       font-weight: 600;
       font-size: 12px;
       opacity: 0.8;
+    }
+
+    .image_18_badge {
+      display: flex;
+      align-items: center;
+      position: absolute;
+      top: 12px;
+      left: 6px;
+      background-color: rgba(5, 127, 226, 0.2);
+      backdrop-filter: blur(5px);
+      color: #fff;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 12px;
+      opacity: 0.8;
+      cursor: pointer;
+    }
+
+    .image_avatar_url {
+      position: absolute;
+      right: 6px;
+      bottom: 46px;
+      width: 24px;
+      height: 24px;
+      border-radius: 100%;
     }
 
     img {
@@ -434,7 +463,6 @@
     span,
     div {
       color: #fff;
-      ;
       background-image: linear-gradient(225deg, rgba(#6363fa, 1) 40%, rgba(#cc53fc, 1));
       background-size: 100%;
       background-clip: text;

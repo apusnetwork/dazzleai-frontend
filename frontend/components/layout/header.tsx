@@ -2,17 +2,18 @@ import { useAppDispatch, useAppSelector } from '@/frontend/redux/hooks';
 import { updateAuthState } from '@/frontend/redux/info/slice';
 import { logoutUser } from '@/frontend/redux/user/actions';
 import { selectUser } from '@/frontend/redux/user/slice';
-import { Coins } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Grid } from 'react-feather';
 import OutsideClickHandler from 'react-outside-click-handler';
 import ActiveLink from '../active_link/active_link';
 import Avatar from '../avatar/avatar';
-import { LogoutExit, MenuHambuger, PaperFileText, SecurityShield, SettingsAccountMore, XCloseDelete } from '../basic-icons';
+import { LogoutExit, MenuHambuger, PaperFileText, SecurityShield, XCloseDelete } from '../basic-icons';
 import Button from '../button/button';
 import styles from './layout.module.scss';
 import Cookies from 'js-cookie';
+import { useGlobal18Plus } from '@/frontend/context/18puls';
+import EyeInvisibleOutlined from '@ant-design/icons/EyeInvisibleOutlined';
+import EyeOutlined from '@ant-design/icons/EyeOutlined';
 
 
 declare global {
@@ -27,6 +28,8 @@ export function WebsiteHeader({ fixed = false }): JSX.Element {
   const dispatch = useAppDispatch();
   const user = useAppSelector(selectUser);
   const [open, setOpen] = useState(false);
+  const { setShow18Plus, show18Plus } = useGlobal18Plus();
+  console.log(setShow18Plus, show18Plus)
 
 
   return (
@@ -52,6 +55,7 @@ export function WebsiteHeader({ fixed = false }): JSX.Element {
         <div className={[styles.header_right, open ? styles.mobile_menu : ''].join(' ')}>
           {/* {/* <ActiveLink activeClassName={styles.active} href="/editor"><a className={styles.header_link}>AI Editor</a></ActiveLink> */}
           <ActiveLink activeClassName={styles.active} href="/generate"><a className={styles.header_link}>Generate Image</a></ActiveLink>
+          <div className={styles.image_18_badge} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setShow18Plus(t => !t) }}>18+ {show18Plus ? <EyeInvisibleOutlined className="leading-0 ml-1" rev="" /> : <EyeOutlined className="leading-0 ml-1" rev="" />}</div>
           {/* <ActiveLink activeClassName={styles.active} href="/dreambooth/models"><a className={styles.header_link}>DreamBooth <span className={styles.new}>new</span></a></ActiveLink> */}
           {/* <ActiveLink activeClassName={styles.active} href="/guides"><a className={styles.header_link}>Guides</a></ActiveLink> */}
           <a className={styles.header_link} href='https://discord.gg/BxXM6qfmwp' target='_blank' rel='noreferrer'>
@@ -117,7 +121,7 @@ function HeaderUser(): JSX.Element {
     <section className={styles._header_user} >
       <div className={styles.header_user} onClick={e => { e.stopPropagation(); setOpen(!open) }}>
         <div >
-          <div className={styles.name}>{user.name}</div>
+          <div className={styles.name}>{user.name?.startsWith('0x') ? user.name.substring(0, 8) : user.name}</div>
           <div className={styles.credits}>Credits: {user.credits}</div>
         </div>
         <div className={styles.header_avatar}>

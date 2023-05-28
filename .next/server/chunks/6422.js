@@ -34,7 +34,8 @@ module.exports = {
 	"model_author": "select_model_author__K9YWH",
 	"model_name": "select_model_name__BU9cf",
 	"model_input": "select_model_input__4opLv",
-	"checked_icon": "select_checked_icon__anCiz"
+	"checked_icon": "select_checked_icon__anCiz",
+	"image_18_badge": "select_image_18_badge__h9y9Q"
 };
 
 

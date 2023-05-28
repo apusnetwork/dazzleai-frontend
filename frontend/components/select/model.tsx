@@ -1,18 +1,85 @@
 import { Link, Search } from "lucide-react";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { cloudflareLoader } from "utils/cloudflare";
 import { CheckGoodYes, ChevronDownArrow } from "../basic-icons";
 import Input from "../input/input";
 import Modal from "../modal/modal";
 
 import styles from './select.module.scss';
+import { useGlobal18Plus } from "@/frontend/context/18puls";
+import EyeInvisibleOutlined from "@ant-design/icons/EyeInvisibleOutlined";
+import EyeOutlined from "@ant-design/icons/EyeOutlined";
 
 interface ModelSelectProps {
   onChange: (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => void
   models: ModelI[]
   value: string
   id: string
+}
+
+const Model = ({ v, modelID, value, handleChange }: {
+  v: ModelI;
+  modelID: string;
+  value: string;
+  handleChange: (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => void
+}) => {
+  const { show18Plus: gloablShow18Plus } = useGlobal18Plus()
+  const [show18Plus, setShow18Plus] = useState(false)
+  useEffect(() => {
+    setShow18Plus(gloablShow18Plus)
+  }, [gloablShow18Plus])
+  return <label key={v.id} htmlFor={modelID + v.id} className={[styles._model, v.id.toString() === value ? styles.checked : ''].join(' ')}>
+    <div className={styles.model}>
+      <div className={styles.model_images}>
+        {
+          v.params.images && v.params.images?.map((im: string, i: number) => (
+            <Image src={im} key={i} width={100} height={100} loader={cloudflareLoader} objectFit="cover" style={{
+              filter: v.nsfw && !show18Plus ? 'blur(10px)' : '',
+            }} />
+          ))
+        }
+      </div>
+
+      <div className={styles.model_info}>
+        <div>
+          {v.nsfw && <div className={styles.image_18_badge} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setShow18Plus(show => !show) }} >18+ {show18Plus ? <EyeInvisibleOutlined className="leading-0 ml-1" rev="" /> : <EyeOutlined className="leading-0 ml-1" rev="" />}</div>}
+          <div className={styles.model_name}>
+            {v.name}
+          </div>
+          {/* <div className={styles.model_desc}>
+                          {v.params.description || `Your own DreamBooth model. Modifer to invoke style "${v.params.instance_prompt}"`}
+                        </div> */}
+        </div>
+        {
+          v.params.author_url ? <div className={styles.model_author}>
+            by <a onClick={e => e.stopPropagation()} target="_blank" rel='noreferrer' href={v.params.author_url}>
+              <Link size={13} />
+              {v.params.author}
+            </a>
+          </div>
+            : null
+        }
+      </div>
+      <input
+        name={modelID}
+        id={modelID + v.id}
+        type="radio"
+        value={v.id}
+        checked={v.id === value}
+        onChange={handleChange}
+        className={styles.model_input}
+      />
+      {
+        v.id === value
+          ?
+          <div className={styles.checked_icon}>
+            <CheckGoodYes size={10} strokeWidth={4} />
+          </div>
+          : null
+      }
+    </div>
+  </label>
 }
 
 export default function ModelSelect({ onChange, models, value, id }: ModelSelectProps): JSX.Element {
@@ -26,37 +93,6 @@ export default function ModelSelect({ onChange, models, value, id }: ModelSelect
   }
 
   const allModels = [
-    // {
-    //   id: 'stable-diffusion-v2.1',
-    //   name: 'Stable Diffusion v2.1',
-    //   params: {
-    //     description: 'Latest text-to-image model from StabilityAI',
-    //     author: 'stability.ai',
-    //     author_url: 'https://stability.ai/',
-    //     images: [
-    //       'https://img.dazzle.ai/generated/img-9jjtCkXWwKjZe9wElBEly2.png',
-    //       'https://img.dazzle.ai/generated/img-YkfgHICXA8YFGEzbWC36kS.png',
-    //       'https://img.dazzle.ai/generated/img-q9tOtcskhqYjxvpFdvE5c2.png',
-    //       'https://img.dazzle.ai/generated/img-vU4xLUCrxSBSA6ky8cXtuP.png'
-    //     ]
-    //   },
-    // },
-    // {
-    //   id: 'stable-diffusion-v1.5',
-    //   name: 'Stable Diffusion v1.5',
-    //   params: {
-    //     description: 'Text-to-image model from StabilityAI',
-    //     author: 'stability.ai',
-    //     author_url: 'https://stability.ai/',
-
-    //     images: [
-    //       'https://img.dazzle.ai/generated/img-gOyyHvmiu4Fjl21f6ucKav.png',
-    //       'https://img.dazzle.ai/generated/img-G99O7IbVKSyyH9XyOMzlxA.png',
-    //       'https://img.dazzle.ai/generated/img-Kzpf5VdKQCQkbGFwew5y2q.png',
-    //       'https://img.dazzle.ai/generated/img-8VpR28yCp2Bq1T3wfrxeeM.png',
-    //     ]
-    //   },
-    // },
     ...models
   ]
 
@@ -105,55 +141,7 @@ export default function ModelSelect({ onChange, models, value, id }: ModelSelect
           <div className={styles.models_list}>
             {
               allModels.filter(v => (v.name + ' ' + v.params.description).toLowerCase().search(textFilter.toLowerCase()) > -1).map(v => (
-                <label key={v.id} htmlFor={id + v.id} className={[styles._model, v.id.toString() === value ? styles.checked : ''].join(' ')}>
-                  <div className={styles.model}>
-                    <div className={styles.model_images}>
-                      {
-                        v.params.images && v.params.images?.map((im: string, i: number) => (
-                          <Image src={im} key={i} width={100} height={100} loader={cloudflareLoader} />
-
-                        ))
-                      }
-                    </div>
-
-                    <div className={styles.model_info}>
-                      <div>
-                        <div className={styles.model_name}>
-                          {v.name}
-                        </div>
-                        {/* <div className={styles.model_desc}>
-                          {v.params.description || `Your own DreamBooth model. Modifer to invoke style "${v.params.instance_prompt}"`}
-                        </div> */}
-                      </div>
-                      {
-                        v.params.author_url ? <div className={styles.model_author}>
-                          by <a onClick={e => e.stopPropagation()} target="_blank" rel='noreferrer' href={v.params.author_url}>
-                            <Link size={13} />
-                            {v.params.author}
-                          </a>
-                        </div>
-                          : null
-                      }
-                    </div>
-                    <input
-                      name={id}
-                      id={id + v.id}
-                      type="radio"
-                      value={v.id}
-                      checked={v.id === value}
-                      onChange={handleChange}
-                      className={styles.model_input}
-                    />
-                    {
-                      v.id === value
-                        ?
-                        <div className={styles.checked_icon}>
-                          <CheckGoodYes size={10} strokeWidth={4} />
-                        </div>
-                        : null
-                    }
-                  </div>
-                </label>
+                <Model v={v} modelID={id} value={value} handleChange={handleChange} />
               ))
             }
           </div>

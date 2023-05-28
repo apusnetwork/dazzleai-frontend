@@ -342,6 +342,19 @@
   }
 }
 
+.image_18_badge {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #000;
+  cursor: pointer;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
 .header_link {
   color: $color;
   font-size: 14px;
@@ -356,7 +369,7 @@
 
   &:hover,
   &.active {
-    color: #fff;
+    color: $primary;
   }
 }
 

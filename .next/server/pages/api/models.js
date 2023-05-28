@@ -90,13 +90,15 @@ async function handler(req, res) {
                     images: model.images.split(","),
                     author_url: model.author_url,
                     description: model.description,
-                    instance_prompt: ""
+                    instance_prompt: "",
+                    author_avatar: model.author_avatar
                 },
                 createdAt: "",
                 trainingStartedAt: null,
                 trainingFinishedAt: null,
                 lastUsedAt: "",
-                useCount: model.use_count
+                useCount: model.use_count,
+                nsfw: model.nsfw
             }));
         res.status(200).json(resData);
     } catch (e) {

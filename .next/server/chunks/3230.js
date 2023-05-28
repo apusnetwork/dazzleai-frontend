@@ -28,7 +28,10 @@ module.exports = {
 	"image_grid_visual": "website_image_grid_visual__A9KrT",
 	"column": "website_column__6Z67w",
 	"image_wrapper": "website_image_wrapper__JDScv",
+	"image_name": "website_image_name__OitrX",
 	"image_badge": "website_image_badge__o4ekU",
+	"image_18_badge": "website_image_18_badge__B9iOJ",
+	"image_avatar_url": "website_image_avatar_url__TIcKv",
 	"_large_cta": "website__large_cta__JWVIc",
 	"large_cta": "website_large_cta__7nFVV",
 	"faq": "website_faq__a5XCs",
@@ -233,11 +236,83 @@ var external_react_masonry_css_default = /*#__PURE__*/__webpack_require__.n(exte
 // EXTERNAL MODULE: ./node_modules/next/link.js
 var next_link = __webpack_require__(1664);
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(6689);
+// EXTERNAL MODULE: external "@ant-design/icons/EyeOutlined"
+var EyeOutlined_ = __webpack_require__(8683);
+var EyeOutlined_default = /*#__PURE__*/__webpack_require__.n(EyeOutlined_);
+// EXTERNAL MODULE: external "@ant-design/icons/EyeInvisibleOutlined"
+var EyeInvisibleOutlined_ = __webpack_require__(8768);
+var EyeInvisibleOutlined_default = /*#__PURE__*/__webpack_require__.n(EyeInvisibleOutlined_);
+// EXTERNAL MODULE: ./frontend/context/18puls.tsx
+var _18puls = __webpack_require__(4993);
 ;// CONCATENATED MODULE: ./frontend/components/website/visuals.tsx
 
 
 
 
+
+
+
+
+const Image = ({ model  })=>{
+    const { show18Plus: gloablShow18Plus  } = (0,_18puls/* useGlobal18Plus */.W)();
+    const { 0: show18Plus , 1: setShow18Plus  } = (0,external_react_.useState)(false);
+    (0,external_react_.useEffect)(()=>{
+        setShow18Plus(gloablShow18Plus);
+    }, [
+        gloablShow18Plus
+    ]);
+    return /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
+        href: `/generate?img=${model.params.images[0].split("/").pop()}&shared=true`,
+        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+            className: (website_module_default()).image_wrapper,
+            children: [
+                /*#__PURE__*/ jsx_runtime_.jsx("img", {
+                    src: model.params.images[0],
+                    alt: "",
+                    style: {
+                        filter: model.nsfw && !show18Plus ? "blur(10px)" : ""
+                    },
+                    className: "z-0"
+                }, model.id),
+                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                    className: (website_module_default()).image_badge,
+                    children: [
+                        model.useCount,
+                        " runs"
+                    ]
+                }),
+                model.nsfw && /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                    className: (website_module_default()).image_18_badge,
+                    onClick: (e)=>{
+                        e.preventDefault();
+                        e.stopPropagation();
+                        setShow18Plus((show)=>!show);
+                    },
+                    children: [
+                        "18+ ",
+                        show18Plus ? /*#__PURE__*/ jsx_runtime_.jsx((EyeInvisibleOutlined_default()), {
+                            className: "leading-0 ml-1",
+                            rev: ""
+                        }) : /*#__PURE__*/ jsx_runtime_.jsx((EyeOutlined_default()), {
+                            className: "leading-0 ml-1",
+                            rev: ""
+                        })
+                    ]
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                    className: (website_module_default()).image_name,
+                    children: model.name
+                }),
+                /*#__PURE__*/ jsx_runtime_.jsx("img", {
+                    className: (website_module_default()).image_avatar_url,
+                    src: model.params.author_avatar
+                })
+            ]
+        })
+    });
+};
 function ImageGridVisual({ images , columns =4  }) {
     return /*#__PURE__*/ jsx_runtime_.jsx("div", {
         className: (website_module_default()).image_grid_visual,
@@ -249,25 +324,8 @@ function ImageGridVisual({ images , columns =4  }) {
             },
             className: (website_module_default()).grid,
             columnClassName: (website_module_default()).column,
-            children: images.map((model)=>/*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
-                    href: `/generate?img=${model.params.images[0].split("/").pop()}&shared=true`,
-                    children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                        className: (website_module_default()).image_wrapper,
-                        children: [
-                            /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                                className: (website_module_default()).image_badge,
-                                children: [
-                                    model.useCount,
-                                    " runs"
-                                ]
-                            }),
-                            /*#__PURE__*/ jsx_runtime_.jsx("img", {
-                                src: model.params.images[0],
-                                alt: "",
-                                className: (website_module_default()).image
-                            }, model.id)
-                        ]
-                    })
+            children: images.map((model)=>/*#__PURE__*/ jsx_runtime_.jsx(Image, {
+                    model: model
                 }))
         })
     });

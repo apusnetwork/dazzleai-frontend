@@ -331,10 +331,12 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony import */ var _button_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4820);
 /* harmony import */ var _footer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(860);
 /* harmony import */ var _header__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(4333);
-/* harmony import */ var _layout_module_scss__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(2171);
-/* harmony import */ var _layout_module_scss__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_layout_module_scss__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _layout_module_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(2171);
+/* harmony import */ var _layout_module_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_layout_module_scss__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _frontend_context_18puls__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(4993);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_3__, js_cookie__WEBPACK_IMPORTED_MODULE_4__, _header__WEBPACK_IMPORTED_MODULE_9__]);
 ([_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_3__, js_cookie__WEBPACK_IMPORTED_MODULE_4__, _header__WEBPACK_IMPORTED_MODULE_9__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -368,172 +370,174 @@ function WebsiteLayout({ children , title , description , robots , canonical =""
     if (imgURL.startsWith("/")) {
         imgURL = "" + imgURL;
     }
-    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-        className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_10___default().website_layout),
-        children: [
-            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_5___default()), {
-                children: [
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
-                        children: title
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "description",
-                        content: description
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "og:title",
-                        property: "og:title",
-                        content: title
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "twitter:title",
-                        property: "twitter:title",
-                        content: title
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "og:description",
-                        property: "og:description",
-                        content: description
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "twitter:description",
-                        content: description
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "og:image",
-                        property: "og:image",
-                        content: imgURL
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "twitter:image",
-                        content: imgURL
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "twitter:site",
-                        content: "@getimg_ai"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "twitter:card",
-                        content: "summary_large_image"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "og:type",
-                        property: "og:type",
-                        content: "website"
-                    }),
-                    "]",
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
-                        rel: "apple-touch-icon",
-                        sizes: "180x180",
-                        href: "/icons/apple-touch-icon.png"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
-                        rel: "icon",
-                        type: "image/png",
-                        sizes: "32x32",
-                        href: "/icons/favicon-32x32.png"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
-                        rel: "icon",
-                        type: "image/png",
-                        sizes: "16x16",
-                        href: "/icons/favicon-16x16.png"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
-                        rel: "manifest",
-                        href: "/icons/site.webmanifest"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
-                        rel: "mask-icon",
-                        href: "/icons/safari-pinned-tab.svg",
-                        color: "#333333"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
-                        rel: "shortcut icon",
-                        href: "/icons/favicon.ico"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "msapplication-TileColor",
-                        content: "#1f2023"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "msapplication-config",
-                        content: "/icons/browserconfig.xml"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "theme-color",
-                        content: "#1f2023"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "viewport",
-                        content: "width=device-width, initial-scale=1.0, maximum-scale=1.0"
-                    }),
-                    robots ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
-                        name: "robots",
-                        content: robots
-                    }) : null,
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
-                        async: true,
-                        src: "https://www.googletagmanager.com/gtag/js?id=G-EEYE7M0G1Y"
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
-                        dangerouslySetInnerHTML: {
-                            __html: `
+    return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+        className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_11___default().website_layout),
+        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_frontend_context_18puls__WEBPACK_IMPORTED_MODULE_10__/* .Global18PlusContextProvider */ .y, {
+            children: [
+                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_head__WEBPACK_IMPORTED_MODULE_5___default()), {
+                    children: [
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("title", {
+                            children: title
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                            name: "description",
+                            content: description
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                            name: "og:title",
+                            property: "og:title",
+                            content: title
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                            name: "twitter:title",
+                            property: "twitter:title",
+                            content: title
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                            name: "og:description",
+                            property: "og:description",
+                            content: description
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                            name: "twitter:description",
+                            content: description
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                            name: "og:image",
+                            property: "og:image",
+                            content: imgURL
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                            name: "twitter:image",
+                            content: imgURL
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                            name: "twitter:site",
+                            content: "@getimg_ai"
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                            name: "twitter:card",
+                            content: "summary_large_image"
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                            name: "og:type",
+                            property: "og:type",
+                            content: "website"
+                        }),
+                        "]",
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
+                            rel: "apple-touch-icon",
+                            sizes: "180x180",
+                            href: "/icons/apple-touch-icon.png"
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
+                            rel: "icon",
+                            type: "image/png",
+                            sizes: "32x32",
+                            href: "/icons/favicon-32x32.png"
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
+                            rel: "icon",
+                            type: "image/png",
+                            sizes: "16x16",
+                            href: "/icons/favicon-16x16.png"
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
+                            rel: "manifest",
+                            href: "/icons/site.webmanifest"
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
+                            rel: "mask-icon",
+                            href: "/icons/safari-pinned-tab.svg",
+                            color: "#333333"
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("link", {
+                            rel: "shortcut icon",
+                            href: "/icons/favicon.ico"
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                            name: "msapplication-TileColor",
+                            content: "#1f2023"
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                            name: "msapplication-config",
+                            content: "/icons/browserconfig.xml"
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                            name: "theme-color",
+                            content: "#1f2023"
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                            name: "viewport",
+                            content: "width=device-width, initial-scale=1.0, maximum-scale=1.0"
+                        }),
+                        robots ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("meta", {
+                            name: "robots",
+                            content: robots
+                        }) : null,
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
+                            async: true,
+                            src: "https://www.googletagmanager.com/gtag/js?id=G-EEYE7M0G1Y"
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
+                            dangerouslySetInnerHTML: {
+                                __html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
 
           gtag('config', 'G-EEYE7M0G1Y');
           `
-                        }
+                            }
+                        })
+                    ]
+                }),
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_header__WEBPACK_IMPORTED_MODULE_9__/* .WebsiteHeader */ .x, {
+                    fixed: true
+                }),
+                user.id && (user.status === "verify" || user.status === "created") ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                    className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_11___default().banner),
+                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                        children: "Please verify your account."
                     })
-                ]
-            }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_header__WEBPACK_IMPORTED_MODULE_9__/* .WebsiteHeader */ .x, {
-                fixed: true
-            }),
-            user.id && (user.status === "verify" || user.status === "created") ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_10___default().banner),
-                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                    children: "Please verify your account."
-                })
-            }) : null,
-            user.id && user.status === "ban" ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                className: [
-                    (_layout_module_scss__WEBPACK_IMPORTED_MODULE_10___default().banner),
-                    (_layout_module_scss__WEBPACK_IMPORTED_MODULE_10___default().banner_danger)
-                ].join(" "),
-                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
-                    children: "You have been banned."
-                })
-            }) : null,
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("main", {
-                className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_10___default().website),
-                children: children
-            }),
-            footer ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_footer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {}) : null,
-            showCookieBar ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                className: "cookies-notification",
-                children: [
-                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
-                        children: [
-                            "We use cookies to improve your experience. Learn more in our ",
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
-                                href: "/legal/privacy-policy",
-                                target: "_blank",
-                                children: "Privacy Policy"
-                            }),
-                            "."
-                        ]
-                    }),
-                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
-                        onClick: handleCookie,
-                        type: "accent",
-                        children: "Accept all"
+                }) : null,
+                user.id && user.status === "ban" ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                    className: [
+                        (_layout_module_scss__WEBPACK_IMPORTED_MODULE_11___default().banner),
+                        (_layout_module_scss__WEBPACK_IMPORTED_MODULE_11___default().banner_danger)
+                    ].join(" "),
+                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                        children: "You have been banned."
                     })
-                ]
-            }) : null
-        ]
+                }) : null,
+                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("main", {
+                    className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_11___default().website),
+                    children: children
+                }),
+                footer ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_footer__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {}) : null,
+                showCookieBar ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                    className: "cookies-notification",
+                    children: [
+                        /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
+                            children: [
+                                "We use cookies to improve your experience. Learn more in our ",
+                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
+                                    href: "/legal/privacy-policy",
+                                    target: "_blank",
+                                    children: "Privacy Policy"
+                                }),
+                                "."
+                            ]
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
+                            onClick: handleCookie,
+                            type: "accent",
+                            children: "Accept all"
+                        })
+                    ]
+                }) : null
+            ]
+        })
     });
 };
 
