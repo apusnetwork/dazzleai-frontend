@@ -69,6 +69,7 @@ export default function HomePage(): JSX.Element {
   const router = useRouter();
   const productItemName = router.query.id as string
   const creditsNumber = Number.isNaN(productItemName?.replace('Credits', '')) ? 0 : Number(productItemName?.replace('Credits', ''))
+  const creditsNumberAfterBonus = Math.ceil(creditsNumber * 1.05)
 
   useEffect(() => {
     if (wallet?.accounts[0]) {
@@ -222,13 +223,13 @@ export default function HomePage(): JSX.Element {
             backgroundColor: '#faf9f8'
           }}><SwapOutlined className='text-xl leading-none rotate-90' style={{ marginRight: -2 }} rev="" /></div></div>
           <div className='h-8 leading-8 font-semibold text-gray-300'>BUY</div>
-          <Input size="large" disabled value={creditsNumber * 1.05 || ''} addonAfter={
+          <Input size="large" disabled value={creditsNumberAfterBonus || ''} addonAfter={
             <div className='flex text-base pl-1' style={{ width: 106, color: "rgba(0, 0, 0, 0.88)" }}>
               <img src={IconCredits.src} className='w-5 h-5 mr-2' />
               <span>Credits</span>
             </div>
           } />
-          {creditsNumber ? < div className='mt-2 text-xs italic opacity-75 text-gray-500'> 500 + <span className={styles.deposit_bonus}>{creditsNumber * 0.05}<sup> Bonus</sup></span> = {creditsNumber * 1.05}</div> : null}
+          {creditsNumber ? < div className='mt-2 text-xs italic opacity-75 text-gray-500'> 500 + <span className={styles.deposit_bonus}>{Math.ceil(creditsNumber * 0.05)}<sup> Bonus</sup></span> = {creditsNumberAfterBonus}</div> : null}
         </div>
         <div className={styles.deposit_page_content}>
           <p className={styles.deposit_page_button} style={{
