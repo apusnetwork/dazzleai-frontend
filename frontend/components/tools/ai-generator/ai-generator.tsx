@@ -254,7 +254,11 @@ into state
               newState.guidanceScale = parseFloat(value);
               break;
             case "Sampler":
-              newState.scheduler = value;
+              if (!["Euler a", "Euler", "LMS", "Heun", "DPM2", "DPM2 a", "DPM++ 2S a", "DPM++ 2M", "DPM++ SDE", "DPM fast", "DPM adaptive", "LMS Karras", "DPM2 Karras", "DPM2 a Karras", "DPM++ 2S a Karras", "DPM++ 2M Karras", "DPM++ SDE Karras", "DDIM"].includes(value)) {
+                message(dispatch, { type: "info", text: `Unsupported sampler: ${value}` })
+              } else {
+                newState.scheduler = value;
+              }
             // Add more cases for the other keys
             default:
               message(dispatch, { type: "info", text: `Unknown key: ${key}` })
