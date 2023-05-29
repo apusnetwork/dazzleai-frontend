@@ -2,7 +2,7 @@ import axios, { AxiosError } from "axios"
 
 const axiosInstance = axios.create({
   // baseURL: 'http://dazzleapi.ap-southeast-1.elasticbeanstalk.com',
-  baseURL: 'https://test-api.dazzleai.network',
+  baseURL: 'https://api.dazzleai.network',
 })
 
 

@@ -17,7 +17,7 @@ axios__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (awa
 
 const axiosInstance = axios__WEBPACK_IMPORTED_MODULE_0__["default"].create({
     // baseURL: 'http://dazzleapi.ap-southeast-1.elasticbeanstalk.com',
-    baseURL: "https://test-api.dazzleai.network"
+    baseURL: "https://api.dazzleai.network"
 });
 axiosInstance.interceptors.request.use(function(config) {
     console.log("Request:", config.method?.toUpperCase(), config.url, config.params, config.data);
