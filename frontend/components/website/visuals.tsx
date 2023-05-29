@@ -1,6 +1,5 @@
-import Masonry from "react-masonry-css";
-import { cloudflareLoader } from "utils/cloudflare";
-
+// import Masonry from "react-masonry-css";
+import Masonry from '@mui/lab/Masonry';
 import styles from './website.module.scss';
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -21,29 +20,35 @@ const Image = ({ model }: { model: ModelI }) => {
     setShow18Plus(gloablShow18Plus)
   }, [gloablShow18Plus])
   return <Link href={`/generate?img=${model.params.images[0].split('/').pop()}&shared=true`}>
-    <div className={styles.image_wrapper}>
-      <img
-        key={model.id}
-        src={model.params.images[0]}
-        alt=""
-        style={{
-          filter: model.nsfw && !show18Plus ? 'blur(10px)' : '',
-        }}
-        className="z-0"
-      />
-      <div className={styles.image_badge}>{model.useCount} runs</div>
-      {model.nsfw && <div className={styles.image_18_badge} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setShow18Plus(show => !show) }} >18+ {show18Plus ? <EyeInvisibleOutlined className="leading-0 ml-1" rev="" /> : <EyeOutlined className="leading-0 ml-1" rev="" />}</div>}
-      <div className={styles.image_name}>{model.name}</div>
-      <img className={styles.image_avatar_url} src={model.params.author_avatar || DefaultAvatar.src} />
+    <div className={styles.column}>
+      <div className={styles.image_wrapper}>
+        <img
+          key={model.id}
+          src={model.params.images[0]}
+          alt=""
+          style={{
+            filter: model.nsfw && !show18Plus ? 'blur(10px)' : '',
+          }}
+          className="z-0"
+        />
+        <div className={styles.image_badge}>{model.useCount} runs</div>
+        {model.nsfw && <div className={styles.image_18_badge} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setShow18Plus(show => !show) }} >18+ {show18Plus ? <EyeInvisibleOutlined className="leading-0 ml-1" rev="" /> : <EyeOutlined className="leading-0 ml-1" rev="" />}</div>}
+        <div className={styles.image_name}>{model.name}</div>
+        <img className={styles.image_avatar_url} src={model.params.author_avatar || DefaultAvatar.src} />
+      </div>
     </div>
   </Link>
 }
 
 export function ImageGridVisual({ images, columns = 4 }: ImageGridVisualProps): JSX.Element {
-
   return (
     <div className={styles.image_grid_visual}>
-      <Masonry
+      <Masonry columns={4} spacing={2}>
+        {
+          images.map((model) => <Image model={model} />)
+        }
+      </Masonry>
+      {/* <Masonry
         breakpointCols={{
           default: columns,
           1100: 2,
@@ -52,12 +57,8 @@ export function ImageGridVisual({ images, columns = 4 }: ImageGridVisualProps): 
         className={styles.grid}
         columnClassName={styles.column}
       >
-        {/* <div className={styles.masonry}> */}
-        {
-          images.map((model) => <Image model={model} />)
-        }
-        {/* </div> */}
-      </Masonry>
+        {images.map((model) => <Image model={model} />)}
+      </Masonry> */}
     </div>
   )
 }

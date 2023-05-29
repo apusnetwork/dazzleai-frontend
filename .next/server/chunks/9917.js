@@ -230,9 +230,9 @@ function SmallSocialProof() {
     });
 }
 
-// EXTERNAL MODULE: external "react-masonry-css"
-var external_react_masonry_css_ = __webpack_require__(7125);
-var external_react_masonry_css_default = /*#__PURE__*/__webpack_require__.n(external_react_masonry_css_);
+// EXTERNAL MODULE: external "@mui/lab/Masonry"
+var Masonry_ = __webpack_require__(1584);
+var Masonry_default = /*#__PURE__*/__webpack_require__.n(Masonry_);
 // EXTERNAL MODULE: ./node_modules/next/link.js
 var next_link = __webpack_require__(1664);
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
@@ -250,6 +250,7 @@ var _18puls = __webpack_require__(4993);
 /* harmony default export */ const default_avatar = ({"src":"/_next/static/media/default_avatar.765939bc.webp","height":120,"width":120,"blurDataURL":"data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADQAQCdASoIAAgAAkA4JaQAAp3NNVkYAAD++uFxGhP12LBx5g3tA3WgqONZM5UFAn8AAA=="});
 ;// CONCATENATED MODULE: ./frontend/components/website/visuals.tsx
 
+// import Masonry from "react-masonry-css";
 
 
 
@@ -268,65 +269,63 @@ const Image = ({ model  })=>{
     ]);
     return /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
         href: `/generate?img=${model.params.images[0].split("/").pop()}&shared=true`,
-        children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-            className: (website_module_default()).image_wrapper,
-            children: [
-                /*#__PURE__*/ jsx_runtime_.jsx("img", {
-                    src: model.params.images[0],
-                    alt: "",
-                    style: {
-                        filter: model.nsfw && !show18Plus ? "blur(10px)" : ""
-                    },
-                    className: "z-0"
-                }, model.id),
-                /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                    className: (website_module_default()).image_badge,
-                    children: [
-                        model.useCount,
-                        " runs"
-                    ]
-                }),
-                model.nsfw && /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                    className: (website_module_default()).image_18_badge,
-                    onClick: (e)=>{
-                        e.preventDefault();
-                        e.stopPropagation();
-                        setShow18Plus((show)=>!show);
-                    },
-                    children: [
-                        "18+ ",
-                        show18Plus ? /*#__PURE__*/ jsx_runtime_.jsx((EyeInvisibleOutlined_default()), {
-                            className: "leading-0 ml-1",
-                            rev: ""
-                        }) : /*#__PURE__*/ jsx_runtime_.jsx((EyeOutlined_default()), {
-                            className: "leading-0 ml-1",
-                            rev: ""
-                        })
-                    ]
-                }),
-                /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                    className: (website_module_default()).image_name,
-                    children: model.name
-                }),
-                /*#__PURE__*/ jsx_runtime_.jsx("img", {
-                    className: (website_module_default()).image_avatar_url,
-                    src: model.params.author_avatar || default_avatar.src
-                })
-            ]
+        children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
+            className: (website_module_default()).column,
+            children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                className: (website_module_default()).image_wrapper,
+                children: [
+                    /*#__PURE__*/ jsx_runtime_.jsx("img", {
+                        src: model.params.images[0],
+                        alt: "",
+                        style: {
+                            filter: model.nsfw && !show18Plus ? "blur(10px)" : ""
+                        },
+                        className: "z-0"
+                    }, model.id),
+                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: (website_module_default()).image_badge,
+                        children: [
+                            model.useCount,
+                            " runs"
+                        ]
+                    }),
+                    model.nsfw && /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
+                        className: (website_module_default()).image_18_badge,
+                        onClick: (e)=>{
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setShow18Plus((show)=>!show);
+                        },
+                        children: [
+                            "18+ ",
+                            show18Plus ? /*#__PURE__*/ jsx_runtime_.jsx((EyeInvisibleOutlined_default()), {
+                                className: "leading-0 ml-1",
+                                rev: ""
+                            }) : /*#__PURE__*/ jsx_runtime_.jsx((EyeOutlined_default()), {
+                                className: "leading-0 ml-1",
+                                rev: ""
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
+                        className: (website_module_default()).image_name,
+                        children: model.name
+                    }),
+                    /*#__PURE__*/ jsx_runtime_.jsx("img", {
+                        className: (website_module_default()).image_avatar_url,
+                        src: model.params.author_avatar || default_avatar.src
+                    })
+                ]
+            })
         })
     });
 };
 function ImageGridVisual({ images , columns =4  }) {
     return /*#__PURE__*/ jsx_runtime_.jsx("div", {
         className: (website_module_default()).image_grid_visual,
-        children: /*#__PURE__*/ jsx_runtime_.jsx((external_react_masonry_css_default()), {
-            breakpointCols: {
-                default: columns,
-                1100: 2,
-                800: 2
-            },
-            className: (website_module_default()).grid,
-            columnClassName: (website_module_default()).column,
+        children: /*#__PURE__*/ jsx_runtime_.jsx((Masonry_default()), {
+            columns: 4,
+            spacing: 2,
             children: images.map((model)=>/*#__PURE__*/ jsx_runtime_.jsx(Image, {
                     model: model
                 }))

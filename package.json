@@ -10,8 +10,12 @@
   },
   "dependencies": {
     "@ant-design/icons": "^5.1.2",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
     "@fontsource/inter": "^4.5.15",
     "@metamask/detect-provider": "^2.0.0",
+    "@mui/lab": "^5.0.0-alpha.131",
+    "@mui/material": "^5.13.2",
     "@reduxjs/toolkit": "^1.9.3",
     "@types/node": "18.15.10",
     "@types/react": "^18.0.0",

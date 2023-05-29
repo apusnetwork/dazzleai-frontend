@@ -29,7 +29,7 @@ export default function HomePage({ exampleArt }: { exampleArt: ImageI[] }): JSX.
     <Hero
       title={
         <>
-          We Use a&nbsp;<span>decentralized</span>GPU network to help model creators<span>make money</span>
+          We Use a&nbsp;<span>decentralized</span>GPU network to help model creators&nbsp;<span>make money</span>
         </>
       }
       subtitle="Amazing pictures generated deployed models, quick try"
@@ -65,7 +65,7 @@ export default function HomePage({ exampleArt }: { exampleArt: ImageI[] }): JSX.
       }
       visual={
         <ImageGridVisual
-          images={models.filter(v => Boolean(v?.params?.images?.length))}
+          images={models.filter(v => Boolean(v?.params?.images?.[0]))}
         />
       }
     />
