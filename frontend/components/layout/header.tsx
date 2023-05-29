@@ -115,13 +115,15 @@ function HeaderUser(): JSX.Element {
   const [open, setOpen] = useState(false)
   const user = useAppSelector(selectUser)
   const dispatch = useAppDispatch()
-
+  const userNameSliced = user.name?.startsWith('0x') ?
+    user.name.length > 10 ? `${user.name.substring(0, 6)}...${user.name.substring(user.name.length - 4)}` : user.name
+    : user.name
 
   return (
     <section className={styles._header_user} >
       <div className={styles.header_user} onClick={e => { e.stopPropagation(); setOpen(!open) }}>
         <div >
-          <div className={styles.name}>{user.name?.startsWith('0x') ? user.name.substring(0, 8) : user.name}</div>
+          <div className={styles.name}>{userNameSliced}</div>
           <div className={styles.credits}>Credits: {user.credits}</div>
         </div>
         <div className={styles.header_avatar}>

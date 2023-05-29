@@ -409,6 +409,7 @@ function HeaderUser() {
     const { 0: open , 1: setOpen  } = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(false);
     const user = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useAppSelector */ .C)(_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_4__/* .selectUser */ .dy);
     const dispatch = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useAppDispatch */ .T)();
+    const userNameSliced = user.name?.startsWith("0x") ? user.name.length > 10 ? `${user.name.substring(0, 6)}...${user.name.substring(user.name.length - 4)}` : user.name : user.name;
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("section", {
         className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default()._header_user),
         children: [
@@ -423,7 +424,7 @@ function HeaderUser() {
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                 className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().name),
-                                children: user.name?.startsWith("0x") ? user.name.substring(0, 8) : user.name
+                                children: userNameSliced
                             }),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                 className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().credits),

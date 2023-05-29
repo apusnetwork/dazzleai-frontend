@@ -244,8 +244,15 @@ function App({ children  }) {
     }
     (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
         if (authState === "login" || authState === "register" || !user.id) initGoogle();
+        if (authState === undefined && user.id) {
+            const autoRefreshAccount = setInterval(()=>{
+                dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__/* .getUser */ .PR)());
+            }, 30000);
+            return ()=>clearInterval(autoRefreshAccount);
+        }
     }, [
-        authState
+        authState,
+        user
     ]);
     (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
         // Add a response interceptor
