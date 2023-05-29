@@ -142,7 +142,13 @@ function App({ children }: Props): JSX.Element {
 
   useEffect(() => {
     if (authState === 'login' || authState === 'register' || !user.id) initGoogle()
-  }, [authState])
+    if (authState === undefined && user.id) {
+      const autoRefreshAccount = setInterval(() => {
+        dispatch(getUser())
+      }, 30000)
+      return () => clearInterval(autoRefreshAccount)
+    }
+  }, [authState, user])
 
   useEffect(() => {
     // Add a response interceptor
