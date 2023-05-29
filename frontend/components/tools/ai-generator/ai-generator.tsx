@@ -226,6 +226,7 @@ into state
       const keyValuePairs = configLine.split(', ');
       setState(s => {
         const newState: Partial<StateI> = {};
+        const UnSupportedKey: string[] = []
         keyValuePairs.forEach((pair) => {
           const [key, value] = pair.split(': ');
 
@@ -255,15 +256,20 @@ into state
               break;
             case "Sampler":
               if (!["Euler a", "Euler", "LMS", "Heun", "DPM2", "DPM2 a", "DPM++ 2S a", "DPM++ 2M", "DPM++ SDE", "DPM fast", "DPM adaptive", "LMS Karras", "DPM2 Karras", "DPM2 a Karras", "DPM++ 2S a Karras", "DPM++ 2M Karras", "DPM++ SDE Karras", "DDIM"].includes(value)) {
-                message(dispatch, { type: "info", text: `Unsupported sampler: ${value}` })
+                message(dispatch, { type: "info", text: `Sampler ${value} is unsupport.` })
               } else {
                 newState.scheduler = value;
               }
             // Add more cases for the other keys
             default:
-              message(dispatch, { type: "info", text: `Unknown key: ${key}` })
+              UnSupportedKey.push(key)
           }
         });
+        if (UnSupportedKey.length > 3) {
+          message(dispatch, { type: "info", text: `${UnSupportedKey.length} params are unsupport.` })
+        } else if (UnSupportedKey.length > 0) {
+          message(dispatch, { type: "info", text: `Params ${UnSupportedKey.join(', ')} are unsupport.` })
+        }
         return {
           ...s,
           ...newState,
