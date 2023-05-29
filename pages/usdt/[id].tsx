@@ -229,7 +229,7 @@ export default function HomePage(): JSX.Element {
               <span>Credits</span>
             </div>
           } />
-          {creditsNumber ? < div className='mt-2 text-xs italic opacity-75 text-gray-500'> 500 + <span className={styles.deposit_bonus}>{Math.ceil(creditsNumber * 0.05)}<sup> Bonus</sup></span> = {creditsNumberAfterBonus}</div> : null}
+          {creditsNumber ? < div className='mt-2 text-xs italic opacity-75 text-gray-500'> {creditsNumber} + <span className={styles.deposit_bonus}>{Math.ceil(creditsNumber * 0.05)}<sup> Bonus</sup></span> = {creditsNumberAfterBonus}</div> : null}
         </div>
         <div className={styles.deposit_page_content}>
           <p className={styles.deposit_page_button} style={{
