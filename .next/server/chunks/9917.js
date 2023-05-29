@@ -1,5 +1,5 @@
-exports.id = 3230;
-exports.ids = [3230];
+exports.id = 9917;
+exports.ids = [9917];
 exports.modules = {
 
 /***/ 3499:
@@ -97,7 +97,7 @@ function Hero({ title , subtitle , visual , socialProof , cta  }) {
 
 /***/ }),
 
-/***/ 3230:
+/***/ 9917:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -246,7 +246,10 @@ var EyeInvisibleOutlined_ = __webpack_require__(8768);
 var EyeInvisibleOutlined_default = /*#__PURE__*/__webpack_require__.n(EyeInvisibleOutlined_);
 // EXTERNAL MODULE: ./frontend/context/18puls.tsx
 var _18puls = __webpack_require__(4993);
+;// CONCATENATED MODULE: ./frontend/components/website/default_avatar.webp
+/* harmony default export */ const default_avatar = ({"src":"/_next/static/media/default_avatar.765939bc.webp","height":120,"width":120,"blurDataURL":"data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADQAQCdASoIAAgAAkA4JaQAAp3NNVkYAAD++uFxGhP12LBx5g3tA3WgqONZM5UFAn8AAA=="});
 ;// CONCATENATED MODULE: ./frontend/components/website/visuals.tsx
+
 
 
 
@@ -307,7 +310,7 @@ const Image = ({ model  })=>{
                 }),
                 /*#__PURE__*/ jsx_runtime_.jsx("img", {
                     className: (website_module_default()).image_avatar_url,
-                    src: model.params.author_avatar
+                    src: model.params.author_avatar || default_avatar.src
                 })
             ]
         })

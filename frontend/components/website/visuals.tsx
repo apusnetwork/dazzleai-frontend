@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import EyeOutlined from '@ant-design/icons/EyeOutlined'
 import EyeInvisibleOutlined from '@ant-design/icons/EyeInvisibleOutlined'
 import { useGlobal18Plus } from "@/frontend/context/18puls";
+import DefaultAvatar from './default_avatar.webp'
 
 interface ImageGridVisualProps {
   images: ModelI[],
@@ -33,7 +34,7 @@ const Image = ({ model }: { model: ModelI }) => {
       <div className={styles.image_badge}>{model.useCount} runs</div>
       {model.nsfw && <div className={styles.image_18_badge} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setShow18Plus(show => !show) }} >18+ {show18Plus ? <EyeInvisibleOutlined className="leading-0 ml-1" rev="" /> : <EyeOutlined className="leading-0 ml-1" rev="" />}</div>}
       <div className={styles.image_name}>{model.name}</div>
-      <img className={styles.image_avatar_url} src={model.params.author_avatar} />
+      <img className={styles.image_avatar_url} src={model.params.author_avatar || DefaultAvatar.src} />
     </div>
   </Link>
 }
@@ -51,9 +52,11 @@ export function ImageGridVisual({ images, columns = 4 }: ImageGridVisualProps): 
         className={styles.grid}
         columnClassName={styles.column}
       >
+        {/* <div className={styles.masonry}> */}
         {
           images.map((model) => <Image model={model} />)
         }
+        {/* </div> */}
       </Masonry>
     </div>
   )
