@@ -235,28 +235,54 @@ into state
             //   state.model = value;
             //   break;
             case "Seed":
-              newState.seed = value;
+              if (Number.isNaN(value)) {
+                newState.seed = undefined
+                return
+              }
+              newState.seed = Number(value) > 0 ? value : undefined;
               break;
             case "Size":
               const [width, height] = value.split('x');
               newState.width = parseInt(width);
-              if (newState.width > 1024) {
+              if (Number.isNaN(newState.width)) {
+                newState.width = 512
+              } else if (newState.width > 1024) {
                 newState.width = 1024
+              } else if (newState.width < 0) {
+                newState.width = 0
               }
               newState.height = parseInt(height);
-              if (newState.height > 1024) {
+              if (Number.isNaN(newState.height)) {
+                newState.height = 512
+              } else if (newState.height > 1024) {
                 newState.height = 1024
+              } else if (newState.height < 0) {
+                newState.height = 0
               }
               break;
             case "Steps":
               newState.steps = parseInt(value);
+              if (Number.isNaN(newState.steps)) {
+                newState.steps = 25
+              } else if (newState.steps > 75) {
+                newState.steps = 75
+              } else if (newState.steps < 1) {
+                newState.steps = 1
+              }
               break;
             case "CFG scale":
               newState.guidanceScale = parseFloat(value);
+              if (Number.isNaN(newState.guidanceScale)) {
+                newState.guidanceScale = 9
+              } else if (newState.guidanceScale > 20) {
+                newState.guidanceScale = 20
+              } else if (newState.guidanceScale < 0) {
+                newState.guidanceScale = 0
+              }
               break;
             case "Sampler":
               if (!["Euler a", "Euler", "LMS", "Heun", "DPM2", "DPM2 a", "DPM++ 2S a", "DPM++ 2M", "DPM++ SDE", "DPM fast", "DPM adaptive", "LMS Karras", "DPM2 Karras", "DPM2 a Karras", "DPM++ 2S a Karras", "DPM++ 2M Karras", "DPM++ SDE Karras", "DDIM"].includes(value)) {
-                message(dispatch, { type: "info", text: `Sampler ${value} is unsupport.` })
+                newState.scheduler = "DPM++ 2M Karras"
               } else {
                 newState.scheduler = value;
               }
