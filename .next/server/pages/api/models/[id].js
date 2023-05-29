@@ -36,6 +36,28 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_fro
 
 
 function mapParamsToRequest(params, model) {
+    if (![
+        "Euler a",
+        "Euler",
+        "LMS",
+        "Heun",
+        "DPM2",
+        "DPM2 a",
+        "DPM++ 2S a",
+        "DPM++ 2M",
+        "DPM++ SDE",
+        "DPM fast",
+        "DPM adaptive",
+        "LMS Karras",
+        "DPM2 Karras",
+        "DPM2 a Karras",
+        "DPM++ 2S a Karras",
+        "DPM++ 2M Karras",
+        "DPM++ SDE Karras",
+        "DDIM"
+    ].includes(params.scheduler)) {
+        params.scheduler = "DPM++ 2M Karras";
+    }
     const req = {
         batch_count: params.num_images,
         cfg_scale: params.guidance_scale,

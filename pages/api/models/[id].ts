@@ -42,6 +42,9 @@ interface GeneratorParams {
 }
 
 function mapParamsToRequest(params: GeneratorParams, model: string): ImageGenerationRequest {
+  if (!["Euler a", "Euler", "LMS", "Heun", "DPM2", "DPM2 a", "DPM++ 2S a", "DPM++ 2M", "DPM++ SDE", "DPM fast", "DPM adaptive", "LMS Karras", "DPM2 Karras", "DPM2 a Karras", "DPM++ 2S a Karras", "DPM++ 2M Karras", "DPM++ SDE Karras", "DDIM"].includes(params.scheduler)) {
+    params.scheduler = "DPM++ 2M Karras"
+  }
   const req = {
     batch_count: params.num_images,
     cfg_scale: params.guidance_scale,
@@ -49,8 +52,8 @@ function mapParamsToRequest(params: GeneratorParams, model: string): ImageGenera
     height: params.height,
     image: params.image_url,
     model,
-    checkpoint: '', 
-    lora: '', 
+    checkpoint: '',
+    lora: '',
     negative_prompt: params.negative_prompt,
     node: params.node,
     prompt: params.prompt,
@@ -59,11 +62,11 @@ function mapParamsToRequest(params: GeneratorParams, model: string): ImageGenera
     steps: params.num_inference_steps,
     width: params.width,
   };
-  if(params.type==="checkpoint"){
-    req.checkpoint=model;
-  }else if (params.type==="lora"){
-    req.checkpoint=params.checkpoint;
-    req.lora=model;
+  if (params.type === "checkpoint") {
+    req.checkpoint = model;
+  } else if (params.type === "lora") {
+    req.checkpoint = params.checkpoint;
+    req.lora = model;
   }
   return req;
 }
