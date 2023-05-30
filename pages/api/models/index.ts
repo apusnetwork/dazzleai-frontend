@@ -42,6 +42,7 @@ interface RemoteModel {
   name: string;
   use_count: number;
   nsfw: boolean;
+  reuse_img: string;
 }
 
 type RemoteModelList = RemoteModel[];
@@ -76,6 +77,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       lastUsedAt: '',
       useCount: model.use_count,
       nsfw: model.nsfw,
+      reuse_img: model.reuse_img,
     }))
     res.status(200).json(resData)
   } catch (e: any) {

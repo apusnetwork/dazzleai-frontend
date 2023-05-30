@@ -268,14 +268,14 @@ const Image = ({ model  })=>{
         gloablShow18Plus
     ]);
     return /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
-        href: `/generate?img=${model.params.images[0].split("/").pop()}&shared=true`,
+        href: `/generate?img=${model.reuse_img}&shared=true`,
         children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
             className: (website_module_default()).column,
             children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
                 className: (website_module_default()).image_wrapper,
                 children: [
                     /*#__PURE__*/ jsx_runtime_.jsx("img", {
-                        src: model.params.images[0],
+                        src: "https://s3.apus.network/" + model.reuse_img,
                         alt: "",
                         style: {
                             filter: model.nsfw && !show18Plus ? "blur(10px)" : ""
