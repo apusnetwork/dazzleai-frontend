@@ -98,7 +98,8 @@ async function handler(req, res) {
                 trainingFinishedAt: null,
                 lastUsedAt: "",
                 useCount: model.use_count,
-                nsfw: model.nsfw
+                nsfw: model.nsfw,
+                reuse_img: model.reuse_img
             }));
         res.status(200).json(resData);
     } catch (e) {

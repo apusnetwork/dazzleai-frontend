@@ -19,12 +19,12 @@ const Image = ({ model }: { model: ModelI }) => {
   useEffect(() => {
     setShow18Plus(gloablShow18Plus)
   }, [gloablShow18Plus])
-  return <Link href={`/generate?img=${model.params.images[0].split('/').pop()}&shared=true`}>
+  return <Link href={`/generate?img=${model.reuse_img}&shared=true`}>
     <div className={styles.column}>
       <div className={styles.image_wrapper}>
         <img
           key={model.id}
-          src={model.params.images[0]}
+          src={'https://s3.apus.network/' + model.reuse_img}
           alt=""
           style={{
             filter: model.nsfw && !show18Plus ? 'blur(10px)' : '',

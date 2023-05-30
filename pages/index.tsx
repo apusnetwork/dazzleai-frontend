@@ -65,7 +65,7 @@ export default function HomePage({ exampleArt }: { exampleArt: ImageI[] }): JSX.
       }
       visual={
         <ImageGridVisual
-          images={models.filter(v => Boolean(v?.params?.images?.[0]))}
+          images={models.filter(v => Boolean(v.reuse_img))}
         />
       }
     />
