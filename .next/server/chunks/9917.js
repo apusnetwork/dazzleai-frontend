@@ -58,7 +58,7 @@ module.exports = {
 /* harmony import */ var _website_module_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_website_module_scss__WEBPACK_IMPORTED_MODULE_1__);
 
 
-function Hero({ title , subtitle , visual , socialProof , cta  }) {
+function Hero({ title , subtitle , subtitle2 , visual , socialProof , cta  }) {
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("section", {
         className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_1___default()._hero),
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -70,6 +70,13 @@ function Hero({ title , subtitle , visual , socialProof , cta  }) {
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h1", {
                             className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_1___default().title),
                             children: title
+                        }),
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("h2", {
+                            className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_1___default().hero_subtitle),
+                            style: {
+                                marginTop: 20
+                            },
+                            children: subtitle2
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                             className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_1___default().cta),
@@ -320,15 +327,30 @@ const Image = ({ model  })=>{
         })
     });
 };
-function ImageGridVisual({ images , columns =4  }) {
+function ImageGridVisual({ images  }) {
+    const { 0: columns , 1: setColumns  } = (0,external_react_.useState)(4);
+    (0,external_react_.useEffect)(()=>{
+        const handleResize = ()=>{
+            if (window.innerWidth > 768) {
+                setColumns(4);
+            } else {
+                setColumns(2);
+            }
+        };
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return ()=>{
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
     return /*#__PURE__*/ jsx_runtime_.jsx("div", {
         className: (website_module_default()).image_grid_visual,
         children: /*#__PURE__*/ jsx_runtime_.jsx((Masonry_default()), {
-            columns: 4,
+            columns: columns,
             spacing: 2,
             children: images.map((model)=>/*#__PURE__*/ jsx_runtime_.jsx(Image, {
                     model: model
-                }))
+                }, model.name))
         })
     });
 }

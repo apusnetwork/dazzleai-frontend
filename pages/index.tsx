@@ -32,6 +32,7 @@ export default function HomePage({ exampleArt }: { exampleArt: ImageI[] }): JSX.
           We Use a&nbsp;<span>decentralized</span>GPU network to help model creators&nbsp;<span>make money</span>
         </>
       }
+      subtitle2={<>Harnessing <span>NFTs</span> to Secure Profit Rights for model creators.</>}
       subtitle="Amazing pictures generated deployed models, quick try"
       cta={
         <div style={{

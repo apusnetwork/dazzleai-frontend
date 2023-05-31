@@ -90,6 +90,10 @@
     color: $dark-font;
     text-align: center;
 
+    span {
+      color: $primary;
+    }
+
     @include mobile {
       font-size: 15px;
     }

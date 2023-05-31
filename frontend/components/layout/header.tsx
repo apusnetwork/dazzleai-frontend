@@ -29,7 +29,6 @@ export function WebsiteHeader({ fixed = false }): JSX.Element {
   const user = useAppSelector(selectUser);
   const [open, setOpen] = useState(false);
   const { setShow18Plus, show18Plus } = useGlobal18Plus();
-  console.log(setShow18Plus, show18Plus)
 
 
   return (
