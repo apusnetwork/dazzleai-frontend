@@ -9,6 +9,8 @@ import { Provider } from 'react-redux';
 import "@/frontend/styles/globals.css";
 import "@/frontend/styles/index.scss";
 import "rc-slider/assets/index.css";
+import MetaMaskLogo from "@/frontend/images/metamask-logo.png"
+import GoogleLogo from "@/frontend/images/google.png"
 
 
 import "@fontsource/inter/400.css";
@@ -63,10 +65,10 @@ function App({ children }: Props): JSX.Element {
       client_id: "1080163930978-2885m14p291dt08tej4p7f4bldtbpsj7.apps.googleusercontent.com",
       callback: googleLogin
     });
-    google.accounts.id.renderButton(
-      document.getElementById("google-login"),
-      { theme: "filled_blue", size: "large", text: 'continue_with', locale: 'en_US', width: 260 }
-    );
+    // google.accounts.id.renderButton(
+    //   document.getElementById("google-login"),
+    //   { theme: "filled_blue", size: "large", text: 'continue_with', locale: 'en_US', width: 260 }
+    // );
   }
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -138,6 +140,14 @@ function App({ children }: Props): JSX.Element {
       message(dispatch, { type: 'success', text: 'Sucesfully Logged In!' })
       window.scrollTo({ top: 0 })
     }
+  }
+
+  function loginWithGoogleOneTap() {
+    window?.google.accounts.id.prompt((notification: any) => {
+      if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
+        message(dispatch, { type: "danger", text: "You have refused google login, try again later or use MetaMask Login." })
+      }
+    });
   }
 
   useEffect(() => {
@@ -213,11 +223,17 @@ function App({ children }: Props): JSX.Element {
             </a>
           </p>
           <br />
-          <div id='google-login' />
+          {/* <div id='google-login' /> */}
+
+          <div className="mobile_link_cta" style={{ marginTop: 14 }}>
+            <Button size="md" type="primary" fullWidth onClick={loginWithGoogleOneTap}>
+              <img src={GoogleLogo.src} className="h-6 w-6" />Google
+            </Button>
+          </div>
 
           <div className="mobile_link_cta" style={{ marginTop: 14 }}>
             <Button size="md" type="primary" fullWidth onClick={metaMaskLogin}>
-              MetaMask
+              <img src={MetaMaskLogo.src} className="h-6 w-6" />MetaMask
             </Button>
           </div>
         </div>
@@ -231,11 +247,15 @@ function App({ children }: Props): JSX.Element {
         <div className='login'>
           <h2 className='login-h'>Create an account</h2>
           <p className='login-p'>Get 25 image credits new user for free!</p>
-          <div id='google-login' />
+          <div className="mobile_link_cta" style={{ marginTop: 14 }}>
+            <Button size="md" type="primary" fullWidth onClick={loginWithGoogleOneTap}>
+              <img src={GoogleLogo.src} className="h-6 w-6" />Google
+            </Button>
+          </div>
 
           <div className="mobile_link_cta" style={{ marginTop: 14 }}>
             <Button size="md" type="primary" fullWidth onClick={metaMaskLogin}>
-              MetaMask
+              <img src={MetaMaskLogo.src} className="h-6 w-6" />MetaMask
             </Button>
           </div>
           <small className='license'>By signing up, you agree to our <a href="/legal/terms-of-service" target="_blank">Terms of Service</a> and <a href="/legal/privacy-policy" target="_blank">Privacy Policy</a>.</small>
