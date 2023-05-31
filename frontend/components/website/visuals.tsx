@@ -40,12 +40,27 @@ const Image = ({ model }: { model: ModelI }) => {
   </Link>
 }
 
-export function ImageGridVisual({ images, columns = 4 }: ImageGridVisualProps): JSX.Element {
+export function ImageGridVisual({ images }: ImageGridVisualProps): JSX.Element {
+  const [columns, setColumns] = useState(4)
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setColumns(4)
+      } else {
+        setColumns(2)
+      }
+    }
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [])
   return (
     <div className={styles.image_grid_visual}>
-      <Masonry columns={4} spacing={2}>
+      <Masonry columns={columns} spacing={2}>
         {
-          images.map((model) => <Image model={model} />)
+          images.map((model) => <Image key={model.name} model={model} />)
         }
       </Masonry>
       {/* <Masonry

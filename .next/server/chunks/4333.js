@@ -254,7 +254,6 @@ function WebsiteHeader({ fixed =false  }) {
     const user = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useAppSelector */ .C)(_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_4__/* .selectUser */ .dy);
     const { 0: open , 1: setOpen  } = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(false);
     const { setShow18Plus , show18Plus  } = (0,_frontend_context_18puls__WEBPACK_IMPORTED_MODULE_13__/* .useGlobal18Plus */ .W)();
-    console.log(setShow18Plus, show18Plus);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("header", {
         className: [
             open ? (_layout_module_scss__WEBPACK_IMPORTED_MODULE_16___default().mobile_header) : ""
