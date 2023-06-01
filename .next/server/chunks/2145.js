@@ -80,6 +80,7 @@ function mapRemoteTaskToTaskInfo(remoteTask) {
         lastUsedAt: createdAt
     };
     const imagesInfo = images?.map((image)=>{
+        console.log(image);
         const { image_id , image_url , is_shared  } = image;
         return {
             id: image_id,
@@ -95,7 +96,8 @@ function mapRemoteTaskToTaskInfo(remoteTask) {
             isShared: is_shared,
             createdAt,
             url: image_url,
-            jpegUrl: image_url
+            jpegUrl: image_url,
+            seed: image.seed
         };
     }) ?? [];
     return {

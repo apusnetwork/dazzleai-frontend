@@ -550,7 +550,15 @@ into state
         const generatedImages: ImageI[] = [];
         for (const task of tasks.data) {
           if (task.status === 'succeed' && task.images && task.images.length) {
-            generatedImages.push(...task.images.map((im: any) => ({ ...im, modelTask: task })))
+            generatedImages.push(...task.images.map((im: any) => ({
+              ...im, modelTask: {
+                ...task,
+                params: {
+                  ...task.params,
+                  seed: im.seed
+                }
+              }
+            })))
           }
           if (task.status === 'failed') {
             throw new Error("Something went wrong!")

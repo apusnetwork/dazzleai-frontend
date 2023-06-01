@@ -72,6 +72,7 @@ type Image = {
   task: string;
   task_id: string;
   user_id: string;
+  seed: string
 };
 
 type Extra = {
@@ -134,6 +135,7 @@ export function mapRemoteTaskToTaskInfo(remoteTask: RemoteTask): TaskInfo {
     lastUsedAt: createdAt,
   };
   const imagesInfo = images?.map((image) => {
+    console.log(image)
     const { image_id, image_url, is_shared } = image;
     return {
       id: image_id,
@@ -150,6 +152,7 @@ export function mapRemoteTaskToTaskInfo(remoteTask: RemoteTask): TaskInfo {
       createdAt,
       url: image_url,
       jpegUrl: image_url,
+      seed: image.seed,
     };
   }) ?? []
   return {
