@@ -3,7 +3,7 @@ import { AppProps } from 'next/dist/shared/lib/router/router';
 import Router, { useRouter } from 'next/router';
 import Script from 'next/script';
 
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { Provider } from 'react-redux';
 
 import "@/frontend/styles/globals.css";
@@ -58,6 +58,10 @@ function App({ children }: Props): JSX.Element {
 
 
   function initGoogle() {
+    const login_btn_wrapper_register = document.getElementById("login_btn_wrapper_register")
+    const login_btn_wrapper_signin = document.getElementById("login_btn_wrapper_signin")
+    const clientWidth = login_btn_wrapper_register?.clientWidth ?? login_btn_wrapper_signin?.clientWidth ?? 328
+    console.log(clientWidth)
     const google = (window as any).google;
     if (!(window as any).google) return
     google.accounts.id.initialize({
@@ -65,10 +69,7 @@ function App({ children }: Props): JSX.Element {
       client_id: "1080163930978-2885m14p291dt08tej4p7f4bldtbpsj7.apps.googleusercontent.com",
       callback: googleLogin
     });
-    // google.accounts.id.renderButton(
-    //   document.getElementById("google-login"),
-    //   { theme: "filled_blue", size: "large", text: 'continue_with', locale: 'en_US', width: 260 }
-    // );
+    google.accounts.id.renderButton(document.getElementById("g_id_signin"), { width: clientWidth, logo_alignment: 'center' });
   }
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
@@ -150,8 +151,8 @@ function App({ children }: Props): JSX.Element {
     });
   }
 
-  useEffect(() => {
-    if (authState === 'login' || authState === 'register' || !user.id) initGoogle()
+  useLayoutEffect(() => {
+    if (authState === 'login' || authState === 'register') initGoogle()
     if (authState === undefined && user.id) {
       const autoRefreshAccount = setInterval(() => {
         dispatch(getUser())
@@ -177,10 +178,10 @@ function App({ children }: Props): JSX.Element {
   useEffect(() => {
     const script = document.createElement('script')
     script.src = 'https://accounts.google.com/gsi/client'
-    script.onload = () => {
-      const google = (window as any).google // Now you can access window.google
-      initGoogle() // Assuming this is defined somewhere else
-    }
+    // script.onload = () => {
+    //   const google = (window as any).google // Now you can access window.google
+    //   initGoogle() // Assuming this is defined somewhere else
+    // }
     document.body.appendChild(script)
 
     if (user.requestStatus === 'idle' || user.requestStatus === 'failed') {
@@ -225,13 +226,21 @@ function App({ children }: Props): JSX.Element {
           <br />
           {/* <div id='google-login' /> */}
 
-          <div className="mobile_link_cta" style={{ marginTop: 14 }}>
+          {/* <div className="mobile_link_cta" style={{ marginTop: 14 }}>
             <Button size="md" type="primary" fullWidth onClick={loginWithGoogleOneTap}>
               <img src={GoogleLogo.src} className="h-6 w-6" />Google
             </Button>
+          </div> */}
+          <div id="g_id_signin" className="g_id_signin"
+            data-type="standard"
+            data-size="large"
+            data-theme="outline"
+            data-text="sign_in_with"
+            data-shape="rectangular"
+            data-logo_alignment="center">
           </div>
 
-          <div className="mobile_link_cta" style={{ marginTop: 14 }}>
+          <div id="login_btn_wrapper_signin" className="mobile_link_cta" style={{ marginTop: 14 }}>
             <Button size="md" type="primary" fullWidth onClick={metaMaskLogin}>
               <img src={MetaMaskLogo.src} className="h-6 w-6" />MetaMask
             </Button>
@@ -247,13 +256,21 @@ function App({ children }: Props): JSX.Element {
         <div className='login'>
           <h2 className='login-h'>Create an account</h2>
           <p className='login-p'>Get 25 image credits new user for free!</p>
-          <div className="mobile_link_cta" style={{ marginTop: 14 }}>
+          {/* <div className="mobile_link_cta" style={{ marginTop: 14 }}>
             <Button size="md" type="primary" fullWidth onClick={loginWithGoogleOneTap}>
               <img src={GoogleLogo.src} className="h-6 w-6" />Google
             </Button>
+          </div> */}
+          <div id="g_id_signin" className="g_id_signin"
+            data-type="icon"
+            data-size="large"
+            data-theme="outline"
+            data-text="sign_in_with"
+            data-shape="rectangular"
+            data-logo_alignment="center">
           </div>
 
-          <div className="mobile_link_cta" style={{ marginTop: 14 }}>
+          <div id="login_btn_wrapper_register" className="mobile_link_cta" style={{ marginTop: 14 }}>
             <Button size="md" type="primary" fullWidth onClick={metaMaskLogin}>
               <img src={MetaMaskLogo.src} className="h-6 w-6" />MetaMask
             </Button>

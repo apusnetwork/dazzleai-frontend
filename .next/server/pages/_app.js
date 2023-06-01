@@ -5,16 +5,6 @@ exports.id = 2888;
 exports.ids = [2888];
 exports.modules = {
 
-/***/ 3482:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({"src":"/_next/static/media/google.d132d3d8.png","height":32,"width":32,"blurDataURL":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAgAAAAICAYAAADED76LAAAA20lEQVR42k2PvUoDURSE93XcB7CwtA1Y+NOmEGwsfQ47n0FIEYMaAlGR1U7BoBALIYjiT0KSDQlJCHv2nnO/5G6VgYGBb6aYKAiIgQeTTExEgMQgLqCH2Dsdza4uGJYP6O/vMK3XMUjVuTgKy3mzymC3JNr7h78OfLYFwHtLIm+Z6O0mjL7IgZtXpdHyvHzkqHmJ0Ewmj1sspt8APL0ppxWhfDbHEwqQ3L9fs109lN9xl0n+w8l5R5rPjsCKB7lZWms32Ls8plQ7otK6Q5UU3Mb6zUScSLZyyEABlzvjzu20pdNdAAAAAElFTkSuQmCC"});
-
-/***/ }),
-
 /***/ 1247:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -80,28 +70,27 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6022);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _frontend_images_metamask_logo_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(1247);
-/* harmony import */ var _frontend_images_google_png__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3482);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(9648);
-/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(1635);
-/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_9__);
-/* harmony import */ var dayjs_plugin_relativeTime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(4195);
-/* harmony import */ var dayjs_plugin_relativeTime__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(dayjs_plugin_relativeTime__WEBPACK_IMPORTED_MODULE_10__);
-/* harmony import */ var _frontend_components_button_button__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(4820);
-/* harmony import */ var _frontend_components_modal_modal__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(3907);
-/* harmony import */ var _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(2970);
-/* harmony import */ var _frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(3464);
-/* harmony import */ var _frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(3137);
-/* harmony import */ var _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(2080);
-/* harmony import */ var _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(3779);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(2423);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(lucide_react__WEBPACK_IMPORTED_MODULE_18__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(1664);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_19___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_19__);
-/* harmony import */ var _frontend_components_message_message__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(3919);
-/* harmony import */ var ethers__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(8844);
-/* harmony import */ var _frontend_context_metamask__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(1842);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__, axios__WEBPACK_IMPORTED_MODULE_8__, _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_13__, _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_16__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_17__, ethers__WEBPACK_IMPORTED_MODULE_21__]);
-([_frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__, axios__WEBPACK_IMPORTED_MODULE_8__, _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_13__, _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_16__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_17__, ethers__WEBPACK_IMPORTED_MODULE_21__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9648);
+/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(1635);
+/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var dayjs_plugin_relativeTime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(4195);
+/* harmony import */ var dayjs_plugin_relativeTime__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(dayjs_plugin_relativeTime__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _frontend_components_button_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(4820);
+/* harmony import */ var _frontend_components_modal_modal__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(3907);
+/* harmony import */ var _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(2970);
+/* harmony import */ var _frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(3464);
+/* harmony import */ var _frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(3137);
+/* harmony import */ var _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(2080);
+/* harmony import */ var _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(3779);
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(2423);
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(lucide_react__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(1664);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _frontend_components_message_message__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(3919);
+/* harmony import */ var ethers__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(8844);
+/* harmony import */ var _frontend_context_metamask__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(1842);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__, axios__WEBPACK_IMPORTED_MODULE_7__, _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_12__, _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_15__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_16__, ethers__WEBPACK_IMPORTED_MODULE_20__]);
+([_frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__, axios__WEBPACK_IMPORTED_MODULE_7__, _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_12__, _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_15__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_16__, ethers__WEBPACK_IMPORTED_MODULE_20__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -131,24 +120,23 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_fro
 
 
 
-
-dayjs__WEBPACK_IMPORTED_MODULE_9___default().extend((dayjs_plugin_relativeTime__WEBPACK_IMPORTED_MODULE_10___default()));
+dayjs__WEBPACK_IMPORTED_MODULE_8___default().extend((dayjs_plugin_relativeTime__WEBPACK_IMPORTED_MODULE_9___default()));
 function App({ children  }) {
-    const dispatch = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_14__/* .useAppDispatch */ .T)();
+    const dispatch = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_13__/* .useAppDispatch */ .T)();
     const router = (0,next_router__WEBPACK_IMPORTED_MODULE_2__.useRouter)();
-    const authState = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_14__/* .useAppSelector */ .C)(_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .selectAuthState */ ._9);
-    const user = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_14__/* .useAppSelector */ .C)(_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_17__/* .selectUser */ .dy);
-    const status = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_14__/* .useAppSelector */ .C)(_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_17__/* .selectUserStatus */ .ss);
+    const authState = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_13__/* .useAppSelector */ .C)(_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .selectAuthState */ ._9);
+    const user = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_13__/* .useAppSelector */ .C)(_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_16__/* .selectUser */ .dy);
+    const status = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_13__/* .useAppSelector */ .C)(_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_16__/* .selectUserStatus */ .ss);
     const { 0: state , 1: setState  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)({
         name: "",
         email: "",
         password: ""
     });
     const { 0: referral , 1: setReferral  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)("");
-    const { wallet , hasProvider , isConnecting , connectMetaMask , errorMessage  } = (0,_frontend_context_metamask__WEBPACK_IMPORTED_MODULE_22__/* .useMetaMask */ ._$)();
+    const { wallet , hasProvider , isConnecting , connectMetaMask , errorMessage  } = (0,_frontend_context_metamask__WEBPACK_IMPORTED_MODULE_21__/* .useMetaMask */ ._$)();
     (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
         if (errorMessage) {
-            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .message */ .yw)(dispatch, {
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
                 type: "danger",
                 text: errorMessage
             });
@@ -157,6 +145,10 @@ function App({ children  }) {
         errorMessage
     ]);
     function initGoogle() {
+        const login_btn_wrapper_register = document.getElementById("login_btn_wrapper_register");
+        const login_btn_wrapper_signin = document.getElementById("login_btn_wrapper_signin");
+        const clientWidth = (login_btn_wrapper_register?.clientWidth ?? login_btn_wrapper_signin?.clientWidth) ?? 328;
+        console.log(clientWidth);
         const google = window.google;
         if (!window.google) return;
         google.accounts.id.initialize({
@@ -164,10 +156,10 @@ function App({ children  }) {
             client_id: "1080163930978-2885m14p291dt08tej4p7f4bldtbpsj7.apps.googleusercontent.com",
             callback: googleLogin
         });
-    // google.accounts.id.renderButton(
-    //   document.getElementById("google-login"),
-    //   { theme: "filled_blue", size: "large", text: 'continue_with', locale: 'en_US', width: 260 }
-    // );
+        google.accounts.id.renderButton(document.getElementById("g_id_signin"), {
+            width: clientWidth,
+            logo_alignment: "center"
+        });
     }
     function handleChange(e) {
         setState({
@@ -183,11 +175,11 @@ function App({ children  }) {
                 from_user: sessionStorage.getItem("from_user") || undefined
             };
         }
-        const res = await dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_16__/* .loginGoogle */ .z3)(getLoginRequest()));
+        const res = await dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_15__/* .loginGoogle */ .z3)(getLoginRequest()));
         if (res.meta.requestStatus === "fulfilled") {
-            dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .updateAuthState */ .FA)(undefined));
-            dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_16__/* .getUser */ .PR)());
-            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .message */ .yw)(dispatch, {
+            dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .updateAuthState */ .FA)(undefined));
+            dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_15__/* .getUser */ .PR)());
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
                 type: "success",
                 text: "Sucesfully Logged In!"
             });
@@ -199,7 +191,7 @@ function App({ children  }) {
     async function metaMaskLogin() {
         console.log(hasProvider);
         if (!hasProvider) {
-            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .message */ .yw)(dispatch, {
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
                 type: "danger",
                 text: "Redirecting to MetaMask..."
             });
@@ -212,18 +204,18 @@ function App({ children  }) {
             connectMetaMask();
         }
         if (!wallet.accounts[0]) {
-            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .message */ .yw)(dispatch, {
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
                 type: "danger",
                 text: "Please connect to MetaMask"
             });
             return;
         }
-        const account = ethers__WEBPACK_IMPORTED_MODULE_21__.ethers.getAddress(wallet.accounts[0]);
-        const nonceRes = await axios__WEBPACK_IMPORTED_MODULE_8__["default"].post("/api/auth/nonce", {
+        const account = ethers__WEBPACK_IMPORTED_MODULE_20__.ethers.getAddress(wallet.accounts[0]);
+        const nonceRes = await axios__WEBPACK_IMPORTED_MODULE_7__["default"].post("/api/auth/nonce", {
             address: account
         });
         if (!nonceRes.data.nonce) {
-            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .message */ .yw)(dispatch, {
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
                 type: "danger",
                 text: "Get Nonce Failed!"
             });
@@ -238,13 +230,13 @@ function App({ children  }) {
             ]
         });
         if (!signature) {
-            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .message */ .yw)(dispatch, {
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
                 type: "danger",
                 text: "Signature Failed!"
             });
             return;
         }
-        const loginRes = await dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_16__/* .loginMetaMask */ .CB)({
+        const loginRes = await dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_15__/* .loginMetaMask */ .CB)({
             address: account,
             signature,
             nonce,
@@ -252,9 +244,9 @@ function App({ children  }) {
             from_user: sessionStorage.getItem("from_user") || undefined
         }));
         if (loginRes.meta.requestStatus === "fulfilled") {
-            dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .updateAuthState */ .FA)(undefined));
-            dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_16__/* .getUser */ .PR)());
-            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .message */ .yw)(dispatch, {
+            dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .updateAuthState */ .FA)(undefined));
+            dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_15__/* .getUser */ .PR)());
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
                 type: "success",
                 text: "Sucesfully Logged In!"
             });
@@ -266,18 +258,18 @@ function App({ children  }) {
     function loginWithGoogleOneTap() {
         window?.google.accounts.id.prompt((notification)=>{
             if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-                (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .message */ .yw)(dispatch, {
+                (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
                     type: "danger",
                     text: "You have refused google login, try again later or use MetaMask Login."
                 });
             }
         });
     }
-    (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
-        if (authState === "login" || authState === "register" || !user.id) initGoogle();
+    (0,react__WEBPACK_IMPORTED_MODULE_4__.useLayoutEffect)(()=>{
+        if (authState === "login" || authState === "register") initGoogle();
         if (authState === undefined && user.id) {
             const autoRefreshAccount = setInterval(()=>{
-                dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_16__/* .getUser */ .PR)());
+                dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_15__/* .getUser */ .PR)());
             }, 30000);
             return ()=>clearInterval(autoRefreshAccount);
         }
@@ -287,11 +279,11 @@ function App({ children  }) {
     ]);
     (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
         // Add a response interceptor
-        axios__WEBPACK_IMPORTED_MODULE_8__["default"].interceptors.response.use(function(response) {
+        axios__WEBPACK_IMPORTED_MODULE_7__["default"].interceptors.response.use(function(response) {
             return response;
         }, function(error) {
             if (error && error.code === "ERR_NETWORK") {
-                (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .message */ .yw)(dispatch, {
+                (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
                     type: "danger",
                     text: "Network error! Check your connection."
                 });
@@ -302,22 +294,20 @@ function App({ children  }) {
     (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
         const script = document.createElement("script");
         script.src = "https://accounts.google.com/gsi/client";
-        script.onload = ()=>{
-            const google = window.google // Now you can access window.google
-            ;
-            initGoogle() // Assuming this is defined somewhere else
-            ;
-        };
+        // script.onload = () => {
+        //   const google = (window as any).google // Now you can access window.google
+        //   initGoogle() // Assuming this is defined somewhere else
+        // }
         document.body.appendChild(script);
         if (user.requestStatus === "idle" || user.requestStatus === "failed") {
-            dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_16__/* .getUser */ .PR)());
+            dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_15__/* .getUser */ .PR)());
         }
         function handleRouteChange() {
         // posthog.capture('$pageview')
         }
         next_router__WEBPACK_IMPORTED_MODULE_2___default().events.on("routeChangeComplete", handleRouteChange);
         if (router.asPath && router.asPath.includes("#signup")) {
-            dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .updateAuthState */ .FA)("register"));
+            dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .updateAuthState */ .FA)("register"));
         }
         return ()=>{
             next_router__WEBPACK_IMPORTED_MODULE_2___default().events.off("routeChangeComplete", handleRouteChange);
@@ -325,11 +315,11 @@ function App({ children  }) {
     }, []);
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_message_message__WEBPACK_IMPORTED_MODULE_20__/* ["default"] */ .Z, {}),
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_message_message__WEBPACK_IMPORTED_MODULE_19__/* ["default"] */ .Z, {}),
             children,
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_modal_modal__WEBPACK_IMPORTED_MODULE_12__/* .AuthModal */ .Q, {
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_modal_modal__WEBPACK_IMPORTED_MODULE_11__/* .AuthModal */ .Q, {
                 show: authState === "login",
-                onClose: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .updateAuthState */ .FA)(undefined)),
+                onClose: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .updateAuthState */ .FA)(undefined)),
                 actions: [],
                 title: "",
                 children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -346,37 +336,29 @@ function App({ children  }) {
                                 " ",
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                     href: "#",
-                                    onClick: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .updateAuthState */ .FA)("register")),
+                                    onClick: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .updateAuthState */ .FA)("register")),
                                     children: "Create it now"
                                 })
                             ]
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("br", {}),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                            className: "mobile_link_cta",
-                            style: {
-                                marginTop: 14
-                            },
-                            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_frontend_components_button_button__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
-                                size: "md",
-                                type: "primary",
-                                fullWidth: true,
-                                onClick: loginWithGoogleOneTap,
-                                children: [
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
-                                        src: _frontend_images_google_png__WEBPACK_IMPORTED_MODULE_7__/* ["default"].src */ .Z.src,
-                                        className: "h-6 w-6"
-                                    }),
-                                    "Google"
-                                ]
-                            })
+                            id: "g_id_signin",
+                            className: "g_id_signin",
+                            "data-type": "standard",
+                            "data-size": "large",
+                            "data-theme": "outline",
+                            "data-text": "sign_in_with",
+                            "data-shape": "rectangular",
+                            "data-logo_alignment": "center"
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                            id: "login_btn_wrapper_signin",
                             className: "mobile_link_cta",
                             style: {
                                 marginTop: 14
                             },
-                            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_frontend_components_button_button__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
+                            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_frontend_components_button_button__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {
                                 size: "md",
                                 type: "primary",
                                 fullWidth: true,
@@ -393,9 +375,9 @@ function App({ children  }) {
                     ]
                 })
             }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_modal_modal__WEBPACK_IMPORTED_MODULE_12__/* .AuthModal */ .Q, {
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_modal_modal__WEBPACK_IMPORTED_MODULE_11__/* .AuthModal */ .Q, {
                 show: authState === "register",
-                onClose: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .updateAuthState */ .FA)(undefined)),
+                onClose: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .updateAuthState */ .FA)(undefined)),
                 actions: [],
                 title: "",
                 children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -410,30 +392,22 @@ function App({ children  }) {
                             children: "Get 25 image credits new user for free!"
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                            className: "mobile_link_cta",
-                            style: {
-                                marginTop: 14
-                            },
-                            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_frontend_components_button_button__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
-                                size: "md",
-                                type: "primary",
-                                fullWidth: true,
-                                onClick: loginWithGoogleOneTap,
-                                children: [
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
-                                        src: _frontend_images_google_png__WEBPACK_IMPORTED_MODULE_7__/* ["default"].src */ .Z.src,
-                                        className: "h-6 w-6"
-                                    }),
-                                    "Google"
-                                ]
-                            })
+                            id: "g_id_signin",
+                            className: "g_id_signin",
+                            "data-type": "icon",
+                            "data-size": "large",
+                            "data-theme": "outline",
+                            "data-text": "sign_in_with",
+                            "data-shape": "rectangular",
+                            "data-logo_alignment": "center"
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                            id: "login_btn_wrapper_register",
                             className: "mobile_link_cta",
                             style: {
                                 marginTop: 14
                             },
-                            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_frontend_components_button_button__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
+                            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_frontend_components_button_button__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {
                                 size: "md",
                                 type: "primary",
                                 fullWidth: true,
@@ -468,9 +442,9 @@ function App({ children  }) {
                     ]
                 })
             }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_modal_modal__WEBPACK_IMPORTED_MODULE_12__/* .AuthModal */ .Q, {
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_modal_modal__WEBPACK_IMPORTED_MODULE_11__/* .AuthModal */ .Q, {
                 show: authState === "credits",
-                onClose: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .updateAuthState */ .FA)(undefined)),
+                onClose: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .updateAuthState */ .FA)(undefined)),
                 actions: [],
                 title: "",
                 size: "xl",
@@ -495,7 +469,7 @@ function App({ children  }) {
                                 height: 9
                             }
                         }),
-                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_13__/* ["default"] */ .Z, {
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_12__/* ["default"] */ .Z, {
                             type: "pricing"
                         }),
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
@@ -504,12 +478,12 @@ function App({ children  }) {
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                     children: "Don't want to upgrade?"
                                 }),
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_19___default()), {
+                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_18___default()), {
                                     href: "/referrals",
                                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
-                                        onClick: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .updateAuthState */ .FA)(undefined)),
+                                        onClick: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .updateAuthState */ .FA)(undefined)),
                                         children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_18__.Gift, {
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_17__.Gift, {
                                                 size: 14,
                                                 strokeWidth: 1
                                             }),
@@ -519,9 +493,9 @@ function App({ children  }) {
                                 }),
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
                                     href: `/api/billing/checkout${referral ? `?referral=${referral}` : ""}`,
-                                    onClick: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_15__/* .updateAuthState */ .FA)(undefined)),
+                                    onClick: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .updateAuthState */ .FA)(undefined)),
                                     children: [
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_18__.Coins, {
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_17__.Coins, {
                                             size: 14,
                                             strokeWidth: 1
                                         }),
@@ -545,7 +519,7 @@ function Frontend({ Component , pageProps  }) {
                 defer: true,
                 async: true
             }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_context_metamask__WEBPACK_IMPORTED_MODULE_22__/* .MetaMaskContextProvider */ .e4, {
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_context_metamask__WEBPACK_IMPORTED_MODULE_21__/* .MetaMaskContextProvider */ .e4, {
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(App, {
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Component, {
                         ...pageProps
