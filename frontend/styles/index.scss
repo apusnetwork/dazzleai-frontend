@@ -663,11 +663,11 @@ a {
   padding: 18px 18px;
   border-radius: 9px;
   background: $bg2;
-  z-index: 9999999;
+  z-index: 99;
   border: 1px solid $border;
   // box-shadow: 13px 27px -5px rgba(50, 50, 50, 0.25), 0 8px 16px -8px rgba(0, 0, 0, 0.3);
   box-shadow: -6px 12px 6px rgba(0, 0, 0, 0.01), -3px 9px 24px 9px rgba(0, 0, 0, 0.09);
-  z-index: 999;
+  z-index: 9;
 
   p {
     color: rgba($color, 0.96);
@@ -810,7 +810,7 @@ a {
 .mobile_link_cta a,
 .mobile_link_cta div,
 .mobile_link_cta button {
-  height: 40px;
+  height: 44px;
   width: 100% !important;
   font-size: 18px;
 }
