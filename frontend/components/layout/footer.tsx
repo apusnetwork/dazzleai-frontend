@@ -140,7 +140,7 @@ export default function WebsiteFooter(): JSX.Element {
               </Link>
             </li>
             <li>
-              <a href="mailto:hi@dazzle.ai">
+              <a href="mailto:dazzleaiapus@gmail.com">
                 Email
               </a>
             </li>

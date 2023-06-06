@@ -58,7 +58,7 @@ Copyright and Content Ownership
     
 2.  We claim no intellectual property rights over the material you provide to the Services. All materials uploaded remain yours.
     
-3.  The names, look, and feel of the Services are copyright© to the Company. All rights reserved. You may not duplicate, copy, or reuse any portion of the HTML, CSS, JavaScript, or visual design elements without express written permission from the Company. You must request permission to use the Company's logo or any Service logos for promotional purposes. Please [email us](mailto:hi@dazzle.ai) requests to use logos. We reserve the right to rescind this permission if you violate these Terms of Service.
+3.  The names, look, and feel of the Services are copyright© to the Company. All rights reserved. You may not duplicate, copy, or reuse any portion of the HTML, CSS, JavaScript, or visual design elements without express written permission from the Company. You must request permission to use the Company's logo or any Service logos for promotional purposes. Please [email us](mailto:dazzleaiapus@gmail.com) requests to use logos. We reserve the right to rescind this permission if you violate these Terms of Service.
     
 4.  You agree not to reproduce, duplicate, copy, sell, resell or exploit any portion of the Services, use of the Services, or access to the Services without the express written permission by the Company.
     
@@ -79,4 +79,4 @@ We mention liability throughout these Terms but to put it all in one section:
 
 **_You expressly understand and agree that the Company shall not be liable, in law or in equity, to you or to any third party for any direct, indirect, incidental, lost profits, special, consequential, punitive or exemplary damages, including, but not limited to, damages for loss of profits, goodwill, use, data or other intangible losses (even if the Company has been advised of the possibility of such damages), resulting from: (i) the use or the inability to use the Services; (ii) the cost of procurement of substitute goods and services resulting from any goods, data, information or services purchased or obtained or messages received or transactions entered into through or from the Services; (iii) unauthorized access to or alteration of your transmissions or data; (iv) statements or conduct of any third party on the service; (v) or any other matter relating to this Terms of Service or the Services, whether as a breach of contract, tort (including negligence whether active or passive), or any other theory of liability._**
 
-If you have a question about any of the Terms of Service, please [contact our Support team](mailto:hi@dazzle.ai).
+If you have a question about any of the Terms of Service, please [contact our Support team](mailto:dazzleaiapus@gmail.com).

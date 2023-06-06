@@ -71,7 +71,7 @@ export default function Pricing(): JSX.Element {
       </FaqQuestion>
       <FaqQuestion question='What payment options do you offer?'>
         <p>
-          We accept all major credit cards and debit cards. However, if you wish to use another payment method and plan to spend at least $5,000 anually, <a href="mailto:hi@dazzle.ai">contact us</a> to start the process.
+          We accept all major credit cards and debit cards. However, if you wish to use another payment method and plan to spend at least $5,000 anually, <a href="mailto:dazzleaiapus@gmail.com">contact us</a> to start the process.
         </p>
       </FaqQuestion>
       <FaqQuestion question='Will my unused credits roll over to the next month?'>

@@ -283,6 +283,7 @@ function App({ children  }) {
             return response;
         }, function(error) {
             if (error && error.code === "ERR_NETWORK") {
+                console.warn(error);
                 (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
                     type: "danger",
                     text: "Network error! Check your connection."

@@ -167,6 +167,7 @@ function App({ children }: Props): JSX.Element {
       return response;
     }, function (error) {
       if (error && error.code === 'ERR_NETWORK') {
+        console.warn(error)
         message(dispatch, { type: 'danger', text: 'Network error! Check your connection.' })
       }
       return Promise.reject(error);
