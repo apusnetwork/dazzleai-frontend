@@ -294,7 +294,7 @@ function WebsiteFooter() {
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
-                                        href: "mailto:hi@dazzle.ai",
+                                        href: "mailto:dazzleaiapus@gmail.com",
                                         children: "Email"
                                     })
                                 })

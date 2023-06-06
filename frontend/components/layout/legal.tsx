@@ -34,6 +34,14 @@ export default function LegalLayout({ children, title, description, canonical }:
               </ActiveLink>
 
             </li>
+            <li>
+              <ActiveLink href='/legal/return-policy' activeClassName={styles.nav_link_active}>
+                <a className={styles.nav_link}>
+                  Return Policy
+                </a>
+              </ActiveLink>
+
+            </li>
             {/* <li>
               <ActiveLink href='/legal/restrictions' activeClassName={styles.nav_link_active}>
                 <a className={styles.nav_link}>

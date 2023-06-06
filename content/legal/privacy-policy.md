@@ -71,7 +71,7 @@ At dazzle.ai, we apply the same data rights to all customers, regardless of thei
 
 Many of these rights can be exercised by signing in and directly updating your account information.
 
-_If you have questions about exercising these rights or need assistance, please contact us at [hi@dazzle.ai](mailto:hi@dazzle.ai) or at Webrockets Sp. z o. o. Okopowa 47a/40, 01-059 Warsaw, Poland. For requests to delete personal information or know what personal information has been collected, we will first verify your identity using a combination of at least two pieces of information already collected including your user email address. If an authorized agent is corresponding on your behalf, we will first need written consent with a signature from the account holder before proceeding._
+_If you have questions about exercising these rights or need assistance, please contact us at [dazzleaiapus@gmail.com](mailto:dazzleaiapus@gmail.com) or at Webrockets Sp. z o. o. Okopowa 47a/40, 01-059 Warsaw, Poland. For requests to delete personal information or know what personal information has been collected, we will first verify your identity using a combination of at least two pieces of information already collected including your user email address. If an authorized agent is corresponding on your behalf, we will first need written consent with a signature from the account holder before proceeding._
 
 If you are in the EU, you can identify your specific authority to file a complaint or find out more about GDPR, at [https://edpb.europa.eu/about-edpb/board/members\_en](https://edpb.europa.eu/about-edpb/board/members_en).
 
@@ -87,4 +87,4 @@ Changes & questions
 
 We may update this policy as needed to comply with relevant regulations and reflect any new practices.
 
-Have any questions, comments, or concerns about this privacy policy, your data, or your rights with respect to your information? Please get in touch by emailing us at _[hi@dazzle.ai](mailto:hi@dazzle.ai) and we'll be happy to answer them!_
+Have any questions, comments, or concerns about this privacy policy, your data, or your rights with respect to your information? Please get in touch by emailing us at _[dazzleaiapus@gmail.com](mailto:dazzleaiapus@gmail.com) and we'll be happy to answer them!_

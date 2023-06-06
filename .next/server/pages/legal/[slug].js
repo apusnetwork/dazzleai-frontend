@@ -59,6 +59,16 @@ function LegalLayout({ children , title , description , canonical  }) {
                                         children: "Terms of service"
                                     })
                                 })
+                            }),
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
+                                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_active_link_active_link__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+                                    href: "/legal/return-policy",
+                                    activeClassName: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_3___default().nav_link_active),
+                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
+                                        className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_3___default().nav_link),
+                                        children: "Return Policy"
+                                    })
+                                })
                             })
                         ]
                     })
