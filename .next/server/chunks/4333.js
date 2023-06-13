@@ -460,13 +460,10 @@ function HeaderUser() {
         showTasksModal
     ]);
     const checkIn = async ()=>{
-        if (hasCheckedIn) {
-            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .message */ .yw)(dispatch, {
-                text: "You have already checked in today",
-                type: "danger"
-            });
-            return;
-        }
+        // if (hasCheckedIn) {
+        //   message(dispatch, { text: 'You have already checked in today', type: 'danger' })
+        //   return
+        // }
         try {
             const res = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_18__/* .oapi.post */ .xP.post("/user/checkin");
             (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .message */ .yw)(dispatch, {
