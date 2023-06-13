@@ -26,6 +26,13 @@ module.exports = import("axios");;
 
 /***/ }),
 
+/***/ 9915:
+/***/ ((module) => {
+
+module.exports = import("js-cookie");;
+
+/***/ }),
+
 /***/ 7147:
 /***/ ((module) => {
 
@@ -49,7 +56,7 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_fro
 
 async function handler(req, res) {
     try {
-        const imagesRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .Z.get("/api/shared/images", {
+        const imagesRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .ZP.get("/api/shared/images", {
             params: {
                 ids: req.query.id
             }
@@ -62,7 +69,7 @@ async function handler(req, res) {
         }
         res.status(200).json((0,_images__WEBPACK_IMPORTED_MODULE_1__.mapRemoteImageToGeneratedImage)(imagesRes.data[0]));
     } catch (e) {
-        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .z)(e);
+        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .zG)(e);
         res.status(status).json({
             message
         });

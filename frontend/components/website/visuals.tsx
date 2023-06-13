@@ -2,14 +2,14 @@
 import Masonry from '@mui/lab/Masonry';
 import styles from './website.module.scss';
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { LegacyRef, forwardRef, useEffect, useState } from "react";
 import EyeOutlined from '@ant-design/icons/EyeOutlined'
 import EyeInvisibleOutlined from '@ant-design/icons/EyeInvisibleOutlined'
 import { useGlobal18Plus } from "@/frontend/context/18puls";
 import DefaultAvatar from './default_avatar.webp'
 
 interface ImageGridVisualProps {
-  images: ModelI[],
+  images: ModelI[]
   columns?: number
 }
 
@@ -40,7 +40,7 @@ const Image = ({ model }: { model: ModelI }) => {
   </Link>
 }
 
-export function ImageGridVisual({ images }: ImageGridVisualProps): JSX.Element {
+export const ImageGridVisual = forwardRef<HTMLDivElement, ImageGridVisualProps>(function ImageGridVisual({ images }: ImageGridVisualProps, ref): JSX.Element {
   const [columns, setColumns] = useState(4)
   useEffect(() => {
     const handleResize = () => {
@@ -57,10 +57,10 @@ export function ImageGridVisual({ images }: ImageGridVisualProps): JSX.Element {
     }
   }, [])
   return (
-    <div className={styles.image_grid_visual}>
+    <div className={styles.image_grid_visual} ref={ref}>
       <Masonry columns={columns} spacing={2}>
         {
-          images.map((model) => <Image key={model.name} model={model} />)
+          images.map((model, index) => <Image key={index} model={model} />)
         }
       </Masonry>
       {/* <Masonry
@@ -76,4 +76,4 @@ export function ImageGridVisual({ images }: ImageGridVisualProps): JSX.Element {
       </Masonry> */}
     </div>
   )
-}
+})

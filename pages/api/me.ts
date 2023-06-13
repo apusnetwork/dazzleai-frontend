@@ -46,6 +46,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       }
     })
     const resData: UserResponse = {
+      ...userRes.data,
       id: userRes.data.user_id,
       referralCode: '',
       additionalCredits: 0,

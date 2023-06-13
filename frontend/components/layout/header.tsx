@@ -1,6 +1,6 @@
 import { useAppDispatch, useAppSelector } from '@/frontend/redux/hooks';
-import { updateAuthState } from '@/frontend/redux/info/slice';
-import { logoutUser } from '@/frontend/redux/user/actions';
+import { message, updateAuthState } from '@/frontend/redux/info/slice';
+import { logoutUser, updateUser } from '@/frontend/redux/user/actions';
 import { selectUser } from '@/frontend/redux/user/slice';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -14,6 +14,10 @@ import Cookies from 'js-cookie';
 import { useGlobal18Plus } from '@/frontend/context/18puls';
 import EyeInvisibleOutlined from '@ant-design/icons/EyeInvisibleOutlined';
 import EyeOutlined from '@ant-design/icons/EyeOutlined';
+import { Coins, CheckSquare } from 'lucide-react';
+import Modal from '../modal/modal';
+import axiosInstance, { oapi } from '@/frontend/utils/axios';
+import dayjs from 'dayjs';
 
 
 declare global {
@@ -53,6 +57,7 @@ export function WebsiteHeader({ fixed = false }): JSX.Element {
         </div>
         <div className={[styles.header_right, open ? styles.mobile_menu : ''].join(' ')}>
           {/* {/* <ActiveLink activeClassName={styles.active} href="/editor"><a className={styles.header_link}>AI Editor</a></ActiveLink> */}
+          <ActiveLink activeClassName={styles.active} href="/?scrollToModal"><a className={styles.header_link}>Model List</a></ActiveLink>
           <ActiveLink activeClassName={styles.active} href="/generate"><a className={styles.header_link}>Generate Image</a></ActiveLink>
           <div className={styles.image_18_badge} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setShow18Plus(t => !t) }}>18+ {show18Plus ? <EyeInvisibleOutlined className="leading-0 ml-1" rev="" /> : <EyeOutlined className="leading-0 ml-1" rev="" />}</div>
           {/* <ActiveLink activeClassName={styles.active} href="/dreambooth/models"><a className={styles.header_link}>DreamBooth <span className={styles.new}>new</span></a></ActiveLink> */}
@@ -108,15 +113,42 @@ export function WebsiteHeader({ fixed = false }): JSX.Element {
   )
 }
 
-
+function getUTCMidnightLocaleTimeString() {
+  // Create a new date object for the current date
+  var now = new Date();
+  // Get the UTC time by subtracting the local timezone offset
+  var utcTime = new Date(now.getTime() + (now.getTimezoneOffset() * 60000));
+  // Set the time to 00:00
+  utcTime.setUTCHours(0, 0, 0, 0);
+  // Format the UTC time as a localized string
+  var localeTimeString = utcTime.toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit", hour12: false });
+  return localeTimeString // Output: "00:00"
+}
 
 function HeaderUser(): JSX.Element {
   const [open, setOpen] = useState(false)
   const user = useAppSelector(selectUser)
+  const hasCheckedIn = user.extra?.checkin_exp && dayjs.unix(Number(user.extra?.checkin_exp)).isAfter(dayjs())
   const dispatch = useAppDispatch()
   const userNameSliced = user.name?.startsWith('0x') ?
     user.name.length > 10 ? `${user.name.substring(0, 6)}...${user.name.substring(user.name.length - 4)}` : user.name
     : user.name
+
+  const [showTasksModal, setShowTasksModal] = useState(false)
+
+  const checkIn = async () => {
+    if (hasCheckedIn) {
+      message(dispatch, { text: 'You have already checked in today', type: 'danger' })
+      return
+    }
+    try {
+      const res = await oapi.post('/user/checkin')
+      message(dispatch, { text: 'Check In Success', type: 'success' })
+      dispatch(updateUser())
+    } catch (error: any) {
+      message(dispatch, { text: error?.response?.data ?? 'Check In Failed', type: 'danger' })
+    }
+  }
 
   return (
     <section className={styles._header_user} >
@@ -162,12 +194,19 @@ function HeaderUser(): JSX.Element {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/legal/terms-of-service">
-                    <a>
-                      <PaperFileText size={16} />
-                      Terms of service
-                    </a>
-                  </Link>
+                  <a>
+                    <PaperFileText size={16} />
+                    Terms of service
+                  </a>
+                </li>
+                <li>
+                  <a onClick={(e) => {
+                    e.preventDefault()
+                    setShowTasksModal(true)
+                  }}>
+                    <CheckSquare size={16} />
+                    Tasks
+                  </a>
                 </li>
                 <li>
                   <a onClick={() => {
@@ -191,6 +230,18 @@ function HeaderUser(): JSX.Element {
           </OutsideClickHandler>
           : null
       }
+      <div className={styles.body_wrapper}>
+        <Modal title="Tasks" show={showTasksModal} onClose={() => setShowTasksModal(false)}>
+          <div>
+            <h3 style={{ marginBottom: 12 }}>Earn Credits Daily with Dazzle AI's Sign-In Bonus!</h3>
+            <p>Simply sign in every day and receive <span style={{ fontWeight: 500, color: '#000' }}>2 Credits</span> as a reward.</p>
+            <p>Remember, you can check in once every 24 hours.</p>
+            <p>Keep an eye on the clock, as a new day starts at <span style={{ fontWeight: 500, color: '#000' }}>{getUTCMidnightLocaleTimeString()}</span>.</p>
+            <p style={{ marginBottom: 12 }}>Don't miss out on your daily dose of credits - sign in and rack up those rewards today!</p>
+            <Button onClick={checkIn} type={hasCheckedIn ? "default" : 'primary'}>{hasCheckedIn ? 'Completed' : 'Claim'}</Button>
+          </div>
+        </Modal>
+      </div>
     </section >
   )
 }

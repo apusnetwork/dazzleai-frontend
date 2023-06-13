@@ -12,6 +12,13 @@ module.exports = import("axios");;
 
 /***/ }),
 
+/***/ 9915:
+/***/ ((module) => {
+
+module.exports = import("js-cookie");;
+
+/***/ }),
+
 /***/ 5523:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
@@ -27,11 +34,11 @@ _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependenci
 async function handler(req, res) {
     try {
         if (req.method === "POST") {
-            const nonceRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .Z.post("/api/nonce", req.body);
+            const nonceRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .ZP.post("/api/nonce", req.body);
             res.status(200).json(nonceRes.data);
         }
     } catch (e) {
-        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .z)(e);
+        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .zG)(e);
         res.status(status).json({
             message
         });

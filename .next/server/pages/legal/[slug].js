@@ -193,6 +193,13 @@ module.exports = require("dayjs");
 
 /***/ }),
 
+/***/ 2423:
+/***/ ((module) => {
+
+module.exports = require("lucide-react");
+
+/***/ }),
+
 /***/ 3280:
 /***/ ((module) => {
 
@@ -368,6 +375,13 @@ module.exports = require("react");
 
 /***/ }),
 
+/***/ 6405:
+/***/ ((module) => {
+
+module.exports = require("react-dom");
+
+/***/ }),
+
 /***/ 2279:
 /***/ ((module) => {
 
@@ -424,7 +438,7 @@ module.exports = require("fs");
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [2952,1664,3578,4333,6950], () => (__webpack_exec__(6942)));
+var __webpack_exports__ = __webpack_require__.X(0, [2952,1664,7444,4333,6950], () => (__webpack_exec__(6942)));
 module.exports = __webpack_exports__;
 
 })();

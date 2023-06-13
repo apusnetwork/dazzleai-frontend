@@ -17,6 +17,13 @@ module.exports = require("cookie");
 
 module.exports = import("axios");;
 
+/***/ }),
+
+/***/ 9915:
+/***/ ((module) => {
+
+module.exports = import("js-cookie");;
+
 /***/ })
 
 };

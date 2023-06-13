@@ -48,6 +48,9 @@ module.exports = {
 	"china_attention": "image_china_attention__i2K1H",
 	"copy_btn": "image_copy_btn__2Lst_",
 	"mobile_sharer": "image_mobile_sharer__g1Hn0",
+	"_user_menu": "image__user_menu__3B4od",
+	"user_menu": "image_user_menu__L_7vs",
+	"user_menu_name": "image_user_menu_name__TdEBm",
 	"shimmer": "image_shimmer__TS7pj"
 };
 

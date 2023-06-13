@@ -8,13 +8,30 @@ exports.modules = {
 
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__),
-/* harmony export */   "z": () => (/* binding */ handleApiError)
+/* harmony export */   "ZP": () => (__WEBPACK_DEFAULT_EXPORT__),
+/* harmony export */   "zG": () => (/* binding */ handleApiError)
 /* harmony export */ });
+/* unused harmony export oapi */
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9648);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_0__]);
-axios__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9915);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_0__, js_cookie__WEBPACK_IMPORTED_MODULE_1__]);
+([axios__WEBPACK_IMPORTED_MODULE_0__, js_cookie__WEBPACK_IMPORTED_MODULE_1__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
+
+const oapi = axios__WEBPACK_IMPORTED_MODULE_0__["default"].create({
+    // baseURL: 'http://dazzleapi.ap-southeast-1.elasticbeanstalk.com',
+    baseURL: "/oapi"
+});
+oapi.interceptors.request.use(function(config) {
+    console.log("Request:", config.method?.toUpperCase(), config.url, config.params, config.data);
+    if (js_cookie__WEBPACK_IMPORTED_MODULE_1__["default"].get("getimgauth")) {
+        config.headers["Authorization"] = `Bearer ${js_cookie__WEBPACK_IMPORTED_MODULE_1__["default"].get("getimgauth")}`;
+    }
+    return config;
+}, function(error) {
+    console.log("Request error:", error);
+    return Promise.reject(error);
+});
 const axiosInstance = axios__WEBPACK_IMPORTED_MODULE_0__["default"].create({
     // baseURL: 'http://dazzleapi.ap-southeast-1.elasticbeanstalk.com',
     baseURL: "https://test-api.dazzleai.network"
@@ -34,7 +51,7 @@ axiosInstance.interceptors.response.use((response)=>{
     //   'event_category': 'error',
     //   'event_label': (error as AxiosError)?.config?.url,
     // });
-    console.error("Response error:", error.response.status, error.response.data);
+    console.error("Response error:", error?.response?.status, error?.response?.data);
     return Promise.reject(error);
 });
 function handleApiError(error) {

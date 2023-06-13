@@ -3,11 +3,14 @@ import WebsiteLayout from '@/frontend/components/layout/website';
 import { ImageGridVisual } from '@/frontend/components/website';
 import Hero from '@/frontend/components/website/hero';
 import axios from 'axios';
-import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+import { createRef, useEffect, useLayoutEffect, useState } from 'react';
 
 export default function HomePage({ exampleArt }: { exampleArt: ImageI[] }): JSX.Element {
-  const [isSSR, setIsSSR] = useState(true);
   const [models, setModels] = useState<ModelI[]>([]);
+  const router = useRouter()
+  const imageRef = createRef<HTMLDivElement>()
+  const [scrolled, setScrolled] = useState(false)
 
   async function getModels() {
     const res = await axios.get('/api/models?status=active&public=true');
@@ -15,9 +18,15 @@ export default function HomePage({ exampleArt }: { exampleArt: ImageI[] }): JSX.
   }
 
   useEffect(() => {
-    setIsSSR(false);
     getModels();
   }, []);
+
+  useLayoutEffect(() => {
+    if (router.query?.scrollToModal !== undefined && models.length > 0 && !scrolled) {
+      imageRef.current?.scrollIntoView({ behavior: 'smooth' })
+      setScrolled(true)
+    }
+  }, [models, scrolled])
 
   return <WebsiteLayout
     title="Everything you need to create images with AI"
@@ -66,6 +75,7 @@ export default function HomePage({ exampleArt }: { exampleArt: ImageI[] }): JSX.
       }
       visual={
         <ImageGridVisual
+          ref={imageRef}
           images={models.filter(v => Boolean(v.reuse_img))}
         />
       }

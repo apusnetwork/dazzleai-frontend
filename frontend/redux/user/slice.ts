@@ -17,6 +17,9 @@ export interface UserState {
   hasBetaAccess: boolean;
   currentPeriodEndAt?: Date;
   referralCode?: string;
+  extra?: {
+    checkin_exp: string;
+  }
 }
 
 const initialState: UserState = {

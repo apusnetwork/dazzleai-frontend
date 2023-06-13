@@ -19,6 +19,13 @@ module.exports = import("axios");;
 
 /***/ }),
 
+/***/ 9915:
+/***/ ((module) => {
+
+module.exports = import("js-cookie");;
+
+/***/ }),
+
 /***/ 9110:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -78,7 +85,7 @@ async function handler(req, res) {
             });
         }
     } catch (e) {
-        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .z)(e);
+        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .zG)(e);
         res.status(status).json({
             message
         });

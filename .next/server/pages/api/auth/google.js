@@ -19,6 +19,13 @@ module.exports = import("axios");;
 
 /***/ }),
 
+/***/ 9915:
+/***/ ((module) => {
+
+module.exports = import("js-cookie");;
+
+/***/ }),
+
 /***/ 9110:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
@@ -81,8 +88,8 @@ async function handler(req, res) {
         if ("from_url" in req.body) {
             remoteReq["from_url"] = req.body.from_url;
         }
-        const loginRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .Z.post("/login", remoteReq);
-        const userRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .Z.get("/api/userinfo", {
+        const loginRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .ZP.post("/login", remoteReq);
+        const userRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .ZP.get("/api/userinfo", {
             headers: {
                 Authorization: `Bearer ${loginRes.data.token}`
             }
@@ -114,7 +121,7 @@ async function handler(req, res) {
         };
         res.status(200).json(resData);
     } catch (e) {
-        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .z)(e);
+        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .zG)(e);
         res.status(status).json({
             message
         });

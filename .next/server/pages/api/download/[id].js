@@ -19,6 +19,13 @@ module.exports = import("axios");;
 
 /***/ }),
 
+/***/ 9915:
+/***/ ((module) => {
+
+module.exports = import("js-cookie");;
+
+/***/ }),
+
 /***/ 6544:
 /***/ ((module) => {
 
@@ -91,7 +98,7 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_fro
 async function handler(req, res) {
     try {
         const token = (0,_frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .getCookie */ .ej)(req, _frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .AuthHeaderKey */ .qf);
-        const imagesRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .Z.get("/api/images", {
+        const imagesRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .ZP.get("/api/images", {
             params: {
                 ids: req.query.id,
                 limit: req.query.take,
@@ -121,7 +128,7 @@ async function handler(req, res) {
             });
         }
     } catch (e) {
-        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .z)(e);
+        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .zG)(e);
         res.status(status).json({
             message
         });

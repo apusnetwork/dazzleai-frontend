@@ -26,6 +26,13 @@ module.exports = import("axios");;
 
 /***/ }),
 
+/***/ 9915:
+/***/ ((module) => {
+
+module.exports = import("js-cookie");;
+
+/***/ }),
+
 /***/ 7147:
 /***/ ((module) => {
 
@@ -57,7 +64,7 @@ async function handler(req, res) {
             headersConfig["Authorization"] = `Bearer ${token}`;
         }
         if (req.method === "GET") {
-            const imagesRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .Z.get("/api/images", {
+            const imagesRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .ZP.get("/api/images", {
                 params: {
                     ids: req.query.id,
                     limit: req.query.take,
@@ -77,7 +84,7 @@ async function handler(req, res) {
                 image_id: req.query.id,
                 ...req.body
             });
-            await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .Z.post("/api/images/update", {
+            await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .ZP.post("/api/images/update", {
                 image_id: req.query.id,
                 ...req.body
             }, {
@@ -90,7 +97,7 @@ async function handler(req, res) {
             });
         }
     } catch (e) {
-        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .z)(e);
+        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .zG)(e);
         res.status(status).json({
             message
         });

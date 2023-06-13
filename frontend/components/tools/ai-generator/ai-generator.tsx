@@ -383,7 +383,15 @@ into state
     } catch {
       message(dispatch, { type: 'danger', text: 'Unexpected Error!' })
     }
+  }
 
+  async function shareImage(image: ImageI) {
+    try {
+      axios.delete('/api/images?ids=' + image.id)
+      setImages(im => im.filter(im => im.id !== image.id))
+    } catch {
+      message(dispatch, { type: 'danger', text: 'Unexpected Error!' })
+    }
   }
 
   async function generate(e?: React.FormEvent, forceMode?: string, initImage?: ImageI) {

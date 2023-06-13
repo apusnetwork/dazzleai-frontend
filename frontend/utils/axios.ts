@@ -1,4 +1,23 @@
 import axios, { AxiosError } from "axios"
+import Cookies from "js-cookie";
+
+
+export const oapi = axios.create({
+  // baseURL: 'http://dazzleapi.ap-southeast-1.elasticbeanstalk.com',
+  baseURL: '/oapi',
+})
+
+oapi.interceptors.request.use(function (config) {
+  console.log('Request:', config.method?.toUpperCase(), config.url, config.params, config.data);
+  if (Cookies.get('getimgauth')) {
+    config.headers["Authorization"] = `Bearer ${Cookies.get('getimgauth')}`
+  }
+  return config;
+}, function (error) {
+  console.log('Request error:', error);
+  return Promise.reject(error); 
+});
+
 
 const axiosInstance = axios.create({
   // baseURL: 'http://dazzleapi.ap-southeast-1.elasticbeanstalk.com',
@@ -24,7 +43,7 @@ axiosInstance.interceptors.response.use(
     //   'event_category': 'error',
     //   'event_label': (error as AxiosError)?.config?.url,
     // });
-    console.error('Response error:', error.response.status, error.response.data);
+    console.error('Response error:', error?.response?.status, error?.response?.data);
     return Promise.reject(error);
   }
 );

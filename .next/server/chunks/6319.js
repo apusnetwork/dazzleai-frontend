@@ -158,7 +158,7 @@ async function handler(req, res) {
                 });
                 return;
             }
-            const uploadRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .Z.post("/api/upload/image", {
+            const uploadRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .ZP.post("/api/upload/image", {
                 file: fs__WEBPACK_IMPORTED_MODULE_2___default().createReadStream(reqData.files.file[0].path)
             }, {
                 headers: {
@@ -183,7 +183,7 @@ async function handler(req, res) {
             };
             res.status(200).json(resData);
         } else if (req.method === "GET") {
-            const imagesRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .Z.get("/api/images", {
+            const imagesRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .ZP.get("/api/images", {
                 params: {
                     limit: req.query.take,
                     offset: req.query.skip
@@ -194,7 +194,7 @@ async function handler(req, res) {
             });
             res.status(200).json(imagesRes.data?.map(mapRemoteImageToGeneratedImage));
         } else if (req.method === "DELETE") {
-            await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .Z.post(`/api/images/del`, {
+            await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .ZP.post(`/api/images/del`, {
                 ids: req.query.ids
             }, {
                 headers: {
@@ -210,7 +210,7 @@ async function handler(req, res) {
             });
         }
     } catch (e) {
-        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .z)(e);
+        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .zG)(e);
         res.status(status).json({
             message
         });

@@ -19,6 +19,13 @@ module.exports = import("axios");;
 
 /***/ }),
 
+/***/ 9915:
+/***/ ((module) => {
+
+module.exports = import("js-cookie");;
+
+/***/ }),
+
 /***/ 9497:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
@@ -90,7 +97,7 @@ async function handler(req, res) {
         if (req.body.node === "all") {
             req.body.node = "";
         }
-        const createRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .Z.post("/api/tasks/create", mapParamsToRequest(req.body, req.query.id), {
+        const createRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .ZP.post("/api/tasks/create", mapParamsToRequest(req.body, req.query.id), {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -99,7 +106,7 @@ async function handler(req, res) {
             (0,_tasks__WEBPACK_IMPORTED_MODULE_2__.mapRemoteTaskToTaskInfo)(createRes.data)
         ]);
     } catch (e) {
-        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .z)(e);
+        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .zG)(e);
         res.status(status).json({
             message
         });
