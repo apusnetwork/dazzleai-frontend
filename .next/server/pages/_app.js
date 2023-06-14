@@ -265,7 +265,7 @@ function App({ children  }) {
             }
         });
     }
-    (0,react__WEBPACK_IMPORTED_MODULE_4__.useLayoutEffect)(()=>{
+    (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
         if (authState === "login" || authState === "register") initGoogle();
         if (authState === undefined && user.id) {
             const autoRefreshAccount = setInterval(()=>{

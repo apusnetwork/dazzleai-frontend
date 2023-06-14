@@ -71,6 +71,14 @@ function mapParamsToRequest(params: GeneratorParams, model: string): ImageGenera
   return req;
 }
 
+export function transformRequest(req: any, modelID: string) {
+  return mapParamsToRequest(req, modelID)
+}
+
+export function transformResponse(res: RemoteTask): TaskInfo {
+  return mapRemoteTaskToTaskInfo(res)
+}
+
 // {"task_id":"task-cgjs3693bbtp4v5e1360","user_id":"1909b3ed-5a68-4a96-b648-9a00cca78f5a","node":"","status":"pending"}
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {

@@ -21,7 +21,7 @@ export default function HomePage({ exampleArt }: { exampleArt: ImageI[] }): JSX.
     getModels();
   }, []);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (router.query?.scrollToModal !== undefined && models.length > 0 && !scrolled) {
       imageRef.current?.scrollIntoView({ behavior: 'smooth' })
       setScrolled(true)

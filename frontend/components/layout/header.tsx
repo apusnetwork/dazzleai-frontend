@@ -3,7 +3,7 @@ import { message, updateAuthState } from '@/frontend/redux/info/slice';
 import { logoutUser, updateUser } from '@/frontend/redux/user/actions';
 import { selectUser } from '@/frontend/redux/user/slice';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import OutsideClickHandler from 'react-outside-click-handler';
 import ActiveLink from '../active_link/active_link';
 import Avatar from '../avatar/avatar';
@@ -18,6 +18,7 @@ import { Coins, CheckSquare } from 'lucide-react';
 import Modal from '../modal/modal';
 import axiosInstance, { oapi } from '@/frontend/utils/axios';
 import dayjs from 'dayjs';
+import { useRouter } from 'next/router';
 
 
 declare global {
@@ -127,6 +128,7 @@ function getUTCMidnightLocaleTimeString() {
 
 function HeaderUser(): JSX.Element {
   const [open, setOpen] = useState(false)
+  const router = useRouter()
   const user = useAppSelector(selectUser)
   const hasCheckedIn = user.extra?.checkin_exp && dayjs.unix(Number(user.extra?.checkin_exp)).isAfter(dayjs())
   const dispatch = useAppDispatch()
@@ -135,6 +137,14 @@ function HeaderUser(): JSX.Element {
     : user.name
 
   const [showTasksModal, setShowTasksModal] = useState(false)
+
+  const [hasAutoPrompted, setHasAutoPrompted] = useState(false)
+  useEffect(() => {
+    if (router.query.showTasksModal !== undefined && !hasAutoPrompted) {
+      setShowTasksModal(true)
+      setHasAutoPrompted(true)
+    }
+  }, [hasAutoPrompted, showTasksModal])
 
   const checkIn = async () => {
     if (hasCheckedIn) {
@@ -146,7 +156,8 @@ function HeaderUser(): JSX.Element {
       message(dispatch, { text: 'Check In Success', type: 'success' })
       dispatch(updateUser())
     } catch (error: any) {
-      message(dispatch, { text: error?.response?.data ?? 'Check In Failed', type: 'danger' })
+      console.log(error?.response?.status, error?.response?.data)
+      message(dispatch, { text: 'Check In Failed', type: 'danger' })
     }
   }
 

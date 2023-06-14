@@ -101,7 +101,7 @@ type TaskStatus = 'pending' | 'succeed' | 'failed';
 
 export type RemoteTask = {
   extra: Extra;
-  images: Image[];
+  images: string| Image[];
   node: string;
   param: Param;
   status: TaskStatus;
@@ -134,10 +134,10 @@ export function mapRemoteTaskToTaskInfo(remoteTask: RemoteTask): TaskInfo {
     trainingFinishedAt: null,
     lastUsedAt: createdAt,
   };
-  const imagesInfo = images?.map((image) => {
-    console.log(image)
+  const imagesInfo = images instanceof Array ? images?.map((image) => {
     const { image_id, image_url, is_shared } = image;
     return {
+      ...image,
       id: image_id,
       modelTaskId: task_id,
       userId: user_id,
@@ -154,7 +154,7 @@ export function mapRemoteTaskToTaskInfo(remoteTask: RemoteTask): TaskInfo {
       jpegUrl: image_url,
       seed: image.seed,
     };
-  }) ?? []
+  }) ?? [] : []
   return {
     id: task_id,
     userId: user_id,

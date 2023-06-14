@@ -22,6 +22,8 @@ import Masonry from 'react-masonry-css';
 import OutsideClickHandler from 'react-outside-click-handler';
 import styles from './ai-generator.module.scss';
 import NodesSelect from '../../select/nodes';
+import { oapi } from '@/frontend/utils/axios';
+import { transformRequest, transformResponse } from '@/pages/api/models/[id]';
 
 interface StateI {
   model: string // model_file_name
@@ -548,9 +550,11 @@ into state
       body.type = models.find(v => v.id === state.model)?.type;
       body.checkpoint = models.find(v => v.id === state.model)?.checkpoint;
 
-      const pendingTasks = await axios.post('/api/models/' + model, body);
+      // let pendingTasksRes = await oapi.post('/api/tasks/create', transformRequest(body, model));
+      // const pendingTasks = transformResponse(pendingTasksRes.data)
+      const pendingTasksRes = await oapi.post('/tasks/create', transformRequest(body, model));
 
-      let pendingIds: string[] = pendingTasks.data.map((t: ModelTaskI) => t.id);
+      let pendingIds: string[] = [transformResponse(pendingTasksRes.data).id]
 
       while (pendingIds.length > 0) {
         const tasks = await axios.get('/api/tasks?ids=' + pendingIds.join(','));
