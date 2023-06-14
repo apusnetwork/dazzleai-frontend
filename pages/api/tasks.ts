@@ -156,6 +156,7 @@ export function mapRemoteTaskToTaskInfo(remoteTask: RemoteTask): TaskInfo {
     };
   }) ?? [] : []
   return {
+    ...remoteTask,
     id: task_id,
     userId: user_id,
     acceptedImageId: null,

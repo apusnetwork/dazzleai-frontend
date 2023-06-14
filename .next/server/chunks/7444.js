@@ -10563,9 +10563,12 @@ __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __we
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": () => (/* binding */ api)
 /* harmony export */ });
+/* unused harmony export oapi */
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9648);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_0__]);
-axios__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
+/* harmony import */ var _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(4969);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_0__, _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_1__]);
+([axios__WEBPACK_IMPORTED_MODULE_0__, _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_1__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 async function thunkHandler(asyncFn, thunkAPI) {
     try {
@@ -10601,6 +10604,24 @@ class api {
                 ...config
             }), thunkAPI);
 };
+class oapi {
+    static get = (/* unused pure expression or super */ null && ((url, config = {}, thenPromise)=>(obj = {}, thunkAPI)=>thunkHandler(ooapi.get(buildUrl(url, obj), {
+                withCredentials: true,
+                ...config
+            }).then((res)=>thenPromise ? thenPromise(res) : res), thunkAPI)));
+    static post = (/* unused pure expression or super */ null && ((url, config = {})=>(obj = {}, thunkAPI)=>thunkHandler(ooapi.post(buildUrl(url, obj), obj, {
+                withCredentials: true,
+                ...config
+            }), thunkAPI)));
+    static put = (/* unused pure expression or super */ null && ((url, config = {})=>(obj = {}, thunkAPI)=>thunkHandler(ooapi.put(buildUrl(url, obj), obj, {
+                withCredentials: true,
+                ...config
+            }), thunkAPI)));
+    static delete = (/* unused pure expression or super */ null && ((url, config = {})=>(obj = {}, thunkAPI)=>thunkHandler(ooapi.delete(buildUrl(url, obj), {
+                withCredentials: true,
+                ...config
+            }), thunkAPI)));
+}
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });
@@ -10820,6 +10841,72 @@ const { updateUser , updateCredits  } = userSlice.actions;
 const selectUser = (state)=>state.user;
 const selectUserStatus = (state)=>state.user.requestStatus;
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (userSlice.reducer);
+
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
+
+/***/ }),
+
+/***/ 4969:
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "xP": () => (/* binding */ oapi)
+/* harmony export */ });
+/* unused harmony export handleApiError */
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9648);
+/* harmony import */ var js_cookie__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9915);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_0__, js_cookie__WEBPACK_IMPORTED_MODULE_1__]);
+([axios__WEBPACK_IMPORTED_MODULE_0__, js_cookie__WEBPACK_IMPORTED_MODULE_1__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
+
+const oapi = axios__WEBPACK_IMPORTED_MODULE_0__["default"].create({
+    // baseURL: 'http://dazzleapi.ap-southeast-1.elasticbeanstalk.com',
+    baseURL: "/oapi"
+});
+oapi.interceptors.request.use(function(config) {
+    console.log("Request:", config.method?.toUpperCase(), config.url, config.params, config.data);
+    if (js_cookie__WEBPACK_IMPORTED_MODULE_1__["default"].get("getimgauth")) {
+        config.headers["Authorization"] = `Bearer ${js_cookie__WEBPACK_IMPORTED_MODULE_1__["default"].get("getimgauth")}`;
+    }
+    return config;
+}, function(error) {
+    console.log("Request error:", error);
+    return Promise.reject(error);
+});
+const axiosInstance = axios__WEBPACK_IMPORTED_MODULE_0__["default"].create({
+    // baseURL: 'http://dazzleapi.ap-southeast-1.elasticbeanstalk.com',
+    baseURL: "https://test-api.dazzleai.network"
+});
+axiosInstance.interceptors.request.use(function(config) {
+    console.log("Request:", config.method?.toUpperCase(), config.url, config.params, config.data);
+    return config;
+}, function(error) {
+    console.log("Request error:", error);
+    return Promise.reject(error);
+});
+axiosInstance.interceptors.response.use((response)=>{
+    console.log(response.data);
+    return response;
+}, (error)=>{
+    // window && (window as any)?.gtag('event', 'apierror', {
+    //   'event_category': 'error',
+    //   'event_label': (error as AxiosError)?.config?.url,
+    // });
+    console.error("Response error:", error?.response?.status, error?.response?.data);
+    return Promise.reject(error);
+});
+function handleApiError(error) {
+    const status = error?.response ? error?.response?.status : 500;
+    let message = error?.response?.data ? error?.response?.data : error?.stack ?? "Unknown Error";
+    return {
+        status,
+        message
+    };
+}
+/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = ((/* unused pure expression or super */ null && (axiosInstance)));
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });

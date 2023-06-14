@@ -780,6 +780,13 @@ module.exports = import("axios");;
 
 module.exports = import("ethers");;
 
+/***/ }),
+
+/***/ 9915:
+/***/ ((module) => {
+
+module.exports = import("js-cookie");;
+
 /***/ })
 
 };

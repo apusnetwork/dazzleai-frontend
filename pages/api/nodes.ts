@@ -39,6 +39,7 @@ type RemoteNodeList = RemoteNode[];
 
 export function transformNodesResponse(res: RemoteNodeList): NodeList {
   return res.map((node) => ({
+    ...node,
     id: node.id + "",
     name: node.name || node.domain || "",
     domain: node.domain,

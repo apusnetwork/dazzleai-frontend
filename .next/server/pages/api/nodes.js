@@ -79,6 +79,7 @@ _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependenci
 
 function transformNodesResponse(res) {
     return res.map((node)=>({
+            ...node,
             id: node.id + "",
             name: node.name || node.domain || "",
             domain: node.domain

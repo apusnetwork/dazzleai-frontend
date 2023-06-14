@@ -49,6 +49,7 @@ type RemoteModelList = RemoteModel[];
 
 export function transformModelsResponse(models: RemoteModelList): ModelList {
   return models.filter(v => v.type === "checkpoint" || v.type === "lora").map((model) => ({
+    ...model,
     id: model.type === "checkpoint" || model.type === "lora" ? model.model_file_name : model.model_id,
     userId: null,
     name: model.name,

@@ -102,6 +102,7 @@ async function handler(req, res) {
             sameSite: "lax"
         });
         const resData = {
+            ...userRes.data,
             id: userRes.data.user_id,
             referralCode: "",
             additionalCredits: 0,

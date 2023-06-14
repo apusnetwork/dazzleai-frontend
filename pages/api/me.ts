@@ -37,6 +37,30 @@ export interface RemoteUserInfoResponse {
   }
 }
 
+export function transformUserInfoResponse(res: RemoteUserInfoResponse): UserResponse {
+  return {
+    ...res,
+    id: res.user_id,
+    referralCode: '',
+    additionalCredits: 0,
+    monthlyCredits: 0,
+    plan: '',
+    billingPeriod: '',
+    currentPeriodStartAt: '',
+    currentPeriodEndAt: '',
+    subscriptionStatus: '',
+    cancelAtEnd: false,
+    name: res.nickname,
+    hasBetaAccess: false,
+    status: 'active',
+    createdAt: '',
+    email: '',
+    firstName: '',
+    credits: res.credit.credit,
+    isPaid: false,
+  }
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const token = getCookie(req, AuthHeaderKey)
@@ -45,28 +69,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         Authorization: `Bearer ${token}`,
       }
     })
-    const resData: UserResponse = {
-      ...userRes.data,
-      id: userRes.data.user_id,
-      referralCode: '',
-      additionalCredits: 0,
-      monthlyCredits: 0,
-      plan: '',
-      billingPeriod: '',
-      currentPeriodStartAt: '',
-      currentPeriodEndAt: '',
-      subscriptionStatus: '',
-      cancelAtEnd: false,
-      name: userRes.data.nickname,
-      hasBetaAccess: false,
-      status: 'active',
-      createdAt: '',
-      email: '',
-      firstName: '',
-      credits: userRes.data.credit.credit,
-      isPaid: false,
-    }
-    res.status(200).json(resData)
+    res.status(200).json(transformUserInfoResponse(userRes.data))
   } catch (e: any) {
     const { status, message } = handleApiError(e)
     res.status(status).json({ message })

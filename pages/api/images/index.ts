@@ -137,6 +137,7 @@ export function mapRemoteImageToGeneratedImage(image: RemoteImage): GeneratedIma
   }
   // const { _model } = task.task_id;
   return {
+    ...image,
     id: image.image_id,
     modelTaskId: task.task_id,
     userId: image.user_id,

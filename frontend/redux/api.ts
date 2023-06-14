@@ -1,4 +1,5 @@
-import axios, { AxiosPromise, AxiosRequestConfig } from "axios";
+import axios, { AxiosPromise, AxiosRequestConfig, AxiosResponse } from "axios";
+import { oapi as ooapi } from '@/frontend/utils/axios'
 
 async function thunkHandler(asyncFn: AxiosPromise, thunkAPI: { rejectWithValue: CallableFunction }): Promise<any> {
   try {
@@ -39,4 +40,27 @@ export default class api {
     (url: string, config: AxiosRequestConfig = {}) =>
     (obj = {}, thunkAPI: { rejectWithValue: CallableFunction }): any =>
       thunkHandler(axios.delete(buildUrl(url, obj), { withCredentials: true, ...config }), thunkAPI);
+}
+
+
+export class oapi {
+  static get =
+    (url: string, config: AxiosRequestConfig = {}, thenPromise?: (res: any) => any) =>
+    (obj = {}, thunkAPI: { rejectWithValue: CallableFunction }): any =>
+      thunkHandler(ooapi.get(buildUrl(url, obj), { withCredentials: true, ...config }).then(res => thenPromise ? thenPromise(res) : res), thunkAPI);
+
+  static post =
+    (url: string, config: AxiosRequestConfig = {}) =>
+    (obj = {}, thunkAPI: { rejectWithValue: CallableFunction }): any =>
+      thunkHandler(ooapi.post(buildUrl(url, obj), obj, { withCredentials: true, ...config }), thunkAPI);
+
+  static put =
+    (url: string, config: AxiosRequestConfig = {}) =>
+    (obj = {}, thunkAPI: { rejectWithValue: CallableFunction }): any =>
+      thunkHandler(ooapi.put(buildUrl(url, obj), obj, { withCredentials: true, ...config }), thunkAPI);
+
+  static delete =
+    (url: string, config: AxiosRequestConfig = {}) =>
+    (obj = {}, thunkAPI: { rejectWithValue: CallableFunction }): any =>
+      thunkHandler(ooapi.delete(buildUrl(url, obj), { withCredentials: true, ...config }), thunkAPI);
 }

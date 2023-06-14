@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-const isDevelopemnt = process.env.APP_ENV === 'development'
-
-console.log(isDevelopemnt)
+const isDevelopemnt = process.env.NEXT_PUBLIC_APP_ENV === 'development'
 
 const nextConfig = {
   /* config options here */

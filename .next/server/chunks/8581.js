@@ -19,6 +19,7 @@ _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependenci
 
 function transformModelsResponse(models) {
     return models.filter((v)=>v.type === "checkpoint" || v.type === "lora").map((model)=>({
+            ...model,
             id: model.type === "checkpoint" || model.type === "lora" ? model.model_file_name : model.model_id,
             userId: null,
             name: model.name,

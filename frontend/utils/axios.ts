@@ -5,6 +5,7 @@ import Cookies from "js-cookie";
 export const oapi = axios.create({
   // baseURL: 'http://dazzleapi.ap-southeast-1.elasticbeanstalk.com',
   baseURL: '/oapi',
+  // baseURL: process.env.NEXT_PUBLIC_APP_ENV === 'development' ? 'https://test-api.dazzleai.network/api' : 'https://api.dazzleai.network/api'
 })
 
 oapi.interceptors.request.use(function (config) {
