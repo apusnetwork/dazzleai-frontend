@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 4327;
-exports.ids = [4327,6806];
+exports.ids = [4327,5899,6806];
 exports.modules = {
 
 /***/ 4802:
@@ -68,7 +68,8 @@ const deleteCookie = (res, name)=>{
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ handler)
+/* harmony export */   "default": () => (/* binding */ handler),
+/* harmony export */   "transformModelsResponse": () => (/* binding */ transformModelsResponse)
 /* harmony export */ });
 /* harmony import */ var _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2378);
 /* harmony import */ var _frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9110);
@@ -76,6 +77,32 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_fro
 _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 
 
+function transformModelsResponse(models) {
+    return models.filter((v)=>v.type === "checkpoint" || v.type === "lora").map((model)=>({
+            id: model.type === "checkpoint" || model.type === "lora" ? model.model_file_name : model.model_id,
+            userId: null,
+            name: model.name,
+            type: model.type,
+            checkpoint: model.checkpoint_file_name,
+            status: "",
+            public: false,
+            params: {
+                author: model.author,
+                images: model.images.split(","),
+                author_url: model.author_url,
+                description: model.description,
+                instance_prompt: "",
+                author_avatar: model.author_avatar
+            },
+            createdAt: "",
+            trainingStartedAt: null,
+            trainingFinishedAt: null,
+            lastUsedAt: "",
+            useCount: model.use_count,
+            nsfw: model.nsfw,
+            reuse_img: model.reuse_img
+        }));
+}
 async function handler(req, res) {
     try {
         const token = (0,_frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .getCookie */ .ej)(req, _frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .AuthHeaderKey */ .qf);
@@ -84,30 +111,7 @@ async function handler(req, res) {
                 Authorization: `Bearer ${token}`
             }
         });
-        const resData = modelRes.data.filter((v)=>v.type === "checkpoint" || v.type === "lora").map((model)=>({
-                id: model.type === "checkpoint" || model.type === "lora" ? model.model_file_name : model.model_id,
-                userId: null,
-                name: model.name,
-                type: model.type,
-                checkpoint: model.checkpoint_file_name,
-                status: "",
-                public: false,
-                params: {
-                    author: model.author,
-                    images: model.images.split(","),
-                    author_url: model.author_url,
-                    description: model.description,
-                    instance_prompt: "",
-                    author_avatar: model.author_avatar
-                },
-                createdAt: "",
-                trainingStartedAt: null,
-                trainingFinishedAt: null,
-                lastUsedAt: "",
-                useCount: model.use_count,
-                nsfw: model.nsfw,
-                reuse_img: model.reuse_img
-            }));
+        const resData = transformModelsResponse(modelRes.data);
         res.status(200).json(resData);
     } catch (e) {
         const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .zG)(e);

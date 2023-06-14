@@ -184,14 +184,13 @@ export function mapRemoteTaskToTaskInfo(remoteTask: RemoteTask): TaskInfo {
   };
 }
 
+export function transformTasksResponse(remoteTasks: RemoteTask[]): TaskInfo[] {
+  return remoteTasks.map(mapRemoteTaskToTaskInfo)
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const token = getCookie(req, AuthHeaderKey)
-    const nodeRes = await axiosInstance.get('/api/nodes', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
     const createRes = await axiosInstance.get<RemoteTask[]>('/api/tasks', {
       params: {
         ids: req.query.ids
@@ -200,7 +199,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         Authorization: `Bearer ${token}`,
       }
     })
-    const resData: TaskInfo[] = createRes.data.map(mapRemoteTaskToTaskInfo)
+    const resData: TaskInfo[] = transformTasksResponse(createRes.data)
     res.status(200).json(resData)
   } catch (e: any) {
     const { status, message } = handleApiError(e)

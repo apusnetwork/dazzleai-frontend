@@ -2,9 +2,11 @@ import Button from '@/frontend/components/button/button';
 import WebsiteLayout from '@/frontend/components/layout/website';
 import { ImageGridVisual } from '@/frontend/components/website';
 import Hero from '@/frontend/components/website/hero';
+import { oapi } from '@/frontend/utils/axios';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { createRef, useEffect, useLayoutEffect, useState } from 'react';
+import { transformModelsResponse } from './api/models';
 
 export default function HomePage({ exampleArt }: { exampleArt: ImageI[] }): JSX.Element {
   const [models, setModels] = useState<ModelI[]>([]);
@@ -13,8 +15,8 @@ export default function HomePage({ exampleArt }: { exampleArt: ImageI[] }): JSX.
   const [scrolled, setScrolled] = useState(false)
 
   async function getModels() {
-    const res = await axios.get('/api/models?status=active&public=true');
-    setModels([...res.data]);
+    const res = await oapi.get('/models?status=active&public=true');
+    setModels(transformModelsResponse(res.data));
   }
 
   useEffect(() => {

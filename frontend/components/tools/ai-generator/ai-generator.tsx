@@ -24,6 +24,11 @@ import styles from './ai-generator.module.scss';
 import NodesSelect from '../../select/nodes';
 import { oapi } from '@/frontend/utils/axios';
 import { transformRequest, transformResponse } from '@/pages/api/models/[id]';
+import { transformNodesResponse } from '@/pages/api/nodes';
+import { transformTasksResponse } from '@/pages/api/tasks';
+import { transformModelsResponse } from '@/pages/api/models';
+import { transformGetImagesResponse } from '@/pages/api/images';
+import { transformGetImageResponse } from '@/pages/api/images/[id]';
 
 interface StateI {
   model: string // model_file_name
@@ -94,8 +99,9 @@ export default function AiGenerator(): JSX.Element {
   })
 
   async function getModels() {
-    const res = await axios.get('/api/models?status=active&public=true');
-    setModels([...res.data]);
+    const res = await oapi.get('/models?status=active&public=true');
+    const modelsRes = transformModelsResponse(res.data);
+    setModels(modelsRes);
     if (res.data?.length) {
       setState((s: any) => {
         if (s.model === "") {
@@ -107,8 +113,9 @@ export default function AiGenerator(): JSX.Element {
   }
 
   async function getNodes() {
-    const res = await axios.get('/api/nodes?status=active');
-    setNodes([{ id: "all", name: "All", domain: "" }, ...res.data]);
+    const res = await oapi.get('/nodes?status=active');
+    const resNodes = transformNodesResponse(res.data);
+    setNodes([{ id: "all", name: "All", domain: "" }, ...resNodes]);
     // if (res.data?.length && state.node === "") {
     //   setState(s => ({ ...s, node: res.data[0].id }))
     // }
@@ -119,8 +126,8 @@ export default function AiGenerator(): JSX.Element {
     let hasMore = true;
     try {
       setPagination({ ...pagination, loading: true })
-      const res = await axios.get('/api/images?tool=generator&take=24&skip=' + images.length);
-      setImages([...images, ...res.data])
+      const res = await oapi.get('/images?tool=generator&limit=24&offset=' + images.length);
+      setImages([...images, ...transformGetImagesResponse(res.data)])
       hasMore = res.data.length > 0
     } catch {
       setImages([]);
@@ -162,53 +169,53 @@ export default function AiGenerator(): JSX.Element {
 
   }
 
-  async function handleUpload(id: string, files: File[]) {
+  // async function handleUpload(id: string, files: File[]) {
 
-    if (!user.id) {
-      dispatch(updateAuthState('login'));
-      return
-    }
+  //   if (!user.id) {
+  //     dispatch(updateAuthState('login'));
+  //     return
+  //   }
 
-    if (!files || _.get(state, id).loading) return
+  //   if (!files || _.get(state, id).loading) return
 
-    if (files[0] && files[0].size > 2.5e7) {
-      message(dispatch, { "type": "danger", text: "File too large! Max. file size is 25MB." })
-      return
-    }
+  //   if (files[0] && files[0].size > 2.5e7) {
+  //     message(dispatch, { "type": "danger", text: "File too large! Max. file size is 25MB." })
+  //     return
+  //   }
 
-    // upload file
-    try {
-      // set loader
-      setState(s => ({ ..._.set<StateI>(s, id + '.loading', true) }))
-      const data = new FormData();
-      data.append('file', files[0]);
+  //   // upload file
+  //   try {
+  //     // set loader
+  //     setState(s => ({ ..._.set<StateI>(s, id + '.loading', true) }))
+  //     const data = new FormData();
+  //     data.append('file', files[0]);
 
-      const res = await axios.post('/api/images', data);
-      const img = res.data
-      img.strength = 1.0;
+  //     const res = await axios.post('/api/images', data);
+  //     const img = res.data
+  //     img.strength = 1.0;
 
-      // set image
-      setState(s => ({ ..._.set<StateI>(s, id, img) }))
+  //     // set image
+  //     setState(s => ({ ..._.set<StateI>(s, id, img) }))
 
-    } catch (e: any) {
-      e && e.response && e.response.data && dispatch(addErrors(e.response.data))
-      message(dispatch, { "type": "danger", text: "Please try uploading again!" })
+  //   } catch (e: any) {
+  //     e && e.response && e.response.data && dispatch(addErrors(e.response.data))
+  //     message(dispatch, { "type": "danger", text: "Please try uploading again!" })
 
-    } finally {
-      // set loader
-      setState(s => ({ ..._.set<StateI>(s, id + '.loading', false) }))
-    }
-  }
+  //   } finally {
+  //     // set loader
+  //     setState(s => ({ ..._.set<StateI>(s, id + '.loading', false) }))
+  //   }
+  // }
 
 
 
-  async function getRandomPrompt() {
-    const res = await axios.get('/api/prompts/random');
-    setState({
-      ...state,
-      prompt: res.data.prompt
-    })
-  }
+  // async function getRandomPrompt() {
+  //   const res = await axios.get('/api/prompts/random');
+  //   setState({
+  //     ...state,
+  //     prompt: res.data.prompt
+  //   })
+  // }
 
   async function importCivitai() {
     // read from clipboard
@@ -380,7 +387,7 @@ into state
 
   async function deleteImage(image: ImageI) {
     try {
-      axios.delete('/api/images?ids=' + image.id)
+      oapi.post('/images/del?ids=' + image.id)
       setImages(im => im.filter(im => im.id !== image.id))
     } catch {
       message(dispatch, { type: 'danger', text: 'Unexpected Error!' })
@@ -389,7 +396,7 @@ into state
 
   async function shareImage(image: ImageI) {
     try {
-      axios.delete('/api/images?ids=' + image.id)
+      oapi.post('/images/del?ids=' + image.id)
       setImages(im => im.filter(im => im.id !== image.id))
     } catch {
       message(dispatch, { type: 'danger', text: 'Unexpected Error!' })
@@ -550,17 +557,17 @@ into state
       body.type = models.find(v => v.id === state.model)?.type;
       body.checkpoint = models.find(v => v.id === state.model)?.checkpoint;
 
-      // let pendingTasksRes = await oapi.post('/api/tasks/create', transformRequest(body, model));
-      // const pendingTasks = transformResponse(pendingTasksRes.data)
       const pendingTasksRes = await oapi.post('/tasks/create', transformRequest(body, model));
 
       let pendingIds: string[] = [transformResponse(pendingTasksRes.data).id]
 
       while (pendingIds.length > 0) {
-        const tasks = await axios.get('/api/tasks?ids=' + pendingIds.join(','));
+        const tasksRes = await oapi.get('/tasks?ids=' + pendingIds.join(','));
+
+        const tasks = transformTasksResponse(tasksRes.data);
 
         const generatedImages: ImageI[] = [];
-        for (const task of tasks.data) {
+        for (const task of tasks) {
           if (task.status === 'succeed' && task.images && task.images.length) {
             generatedImages.push(...task.images.map((im: any) => ({
               ...im, modelTask: {
@@ -668,11 +675,12 @@ into state
     const isShared = urlParams.get('shared') !== null
 
     try {
-      const res = await axios.get(`/api/images/${isShared ? 'shared/' : ''}` + img);
+      const res = await oapi.get(`${isShared ? '/shared/images' : '/images'}?ids=${img}`);
+      const imageRes = transformGetImageResponse(res.data);
       if (urlParams.has('img')) {
-        copyParams(res.data)
+        copyParams(imageRes)
       } else if (urlParams.has('init-img')) {
-        copyImage(res.data)
+        copyImage(imageRes)
       }
     } catch { }
   }

@@ -47,11 +47,11 @@ function GeneratedImage({
     setTimer(0)
   }, []);
 
-  async function likeImage() {
-    setLiked(l => !l);
-    await axios.post(`/api/images/${image.id}/like`);
+  // async function likeImage() {
+  //   setLiked(l => !l);
+  //   await axios.post(`/api/images/${image.id}/like`);
 
-  }
+  // }
 
   useEffect(() => {
     if (image.loading) {

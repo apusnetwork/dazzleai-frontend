@@ -11,6 +11,8 @@ import Button from "../button/button";
 import styles from './image.module.scss';
 import ImageSharer from "./sharer";
 import { useRouter } from "next/router";
+import { oapi } from "@/frontend/utils/axios";
+import { transformGetImageResponse } from "@/pages/api/images/[id]";
 
 
 const modelsMap: Record<string, string> = {
@@ -40,8 +42,8 @@ export default function ImageView(props: ImageI) {
   const dispatch = useAppDispatch();
 
   async function getImage() {
-    const res = await axios.get('/api/images/' + props.id);
-    setState({ ...state, ...res.data });
+    const res = await oapi.get(`/images?ids=${props.id}`);
+    setState({ ...state, ...transformGetImageResponse(res.data) });
   }
 
   useEffect(() => {

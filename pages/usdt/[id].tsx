@@ -17,7 +17,7 @@ import IconUSDC from './usdc.png'
 import SwapOutlined from '@ant-design/icons/lib/icons/SwapOutlined';
 import { useRouter } from 'next/router';
 import IconCredits from './cashback.png';
-import axiosInstance from '@/frontend/utils/axios';
+import axiosInstance, { oapi } from '@/frontend/utils/axios';
 import axios from 'axios';
 import { ethers } from 'ethers';
 import Web3 from 'web3';
@@ -83,7 +83,7 @@ export default function HomePage(): JSX.Element {
   useEffect(() => {
     if (creditsNumber > 0 && network) {
       setValue(undefined)
-      axios.post('/api/crypto/create-checkout-session', {
+      oapi.post('/crypto/create-checkout-session', {
         currency,
         network,
         productitemname: productItemName,
@@ -167,7 +167,7 @@ export default function HomePage(): JSX.Element {
       message(dispatch, { type: 'success', text: 'Deposit Success, Credits will arrival later.' })
       setLoading(false)
       router.push('/generate')
-      await retryPromiseWithDelay(axios.post('/api/crypto/update-order', {
+      await retryPromiseWithDelay(oapi.post('/crypto/update-order', {
         orderid: orderID,
         txaddress: wallet.accounts[0],
         txhash: result.transactionHash,
