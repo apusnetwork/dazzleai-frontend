@@ -21,8 +21,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var frontend_components_layout_website__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6950);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(1853);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axios__WEBPACK_IMPORTED_MODULE_1__, frontend_components_image_view__WEBPACK_IMPORTED_MODULE_2__, frontend_components_layout_website__WEBPACK_IMPORTED_MODULE_3__]);
 ([axios__WEBPACK_IMPORTED_MODULE_1__, frontend_components_image_view__WEBPACK_IMPORTED_MODULE_2__, frontend_components_layout_website__WEBPACK_IMPORTED_MODULE_3__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -33,6 +36,13 @@ function ImageSharePage(props) {
     const prompt = props.modelTask ? props.modelTask.params.prompt || "" : "";
     const splitted = prompt.split(/[,|.]/gi);
     let h = splitted[0].charAt(0).toUpperCase() + splitted[0].slice(1) + ".";
+    (0,react__WEBPACK_IMPORTED_MODULE_5__.useEffect)(()=>{
+        if (props.id) {
+            sessionStorage.setItem("from_img", props.id);
+        }
+    }, [
+        props
+    ]);
     if (props.modelTask.model === "real-esrgan" || props.modelTask.model === "gfpgan") {
         h = "Enhanced image.";
     }
