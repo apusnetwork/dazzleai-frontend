@@ -27,9 +27,9 @@
   "/pricing": "pages/pricing.html",
   "/referrals": "pages/referrals.html",
   "/usdt/[id]": "pages/usdt/[id].html",
-  "/_error": "pages/_error.js",
   "/img/[id]": "pages/img/[id].js",
   "/legal/[slug]": "pages/legal/[slug].js",
+  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
   "/404": "pages/404.html"
 }

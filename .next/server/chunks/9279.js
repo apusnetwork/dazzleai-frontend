@@ -310,7 +310,7 @@ function ImageView(props) {
     const user = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_2__/* .useAppSelector */ .C)(_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_4__/* .selectUser */ .dy);
     const dispatch = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_2__/* .useAppDispatch */ .T)();
     async function getImage() {
-        const res = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_11__/* .oapi.get */ .xP.get(`/images?ids=${props.id}`);
+        const res = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_11__/* .oapi.get */ .xP.get(`/image?ids=${props.id}`);
         setState({
             ...state,
             ...(0,_pages_api_images_id___WEBPACK_IMPORTED_MODULE_12__/* .transformGetImageResponse */ .a)(res.data)

@@ -675,7 +675,7 @@ into state
     const isShared = urlParams.get('shared') !== null
 
     try {
-      const res = await oapi.get(`${isShared ? '/shared/images' : '/images'}?ids=${img}`);
+      const res = await oapi.get(`${isShared ? '/shared/images' : '/image'}?ids=${img}`);
       const imageRes = transformGetImageResponse(res.data);
       if (urlParams.has('img')) {
         copyParams(imageRes)

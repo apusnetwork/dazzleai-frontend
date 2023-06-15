@@ -42,7 +42,7 @@ export default function ImageView(props: ImageI) {
   const dispatch = useAppDispatch();
 
   async function getImage() {
-    const res = await oapi.get(`/images?ids=${props.id}`);
+    const res = await oapi.get(`/image?ids=${props.id}`);
     setState({ ...state, ...transformGetImageResponse(res.data) });
   }
 
