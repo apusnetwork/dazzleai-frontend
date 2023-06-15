@@ -581,23 +581,6 @@ function HeaderUser() {
                                             "Log Out"
                                         ]
                                     })
-                                }),
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
-                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_5___default()), {
-                                        href: "/referrals",
-                                        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
-                                            style: {
-                                                background: "#5858e6",
-                                                color: "#ffffff"
-                                            },
-                                            children: [
-                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_16__.Coins, {
-                                                    size: 16
-                                                }),
-                                                "Invite friends & Earn credits"
-                                            ]
-                                        })
-                                    })
                                 })
                             ]
                         })
