@@ -474,11 +474,11 @@ into state
           return
         }
 
-        if (state.model.startsWith('model')) {
-          const m = models.find(x => x.id === state.model);
-          if (!m) return
-          if (m.params.instance_prompt && !body.prompt.includes(m.params.instance_prompt)) body.prompt = m.params.instance_prompt + ', ' + body.prompt;
-        }
+        // if (state.model.startsWith('model')) {
+        //   const m = models.find(x => x.id === state.model);
+        //   if (!m) return
+        //   if (m.params.instance_prompt && !body.prompt.includes(m.params.instance_prompt)) body.prompt = m.params.instance_prompt + ', ' + body.prompt;
+        // }
 
         if (state.negativePrompt) body.negative_prompt = state.negativePrompt;
         if (state.seed) body.seed = state.seed;
@@ -611,6 +611,7 @@ into state
       dispatch(updateCredits(-1 * credits))
 
     } catch (e: any) {
+      console.log(e)
       if (e && e.response && e.response.status === 401) {
         dispatch(updateAuthState('register'));
       } else {
@@ -675,7 +676,7 @@ into state
     const isShared = urlParams.get('shared') !== null
 
     try {
-      const res = await oapi.get(`${isShared ? '/shared/images' : '/images'}?ids=${img}`);
+      const res = await oapi.get(`${isShared ? '/shared/images' : '/image'}?ids=${img}`);
       const imageRes = transformGetImageResponse(res.data);
       if (urlParams.has('img')) {
         copyParams(imageRes)
