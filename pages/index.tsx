@@ -15,8 +15,10 @@ export default function HomePage({ exampleArt }: { exampleArt: ImageI[] }): JSX.
   const [scrolled, setScrolled] = useState(false)
 
   async function getModels() {
-    const res = await oapi.get('/models?status=active&public=true');
-    setModels(transformModelsResponse(res.data));
+    const res = await axios.get('/api/models?status=active&public=true');
+    setModels([...res.data]);
+    // const res = await oapi.get('/models?status=active&public=true');
+    // setModels(transformModelsResponse(res.data));
   }
 
   useEffect(() => {

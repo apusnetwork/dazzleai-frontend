@@ -99,9 +99,11 @@ export default function AiGenerator(): JSX.Element {
   })
 
   async function getModels() {
-    const res = await oapi.get('/models?status=active&public=true');
-    const modelsRes = transformModelsResponse(res.data);
-    setModels(modelsRes);
+    const res = await axios.get('/api/models?status=active&public=true');
+    setModels([...res.data]);
+    // const res = await oapi.get('/models?status=active&public=true');
+    // const modelsRes = transformModelsResponse(res.data);
+    // setModels(modelsRes);
     if (res.data?.length) {
       setState((s: any) => {
         if (s.model === "") {
