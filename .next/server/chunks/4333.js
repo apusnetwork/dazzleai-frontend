@@ -594,7 +594,7 @@ function HeaderUser() {
                                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_16__.Coins, {
                                                     size: 16
                                                 }),
-                                                "friends & Earn creditsInvite"
+                                                "Invite friends & Earn credits"
                                             ]
                                         })
                                     })

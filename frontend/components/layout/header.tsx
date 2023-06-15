@@ -232,7 +232,7 @@ function HeaderUser(): JSX.Element {
                   <Link href="/referrals">
                     <a style={{ background: '#5858e6', color: '#ffffff' }}>
                       <Coins size={16} />
-                       friends & Earn creditsInvite
+                      Invite friends & Earn credits
                     </a>
                   </Link>
                 </li>
