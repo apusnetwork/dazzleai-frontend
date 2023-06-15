@@ -470,14 +470,14 @@ function HeaderUser() {
         try {
             const res = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_18__/* .oapi.post */ .xP.post("/user/checkin");
             (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .message */ .yw)(dispatch, {
-                text: "Check In Success",
+                text: "Check-In successfully +2 Credits",
                 type: "success"
             });
             dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_3__/* .updateUser */ .Nq)());
         } catch (error) {
             console.log(error?.response?.status, error?.response?.data);
             (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .message */ .yw)(dispatch, {
-                text: "Check In Failed",
+                text: "Check-In Failed",
                 type: "danger"
             });
         }

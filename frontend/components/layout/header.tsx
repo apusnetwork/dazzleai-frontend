@@ -153,11 +153,11 @@ function HeaderUser(): JSX.Element {
     }
     try {
       const res = await oapi.post('/user/checkin')
-      message(dispatch, { text: 'Check In Success', type: 'success' })
+      message(dispatch, { text: 'Check-In successfully +2 Credits', type: 'success' })
       dispatch(updateUser())
     } catch (error: any) {
       console.log(error?.response?.status, error?.response?.data)
-      message(dispatch, { text: 'Check In Failed', type: 'danger' })
+      message(dispatch, { text: 'Check-In Failed', type: 'danger' })
     }
   }
 
