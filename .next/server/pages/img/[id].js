@@ -56,7 +56,8 @@ function ImageSharePage(props) {
         image: props.url,
         footer: false,
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(frontend_components_image_view__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
-            ...props
+            ...props,
+            reuseNewTab: false
         })
     });
 };

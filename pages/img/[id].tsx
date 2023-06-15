@@ -36,6 +36,7 @@ export default function ImageSharePage(props: ImageI): JSX.Element {
 
     <ImageView
       {...props}
+      reuseNewTab={false}
     />
 
   </WebsiteLayout>
