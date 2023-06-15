@@ -228,14 +228,14 @@ function HeaderUser(): JSX.Element {
                     Log Out
                   </a>
                 </li>
-                {/* <li>
+                <li>
                   <Link href="/referrals">
                     <a style={{ background: '#5858e6', color: '#ffffff' }}>
                       <Coins size={16} />
                       Invite friends & Earn credits
                     </a>
                   </Link>
-                </li> */}
+                </li>
               </ul>
             </div>
           </OutsideClickHandler>

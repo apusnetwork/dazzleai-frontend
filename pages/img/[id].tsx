@@ -13,6 +13,12 @@ export default function ImageSharePage(props: ImageI): JSX.Element {
   const splitted = prompt.split(/[,|.]/gi)
   let h = splitted[0].charAt(0).toUpperCase() + splitted[0].slice(1) + '.';
 
+  useEffect(() => {
+    if (props.id) {
+      sessionStorage.setItem('from_img', props.id)
+    }
+  }, [props])
+
   if (props.modelTask.model === 'real-esrgan' || props.modelTask.model === 'gfpgan') {
     h = 'Enhanced image.'
   }
@@ -30,6 +36,7 @@ export default function ImageSharePage(props: ImageI): JSX.Element {
 
     <ImageView
       {...props}
+      reuseNewTab={false}
     />
 
   </WebsiteLayout>

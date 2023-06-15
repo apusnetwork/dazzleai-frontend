@@ -672,7 +672,7 @@ into state
     const img = urlParams.get('img') || urlParams.get('init-img');
     if (!img) return
     if (img) {
-      sessionStorage.setItem('from_img', img)
+      // sessionStorage.setItem('from_img', img)
     }
 
     const isShared = urlParams.get('shared') !== null

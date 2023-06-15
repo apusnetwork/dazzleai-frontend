@@ -371,7 +371,7 @@ function ImageView(props) {
                                 type: "default",
                                 title: "Generate similar",
                                 href: `/generate?img=${id}${shareParam}`,
-                                openInNewTab: true,
+                                openInNewTab: props.reuseNewTab ?? true,
                                 children: [
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_5__.Repeat, {
                                         strokeWidth: 1.5
