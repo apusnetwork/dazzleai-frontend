@@ -1,18 +1,13 @@
 import WebsiteLayout from '@/frontend/components/layout/website';
 import AiGenerator from '@/frontend/components/tools/ai-generator/ai-generator';
 
-import { useEffect } from "react";
 
 import { useAppDispatch, useAppSelector } from "@/frontend/redux/hooks";
-import { updateAuthState } from "@/frontend/redux/info/slice";
 import { selectUser, selectUserStatus } from "@/frontend/redux/user/slice";
 
 
 
 export default function AiGeneratorPage(): JSX.Element {
-  const dispatch = useAppDispatch();
-  const user = useAppSelector(selectUser);
-  const userState = useAppSelector(selectUserStatus);
 
   // useEffect(() => {
   //   if ((userState === 'failed' || userState === 'completed') && !user.id) {

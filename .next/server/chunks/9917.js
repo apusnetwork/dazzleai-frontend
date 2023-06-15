@@ -327,7 +327,7 @@ const Image = ({ model  })=>{
         })
     });
 };
-function ImageGridVisual({ images  }) {
+const ImageGridVisual = /*#__PURE__*/ (0,external_react_.forwardRef)(function ImageGridVisual({ images  }, ref) {
     const { 0: columns , 1: setColumns  } = (0,external_react_.useState)(4);
     (0,external_react_.useEffect)(()=>{
         const handleResize = ()=>{
@@ -345,15 +345,16 @@ function ImageGridVisual({ images  }) {
     }, []);
     return /*#__PURE__*/ jsx_runtime_.jsx("div", {
         className: (website_module_default()).image_grid_visual,
+        ref: ref,
         children: /*#__PURE__*/ jsx_runtime_.jsx((Masonry_default()), {
             columns: columns,
             spacing: 2,
-            children: images.map((model)=>/*#__PURE__*/ jsx_runtime_.jsx(Image, {
+            children: images.map((model, index)=>/*#__PURE__*/ jsx_runtime_.jsx(Image, {
                     model: model
-                }, model.name))
+                }, index))
         })
     });
-}
+});
 
 ;// CONCATENATED MODULE: ./frontend/components/website/index.tsx
 

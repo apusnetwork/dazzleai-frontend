@@ -37,6 +37,15 @@ interface RemoteNode {
 
 type RemoteNodeList = RemoteNode[];
 
+export function transformNodesResponse(res: RemoteNodeList): NodeList {
+  return res.map((node) => ({
+    ...node,
+    id: node.id + "",
+    name: node.name || node.domain || "",
+    domain: node.domain,
+  }))
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const token = getCookie(req, AuthHeaderKey)
@@ -45,11 +54,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         Authorization: `Bearer ${token}`,
       }
     })
-    const resData: NodeList = nodeRes.data.map((node) => ({
-      id: node.id + "",
-      name: node.name || node.domain || "",
-      domain: node.domain,
-    }))
+    const resData: NodeList = transformNodesResponse(nodeRes.data)
     res.status(200).json(resData)
   } catch (e: any) {
     const { status, message } = handleApiError(e)

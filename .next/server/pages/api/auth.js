@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 2508;
-exports.ids = [2508,6806];
+exports.ids = [2508,5899,6806];
 exports.modules = {
 
 /***/ 4802:
@@ -16,6 +16,13 @@ module.exports = require("cookie");
 /***/ ((module) => {
 
 module.exports = import("axios");;
+
+/***/ }),
+
+/***/ 9915:
+/***/ ((module) => {
+
+module.exports = import("js-cookie");;
 
 /***/ }),
 
@@ -78,7 +85,7 @@ async function handler(req, res) {
             });
         }
     } catch (e) {
-        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .z)(e);
+        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .zG)(e);
         res.status(status).json({
             message
         });

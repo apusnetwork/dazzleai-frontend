@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 9124;
-exports.ids = [9124,6806];
+exports.ids = [9124,5899,6806];
 exports.modules = {
 
 /***/ 4802:
@@ -16,6 +16,13 @@ module.exports = require("cookie");
 /***/ ((module) => {
 
 module.exports = import("axios");;
+
+/***/ }),
+
+/***/ 9915:
+/***/ ((module) => {
+
+module.exports = import("js-cookie");;
 
 /***/ }),
 
@@ -83,8 +90,8 @@ async function handler(req, res) {
         if ("from_url" in req.body) {
             remoteReq["from_url"] = req.body.from_url;
         }
-        const loginRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .Z.post("/login", remoteReq);
-        const userRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .Z.get("/api/userinfo", {
+        const loginRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .ZP.post("/login", remoteReq);
+        const userRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .ZP.get("/api/userinfo", {
             headers: {
                 Authorization: `Bearer ${loginRes.data.token}`
             }
@@ -95,6 +102,7 @@ async function handler(req, res) {
             sameSite: "lax"
         });
         const resData = {
+            ...userRes.data,
             id: userRes.data.user_id,
             referralCode: "",
             additionalCredits: 0,
@@ -116,7 +124,7 @@ async function handler(req, res) {
         };
         res.status(200).json(resData);
     } catch (e) {
-        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .z)(e);
+        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .zG)(e);
         res.status(status).json({
             message
         });

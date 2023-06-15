@@ -12,13 +12,6 @@ module.exports = require("cookie");
 
 /***/ }),
 
-/***/ 165:
-/***/ ((module) => {
-
-module.exports = require("multiparty");
-
-/***/ }),
-
 /***/ 9648:
 /***/ ((module) => {
 
@@ -26,10 +19,10 @@ module.exports = import("axios");;
 
 /***/ }),
 
-/***/ 7147:
+/***/ 9915:
 /***/ ((module) => {
 
-module.exports = require("fs");
+module.exports = import("js-cookie");;
 
 /***/ })
 

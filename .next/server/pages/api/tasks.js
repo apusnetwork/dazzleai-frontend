@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 6806;
-exports.ids = [6806];
+exports.ids = [6806,5899];
 exports.modules = {
 
 /***/ 4802:
@@ -16,6 +16,13 @@ module.exports = require("cookie");
 /***/ ((module) => {
 
 module.exports = import("axios");;
+
+/***/ }),
+
+/***/ 9915:
+/***/ ((module) => {
+
+module.exports = import("js-cookie");;
 
 /***/ })
 

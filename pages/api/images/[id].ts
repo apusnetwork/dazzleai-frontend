@@ -2,8 +2,10 @@ import axiosInstance, { handleApiError } from '@/frontend/utils/axios';
 import { AuthHeaderKey, getCookie } from '@/frontend/utils/cookie';
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { RemoteImage, mapRemoteImageToGeneratedImage } from '../images';
-import fetch from 'node-fetch';
-import stream from 'stream';
+
+export function transformGetImageResponse(res: RemoteImage[]) {
+  return mapRemoteImageToGeneratedImage(res[0])
+}
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
@@ -25,7 +27,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         res.status(404).json({ message: 'Image not found' })
         return
       }
-      res.status(200).json(mapRemoteImageToGeneratedImage(imagesRes.data[0]))
+      res.status(200).json(transformGetImageResponse(imagesRes.data))
     } else if (req.method === "PUT") {
       console.log({
         image_id: req.query.id,

@@ -1,5 +1,5 @@
 import axios from "axios";
-import { ChevronsUp, Download, Heart, ImagePlus, Repeat, Smile, Trash2 } from 'lucide-react';
+import { ChevronsUp, Download, Heart, ImagePlus, Repeat, Smile, Trash2, MoreVertical, Share2 } from 'lucide-react';
 import Image from "next/image";
 import { memo, useEffect, useState } from "react";
 import Button from "../button/button";
@@ -7,6 +7,7 @@ import Loader from "../loader/loader";
 import Tooltip from "../tooltip/tooltip";
 
 import styles from './image.module.scss';
+import OutsideClickHandler from "react-outside-click-handler";
 
 
 interface GeneratorImageI {
@@ -16,6 +17,7 @@ interface GeneratorImageI {
   onCopyImage?: (i: ImageI) => void
   onSelect?: (i: ImageI) => void
   onDelete?: (i: ImageI) => void
+  onShare?: (i: ImageI) => void
   onEnhanceFace?: (i: ImageI) => void
   onUpscale?: (i: ImageI) => void
   imageLoader?: any
@@ -30,12 +32,14 @@ function GeneratedImage({
   onCopyImage,
   onSelect,
   onDelete,
+  onShare,
   onUpscale,
   onEnhanceFace,
   actions = ['like', 'delete', 'upscale', 'enhance_faces', 'copy_params', 'copy_image'],
   imageLoader,
   hoverable = true
 }: GeneratorImageI): JSX.Element {
+  const [open, setOpen] = useState(false)
   const [timer, setTimer] = useState(0);
   const [liked, setLiked] = useState<boolean>(image.liked);
 
@@ -43,11 +47,11 @@ function GeneratedImage({
     setTimer(0)
   }, []);
 
-  async function likeImage() {
-    setLiked(l => !l);
-    await axios.post(`/api/images/${image.id}/like`);
+  // async function likeImage() {
+  //   setLiked(l => !l);
+  //   await axios.post(`/api/images/${image.id}/like`);
 
-  }
+  // }
 
   useEffect(() => {
     if (image.loading) {
@@ -91,7 +95,39 @@ function GeneratedImage({
         <div className={[styles.img_hover, hoverable ? styles.hoverable : ''].join(' ')} onClick={() => onSelect && onSelect(image)}>
 
           <div className={styles.img_hover_row}>
+            <div className={styles.btn_group}></div>
             <div className={styles.btn_group}>
+              <section className={styles._header_user}>
+                <Button
+                  onClick={e => { e.stopPropagation(); setOpen(!open) }}
+                  size='md'
+                  type='transparent'
+                >
+                  <MoreVertical strokeWidth={1.5} />
+                </Button>
+                {
+                  open ?
+                    <OutsideClickHandler onOutsideClick={(e) => { e.stopPropagation(); setOpen(false) }}>
+                      <div className={styles._user_menu}>
+                        <ul className={styles.user_menu}>
+                          {onShare && <li>
+                            <a onClick={e => { e.preventDefault(); e.stopPropagation(); onShare(image) }}>
+                              <Share2 size={16} />
+                              Public
+                            </a>
+                          </li>}
+                          {onDelete && <li>
+                            <a onClick={e => { e.preventDefault(); e.stopPropagation(); onDelete(image) }}>
+                              <Trash2 size={16} />
+                              Delete
+                            </a>
+                          </li>}
+                        </ul></div>
+                    </OutsideClickHandler> : null
+                }
+              </section>
+            </div>
+            {/* <div className={styles.btn_group}>
               {
                 (image.modelTask.model?.includes('stable-diffusion') || image.modelTask.model?.includes('model-') || image.modelTask.model === 'instruct-pix2pix' || image.modelTask.model === 'image-mixer')
                   && actions.includes('copy_params')
@@ -131,7 +167,7 @@ function GeneratedImage({
                   </Tooltip>
                   : null
               }
-            </div>
+            </div> */}
             {/* <div className={styles.btn_group}>
               {
                 (image.width <= 1024 && image.height <= 1024)
@@ -176,7 +212,7 @@ function GeneratedImage({
               }
             </div> */}
           </div>
-          <div className={styles.img_hover_row}>
+          {/* <div className={styles.img_hover_row}>
             <div className={styles.btn_group}>
 
               {actions.includes('delete') && onDelete ? <Button
@@ -204,7 +240,7 @@ function GeneratedImage({
                   </Button>
                   : null
               }
-              {/* {
+              {
                 actions.includes('like') ?
                   <Button
                     onClick={e => { e.stopPropagation(); likeImage() }}
@@ -216,11 +252,11 @@ function GeneratedImage({
 
                   </Button>
                   : null
-              } */}
+              }
             </div>
-          </div>
+          </div> */}
         </div>
-      </div>
+      </div >
     </div >
   )
 }

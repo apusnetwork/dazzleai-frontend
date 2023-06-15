@@ -1,12 +1,12 @@
 import axiosInstance, { handleApiError } from '@/frontend/utils/axios'
 import { AuthHeaderKey, getCookie } from '@/frontend/utils/cookie';
 import type { NextApiRequest, NextApiResponse } from 'next'
-import FormData from 'form-data'
-import fs from 'fs'
+// import FormData from 'form-data'
+// import fs from 'fs'
 
 // import { withFileUpload, getConfig } from 'next-multiparty'
-import path from 'path';
-import multiparty from "multiparty"
+// import path from 'path';
+// import multiparty from "multiparty"
 
 interface ImageInfo {
   id: string;
@@ -137,6 +137,7 @@ export function mapRemoteImageToGeneratedImage(image: RemoteImage): GeneratedIma
   }
   // const { _model } = task.task_id;
   return {
+    ...image,
     id: image.image_id,
     modelTaskId: task.task_id,
     userId: image.user_id,
@@ -191,48 +192,50 @@ export const config = {
   },
 };
 
-
+export function transformGetImagesResponse(res?: RemoteImage[]): GeneratedImage[] {
+  return res?.map(mapRemoteImageToGeneratedImage) ?? []
+}
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const token = getCookie(req, AuthHeaderKey)
     if (req.method === 'POST') {
-      const form = new multiparty.Form();
-      const reqData: any = await new Promise((resolve, reject) => {
-        form.parse(req, function (err: any, fields: any, files: any) {
-          if (err) reject({ err });
-          resolve({ fields, files });
-        });
-      });
-      if (!reqData.files.file) {
-        res.status(400).json({ message: 'No file' })
-        return
-      }
+      // const form = new multiparty.Form();
+      // const reqData: any = await new Promise((resolve, reject) => {
+      //   form.parse(req, function (err: any, fields: any, files: any) {
+      //     if (err) reject({ err });
+      //     resolve({ fields, files });
+      //   });
+      // });
+      // if (!reqData.files.file) {
+      //   res.status(400).json({ message: 'No file' })
+      //   return
+      // }
 
-      const uploadRes = await axiosInstance.post<RemoteUploadImage>('/api/upload/image', {
-        file: fs.createReadStream(reqData.files.file[0].path)
-      }, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "multipart/form-data",
-        }
-      })
-      const resData: ImageInfo = {
-        id: '',
-        userId: '',
-        format: '',
-        width: 0,
-        height: 0,
-        path: '',
-        hosting: '',
-        modelTaskId: null,
-        jpegPath: null,
-        liked: false,
-        isShared: false,
-        createdAt: '',
-        url: uploadRes.data.Url,
-      }
-      res.status(200).json(resData)
+      // const uploadRes = await axiosInstance.post<RemoteUploadImage>('/api/upload/image', {
+      //   file: fs.createReadStream(reqData.files.file[0].path)
+      // }, {
+      //   headers: {
+      //     Authorization: `Bearer ${token}`,
+      //     "Content-Type": "multipart/form-data",
+      //   }
+      // })
+      // const resData: ImageInfo = {
+      //   id: '',
+      //   userId: '',
+      //   format: '',
+      //   width: 0,
+      //   height: 0,
+      //   path: '',
+      //   hosting: '',
+      //   modelTaskId: null,
+      //   jpegPath: null,
+      //   liked: false,
+      //   isShared: false,
+      //   createdAt: '',
+      //   url: uploadRes.data.Url,
+      // }
+      // res.status(200).json(resData)
     } else if (req.method === "GET") {
       const imagesRes = await axiosInstance.get<RemoteImage[]>('/api/images', {
         params: {
@@ -243,7 +246,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
           Authorization: `Bearer ${token}`,
         }
       })
-      res.status(200).json(imagesRes.data?.map(mapRemoteImageToGeneratedImage))
+      res.status(200).json(transformGetImagesResponse(imagesRes.data))
     } else if (req.method === "DELETE") {
       await axiosInstance.post(`/api/images/del`, {
         ids: req.query.ids,

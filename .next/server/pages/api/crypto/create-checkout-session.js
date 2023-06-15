@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 8659;
-exports.ids = [8659,6806];
+exports.ids = [8659,5899,6806];
 exports.modules = {
 
 /***/ 4802:
@@ -16,6 +16,13 @@ module.exports = require("cookie");
 /***/ ((module) => {
 
 module.exports = import("axios");;
+
+/***/ }),
+
+/***/ 9915:
+/***/ ((module) => {
+
+module.exports = import("js-cookie");;
 
 /***/ }),
 
@@ -72,14 +79,14 @@ _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__ = (__webpack_async_dependenci
 async function handler(req, res) {
     try {
         const token = (0,_frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .getCookie */ .ej)(req, _frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .AuthHeaderKey */ .qf);
-        const stripeRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .Z.post("/api/crypto/create-checkout-session", req.body, {
+        const stripeRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].post */ .ZP.post("/api/crypto/create-checkout-session", req.body, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
         });
         res.status(200).json(stripeRes.data);
     } catch (e) {
-        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .z)(e);
+        const { status , message  } = (0,_frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* .handleApiError */ .zG)(e);
         res.status(status).json({
             message
         });

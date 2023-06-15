@@ -101,7 +101,7 @@ type TaskStatus = 'pending' | 'succeed' | 'failed';
 
 export type RemoteTask = {
   extra: Extra;
-  images: Image[];
+  images: string| Image[];
   node: string;
   param: Param;
   status: TaskStatus;
@@ -134,10 +134,10 @@ export function mapRemoteTaskToTaskInfo(remoteTask: RemoteTask): TaskInfo {
     trainingFinishedAt: null,
     lastUsedAt: createdAt,
   };
-  const imagesInfo = images?.map((image) => {
-    console.log(image)
+  const imagesInfo = images instanceof Array ? images?.map((image) => {
     const { image_id, image_url, is_shared } = image;
     return {
+      ...image,
       id: image_id,
       modelTaskId: task_id,
       userId: user_id,
@@ -154,8 +154,9 @@ export function mapRemoteTaskToTaskInfo(remoteTask: RemoteTask): TaskInfo {
       jpegUrl: image_url,
       seed: image.seed,
     };
-  }) ?? []
+  }) ?? [] : []
   return {
+    ...remoteTask,
     id: task_id,
     userId: user_id,
     acceptedImageId: null,
@@ -184,14 +185,13 @@ export function mapRemoteTaskToTaskInfo(remoteTask: RemoteTask): TaskInfo {
   };
 }
 
+export function transformTasksResponse(remoteTasks: RemoteTask[]): TaskInfo[] {
+  return remoteTasks.map(mapRemoteTaskToTaskInfo)
+}
+
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   try {
     const token = getCookie(req, AuthHeaderKey)
-    const nodeRes = await axiosInstance.get('/api/nodes', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    })
     const createRes = await axiosInstance.get<RemoteTask[]>('/api/tasks', {
       params: {
         ids: req.query.ids
@@ -200,7 +200,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
         Authorization: `Bearer ${token}`,
       }
     })
-    const resData: TaskInfo[] = createRes.data.map(mapRemoteTaskToTaskInfo)
+    const resData: TaskInfo[] = transformTasksResponse(createRes.data)
     res.status(200).json(resData)
   } catch (e: any) {
     const { status, message } = handleApiError(e)

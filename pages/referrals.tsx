@@ -6,6 +6,7 @@ import WebsiteLayout from 'frontend/components/layout/website';
 import { useAppDispatch, useAppSelector } from 'frontend/redux/hooks';
 import { message } from "frontend/redux/info/slice";
 import { selectUser } from 'frontend/redux/user/slice';
+import ImageShare from 'frontend/images/share-example.jpg'
 
 export default function ReferralsPage(): JSX.Element {
   const user = useAppSelector(selectUser);
@@ -37,44 +38,23 @@ export default function ReferralsPage(): JSX.Element {
 
 
   return (
-    <WebsiteLayout title="Invite friends. Earn free image credits.
-    " description="Get more credits by sharing getimg.ai with friends." robots='noindex'>
+    <WebsiteLayout title="Unlock Extra Credits by Sharing with Friends!" description="Invite your pals to Dazzle AI and watch your credits soar." robots='noindex' footer={false}>
       <div className='container'>
         <div className='w640 center-h'>
-
           <div className='hero'>
-            <h1 className='h3'>
-              Invite friends. Earn free image credits.
+            <h1 className='h3' style={{ marginBottom: 24 }}>
+              Unlock Extra Credits by Sharing with Friends!
             </h1>
             <div className='p3'>
-              Get more credits by sharing getimg.ai with friends.
+              Invite your pals to Dazzle AI and watch your credits soar.<br /><span style={{ fontWeight: 500, color: '#000' }}>Both you and your friend will receive a fantastic 10 Credits</span> when they sign up using the image you share.<br />
             </div>
           </div>
 
           <div>
-            <h2 className='h4'>Give 50 credits, Get 20 credits.
-            </h2>
-            <p className='p3'>
-              Everyone you refer gets 50 image credits. Once they create an account with us, you&apos;ll get 20 credits too. Credits earned through referrals do not expire, and there is no limit to the amount you can earn.
+            <p className='p3' style={{ marginBottom: 24 }}>
+              Spread the word on Facebook and Twitter, and enjoy the rewards!<br />Remember, the more friends you invite, the more credits you earn.<br />Supercharge your image collection today with Dazzle AI's referral program. Share and reap the benefits!
             </p>
-            {user.id ? <p className='p3'>
-              Copy your personal referral link and share it with your friends and followers.
-            </p> : <p className='p3'>
-              Log in to see your personal referral link.
-            </p>}
-
-
-            {user.id ? <InputRow>
-              <Input
-                label="Referral Link"
-                id="link"
-                value={`https://${window.location.host}/?ref=${user.id}`}
-                disableInfo
-              />
-              <div style={{ marginTop: 34 }}>
-                <Button onClick={handleCopy}><CopyDuplicate /> Copy</Button>
-              </div>
-            </InputRow> : null}
+            <img src={ImageShare.src} />
           </div>
         </div>
       </div>

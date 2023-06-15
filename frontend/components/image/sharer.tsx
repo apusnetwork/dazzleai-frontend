@@ -10,6 +10,7 @@ import { InputRow } from "../form/form";
 import Input from "../input/input";
 import styles from './image.module.scss';
 import axios from "axios";
+import { oapi } from "@/frontend/utils/axios";
 
 
 interface ImageSharerProps {
@@ -66,7 +67,8 @@ export default function ImageSharer({ id, url, imageSrc, imageWidth, imageHeight
           'event_category': 'spread',
           'event_label': ''
         });
-        axios.put(`/api/images/${id}`, {
+        oapi.post(`/images/update`, {
+          image_id: id,
           is_shared: true,
         })
       }}><ShareAlt />Share</Button>

@@ -265,7 +265,7 @@ function App({ children  }) {
             }
         });
     }
-    (0,react__WEBPACK_IMPORTED_MODULE_4__.useLayoutEffect)(()=>{
+    (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
         if (authState === "login" || authState === "register") initGoogle();
         if (authState === undefined && user.id) {
             const autoRefreshAccount = setInterval(()=>{
@@ -780,6 +780,13 @@ module.exports = import("axios");;
 
 module.exports = import("ethers");;
 
+/***/ }),
+
+/***/ 9915:
+/***/ ((module) => {
+
+module.exports = import("js-cookie");;
+
 /***/ })
 
 };
@@ -789,7 +796,7 @@ module.exports = import("ethers");;
 var __webpack_require__ = require("../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [2952,1664,3578,3907,1842,2970,5533], () => (__webpack_exec__(5656)));
+var __webpack_exports__ = __webpack_require__.X(0, [2952,1664,7444,1842,2970,5533], () => (__webpack_exec__(5656)));
 module.exports = __webpack_exports__;
 
 })();

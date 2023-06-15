@@ -151,7 +151,7 @@ function App({ children }: Props): JSX.Element {
     });
   }
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (authState === 'login' || authState === 'register') initGoogle()
     if (authState === undefined && user.id) {
       const autoRefreshAccount = setInterval(() => {
