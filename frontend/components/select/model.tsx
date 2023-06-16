@@ -31,15 +31,15 @@ const Model = ({ v, modelID, value, handleChange }: {
   }, [gloablShow18Plus])
   return <label key={v.id} htmlFor={modelID + v.id} className={[styles._model, v.id.toString() === value ? styles.checked : ''].join(' ')}>
     <div className={styles.model}>
-      <div className={styles.model_images}>
-        {
-          v.params.images && v.params.images?.map((im: string, i: number) => (
-            <Image src={im} key={i} width={100} height={100} loader={cloudflareLoader} objectFit="cover" style={{
-              filter: v.nsfw && !show18Plus ? 'blur(10px)' : '',
-            }} />
-          ))
-        }
-      </div>
+      {
+        v.params.images ? v.params.images?.length >=4 ? <div className={styles.model_images}>{v.params.images?.map((im: string, i: number) => (
+          <Image src={im} key={i} width={100} height={100} loader={cloudflareLoader} objectFit="cover" style={{
+            filter: v.nsfw && !show18Plus ? 'blur(10px)' : '',
+          }} />
+        ))}</div> : <div className={styles.model_images_1}><Image src={v.params.images[0]} width={400} height={400} loader={cloudflareLoader} objectFit="cover" style={{
+          filter: v.nsfw && !show18Plus ? 'blur(10px)' : '',
+        }} /></div> : <div className={styles.model_images}></div>
+      }
 
       <div className={styles.model_info}>
         <div>

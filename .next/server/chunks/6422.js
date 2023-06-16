@@ -28,6 +28,7 @@ module.exports = {
 	"_node": "select__node__nYlWQ",
 	"model": "select_model__o_HqZ",
 	"model_images": "select_model_images__Bfl8t",
+	"model_images_1": "select_model_images_1__gGiQi",
 	"controlnet_images": "select_controlnet_images__sX1Mj",
 	"model_info": "select_model_info__TiwHW",
 	"model_desc": "select_model_desc__5wDWq",
