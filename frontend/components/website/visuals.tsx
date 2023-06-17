@@ -24,7 +24,7 @@ const Image = ({ model }: { model: ModelI }) => {
       <div className={styles.image_wrapper}>
         <img
           key={model.id}
-          src={'https://s3.apus.network/' + model.reuse_img}
+          src={model.reuse_img_url ?? 'https://s3.apus.network/' + model.reuse_img}
           alt=""
           style={{
             filter: model.nsfw && !show18Plus ? 'blur(10px)' : '',

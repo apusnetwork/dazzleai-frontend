@@ -282,7 +282,7 @@ const Image = ({ model  })=>{
                 className: (website_module_default()).image_wrapper,
                 children: [
                     /*#__PURE__*/ jsx_runtime_.jsx("img", {
-                        src: "https://s3.apus.network/" + model.reuse_img,
+                        src: model.reuse_img_url ?? "https://s3.apus.network/" + model.reuse_img,
                         alt: "",
                         style: {
                             filter: model.nsfw && !show18Plus ? "blur(10px)" : ""
