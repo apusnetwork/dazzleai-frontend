@@ -331,12 +331,13 @@
   overflow: hidden;
   text-overflow: ellipsis;
   padding: 0 8px;
+  cursor: pointer;
 }
 
 .image_badge {
   position: absolute;
-  top: 12px;
-  right: 6px;
+  bottom: 46px;
+  left: 6px;
   background-color: rgba($primary, 0.5);
   color: #ffffff;
   backdrop-filter: blur(5px);
@@ -350,13 +351,13 @@
 .image_try_badge {
   cursor: pointer;
   position: absolute;
-  top: 40px;
+  top: 12px;
   right: 6px;
-  background-color: rgba($primary, 0.6);
+  background-color: rgba($primary, 0.7);
   color: #ffffff;
-  backdrop-filter: blur(5px);
-  padding: 2px 24px;
-  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  padding: 6px 24px;
+  border-radius: 15px;
   font-weight: 600;
   font-size: 16px;
 }
@@ -366,11 +367,11 @@
   position: absolute;
   top: 12px;
   right: 6px;
-  background-color: rgba($primary, 0.6);
+  background-color: rgba($primary, 0.7);
   color: #ffffff;
-  backdrop-filter: blur(5px);
-  padding: 2px 24px;
-  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  padding: 6px 24px;
+  border-radius: 15px;
   font-weight: 600;
   font-size: 16px;
 }

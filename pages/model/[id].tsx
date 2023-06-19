@@ -80,7 +80,9 @@ export default function Model({model}: any): JSX.Element {
                       <div className=''>{value}</div>
                   </div>)}
               </div>
-              <Button href={`/generate?img=${model.reuse_img}&shared=true`}><div className={styles.image_try_badge_2}>Run</div></Button>
+              <Button size="lg" fullWidth href={`/generate?img=${model.reuse_img}&shared=true`}>
+                <div className='w-20 text-center'>Run</div>
+              </Button>
             </div>
         </div>
     </div>
@@ -109,25 +111,20 @@ export default function Model({model}: any): JSX.Element {
             {
               images.map((i) => (
                 <div id={i.id} key={i.id} className={styles.img}>
-                  <GeneratedImage
-                    image={i}
-                    onSelect={() => {
+                  <SimpleImage
+                    model={{
+                      id: i.id,
+                      reuse_img_url: i.image_url,
+                      nsfw: i.nsfw,
+                      reuse_img: i.image_id,
+                    }}
+                    onClick={(e: any) => {
+                      e.stopPropagation()
+                      e.preventDefault()
                       router.push(`/img/${i.id}`)
                     }}
+                    showRun
                   />
-                </div>
-              ))
-            }
-            {
-              images.length == 0 && Array(24).fill(1).map((_, i) => (
-                <div
-                  key={i}
-                  className={styles.image}
-                  style={{
-                    paddingBottom: '100%'
-                  }}
-                >
-
                 </div>
               ))
             }

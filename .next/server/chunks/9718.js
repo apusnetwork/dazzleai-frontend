@@ -93,7 +93,7 @@ module.exports = {
 
 
 
-const SimpleImage = ({ model  })=>{
+const SimpleImage = ({ model , onClick , showRun  })=>{
     const { show18Plus: gloablShow18Plus  } = (0,_frontend_context_18puls__WEBPACK_IMPORTED_MODULE_6__/* .useGlobal18Plus */ .W)();
     const { 0: show18Plus , 1: setShow18Plus  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
     (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
@@ -103,6 +103,7 @@ const SimpleImage = ({ model  })=>{
     ]);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
         className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_8___default().column),
+        onClick: onClick,
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
             className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_8___default().image_wrapper_2),
             children: [
@@ -114,6 +115,16 @@ const SimpleImage = ({ model  })=>{
                     },
                     className: "z-0"
                 }, model.id),
+                showRun && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
+                    href: `/generate?img=${model.reuse_img}&shared=true`,
+                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                        className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_8___default().image_try_badge_2),
+                        onClick: (e)=>{
+                            e.stopPropagation();
+                        },
+                        children: "Run"
+                    })
+                }),
                 model.nsfw && /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                     className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_8___default().image_18_badge),
                     onClick: (e)=>{

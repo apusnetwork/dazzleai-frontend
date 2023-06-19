@@ -13,13 +13,13 @@ interface ImageGridVisualProps {
   columns?: number
 }
 
-export const SimpleImage = ({ model }: { model: ModelI }) => {
+export const SimpleImage = ({ model, onClick, showRun }: { model: ModelI; onClick?: any; showRun?: boolean }) => {
   const { show18Plus: gloablShow18Plus } = useGlobal18Plus()
   const [show18Plus, setShow18Plus] = useState(false)
   useEffect(() => {
     setShow18Plus(gloablShow18Plus)
   }, [gloablShow18Plus])
-  return <div className={styles.column}>
+  return <div className={styles.column} onClick={onClick}>
       <div className={styles.image_wrapper_2}>
         <img
           key={model.id}
@@ -30,7 +30,7 @@ export const SimpleImage = ({ model }: { model: ModelI }) => {
           }}
           className="z-0"
         />
-        {/* <Link href={`/generate?img=${model.reuse_img}&shared=true`}><div className={styles.image_try_badge_2}>Run</div></Link> */}
+        {showRun && <Link href={`/generate?img=${model.reuse_img}&shared=true`}><div className={styles.image_try_badge_2} onClick={e => {e.stopPropagation()}}>Run</div></Link>}
         {model.nsfw && <div className={styles.image_18_badge} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setShow18Plus(show => !show) }} >18+ {show18Plus ? <EyeInvisibleOutlined className="leading-0 ml-1" rev="" /> : <EyeOutlined className="leading-0 ml-1" rev="" />}</div>}
       </div>
     </div>

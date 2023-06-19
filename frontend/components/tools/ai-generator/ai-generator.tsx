@@ -74,7 +74,7 @@ export default function AiGenerator(): JSX.Element {
     guidanceScale: 9,
     imageGuidance: 1.5,
     seed: undefined,
-    numImages: 1,
+    numImages: 2,
     enhanceFace: 'false',
     upscale: 'false',
     width: 512,
@@ -470,7 +470,6 @@ into state
 
         if (state.upscale === 'true') body.upscale = 4
         if (state.enhanceFace === 'true') body.enhance_face = true
-
       }
 
       if (pipeline === 'generate' || pipeline === 'edit') {
