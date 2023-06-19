@@ -30,7 +30,7 @@ export const SimpleImage = ({ model }: { model: ModelI }) => {
           }}
           className="z-0"
         />
-        <Link href={`/generate?img=${model.reuse_img}&shared=true`}><div className={styles.image_try_badge_2}>Run</div></Link>
+        {/* <Link href={`/generate?img=${model.reuse_img}&shared=true`}><div className={styles.image_try_badge_2}>Run</div></Link> */}
         {model.nsfw && <div className={styles.image_18_badge} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setShow18Plus(show => !show) }} >18+ {show18Plus ? <EyeInvisibleOutlined className="leading-0 ml-1" rev="" /> : <EyeOutlined className="leading-0 ml-1" rev="" />}</div>}
       </div>
     </div>

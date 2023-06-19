@@ -12,6 +12,7 @@ import styles from '@/frontend/components/tools/ai-generator/ai-generator.module
 import { transformGetImagesResponse } from '../api/images';
 import { SimpleImage } from '@/frontend/components/website/visuals';
 import DefaultAvatar from '@/frontend/components/website/default_avatar.webp'
+import Link from 'next/link';
 
 export default function Model({model}: any): JSX.Element {
     const [images, setImages] = useState<ImageI[]>([])
@@ -60,24 +61,25 @@ export default function Model({model}: any): JSX.Element {
     footer={false}
   >
     <div className='py-1 px-2 md:py-2 md:px-12 lg:py-4 lg:px-24'>
-    <div className='p-2 md:p-4 lg:p-8 flex'>
-        <div className="flex items-end flex-col md:flex-row rounded-3xl shadow-2xl overflow-hidden">
+    <div className='p-2 md:p-4 lg:p-8 flex justify-center'>
+        <div className="flex items-end flex-col md:flex-row rounded-3xl shadow-2xl overflow-hidden h-auto md: h-96">
             <SimpleImage model={model} />
-            <div className='flex flex-col w-full pl-4 py-4 md:py-0' style={{ alignItems: 'start' }}>
-            <div className='flex'>
-                <img className="w-12 h-12 rounded-full mr-4" src={model.author_avatar || DefaultAvatar.src} />
-                <div className='text-2xl font-semibold text-slate-600'>{model.author}</div>
-            </div>
-            <div className='pl-2 w-full'>
-                {[
-                    { label: 'Type', value: model.type },
-                    { label: 'Run Count', value: model.use_count },
-                    { label: 'Base Model', value: model.checkpoint_file_name },
-                ].map(({ label, value }) => <div key={label} className='flex flex-col justify-start mt-4' style={{alignItems: 'flex-start'}}>
-                    <div className='w-24 flex-shrink-0 text-sm text-gray-600'>{label}</div>
-                    <div className=''>{value}</div>
-                </div>)}
-            </div>
+            <div className='h-full flex flex-col justify-between w-full pl-4 py-4' style={{ alignItems: 'start' }}>
+              <div className='flex'>
+                  <img className="w-12 h-12 rounded-full mr-4" src={model.author_avatar || DefaultAvatar.src} />
+                  <div className='text-2xl font-semibold text-slate-600'>{model.author}</div>
+              </div>
+              <div className='flex flex-col pl-2 py-8 w-full gap-4' style={{ alignItems: 'start'}}>
+                  {[
+                      { label: 'Type', value: model.type },
+                      { label: 'Run Count', value: model.use_count },
+                      { label: 'Base Model', value: model.checkpoint_file_name },
+                  ].map(({ label, value }) => <div key={label} className='flex flex-col justify-start' style={{alignItems: 'flex-start'}}>
+                      <div className='w-24 flex-shrink-0 text-sm text-gray-600'>{label}</div>
+                      <div className=''>{value}</div>
+                  </div>)}
+              </div>
+              <Button href={`/generate?img=${model.reuse_img}&shared=true`}><div className={styles.image_try_badge_2}>Run</div></Button>
             </div>
         </div>
     </div>
@@ -148,15 +150,15 @@ export default function Model({model}: any): JSX.Element {
 }
 
 export async function getStaticProps({ params }: GetStaticPropsContext) {
-    if (!params) return { notFound: true }
-    const modelRes = await axiosInstance.get('/api/models/list', { params: {ids: params.id}})
-    if (!modelRes.data.length) return { notFound: true }
-    return { props: {model: modelRes.data[0]} }
+  if (!params) return { notFound: true }
+  const modelRes = await axiosInstance.get('/api/models/list', { params: {ids: params.id}})
+  if (!modelRes.data.length) return { notFound: true }
+  return { props: {model: modelRes.data[0]} }
 }
 
 export function getStaticPaths(): GetStaticPathsResult {
     return {
         paths: [],
-        fallback: false, // false or "blocking"
+        fallback: 'blocking', // false or "blocking"
       }
   }

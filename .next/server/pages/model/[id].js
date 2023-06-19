@@ -105,15 +105,15 @@ function Model({ model  }) {
             className: "py-1 px-2 md:py-2 md:px-12 lg:py-4 lg:px-24",
             children: [
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    className: "p-2 md:p-4 lg:p-8 flex",
+                    className: "p-2 md:p-4 lg:p-8 flex justify-center",
                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: "flex items-end flex-col md:flex-row rounded-3xl shadow-2xl overflow-hidden",
+                        className: "flex items-end flex-col md:flex-row rounded-3xl shadow-2xl overflow-hidden h-auto md: h-96",
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_website_visuals__WEBPACK_IMPORTED_MODULE_9__/* .SimpleImage */ .E, {
                                 model: model
                             }),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                className: "flex flex-col w-full pl-4 py-4 md:py-0",
+                                className: "h-full flex flex-col justify-between w-full pl-4 py-4",
                                 style: {
                                     alignItems: "start"
                                 },
@@ -132,7 +132,10 @@ function Model({ model  }) {
                                         ]
                                     }),
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                        className: "pl-2 w-full",
+                                        className: "flex flex-col pl-2 py-8 w-full gap-4",
+                                        style: {
+                                            alignItems: "start"
+                                        },
                                         children: [
                                             {
                                                 label: "Type",
@@ -147,7 +150,7 @@ function Model({ model  }) {
                                                 value: model.checkpoint_file_name
                                             }, 
                                         ].map(({ label , value  })=>/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                                className: "flex flex-col justify-start mt-4",
+                                                className: "flex flex-col justify-start",
                                                 style: {
                                                     alignItems: "flex-start"
                                                 },
@@ -162,6 +165,13 @@ function Model({ model  }) {
                                                     })
                                                 ]
                                             }, label))
+                                    }),
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_button_button__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
+                                        href: `/generate?img=${model.reuse_img}&shared=true`,
+                                        children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                                            className: (_frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_11___default().image_try_badge_2),
+                                            children: "Run"
+                                        })
                                     })
                                 ]
                             })
@@ -259,7 +269,7 @@ async function getStaticProps({ params  }) {
 function getStaticPaths() {
     return {
         paths: [],
-        fallback: false
+        fallback: "blocking"
     };
 }
 

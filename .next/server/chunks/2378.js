@@ -38,20 +38,20 @@ const axiosInstance = axios__WEBPACK_IMPORTED_MODULE_0__["default"].create({
     baseURL: "https://test-api.dazzleai.network"
 });
 axiosInstance.interceptors.request.use(function(config) {
-    console.log("Request:", config.method?.toUpperCase(), config.url, config.params, config.data);
+    if (config.url !== "/api/userinfo") {
+        console.log("Request:", config.method?.toUpperCase(), config.url, config.params, config.data);
+    }
     return config;
 }, function(error) {
     console.log("Request error:", error);
     return Promise.reject(error);
 });
 axiosInstance.interceptors.response.use((response)=>{
-    console.log(response.data);
+    if (response.config.url !== "/api/userinfo") {
+        console.log(response.data);
+    }
     return response;
 }, (error)=>{
-    // window && (window as any)?.gtag('event', 'apierror', {
-    //   'event_category': 'error',
-    //   'event_label': (error as AxiosError)?.config?.url,
-    // });
     console.error("Response error:", error?.response?.status, error?.response?.data);
     return Promise.reject(error);
 });

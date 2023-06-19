@@ -114,13 +114,6 @@ const SimpleImage = ({ model  })=>{
                     },
                     className: "z-0"
                 }, model.id),
-                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
-                    href: `/generate?img=${model.reuse_img}&shared=true`,
-                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_8___default().image_try_badge_2),
-                        children: "Run"
-                    })
-                }),
                 model.nsfw && /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                     className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_8___default().image_18_badge),
                     onClick: (e)=>{
