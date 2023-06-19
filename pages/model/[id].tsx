@@ -15,6 +15,7 @@ import DefaultAvatar from '@/frontend/components/website/default_avatar.webp'
 import Link from 'next/link';
 
 export default function Model({model}: any): JSX.Element {
+  const router = useRouter()
     const [images, setImages] = useState<ImageI[]>([])
     const [pagination, setPagination] = useState({
       loading: false, hasMore: true
@@ -110,6 +111,9 @@ export default function Model({model}: any): JSX.Element {
                 <div id={i.id} key={i.id} className={styles.img}>
                   <GeneratedImage
                     image={i}
+                    onSelect={() => {
+                      router.push(`/img/${i.id}`)
+                    }}
                   />
                 </div>
               ))

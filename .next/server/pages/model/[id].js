@@ -19,21 +19,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _frontend_components_layout_website__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(6950);
 /* harmony import */ var _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4969);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6689);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(4336);
-/* harmony import */ var react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var react_masonry_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(7125);
-/* harmony import */ var react_masonry_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_masonry_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _frontend_components_image_image__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(6665);
-/* harmony import */ var _frontend_components_button_button__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4820);
-/* harmony import */ var _frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(3381);
-/* harmony import */ var _frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_11__);
-/* harmony import */ var _api_images__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(2718);
-/* harmony import */ var _frontend_components_website_visuals__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(9718);
-/* harmony import */ var _frontend_components_website_default_avatar_webp__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(4836);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_components_layout_website__WEBPACK_IMPORTED_MODULE_1__, _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_2__, _api_images__WEBPACK_IMPORTED_MODULE_8__]);
-([_frontend_components_layout_website__WEBPACK_IMPORTED_MODULE_1__, _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_2__, _api_images__WEBPACK_IMPORTED_MODULE_8__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(1853);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4336);
+/* harmony import */ var react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var react_masonry_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7125);
+/* harmony import */ var react_masonry_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(react_masonry_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _frontend_components_image_image__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(6665);
+/* harmony import */ var _frontend_components_button_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(4820);
+/* harmony import */ var _frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(3381);
+/* harmony import */ var _frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _api_images__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(2718);
+/* harmony import */ var _frontend_components_website_visuals__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(9718);
+/* harmony import */ var _frontend_components_website_default_avatar_webp__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(4836);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_components_layout_website__WEBPACK_IMPORTED_MODULE_1__, _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_2__, _api_images__WEBPACK_IMPORTED_MODULE_9__]);
+([_frontend_components_layout_website__WEBPACK_IMPORTED_MODULE_1__, _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_2__, _api_images__WEBPACK_IMPORTED_MODULE_9__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+
 
 
 
@@ -47,8 +50,9 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_fro
 
 
 function Model({ model  }) {
-    const { 0: images , 1: setImages  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)([]);
-    const { 0: pagination , 1: setPagination  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)({
+    const router = (0,next_router__WEBPACK_IMPORTED_MODULE_3__.useRouter)();
+    const { 0: images , 1: setImages  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)([]);
+    const { 0: pagination , 1: setPagination  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)({
         loading: false,
         hasMore: true
     });
@@ -71,7 +75,7 @@ function Model({ model  }) {
             });
             setImages([
                 ...images,
-                ...(0,_api_images__WEBPACK_IMPORTED_MODULE_8__/* .transformGetImagesResponse */ .Mk)(res.data)
+                ...(0,_api_images__WEBPACK_IMPORTED_MODULE_9__/* .transformGetImagesResponse */ .Mk)(res.data)
             ]);
             hasMore = res.data.length > 0;
         } catch (e) {
@@ -84,7 +88,7 @@ function Model({ model  }) {
             });
         }
     }
-    (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
+    (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
         getImages();
     }, [
         model
@@ -109,7 +113,7 @@ function Model({ model  }) {
                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                         className: "flex items-end flex-col md:flex-row rounded-3xl shadow-2xl overflow-hidden h-auto md: h-96",
                         children: [
-                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_website_visuals__WEBPACK_IMPORTED_MODULE_9__/* .SimpleImage */ .E, {
+                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_website_visuals__WEBPACK_IMPORTED_MODULE_10__/* .SimpleImage */ .E, {
                                 model: model
                             }),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -123,7 +127,7 @@ function Model({ model  }) {
                                         children: [
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                                                 className: "w-12 h-12 rounded-full mr-4",
-                                                src: model.author_avatar || _frontend_components_website_default_avatar_webp__WEBPACK_IMPORTED_MODULE_10__/* ["default"].src */ .Z.src
+                                                src: model.author_avatar || _frontend_components_website_default_avatar_webp__WEBPACK_IMPORTED_MODULE_11__/* ["default"].src */ .Z.src
                                             }),
                                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                                 className: "text-2xl font-semibold text-slate-600",
@@ -166,10 +170,10 @@ function Model({ model  }) {
                                                 ]
                                             }, label))
                                     }),
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_button_button__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_button_button__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
                                         href: `/generate?img=${model.reuse_img}&shared=true`,
                                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                            className: (_frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_11___default().image_try_badge_2),
+                                            className: (_frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_12___default().image_try_badge_2),
                                             children: "Run"
                                         })
                                     })
@@ -183,16 +187,16 @@ function Model({ model  }) {
                     children: "Explore Related"
                 }),
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    className: (_frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_11___default().images),
+                    className: (_frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_12___default().images),
                     id: "images",
-                    children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_4___default()), {
+                    children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_5___default()), {
                         dataLength: images.length,
                         next: getImages,
                         hasMore: pagination.hasMore,
                         loader: true,
-                        className: (_frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_11___default().infinite),
+                        className: (_frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_12___default().infinite),
                         children: [
-                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((react_masonry_css__WEBPACK_IMPORTED_MODULE_5___default()), {
+                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((react_masonry_css__WEBPACK_IMPORTED_MODULE_6___default()), {
                                 breakpointCols: {
                                     default: 8,
                                     2400: 6,
@@ -202,18 +206,21 @@ function Model({ model  }) {
                                     840: 1,
                                     760: 2
                                 },
-                                className: (_frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_11___default().grid),
-                                columnClassName: (_frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_11___default().column),
+                                className: (_frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_12___default().grid),
+                                columnClassName: (_frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_12___default().column),
                                 children: [
                                     images.map((i)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                             id: i.id,
-                                            className: (_frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_11___default().img),
-                                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_image_image__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
-                                                image: i
+                                            className: (_frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_12___default().img),
+                                            children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_image_image__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
+                                                image: i,
+                                                onSelect: ()=>{
+                                                    router.push(`/img/${i.id}`);
+                                                }
                                             })
                                         }, i.id)),
                                     images.length == 0 && Array(24).fill(1).map((_, i)=>/*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                            className: (_frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_11___default().image),
+                                            className: (_frontend_components_tools_ai_generator_ai_generator_module_scss__WEBPACK_IMPORTED_MODULE_12___default().image),
                                             style: {
                                                 paddingBottom: "100%"
                                             }
@@ -225,7 +232,7 @@ function Model({ model  }) {
                                     height: 24
                                 }
                             }),
-                            pagination.hasMore ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_frontend_components_button_button__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
+                            pagination.hasMore ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_frontend_components_button_button__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
                                 type: "default",
                                 loading: pagination.loading,
                                 onClick: getImages,
