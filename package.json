@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "cross-env NEXT_PUBLIC_APP_ENV=development next dev -p 3005",
-    "build": "next build --no-lint",
+    "build:dev": "cross-env NEXT_PUBLIC_APP_ENV=development next build --no-lint",
+    "build:prod": "cross-env NEXT_PUBLIC_APP_ENV=production next build --no-lint",
     "start": "next start -p 80",
     "lint": "next lint"
   },
