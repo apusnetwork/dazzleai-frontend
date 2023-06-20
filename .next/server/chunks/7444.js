@@ -10853,6 +10853,7 @@ __webpack_async_result__();
 "use strict";
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ZP": () => (__WEBPACK_DEFAULT_EXPORT__),
 /* harmony export */   "xP": () => (/* binding */ oapi)
 /* harmony export */ });
 /* unused harmony export handleApiError */
@@ -10882,20 +10883,20 @@ const axiosInstance = axios__WEBPACK_IMPORTED_MODULE_0__["default"].create({
     baseURL: "https://api.dazzleai.network"
 });
 axiosInstance.interceptors.request.use(function(config) {
-    console.log("Request:", config.method?.toUpperCase(), config.url, config.params, config.data);
+    if (config.url !== "/api/userinfo") {
+        console.log("Request:", config.method?.toUpperCase(), config.url, config.params, config.data);
+    }
     return config;
 }, function(error) {
     console.log("Request error:", error);
     return Promise.reject(error);
 });
 axiosInstance.interceptors.response.use((response)=>{
-    console.log(response.data);
+    if (response.config.url !== "/api/userinfo") {
+        console.log(response.data);
+    }
     return response;
 }, (error)=>{
-    // window && (window as any)?.gtag('event', 'apierror', {
-    //   'event_category': 'error',
-    //   'event_label': (error as AxiosError)?.config?.url,
-    // });
     console.error("Response error:", error?.response?.status, error?.response?.data);
     return Promise.reject(error);
 });
@@ -10907,7 +10908,7 @@ function handleApiError(error) {
         message
     };
 }
-/* unused harmony default export */ var __WEBPACK_DEFAULT_EXPORT__ = ((/* unused pure expression or super */ null && (axiosInstance)));
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (axiosInstance);
 
 __webpack_async_result__();
 } catch(e) { __webpack_async_result__(e); } });

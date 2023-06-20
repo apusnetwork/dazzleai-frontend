@@ -98,13 +98,13 @@ function GeneratedImage({
             <div className={styles.btn_group}></div>
             <div className={styles.btn_group}>
               <section className={styles._header_user}>
-                <Button
+                {(onShare || onDelete) && <Button
                   onClick={e => { e.stopPropagation(); setOpen(!open) }}
                   size='md'
                   type='transparent'
                 >
                   <MoreVertical strokeWidth={1.5} />
-                </Button>
+                </Button>}
                 {
                   open ?
                     <OutsideClickHandler onOutsideClick={(e) => { e.stopPropagation(); setOpen(false) }}>
@@ -113,7 +113,7 @@ function GeneratedImage({
                           {onShare && <li>
                             <a onClick={e => { e.preventDefault(); e.stopPropagation(); onShare(image) }}>
                               <Share2 size={16} />
-                              Public
+                              { image.is_shared ? 'Unpublish' : 'Publish'}
                             </a>
                           </li>}
                           {onDelete && <li>

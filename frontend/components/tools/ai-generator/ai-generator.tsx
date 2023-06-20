@@ -74,7 +74,7 @@ export default function AiGenerator(): JSX.Element {
     guidanceScale: 9,
     imageGuidance: 1.5,
     seed: undefined,
-    numImages: 1,
+    numImages: 2,
     enhanceFace: 'false',
     upscale: 'false',
     width: 512,
@@ -392,16 +392,25 @@ into state
       oapi.post('/images/del?ids=' + image.id)
       setImages(im => im.filter(im => im.id !== image.id))
     } catch {
-      message(dispatch, { type: 'danger', text: 'Unexpected Error!' })
+      message(dispatch, { type: 'danger', text: 'Delete Image Failed!' })
     }
   }
 
   async function shareImage(image: ImageI) {
+    const isPublicText = image.is_shared ? 'Unpublish' : 'Publish'
     try {
-      oapi.post('/images/del?ids=' + image.id)
-      setImages(im => im.filter(im => im.id !== image.id))
+      oapi.post('/images/update', {
+        image_id: image.id,
+        is_shared: !image.is_shared
+      })
+      message(dispatch, { type: 'success', text: image.is_shared ? 'Unpublish Success!' : 'The image published will be seen by more people.' })
+      setImages(im => {
+        const i = im.findIndex(im => im.id === image.id)
+        im[i].is_shared = !im[i].is_shared
+        return [...im]
+      })
     } catch {
-      message(dispatch, { type: 'danger', text: 'Unexpected Error!' })
+      message(dispatch, { type: 'danger', text: `${isPublicText} Image Failed!` })
     }
   }
 
@@ -461,7 +470,6 @@ into state
 
         if (state.upscale === 'true') body.upscale = 4
         if (state.enhanceFace === 'true') body.enhance_face = true
-
       }
 
       if (pipeline === 'generate' || pipeline === 'edit') {
@@ -1264,11 +1272,12 @@ into state
           >
             {
               images.map((i) => (
-                <div id={i.id} key={i.id} className={[styles.img, dragging === i.id ? styles.img_dragging : ''].join(' ')} draggable onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
+                <div id={i.id} key={i.id} className={[styles.img, dragging === i.id ? styles.img_dragging : ''].join(' ')}>
                   <GeneratedImage
                     onCopyParams={copyParams}
                     onCopyImage={copyImage}
                     onSelect={setSelectedImage}
+                    onShare={shareImage}
                     onDelete={deleteImage}
                     onUpscale={upscale}
                     onEnhanceFace={enhanceFace}

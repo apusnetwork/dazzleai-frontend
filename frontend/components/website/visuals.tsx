@@ -13,13 +13,37 @@ interface ImageGridVisualProps {
   columns?: number
 }
 
+export const SimpleImage = ({ model, onClick, showRun }: { model: ModelI; onClick?: any; showRun?: boolean }) => {
+  const { show18Plus: gloablShow18Plus } = useGlobal18Plus()
+  const [show18Plus, setShow18Plus] = useState(false)
+  useEffect(() => {
+    setShow18Plus(gloablShow18Plus)
+  }, [gloablShow18Plus])
+  const is18Plus = model.nsfw
+  return <div className={styles.column} onClick={onClick}>
+      <div className={styles.image_wrapper_2}>
+        <img
+          key={model.id}
+          src={model.reuse_img_url ?? 'https://s3.apus.network/' + model.reuse_img}
+          alt=""
+          style={{
+            filter: is18Plus && !show18Plus ? 'blur(10px)' : '',
+          }}
+          className="z-0"
+        />
+        {showRun && <Link href={`/generate?img=${model.reuse_img}&shared=true`}><div className={styles.image_try_badge_2} onClick={e => {e.stopPropagation()}}>Run</div></Link>}
+        {is18Plus && <div className={styles.image_18_badge} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setShow18Plus(show => !show) }} >18+ {show18Plus ? <EyeInvisibleOutlined className="leading-0 ml-1" rev="" /> : <EyeOutlined className="leading-0 ml-1" rev="" />}</div>}
+      </div>
+    </div>
+}
+
 const Image = ({ model }: { model: ModelI }) => {
   const { show18Plus: gloablShow18Plus } = useGlobal18Plus()
   const [show18Plus, setShow18Plus] = useState(false)
   useEffect(() => {
     setShow18Plus(gloablShow18Plus)
   }, [gloablShow18Plus])
-  return <Link href={`/generate?img=${model.reuse_img}&shared=true`}>
+  return <Link href={`/model/${model.id}`}>
     <div className={styles.column}>
       <div className={styles.image_wrapper}>
         <img
@@ -32,6 +56,7 @@ const Image = ({ model }: { model: ModelI }) => {
           className="z-0"
         />
         <div className={styles.image_badge}>{model.useCount} runs</div>
+        <Link href={`/generate?img=${model.reuse_img}&shared=true`}><div className={styles.image_try_badge}>Run</div></Link>
         {model.nsfw && <div className={styles.image_18_badge} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setShow18Plus(show => !show) }} >18+ {show18Plus ? <EyeInvisibleOutlined className="leading-0 ml-1" rev="" /> : <EyeOutlined className="leading-0 ml-1" rev="" />}</div>}
         <div className={styles.image_name}>{model.name}</div>
         <img className={styles.image_avatar_url} src={model.params.author_avatar || DefaultAvatar.src} />

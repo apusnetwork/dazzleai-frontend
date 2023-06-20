@@ -1,49 +1,6 @@
-exports.id = 9917;
-exports.ids = [9917];
+exports.id = 690;
+exports.ids = [690];
 exports.modules = {
-
-/***/ 3499:
-/***/ ((module) => {
-
-// Exports
-module.exports = {
-	"_hero": "website__hero__49ENh",
-	"hero": "website_hero__ssYjU",
-	"content": "website_content__DPLzT",
-	"title": "website_title__lStXQ",
-	"hero_subtitle": "website_hero_subtitle__syX5G",
-	"subtitle": "website_subtitle__igLVp",
-	"cta": "website_cta__vuIFI",
-	"social_proof": "website_social_proof__zvY01",
-	"feature_row": "website_feature_row__xIMTc",
-	"caption": "website_caption__5qgsO",
-	"text": "website_text__9_aXE",
-	"_visual": "website__visual__tMsSn",
-	"reverse": "website_reverse__1_ZKr",
-	"features_grid": "website_features_grid__i8RTU",
-	"heading": "website_heading__MIP9r",
-	"grid": "website_grid__MYDkl",
-	"feature_card": "website_feature_card__cgxF6",
-	"icon": "website_icon__Gue5X",
-	"image_grid_visual": "website_image_grid_visual__A9KrT",
-	"column": "website_column__6Z67w",
-	"image_wrapper": "website_image_wrapper__JDScv",
-	"image_name": "website_image_name__OitrX",
-	"image_badge": "website_image_badge__o4ekU",
-	"image_18_badge": "website_image_18_badge__B9iOJ",
-	"image_avatar_url": "website_image_avatar_url__TIcKv",
-	"_large_cta": "website__large_cta__JWVIc",
-	"large_cta": "website_large_cta__7nFVV",
-	"faq": "website_faq__a5XCs",
-	"questions": "website_questions__hJhPl",
-	"faq_question": "website_faq_question__bHtwU",
-	"question": "website_question__XBqiI",
-	"answer": "website_answer__Ag0J3",
-	"open": "website_open__3Goe4"
-};
-
-
-/***/ }),
 
 /***/ 9974:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
@@ -104,7 +61,7 @@ function Hero({ title , subtitle , subtitle2 , visual , socialProof , cta  }) {
 
 /***/ }),
 
-/***/ 9917:
+/***/ 690:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -112,10 +69,10 @@ function Hero({ title , subtitle , subtitle2 , visual , socialProof , cta  }) {
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
   "GN": () => (/* reexport */ FeatureRow),
-  "mw": () => (/* reexport */ ImageGridVisual)
+  "mw": () => (/* reexport */ visuals/* ImageGridVisual */.m)
 });
 
-// UNUSED EXPORTS: FeatureCard, FeaturesGrid, SmallSocialProof, SocialProof
+// UNUSED EXPORTS: FeatureCard, FeaturesGrid, SimpleImage, SmallSocialProof, SocialProof
 
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__(997);
@@ -237,125 +194,8 @@ function SmallSocialProof() {
     });
 }
 
-// EXTERNAL MODULE: external "@mui/lab/Masonry"
-var Masonry_ = __webpack_require__(1584);
-var Masonry_default = /*#__PURE__*/__webpack_require__.n(Masonry_);
-// EXTERNAL MODULE: ./node_modules/next/link.js
-var next_link = __webpack_require__(1664);
-var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
-// EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__(6689);
-// EXTERNAL MODULE: external "@ant-design/icons/EyeOutlined"
-var EyeOutlined_ = __webpack_require__(8683);
-var EyeOutlined_default = /*#__PURE__*/__webpack_require__.n(EyeOutlined_);
-// EXTERNAL MODULE: external "@ant-design/icons/EyeInvisibleOutlined"
-var EyeInvisibleOutlined_ = __webpack_require__(8768);
-var EyeInvisibleOutlined_default = /*#__PURE__*/__webpack_require__.n(EyeInvisibleOutlined_);
-// EXTERNAL MODULE: ./frontend/context/18puls.tsx
-var _18puls = __webpack_require__(4993);
-;// CONCATENATED MODULE: ./frontend/components/website/default_avatar.webp
-/* harmony default export */ const default_avatar = ({"src":"/_next/static/media/default_avatar.765939bc.webp","height":120,"width":120,"blurDataURL":"data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADQAQCdASoIAAgAAkA4JaQAAp3NNVkYAAD++uFxGhP12LBx5g3tA3WgqONZM5UFAn8AAA=="});
-;// CONCATENATED MODULE: ./frontend/components/website/visuals.tsx
-
-// import Masonry from "react-masonry-css";
-
-
-
-
-
-
-
-
-const Image = ({ model  })=>{
-    const { show18Plus: gloablShow18Plus  } = (0,_18puls/* useGlobal18Plus */.W)();
-    const { 0: show18Plus , 1: setShow18Plus  } = (0,external_react_.useState)(false);
-    (0,external_react_.useEffect)(()=>{
-        setShow18Plus(gloablShow18Plus);
-    }, [
-        gloablShow18Plus
-    ]);
-    return /*#__PURE__*/ jsx_runtime_.jsx((link_default()), {
-        href: `/generate?img=${model.reuse_img}&shared=true`,
-        children: /*#__PURE__*/ jsx_runtime_.jsx("div", {
-            className: (website_module_default()).column,
-            children: /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                className: (website_module_default()).image_wrapper,
-                children: [
-                    /*#__PURE__*/ jsx_runtime_.jsx("img", {
-                        src: model.reuse_img_url ?? "https://s3.apus.network/" + model.reuse_img,
-                        alt: "",
-                        style: {
-                            filter: model.nsfw && !show18Plus ? "blur(10px)" : ""
-                        },
-                        className: "z-0"
-                    }, model.id),
-                    /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                        className: (website_module_default()).image_badge,
-                        children: [
-                            model.useCount,
-                            " runs"
-                        ]
-                    }),
-                    model.nsfw && /*#__PURE__*/ (0,jsx_runtime_.jsxs)("div", {
-                        className: (website_module_default()).image_18_badge,
-                        onClick: (e)=>{
-                            e.preventDefault();
-                            e.stopPropagation();
-                            setShow18Plus((show)=>!show);
-                        },
-                        children: [
-                            "18+ ",
-                            show18Plus ? /*#__PURE__*/ jsx_runtime_.jsx((EyeInvisibleOutlined_default()), {
-                                className: "leading-0 ml-1",
-                                rev: ""
-                            }) : /*#__PURE__*/ jsx_runtime_.jsx((EyeOutlined_default()), {
-                                className: "leading-0 ml-1",
-                                rev: ""
-                            })
-                        ]
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx("div", {
-                        className: (website_module_default()).image_name,
-                        children: model.name
-                    }),
-                    /*#__PURE__*/ jsx_runtime_.jsx("img", {
-                        className: (website_module_default()).image_avatar_url,
-                        src: model.params.author_avatar || default_avatar.src
-                    })
-                ]
-            })
-        })
-    });
-};
-const ImageGridVisual = /*#__PURE__*/ (0,external_react_.forwardRef)(function ImageGridVisual({ images  }, ref) {
-    const { 0: columns , 1: setColumns  } = (0,external_react_.useState)(4);
-    (0,external_react_.useEffect)(()=>{
-        const handleResize = ()=>{
-            if (window.innerWidth > 768) {
-                setColumns(4);
-            } else {
-                setColumns(2);
-            }
-        };
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return ()=>{
-            window.removeEventListener("resize", handleResize);
-        };
-    }, []);
-    return /*#__PURE__*/ jsx_runtime_.jsx("div", {
-        className: (website_module_default()).image_grid_visual,
-        ref: ref,
-        children: /*#__PURE__*/ jsx_runtime_.jsx((Masonry_default()), {
-            columns: columns,
-            spacing: 2,
-            children: images.map((model, index)=>/*#__PURE__*/ jsx_runtime_.jsx(Image, {
-                    model: model
-                }, index))
-        })
-    });
-});
-
+// EXTERNAL MODULE: ./frontend/components/website/visuals.tsx
+var visuals = __webpack_require__(9718);
 ;// CONCATENATED MODULE: ./frontend/components/website/index.tsx
 
 
