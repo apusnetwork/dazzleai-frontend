@@ -101,6 +101,7 @@ const SimpleImage = ({ model , onClick , showRun  })=>{
     }, [
         gloablShow18Plus
     ]);
+    const is18Plus = model.nsfw === "18+";
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
         className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_8___default().column),
         onClick: onClick,
@@ -111,7 +112,7 @@ const SimpleImage = ({ model , onClick , showRun  })=>{
                     src: model.reuse_img_url ?? "https://s3.apus.network/" + model.reuse_img,
                     alt: "",
                     style: {
-                        filter: model.nsfw && !show18Plus ? "blur(10px)" : ""
+                        filter: is18Plus && !show18Plus ? "blur(10px)" : ""
                     },
                     className: "z-0"
                 }, model.id),
@@ -125,7 +126,7 @@ const SimpleImage = ({ model , onClick , showRun  })=>{
                         children: "Run"
                     })
                 }),
-                model.nsfw && /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                is18Plus && /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                     className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_8___default().image_18_badge),
                     onClick: (e)=>{
                         e.preventDefault();

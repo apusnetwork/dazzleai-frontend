@@ -19,6 +19,7 @@ export const SimpleImage = ({ model, onClick, showRun }: { model: ModelI; onClic
   useEffect(() => {
     setShow18Plus(gloablShow18Plus)
   }, [gloablShow18Plus])
+  const is18Plus = model.nsfw === '18+'
   return <div className={styles.column} onClick={onClick}>
       <div className={styles.image_wrapper_2}>
         <img
@@ -26,12 +27,12 @@ export const SimpleImage = ({ model, onClick, showRun }: { model: ModelI; onClic
           src={model.reuse_img_url ?? 'https://s3.apus.network/' + model.reuse_img}
           alt=""
           style={{
-            filter: model.nsfw && !show18Plus ? 'blur(10px)' : '',
+            filter: is18Plus && !show18Plus ? 'blur(10px)' : '',
           }}
           className="z-0"
         />
         {showRun && <Link href={`/generate?img=${model.reuse_img}&shared=true`}><div className={styles.image_try_badge_2} onClick={e => {e.stopPropagation()}}>Run</div></Link>}
-        {model.nsfw && <div className={styles.image_18_badge} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setShow18Plus(show => !show) }} >18+ {show18Plus ? <EyeInvisibleOutlined className="leading-0 ml-1" rev="" /> : <EyeOutlined className="leading-0 ml-1" rev="" />}</div>}
+        {is18Plus && <div className={styles.image_18_badge} onClick={(e) => { e.preventDefault(); e.stopPropagation(); setShow18Plus(show => !show) }} >18+ {show18Plus ? <EyeInvisibleOutlined className="leading-0 ml-1" rev="" /> : <EyeOutlined className="leading-0 ml-1" rev="" />}</div>}
       </div>
     </div>
 }
