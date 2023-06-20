@@ -99,8 +99,8 @@ function Model({ model  }) {
         children: ""
     });
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_layout_website__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
-        title: "Everything you need to create images with AI",
-        description: "Magical AI art tools. Generate original images, modify existing ones, expand pictures beyond its original borders, and more.",
+        title: model.id,
+        description: model.description,
         canonical: "/",
         footer: false,
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {

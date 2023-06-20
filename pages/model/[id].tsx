@@ -56,8 +56,8 @@ export default function Model({model}: any): JSX.Element {
   >{''}</WebsiteLayout>
 
   return <WebsiteLayout
-    title="Everything you need to create images with AI"
-    description="Magical AI art tools. Generate original images, modify existing ones, expand pictures beyond its original borders, and more."
+    title={model.id}
+    description={model.description}
     canonical='/'
     footer={false}
   >
