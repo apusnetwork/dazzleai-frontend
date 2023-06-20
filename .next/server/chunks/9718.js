@@ -101,7 +101,7 @@ const SimpleImage = ({ model , onClick , showRun  })=>{
     }, [
         gloablShow18Plus
     ]);
-    const is18Plus = model.nsfw === "18+";
+    const is18Plus = model.nsfw;
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
         className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_8___default().column),
         onClick: onClick,

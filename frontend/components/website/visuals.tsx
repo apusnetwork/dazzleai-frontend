@@ -19,7 +19,7 @@ export const SimpleImage = ({ model, onClick, showRun }: { model: ModelI; onClic
   useEffect(() => {
     setShow18Plus(gloablShow18Plus)
   }, [gloablShow18Plus])
-  const is18Plus = model.nsfw === '18+'
+  const is18Plus = model.nsfw
   return <div className={styles.column} onClick={onClick}>
       <div className={styles.image_wrapper_2}>
         <img
