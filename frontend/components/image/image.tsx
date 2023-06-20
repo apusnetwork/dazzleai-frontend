@@ -113,7 +113,7 @@ function GeneratedImage({
                           {onShare && <li>
                             <a onClick={e => { e.preventDefault(); e.stopPropagation(); onShare(image) }}>
                               <Share2 size={16} />
-                              { image.is_shared ? 'UnPublic' : 'Public'}
+                              { image.is_shared ? 'Unpublish' : 'Publish'}
                             </a>
                           </li>}
                           {onDelete && <li>

@@ -397,18 +397,18 @@ into state
   }
 
   async function shareImage(image: ImageI) {
-    const isPublicText = image.is_shared ? 'UnPublic' : 'Public'
+    const isPublicText = image.is_shared ? 'Unpublish' : 'Publish'
     try {
       oapi.post('/images/update', {
         image_id: image.id,
         is_shared: !image.is_shared
       })
+      message(dispatch, { type: 'success', text: image.is_shared ? 'Unpublish Success!' : 'The image published will be seen by more people.' })
       setImages(im => {
         const i = im.findIndex(im => im.id === image.id)
         im[i].is_shared = !im[i].is_shared
         return [...im]
       })
-      message(dispatch, { type: 'success', text: `${isPublicText} Image Success!` })
     } catch {
       message(dispatch, { type: 'danger', text: `${isPublicText} Image Failed!` })
     }

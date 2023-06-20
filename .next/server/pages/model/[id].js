@@ -68,7 +68,11 @@ function Model({ model  }) {
                     limit: 24,
                     offset: images.length,
                     model: model.model_file_name,
-                    order: "desc"
+                    order: "desc",
+                    nsfw_types: [
+                        "none",
+                        "18+"
+                    ].join(",")
                 }
             });
             setImages([

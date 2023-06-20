@@ -32,6 +32,7 @@ export default function Model({model}: any): JSX.Element {
                 offset: images.length,
                 model: model.model_file_name,
                 order: 'desc',
+                nsfw_types: ['none','18+'].join(',')
             }
         });
         setImages([...images, ...transformGetImagesResponse(res.data)])
