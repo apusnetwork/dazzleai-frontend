@@ -63,7 +63,7 @@ function mapParamsToRequest(params, model) {
         "DPM++ 2S a Karras",
         "DPM++ 2M Karras",
         "DPM++ SDE Karras",
-        "DDIM"
+        "DDIM", 
     ].includes(params.scheduler)) {
         params.scheduler = "DPM++ 2M Karras";
     }

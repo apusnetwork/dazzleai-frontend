@@ -7,15 +7,15 @@ import Modal from "../modal/modal";
 import styles from './select.module.scss';
 
 interface ModelSelectProps {
+  title?: string
   onChange: (e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) => void
   models: ModelI[]
   value: string
   id: string
 }
 
-export default function NodesSelect({ onChange, models, value, id }: ModelSelectProps): JSX.Element {
+export default function NodesSelect({ title = "Node", onChange, models, value, id }: ModelSelectProps): JSX.Element {
   const [open, setOpen] = useState(false)
-  const [textFilter, setTextFilter] = useState('');
 
 
   function handleChange(e: React.ChangeEvent<HTMLSelectElement | HTMLInputElement>) {
@@ -33,7 +33,7 @@ export default function NodesSelect({ onChange, models, value, id }: ModelSelect
     <div className={styles._model_select}>
       <div onClick={() => setOpen(true)}>
         <div className={[styles.selected_model].join(' ')}>
-          Node: {selected ? selected.name : "All"}
+          {title}: {selected ? selected.name : "All"}
           <div className={styles.arrow}>
             <ChevronDownArrow size={16} strokeWidth={3} />
           </div>
@@ -43,7 +43,7 @@ export default function NodesSelect({ onChange, models, value, id }: ModelSelect
       <div>
         <Modal
           onClose={() => setOpen(false)}
-          title="Select Node"
+          title={`Select ${title}`}
           show={open}
           size='lg'
         >

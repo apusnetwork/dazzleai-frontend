@@ -18,9 +18,10 @@ module.exports = {
 	"controlnet_select": "select_controlnet_select__jWojY",
 	"model_search": "select_model_search__WDieZ",
 	"search": "select_search__WSutL",
+	"_model_select_noborder": "select__model_select_noborder__cmK2j",
 	"selected_model": "select_selected_model__d45Do",
-	"tag": "select_tag__7Ik0F",
 	"arrow": "select_arrow__kkiEp",
+	"tag": "select_tag__7Ik0F",
 	"models_list": "select_models_list__KGghQ",
 	"nodes_list": "select_nodes_list__g_A53",
 	"_model": "select__model__POw9j",
@@ -36,7 +37,12 @@ module.exports = {
 	"model_name": "select_model_name__BU9cf",
 	"model_input": "select_model_input__4opLv",
 	"checked_icon": "select_checked_icon__anCiz",
-	"image_18_badge": "select_image_18_badge__h9y9Q"
+	"image_18_badge": "select_image_18_badge__h9y9Q",
+	"image_badge_wrapper": "select_image_badge_wrapper__7U_Zl",
+	"image_badge_left_top": "select_image_badge_left_top__U_v8y",
+	"image_badge": "select_image_badge__EYqk3",
+	"image_badge_18": "select_image_badge_18___T8ND",
+	"image_badge_type": "select_image_badge_type__LivJ8"
 };
 
 

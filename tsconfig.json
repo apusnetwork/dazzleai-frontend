@@ -1,16 +1,8 @@
 {
   "compilerOptions": {
-    "types": [
-      "next",
-      "next/types/global",
-      "node"
-    ],
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "types": ["next", "next/types/global", "node"],
+    "target": "es2015",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
@@ -30,9 +22,7 @@
       }
     ],
     "paths": {
-      "@/*": [
-        "./*"
-      ]
+      "@/*": ["./*"]
     }
   },
   "include": [
@@ -42,7 +32,5 @@
     ".next/types/**/*.ts",
     "globals.d.ts"
   ],
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
