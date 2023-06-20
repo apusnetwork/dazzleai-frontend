@@ -219,7 +219,7 @@ function Model({ model  }) {
                                             model: {
                                                 id: i.id,
                                                 reuse_img_url: i.image_url,
-                                                nsfw: i.nsfw,
+                                                nsfw: i.nsfw === "18+",
                                                 reuse_img: i.image_id
                                             },
                                             onClick: (e)=>{
