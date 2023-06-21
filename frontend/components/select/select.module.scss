@@ -70,8 +70,6 @@
   }
 }
 
-
-
 ._model_select {
   padding: 0 0 0 0;
   margin-bottom: 24px;
@@ -102,7 +100,6 @@
 
     background: $bg3;
     color: $color;
-
   }
 }
 
@@ -123,6 +120,27 @@
     @include mobile {
       margin-top: 9px;
     }
+  }
+}
+
+._model_select_noborder {
+  margin-bottom: 12px;
+  .selected_model {
+    border-bottom: 0;
+    &:hover {
+      opacity: 1;
+      color: rgba(0, 0, 0, 0.7);
+    }
+    .arrow {
+      svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  @include mobile {
+    padding: 0;
+    margin-bottom: 6px;
   }
 }
 
@@ -166,7 +184,6 @@
     margin-left: auto;
     flex-shrink: 0;
 
-
     svg {
       width: 14px;
       height: 14px;
@@ -184,11 +201,7 @@
   &:hover {
     opacity: 0.7;
   }
-
-
 }
-
-
 
 .models_list {
   display: grid;
@@ -205,14 +218,12 @@
 
   @include medium {
     grid-template-columns: repeat(4, 1fr);
-
   }
 
   @include mobile {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-
 
 .nodes_list {
   display: grid;
@@ -229,7 +240,6 @@
 
   @include medium {
     grid-template-columns: repeat(1, 1fr);
-
   }
 
   @include mobile {
@@ -263,7 +273,6 @@
     max-width: 300px;
   }
 }
-
 
 ._node {
   border: 1px solid $border;
@@ -327,7 +336,6 @@
   }
 }
 
-
 .model_info {
   padding: 9px;
   color: $bg;
@@ -342,9 +350,12 @@
   height: 100%;
   background: linear-gradient(12deg, rgba(0, 0, 0, 0.9) 10%, transparent 40%);
 
-
   &:hover {
-    background: linear-gradient(12deg, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0.1) 100%);
+    background: linear-gradient(
+      12deg,
+      rgba(0, 0, 0, 0.9) 20%,
+      rgba(0, 0, 0, 0.1) 100%
+    );
 
     .model_desc {
       display: block;
@@ -353,9 +364,7 @@
     .model_author {
       display: flex;
     }
-
   }
-
 }
 
 .model_name {
@@ -380,13 +389,11 @@
   text-align: right;
   align-items: center;
   gap: 3px;
-  ;
-
   a {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 3px
+    gap: 3px;
   }
 }
 
@@ -394,7 +401,6 @@
   opacity: 0;
   position: absolute;
   left: -123213px;
-
 }
 
 .checked_icon {
@@ -425,6 +431,37 @@
   border-radius: 4px;
   font-weight: 600;
   font-size: 12px;
-  opacity: 0.8;
   cursor: pointer;
+}
+
+.image_badge_wrapper {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+  gap: 4px;
+}
+
+.image_badge_left_top {
+  top: 12px;
+  left: 6px;
+}
+
+.image_badge {
+  backdrop-filter: blur(5px);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.image_badge_18 {
+  display: flex;
+  align-items: center;
+  background-color: rgba(5, 127, 226, 0.2);
+  cursor: pointer;
+}
+
+.image_badge_type {
+  background-color: rgba(245, 202, 10, 0.4);
 }
