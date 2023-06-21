@@ -200,7 +200,8 @@ export default function ModelSelect({
       <div onClick={() => setOpen(true)}>
         <div className={[styles.selected_model].join(" ")}>
           <Image
-            src={selected && selected.params.images[2]}
+            src={selected && selected.params.images[0]}
+            objectFit="cover"
             width={26}
             height={26}
             loader={cloudflareLoader}

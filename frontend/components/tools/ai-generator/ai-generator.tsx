@@ -432,23 +432,15 @@ export default function AiGenerator(): JSX.Element {
   async function copyParams(image: ImageI) {
     const task = image.modelTask;
     const params = image.modelTask.params;
-    const _model = image.modelTask._model;
 
     setState((s) => {
       const newState = {
         ...s,
       };
-      if (task.model === "instruct-pix2pix") {
-        setMode("edit");
-      } else if (task.model === "image-mixer") {
-        setMode("mix");
-      } else {
-        newState.model = task.model
-          .replace("-img2img", "")
-          .replace("-inpaint", "")
-          .replace("-txt2img", "");
-        setMode("generate");
-      }
+      if (task.model) newState.model = task.model_id;
+      if (params.lora) newState.lora = params.lora;
+      if (params.lora_weight) newState.weight = params.lora_weight;
+      if (params.checkpoint) newState.model = params.checkpoint;
       if (params.prompt) newState.prompt = params.prompt;
       // if (_model && !_model.id.includes('/')) newState.prompt = newState.prompt.replace(_model.params.instance_prompt + ', ', '')
       if (params.guidance_scale) newState.guidanceScale = params.guidance_scale;
@@ -474,7 +466,6 @@ export default function AiGenerator(): JSX.Element {
         newState.images = [...params.images];
       }
 
-      console.log("copy Params", dayjs().format("HH:mm:ss:SSS"));
       return newState;
     });
     message(dispatch, { text: "Copied parameters.", type: "success" });
@@ -490,18 +481,23 @@ export default function AiGenerator(): JSX.Element {
   }
 
   async function shareImage(image: ImageI) {
-    const isPublicText = image.is_shared ? 'Unpublish' : 'Publish';
+    const isPublicText = image.is_shared ? "Unpublish" : "Publish";
     try {
       oapi.post("/images/update", {
         image_id: image.id,
-        is_shared: !image.is_shared
-      })
-      message(dispatch, { type: 'success', text: image.is_shared ? 'Unpublish Success!' : 'The image published will be seen by more people.' })
-      setImages(im => {
-        const i = im.findIndex(im => im.id === image.id)
-        im[i].is_shared = !im[i].is_shared
-        return [...im]
-      })
+        is_shared: !image.is_shared,
+      });
+      message(dispatch, {
+        type: "success",
+        text: image.is_shared
+          ? "Unpublish Success!"
+          : "The image published will be seen by more people.",
+      });
+      setImages((im) => {
+        const i = im.findIndex((im) => im.id === image.id);
+        im[i].is_shared = !im[i].is_shared;
+        return [...im];
+      });
     } catch {
       message(dispatch, {
         type: "danger",
