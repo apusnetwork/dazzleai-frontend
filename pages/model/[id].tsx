@@ -155,7 +155,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext) {
   if (!params) return { notFound: true }
   const modelRes = await axiosInstance.get('/api/models/list', { params: {ids: params.id}})
   if (!modelRes.data.length) return { notFound: true }
-  return { props: {model: modelRes.data[0]} }
+  return { props: {model: modelRes.data[0]}, revalidate: 60 }
 }
 
 export function getStaticPaths(): GetStaticPathsResult {

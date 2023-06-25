@@ -274,7 +274,8 @@ async function getStaticProps({ params  }) {
     return {
         props: {
             model: modelRes.data[0]
-        }
+        },
+        revalidate: 60
     };
 }
 function getStaticPaths() {
