@@ -433,12 +433,13 @@ export default function AiGenerator(): JSX.Element {
     const task = image.modelTask;
     const params = image.modelTask.params;
 
+    debugger
     setState((s) => {
       const newState = {
         ...s,
       };
       if (task.model) newState.model = task.model_id;
-      if (params.lora) newState.lora = params.lora;
+      if (params.lora !== undefined) newState.lora = params.lora;
       if (params.lora_weight) newState.weight = params.lora_weight;
       if (params.checkpoint) newState.model = params.checkpoint;
       if (params.prompt) newState.prompt = params.prompt;
