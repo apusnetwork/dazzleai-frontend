@@ -31,7 +31,7 @@ export default function ImageSharer({ id, url, imageSrc, imageWidth, imageHeight
   const [modal, setModal] = useState(false);
 
   function handleCopy() {
-    window && (window as any)?.gtag('event', 'copy', {
+    window && typeof (window as any).gtag === 'function' && (window as any)?.gtag('event', 'copy', {
       'event_category': 'spread',
       'event_label': ''
     });
@@ -63,7 +63,7 @@ export default function ImageSharer({ id, url, imageSrc, imageWidth, imageHeight
     <>
       <Button size={size} type={type} onClick={() => {
         setModal(true)
-        window && (window as any)?.gtag('event', 'share', {
+        window && typeof (window as any).gtag === 'function' && (window as any)?.gtag('event', 'share', {
           'event_category': 'spread',
           'event_label': ''
         });
