@@ -176,7 +176,7 @@ export default function AiGenerator(): JSX.Element {
     >
   ) {
     if (e?.target?.name === 'prompt' && !hasUpdatePrompt) {
-      window && (window as any)?.gtag('event', 'update_prompt', {
+      window && typeof (window as any).gtag === 'function' && (window as any)?.gtag('event', 'update_prompt', {
         'event_category': '',
         'event_label': ''
       });
@@ -605,7 +605,7 @@ export default function AiGenerator(): JSX.Element {
         seed: seed,
         steps: state.steps,
         width: state.width,
-        weight: state.weight,
+        lora_weight: state.weight,
       };
 
       if (
@@ -723,7 +723,7 @@ export default function AiGenerator(): JSX.Element {
     const model_version_id = urlParams.get("model_version_id");
     const utm_source = urlParams.get("utm_source");
     if (model_version_id != null && model_version_id !== "") {
-      window &&
+      window && typeof (window as any).gtag === 'function' && 
         (window as any)?.gtag("event", "model_version_id", {
           event_category: "model_version_id",
           event_label: model_version_id,
