@@ -141,7 +141,7 @@ function Plans({ type ="pricing"  }) {
         user
     ]);
     async function handleClick(e, plan) {
-        window && window?.gtag("event", "begin_checkout", {
+        window && typeof window.gtag === "function" && window?.gtag("event", "begin_checkout", {
             "event_category": "ecommerce",
             "event_label": plan
         });
@@ -152,7 +152,7 @@ function Plans({ type ="pricing"  }) {
         }
     }
     async function handleUSDTPay(e, plan) {
-        window && window?.gtag("event", "begin_checkout", {
+        window && typeof window.gtag === "function" && window?.gtag("event", "begin_checkout", {
             "event_category": "USDT payment",
             "event_label": plan
         });
