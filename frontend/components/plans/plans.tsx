@@ -46,7 +46,7 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
   }, [user])
 
   async function handleClick(e: React.MouseEvent, plan: string) {
-    window && (window as any)?.gtag('event', 'begin_checkout', {
+    window && typeof (window as any).gtag === 'function' && (window as any)?.gtag('event', 'begin_checkout', {
       'event_category': 'ecommerce',
       'event_label': plan
     });
@@ -58,7 +58,7 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
   }
 
   async function handleUSDTPay(e: React.MouseEvent, plan: string) {
-    window && (window as any)?.gtag('event', 'begin_checkout', {
+    window && typeof (window as any).gtag === 'function' && (window as any)?.gtag('event', 'begin_checkout', {
       'event_category': 'USDT payment',
       'event_label': plan
     });
