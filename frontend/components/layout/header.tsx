@@ -209,13 +209,15 @@ function HeaderUser(): JSX.Element {
                   </Link>
                 </li>
                 <li>
+                <Link href="/legal/terms-of-service">
                   <a>
                     <PaperFileText size={16} />
                     Terms of service
                   </a>
+                  </Link>
                 </li>
                 <li>
-                  <a onClick={(e) => {
+                  <a className="cursor-pointer" onClick={(e) => {
                     e.preventDefault()
                     setShowTasksModal(true)
                   }}>
@@ -224,7 +226,7 @@ function HeaderUser(): JSX.Element {
                   </a>
                 </li>
                 <li>
-                  <a onClick={() => {
+                  <a className="cursor-pointer" onClick={() => {
                     Cookies.remove('getimgauth')
                     dispatch(logoutUser())
                   }}>
