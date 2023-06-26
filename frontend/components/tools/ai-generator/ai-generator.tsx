@@ -67,6 +67,8 @@ interface StateI {
   skipControlnetProcessing: string;
 }
 
+let hasUpdatePrompt = false
+
 export default function AiGenerator(): JSX.Element {
   const dispatch = useAppDispatch();
   const user = useAppSelector(selectUser);
@@ -173,6 +175,13 @@ export default function AiGenerator(): JSX.Element {
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
     >
   ) {
+    if (e?.target?.name === 'prompt' && !hasUpdatePrompt) {
+      window && (window as any)?.gtag('event', 'update_prompt', {
+        'event_category': '',
+        'event_label': ''
+      });
+      hasUpdatePrompt = true
+    }
     setState({
       ...state,
       [e.target.name]: e.target.value,

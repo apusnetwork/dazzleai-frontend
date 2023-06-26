@@ -474,6 +474,10 @@ function HeaderUser() {
                 type: "success"
             });
             dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_3__/* .updateUser */ .Nq)());
+            window && window?.gtag("event", "checkin", {
+                "event_category": "",
+                "event_label": ""
+            });
         } catch (error) {
             console.log(error?.response?.status, error?.response?.data);
             (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .message */ .yw)(dispatch, {

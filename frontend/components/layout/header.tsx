@@ -155,6 +155,10 @@ function HeaderUser(): JSX.Element {
       const res = await oapi.post('/user/checkin')
       message(dispatch, { text: 'Check-In successfully +2 Credits', type: 'success' })
       dispatch(updateUser())
+      window && (window as any)?.gtag('event', 'checkin', {
+        'event_category': '',
+        'event_label': ''
+      });
     } catch (error: any) {
       console.log(error?.response?.status, error?.response?.data)
       message(dispatch, { text: 'Check-In Failed', type: 'danger' })
