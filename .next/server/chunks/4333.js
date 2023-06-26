@@ -549,17 +549,21 @@ function HeaderUser() {
                                     })
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
-                                    children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_10__/* .PaperFileText */ .Bee, {
-                                                size: 16
-                                            }),
-                                            "Terms of service"
-                                        ]
+                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_5___default()), {
+                                        href: "/legal/terms-of-service",
+                                        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
+                                            children: [
+                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_10__/* .PaperFileText */ .Bee, {
+                                                    size: 16
+                                                }),
+                                                "Terms of service"
+                                            ]
+                                        })
                                     })
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
                                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
+                                        className: "cursor-pointer",
                                         onClick: (e)=>{
                                             e.preventDefault();
                                             setShowTasksModal(true);
@@ -574,6 +578,7 @@ function HeaderUser() {
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
                                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
+                                        className: "cursor-pointer",
                                         onClick: ()=>{
                                             js_cookie__WEBPACK_IMPORTED_MODULE_12__["default"].remove("getimgauth");
                                             dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_3__/* .logoutUser */ .TX)());
