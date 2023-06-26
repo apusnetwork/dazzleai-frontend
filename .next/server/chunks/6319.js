@@ -97,6 +97,7 @@ function mapRemoteImageToGeneratedImage(image) {
             id: task.task_id,
             model: param.lora || param.checkpoint || param.model || "",
             params: {
+                ...param,
                 seed: seed,
                 tool: param.sampler,
                 width: param.width,

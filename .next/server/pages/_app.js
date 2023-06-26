@@ -425,13 +425,16 @@ function App({ children  }) {
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("small", {
                             className: "license",
                             children: [
-                                "By signing up, you agree to our ",
+                                "By signing up, you agree to our",
+                                " ",
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                     href: "/legal/terms-of-service",
                                     target: "_blank",
                                     children: "Terms of Service"
                                 }),
-                                " and ",
+                                " ",
+                                "and",
+                                " ",
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                     href: "/legal/privacy-policy",
                                     target: "_blank",
@@ -515,6 +518,17 @@ function Frontend({ Component , pageProps  }) {
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_redux__WEBPACK_IMPORTED_MODULE_5__.Provider, {
         store: _frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z,
         children: [
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("noscript", {
+                children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("iframe", {
+                    src: "https://www.googletagmanager.com/ns.html?id=GTM-MX6NDHL",
+                    height: "0",
+                    width: "0",
+                    style: {
+                        display: "none",
+                        visibility: "hidden"
+                    }
+                })
+            }),
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_script__WEBPACK_IMPORTED_MODULE_3___default()), {
                 src: "https://accounts.google.com/gsi/client",
                 defer: true,

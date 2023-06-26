@@ -1,6 +1,6 @@
-import axiosInstance, { handleApiError } from '@/frontend/utils/axios'
-import { AuthHeaderKey, getCookie } from '@/frontend/utils/cookie';
-import type { NextApiRequest, NextApiResponse } from 'next'
+import axiosInstance, { handleApiError } from "@/frontend/utils/axios";
+import { AuthHeaderKey, getCookie } from "@/frontend/utils/cookie";
+import type { NextApiRequest, NextApiResponse } from "next";
 // import FormData from 'form-data'
 // import fs from 'fs'
 
@@ -25,7 +25,7 @@ interface ImageInfo {
 }
 
 interface RemoteUploadImage {
-  Url: string
+  Url: string;
 }
 
 export interface GeneratedImage {
@@ -103,7 +103,7 @@ export interface RemoteImage {
       steps: number;
       width: number;
     };
-    status: 'pendding' | 'succeed' | 'failed';
+    status: "pendding" | "succeed" | "failed";
     task_id: string;
     user_id: string;
   };
@@ -117,23 +117,24 @@ const defaultParam = {
   denoising_strength: 0,
   height: 512,
   width: 512,
-  image: '',
-  model: '',
+  image: "",
+  model: "",
   lora: "",
-  checkpoint: '',
-  negative_prompt: '',
-  prompt: '',
-  sampler: '',
+  checkpoint: "",
+  negative_prompt: "",
+  prompt: "",
+  sampler: "",
   seed: 0,
   steps: 0,
 };
 
-
-export function mapRemoteImageToGeneratedImage(image: RemoteImage): GeneratedImage {
+export function mapRemoteImageToGeneratedImage(
+  image: RemoteImage
+): GeneratedImage {
   const { task, model_id, seed, image_id } = image;
   let { param = defaultParam } = task;
   if (param == null) {
-    param = defaultParam
+    param = defaultParam;
   }
   // const { _model } = task.task_id;
   return {
@@ -141,19 +142,20 @@ export function mapRemoteImageToGeneratedImage(image: RemoteImage): GeneratedIma
     id: image.image_id,
     modelTaskId: task.task_id,
     userId: image.user_id,
-    hosting: 'remote',
-    path: '',
-    jpegPath: '',
+    hosting: "remote",
+    path: "",
+    jpegPath: "",
     width: param.width,
     height: param.height,
-    format: 'jpg',
+    format: "jpg",
     liked: false,
     isShared: image.is_shared,
-    createdAt: '',
+    createdAt: "",
     modelTask: {
       id: task.task_id,
       model: param.lora || param.checkpoint || param.model || "",
       params: {
+        ...param,
         seed: seed,
         tool: param.sampler,
         width: param.width,
@@ -161,26 +163,26 @@ export function mapRemoteImageToGeneratedImage(image: RemoteImage): GeneratedIma
         prompt: param.prompt,
         scheduler: param.sampler,
         num_images: param.batch_count,
-        started_at: '',
+        started_at: "",
         enhance_face: false,
         guidance_scale: param.cfg_scale,
         negative_prompt: param.negative_prompt,
         num_inference_steps: param.steps,
       },
       _model: {
-        id: '',
-        name: param.model ?? model_id ?? '',
+        id: "",
+        name: param.model ?? model_id ?? "",
         params: {
-          author: '',
+          author: "",
           images: [],
-          author_url: '',
-          description: '',
-          instance_prompt: '',
+          author_url: "",
+          description: "",
+          instance_prompt: "",
         },
       },
     },
     url: image.image_url,
-    jpegUrl: '',
+    jpegUrl: "",
   };
 }
 
@@ -192,14 +194,19 @@ export const config = {
   },
 };
 
-export function transformGetImagesResponse(res?: RemoteImage[]): GeneratedImage[] {
-  return res?.map(mapRemoteImageToGeneratedImage) ?? []
+export function transformGetImagesResponse(
+  res?: RemoteImage[]
+): GeneratedImage[] {
+  return res?.map(mapRemoteImageToGeneratedImage) ?? [];
 }
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   try {
-    const token = getCookie(req, AuthHeaderKey)
-    if (req.method === 'POST') {
+    const token = getCookie(req, AuthHeaderKey);
+    if (req.method === "POST") {
       // const form = new multiparty.Form();
       // const reqData: any = await new Promise((resolve, reject) => {
       //   form.parse(req, function (err: any, fields: any, files: any) {
@@ -211,7 +218,6 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       //   res.status(400).json({ message: 'No file' })
       //   return
       // }
-
       // const uploadRes = await axiosInstance.post<RemoteUploadImage>('/api/upload/image', {
       //   file: fs.createReadStream(reqData.files.file[0].path)
       // }, {
@@ -237,30 +243,34 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       // }
       // res.status(200).json(resData)
     } else if (req.method === "GET") {
-      const imagesRes = await axiosInstance.get<RemoteImage[]>('/api/images', {
+      const imagesRes = await axiosInstance.get<RemoteImage[]>("/api/images", {
         params: {
           limit: req.query.take,
           offset: req.query.skip,
         },
         headers: {
           Authorization: `Bearer ${token}`,
-        }
-      })
-      res.status(200).json(transformGetImagesResponse(imagesRes.data))
+        },
+      });
+      res.status(200).json(transformGetImagesResponse(imagesRes.data));
     } else if (req.method === "DELETE") {
-      await axiosInstance.post(`/api/images/del`, {
-        ids: req.query.ids,
-      }, {
-        headers: {
-          Authorization: `Bearer ${token}`,
+      await axiosInstance.post(
+        `/api/images/del`,
+        {
+          ids: req.query.ids,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
         }
-      })
-      res.status(200).json({ success: true })
+      );
+      res.status(200).json({ success: true });
     } else {
-      res.status(405).json({ message: 'Method not allowed' })
+      res.status(405).json({ message: "Method not allowed" });
     }
   } catch (e: any) {
-    const { status, message } = handleApiError(e)
-    res.status(status).json({ message })
+    const { status, message } = handleApiError(e);
+    res.status(status).json({ message });
   }
 }

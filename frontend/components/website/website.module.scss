@@ -7,8 +7,16 @@
   border-bottom: 1px solid $border;
 
   background-color: rgb(22, 23, 24);
-  background: radial-gradient(ellipse 90% 100% at 100% 50%, rgba(#6563fa, 0.3), rgba(255, 255, 255, 0)),
-    radial-gradient(ellipse 90% 50% at 0% 100%, rgba(#9859d2, 0.1), rgba(255, 255, 255, 0));
+  background: radial-gradient(
+      ellipse 90% 100% at 100% 50%,
+      rgba(#6563fa, 0.3),
+      rgba(255, 255, 255, 0)
+    ),
+    radial-gradient(
+      ellipse 90% 50% at 0% 100%,
+      rgba(#9859d2, 0.1),
+      rgba(255, 255, 255, 0)
+    );
 
   @include mobile {
     // max-height: 150vh;
@@ -51,7 +59,7 @@
     margin: 0;
     font-size: 56px;
     font-weight: 600;
-    letter-spacing: -.02em;
+    letter-spacing: -0.02em;
     line-height: 120%;
 
     margin: 0;
@@ -120,15 +128,13 @@
       display: block;
       padding: 9px 0 0 0;
       font-size: 12px;
-      color: hsla(180, 7%, 97%, .8);
+      color: hsla(180, 7%, 97%, 0.8);
     }
-
   }
 
   .social_proof {
     padding: 36px 0;
   }
-
 }
 
 .feature_row {
@@ -145,7 +151,6 @@
     grid-template-columns: 1fr;
     gap: 24px;
     padding: 24px 24px 24px 24px;
-
   }
 
   .content {
@@ -202,7 +207,6 @@
     background: rgba($bg, 0.8);
     backdrop-filter: blur(4px);
 
-
     img,
     video {
       min-height: 120px;
@@ -210,7 +214,6 @@
       border-radius: 12px;
     }
   }
-
 
   &.reverse {
     .content {
@@ -221,8 +224,6 @@
         grid-column: 1;
       }
     }
-
-
   }
 }
 
@@ -257,7 +258,11 @@
 .feature_card {
   min-width: 200px;
   padding: 42px;
-  background: linear-gradient(180deg, rgba(0, 0, 4, 0.1) 0%, rgba(8, 7, 0, 0.3) 100%);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 4, 0.1) 0%,
+    rgba(8, 7, 0, 0.3) 100%
+  );
   border-radius: 16px;
   border: 1px solid $border;
 
@@ -267,7 +272,6 @@
 
   .icon {
     height: 40px;
-    ;
     color: $accent;
 
     svg,
@@ -302,7 +306,6 @@
   }
 }
 
-
 .image_wrapper {
   display: inline-block;
   position: relative;
@@ -334,7 +337,7 @@
   cursor: pointer;
 }
 
-.image_badge {
+.image_badge_runs {
   position: absolute;
   bottom: 46px;
   left: 6px;
@@ -360,6 +363,10 @@
   border-radius: 15px;
   font-weight: 600;
   font-size: 16px;
+  @media screen and (max-width: 768px) {
+    padding: 4px 12px;
+    font-size: 16px;
+  }
 }
 
 .image_try_badge_2 {
@@ -393,6 +400,42 @@
   cursor: pointer;
 }
 
+.image_badge_wrapper {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  color: #fff;
+  font-weight: 600;
+  font-size: 12px;
+  gap: 4px;
+}
+
+.image_badge_left_top {
+  top: 12px;
+  left: 6px;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.image_badge {
+  backdrop-filter: blur(5px);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.image_badge_18 {
+  display: flex;
+  align-items: center;
+  background-color: rgba(5, 127, 226, 0.2);
+  cursor: pointer;
+}
+
+.image_badge_type {
+  background-color: rgba(245, 202, 10, 0.4);
+}
+
 .image_avatar_url {
   position: absolute;
   right: 6px;
@@ -422,7 +465,6 @@
   // }
 }
 
-
 .image_grid_visual {
   margin-top: calc(-12px);
 
@@ -439,17 +481,11 @@
       margin-left: -6px;
     }
   }
-
-  
 }
-
 
 .social_proof {
   margin: 0 auto;
   padding: 24px 24px 64px 24px;
-
-
-
 
   .title {
     font-size: 24px;
@@ -462,7 +498,6 @@
       font-size: 21px;
     }
   }
-
 }
 
 ._large_cta {
@@ -478,13 +513,15 @@
   margin: 0 auto;
   padding: 48px;
   text-align: center;
-  background: linear-gradient(180deg, rgba(0, 0, 4, 0.1) 0%, rgba(8, 7, 0, 0.4) 100%);
-
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 4, 0.1) 0%,
+    rgba(8, 7, 0, 0.4) 100%
+  );
 
   @include mobile {
     padding: 24px;
     margin: 24px;
-    ;
   }
 
   .title {
@@ -497,7 +534,7 @@
     margin: 0;
     font-size: 33px;
     font-weight: 600;
-    letter-spacing: -.02em;
+    letter-spacing: -0.02em;
     line-height: 120%;
 
     margin: 0;
@@ -506,7 +543,11 @@
     span,
     div {
       color: #fff;
-      background-image: linear-gradient(225deg, rgba(#6363fa, 1) 40%, rgba(#cc53fc, 1));
+      background-image: linear-gradient(
+        225deg,
+        rgba(#6363fa, 1) 40%,
+        rgba(#cc53fc, 1)
+      );
       background-size: 100%;
       background-clip: text;
       text-fill-color: transparent;
@@ -530,12 +571,10 @@
     max-width: 600px;
     padding: 12px 0 0 0;
 
-
     @include mobile {
       font-size: 14px;
     }
   }
-
 
   .cta {
     padding: 24px 0 0px 0;
@@ -547,13 +586,10 @@
       display: block;
       padding: 9px 0 0 0;
       font-size: 12px;
-      color: hsla(180, 7%, 97%, .8);
+      color: hsla(180, 7%, 97%, 0.8);
     }
-
   }
-
 }
-
 
 .faq {
   max-width: 600px;
@@ -573,16 +609,13 @@
 
     @include mobile {
       font-size: 18px;
-
     }
   }
 
   .questions {
     border-bottom: 1px solid $border;
   }
-
 }
-
 
 .faq_question {
   border-top: 1px solid $border;
@@ -612,7 +645,6 @@
     text-align: left;
     gap: 12px;
 
-
     &:hover {
       background: $bg2;
     }
@@ -633,11 +665,9 @@
       font-size: 15px;
     }
 
-
     &.open {
       height: 100%;
       padding: 0 12px 12px 12px;
-
     }
 
     p {

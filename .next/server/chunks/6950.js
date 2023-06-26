@@ -476,18 +476,17 @@ function WebsiteLayout({ children , title , description , robots , canonical =""
                             content: robots
                         }) : null,
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
-                            async: true,
-                            src: "https://www.googletagmanager.com/gtag/js?id=G-EEYE7M0G1Y"
+                            dangerouslySetInnerHTML: {
+                                __html: `window.dataLayer = window.dataLayer || [];`
+                            }
                         }),
                         /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("script", {
                             dangerouslySetInnerHTML: {
-                                __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-EEYE7M0G1Y');
-          `
+                                __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-MX6NDHL');`
                             }
                         })
                     ]
@@ -520,7 +519,8 @@ function WebsiteLayout({ children , title , description , robots , canonical =""
                     children: [
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
                             children: [
-                                "We use cookies to improve your experience. Learn more in our ",
+                                "We use cookies to improve your experience. Learn more in our",
+                                " ",
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                     href: "/legal/privacy-policy",
                                     target: "_blank",

@@ -44,7 +44,7 @@ export default function Model({model}: any): JSX.Element {
         setPagination({ loading: false, hasMore: hasMore });
       }
     }
-    
+
   useEffect(() => {
     getImages();
   }, [model])
