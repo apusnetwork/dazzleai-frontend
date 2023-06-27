@@ -1,6 +1,5 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/api/auth/google": "pages/api/auth/google.js",
   "/api/auth": "pages/api/auth.js",
   "/api/auth/metamask": "pages/api/auth/metamask.js",
@@ -14,11 +13,11 @@
   "/api/images/shared/[id]": "pages/api/images/shared/[id].js",
   "/api/me": "pages/api/me.js",
   "/api/models/[id]": "pages/api/models/[id].js",
-  "/api/nodes": "pages/api/nodes.js",
   "/api/models": "pages/api/models.js",
+  "/api/nodes": "pages/api/nodes.js",
   "/api/tasks": "pages/api/tasks.js",
-  "/dreambooth/models": "pages/dreambooth/models.html",
   "/dreambooth/model/create": "pages/dreambooth/model/create.html",
+  "/dreambooth/models": "pages/dreambooth/models.html",
   "/dreambooth/tools/dreambooth": "pages/dreambooth/tools/dreambooth.html",
   "/dreambooth/tools/outpainting": "pages/dreambooth/tools/outpainting.html",
   "/editor": "pages/editor.html",
@@ -30,6 +29,7 @@
   "/usdt/[id]": "pages/usdt/[id].html",
   "/img/[id]": "pages/img/[id].js",
   "/legal/[slug]": "pages/legal/[slug].js",
+  "/_error": "pages/_error.js",
   "/model/[id]": "pages/model/[id].js",
   "/_document": "pages/_document.js",
   "/404": "pages/404.html"

@@ -10866,7 +10866,7 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([axio
 const oapi = axios__WEBPACK_IMPORTED_MODULE_0__["default"].create({
     // baseURL: 'http://dazzleapi.ap-southeast-1.elasticbeanstalk.com',
     // baseURL: '/oapi',
-    baseURL:  false ? 0 : "https://api.dazzleai.network/api"
+    baseURL:  true ? "https://test-api.dazzleai.network/api" : 0
 });
 oapi.interceptors.request.use(function(config) {
     console.log("Request:", config.method?.toUpperCase(), config.url, config.params, config.data);

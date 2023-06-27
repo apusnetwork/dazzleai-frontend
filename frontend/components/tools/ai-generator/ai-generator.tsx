@@ -442,7 +442,6 @@ export default function AiGenerator(): JSX.Element {
     const task = image.modelTask;
     const params = image.modelTask.params;
 
-    debugger
     setState((s) => {
       const newState = {
         ...s,
@@ -553,6 +552,14 @@ export default function AiGenerator(): JSX.Element {
     if (!state.model) {
       message(dispatch, {
         text: "Please select Model first!",
+        type: "info",
+      });
+      return;
+    }
+
+    if (!models.find((m) => m.id === state.model)) {
+      message(dispatch, {
+        text: "The Model you selected is not available!",
         type: "info",
       });
       return;
