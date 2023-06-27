@@ -548,7 +548,11 @@ export default function AiGenerator(): JSX.Element {
       return;
     }
 
-    if (!models.find((m) => m.id === state.model)) {
+    if (
+      !models
+        .filter((v) => v.type === "checkpoint")
+        .find((m) => m.id === state.model)
+    ) {
       message(dispatch, {
         text: "The Model you selected is not available!",
         type: "info",
@@ -1046,12 +1050,7 @@ export default function AiGenerator(): JSX.Element {
                 for this generation.
               </span>
             </small>
-            <Button
-              fullWidth
-              loading={loader}
-              size="lg"
-              errorFor={["prompt"]}
-            >
+            <Button fullWidth loading={loader} size="lg" errorFor={["prompt"]}>
               {user.id ? (
                 <>
                   Generat
