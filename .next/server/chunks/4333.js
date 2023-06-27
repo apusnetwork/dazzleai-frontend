@@ -378,7 +378,7 @@ function WebsiteHeader({ fixed =false  }) {
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
                                         href: "/pricing",
                                         onClick: (e)=>{
-                                            window && window?.gtag("event", "view_item_list", {
+                                            window && typeof window.gtag === "function" && window?.gtag("event", "view_item_list", {
                                                 "event_category": "engagement",
                                                 "event_label": ""
                                             });
@@ -408,7 +408,7 @@ function WebsiteHeader({ fixed =false  }) {
                                     className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_21___default().mobile_link_cta),
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
                                         onClick: ()=>{
-                                            window && window?.gtag("event", "signup", {
+                                            window && typeof window.gtag === "function" && window?.gtag("event", "signup", {
                                                 "event_category": "account",
                                                 "event_label": ""
                                             });
@@ -474,7 +474,7 @@ function HeaderUser() {
                 type: "success"
             });
             dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_3__/* .updateUser */ .Nq)());
-            window && window?.gtag("event", "checkin", {
+            window && typeof window.gtag === "function" && window?.gtag("event", "checkin", {
                 "event_category": "",
                 "event_label": ""
             });
@@ -549,17 +549,21 @@ function HeaderUser() {
                                     })
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
-                                    children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
-                                        children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_10__/* .PaperFileText */ .Bee, {
-                                                size: 16
-                                            }),
-                                            "Terms of service"
-                                        ]
+                                    children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_5___default()), {
+                                        href: "/legal/terms-of-service",
+                                        children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
+                                            children: [
+                                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_basic_icons__WEBPACK_IMPORTED_MODULE_10__/* .PaperFileText */ .Bee, {
+                                                    size: 16
+                                                }),
+                                                "Terms of service"
+                                            ]
+                                        })
                                     })
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
                                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
+                                        className: "cursor-pointer",
                                         onClick: (e)=>{
                                             e.preventDefault();
                                             setShowTasksModal(true);
@@ -574,6 +578,7 @@ function HeaderUser() {
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("li", {
                                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
+                                        className: "cursor-pointer",
                                         onClick: ()=>{
                                             js_cookie__WEBPACK_IMPORTED_MODULE_12__["default"].remove("getimgauth");
                                             dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_3__/* .logoutUser */ .TX)());

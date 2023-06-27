@@ -124,17 +124,6 @@ export default function WebsiteLayout({
             content="width=device-width, initial-scale=1.0,  maximum-scale=1.0"
           />
           {robots ? <meta name="robots" content={robots} /> : null}
-          {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEYE7M0G1Y"></script>
-          <script dangerouslySetInnerHTML={{
-            __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-EEYE7M0G1Y');
-          `
-          }}>
-          </script> */}
         </Head>
         <WebsiteHeader fixed />
         {user.id && (user.status === "verify" || user.status === "created") ? (

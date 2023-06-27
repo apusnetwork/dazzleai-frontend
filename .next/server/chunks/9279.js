@@ -102,7 +102,7 @@ function ImageSharer({ id , url , imageSrc , imageWidth , imageHeight , type ="i
     const dispatch = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useAppDispatch */ .T)();
     const { 0: modal , 1: setModal  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
     function handleCopy() {
-        window && window?.gtag("event", "copy", {
+        window && typeof window.gtag === "function" && window?.gtag("event", "copy", {
             "event_category": "spread",
             "event_label": ""
         });
@@ -143,7 +143,7 @@ function ImageSharer({ id , url , imageSrc , imageWidth , imageHeight , type ="i
                 type: type,
                 onClick: ()=>{
                     setModal(true);
-                    window && window?.gtag("event", "share", {
+                    window && typeof window.gtag === "function" && window?.gtag("event", "share", {
                         "event_category": "spread",
                         "event_label": ""
                     });
