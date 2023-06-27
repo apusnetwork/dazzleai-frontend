@@ -377,12 +377,6 @@ function WebsiteHeader({ fixed =false  }) {
                                     className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_21___default().mobile_link_cta),
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
                                         href: "/pricing",
-                                        onClick: (e)=>{
-                                            window && typeof window.gtag === "function" && window?.gtag("event", "view_item_list", {
-                                                "event_category": "engagement",
-                                                "event_label": ""
-                                            });
-                                        },
                                         children: "Upgrade now"
                                     })
                                 }),
@@ -407,13 +401,6 @@ function WebsiteHeader({ fixed =false  }) {
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                     className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_21___default().mobile_link_cta),
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
-                                        onClick: ()=>{
-                                            window && typeof window.gtag === "function" && window?.gtag("event", "signup", {
-                                                "event_category": "account",
-                                                "event_label": ""
-                                            });
-                                            dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .updateAuthState */ .FA)("register"));
-                                        },
                                         children: "Create free account"
                                     })
                                 })
@@ -474,10 +461,6 @@ function HeaderUser() {
                 type: "success"
             });
             dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_3__/* .updateUser */ .Nq)());
-            window && typeof window.gtag === "function" && window?.gtag("event", "checkin", {
-                "event_category": "",
-                "event_label": ""
-            });
         } catch (error) {
             console.log(error?.response?.status, error?.response?.data);
             (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .message */ .yw)(dispatch, {

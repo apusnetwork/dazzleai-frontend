@@ -141,10 +141,6 @@ function Plans({ type ="pricing"  }) {
         user
     ]);
     async function handleClick(e, plan) {
-        window && typeof window.gtag === "function" && window?.gtag("event", "begin_checkout", {
-            "event_category": "ecommerce",
-            "event_label": plan
-        });
         if (!user.id) {
             e.preventDefault();
             dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .updateAuthState */ .FA)("login"));
@@ -152,10 +148,6 @@ function Plans({ type ="pricing"  }) {
         }
     }
     async function handleUSDTPay(e, plan) {
-        window && typeof window.gtag === "function" && window?.gtag("event", "begin_checkout", {
-            "event_category": "USDT payment",
-            "event_label": plan
-        });
         if (!user.id || !wallet.accounts[0]) {
             (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .message */ .yw)(dispatch, {
                 type: "danger",

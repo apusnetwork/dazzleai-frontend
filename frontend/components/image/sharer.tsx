@@ -31,10 +31,6 @@ export default function ImageSharer({ id, url, imageSrc, imageWidth, imageHeight
   const [modal, setModal] = useState(false);
 
   function handleCopy() {
-    window && typeof (window as any).gtag === 'function' && (window as any)?.gtag('event', 'copy', {
-      'event_category': 'spread',
-      'event_label': ''
-    });
     if (!navigator.clipboard) {
       const textArea = document.getElementById("link-copy");
       if (!textArea) return
@@ -63,10 +59,6 @@ export default function ImageSharer({ id, url, imageSrc, imageWidth, imageHeight
     <>
       <Button size={size} type={type} onClick={() => {
         setModal(true)
-        window && typeof (window as any).gtag === 'function' && (window as any)?.gtag('event', 'share', {
-          'event_category': 'spread',
-          'event_label': ''
-        });
         oapi.post(`/images/update`, {
           image_id: id,
           is_shared: true,

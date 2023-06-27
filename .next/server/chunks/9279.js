@@ -102,10 +102,6 @@ function ImageSharer({ id , url , imageSrc , imageWidth , imageHeight , type ="i
     const dispatch = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_1__/* .useAppDispatch */ .T)();
     const { 0: modal , 1: setModal  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(false);
     function handleCopy() {
-        window && typeof window.gtag === "function" && window?.gtag("event", "copy", {
-            "event_category": "spread",
-            "event_label": ""
-        });
         if (!navigator.clipboard) {
             const textArea = document.getElementById("link-copy");
             if (!textArea) return;
@@ -143,10 +139,6 @@ function ImageSharer({ id , url , imageSrc , imageWidth , imageHeight , type ="i
                 type: type,
                 onClick: ()=>{
                     setModal(true);
-                    window && typeof window.gtag === "function" && window?.gtag("event", "share", {
-                        "event_category": "spread",
-                        "event_label": ""
-                    });
                     _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_10__/* .oapi.post */ .xP.post(`/images/update`, {
                         image_id: id,
                         is_shared: true
