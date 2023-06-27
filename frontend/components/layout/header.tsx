@@ -80,12 +80,7 @@ export function WebsiteHeader({ fixed = false }): JSX.Element {
             user.id ?
               <>
                 <div className={styles.mobile_link_cta}>
-                  <Button href='/pricing' onClick={e => {
-                    window && typeof (window as any).gtag === 'function' && (window as any)?.gtag('event', 'view_item_list', {
-                      'event_category': 'engagement',
-                      'event_label': ''
-                    });;
-                  }}>Upgrade now</Button>
+                  <Button href='/pricing'>Upgrade now</Button>
                 </div>
                 <HeaderUser />
 
@@ -96,13 +91,7 @@ export function WebsiteHeader({ fixed = false }): JSX.Element {
 
                 <a onClick={() => dispatch(updateAuthState('login'))} href="#" className={styles.header_link}>Log in</a>
                 <div className={styles.mobile_link_cta}>
-                  <Button onClick={() => {
-                    window && typeof (window as any).gtag === 'function' && (window as any)?.gtag('event', 'signup', {
-                      'event_category': 'account',
-                      'event_label': ''
-                    });
-                    dispatch(updateAuthState('register'))
-                  }}>Create free account</Button>
+                  <Button>Create free account</Button>
                 </div>
 
               </>
@@ -155,10 +144,6 @@ function HeaderUser(): JSX.Element {
       const res = await oapi.post('/user/checkin')
       message(dispatch, { text: 'Check-In successfully +2 Credits', type: 'success' })
       dispatch(updateUser())
-      window && typeof (window as any).gtag === 'function' && (window as any)?.gtag('event', 'checkin', {
-        'event_category': '',
-        'event_label': ''
-      });
     } catch (error: any) {
       console.log(error?.response?.status, error?.response?.data)
       message(dispatch, { text: 'Check-In Failed', type: 'danger' })

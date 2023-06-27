@@ -46,10 +46,6 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
   }, [user])
 
   async function handleClick(e: React.MouseEvent, plan: string) {
-    window && typeof (window as any).gtag === 'function' && (window as any)?.gtag('event', 'begin_checkout', {
-      'event_category': 'ecommerce',
-      'event_label': plan
-    });
     if (!user.id) {
       e.preventDefault()
       dispatch(updateAuthState('login'))
@@ -58,10 +54,6 @@ export default function Plans({ type = 'pricing' }: PlansProps): JSX.Element {
   }
 
   async function handleUSDTPay(e: React.MouseEvent, plan: string) {
-    window && typeof (window as any).gtag === 'function' && (window as any)?.gtag('event', 'begin_checkout', {
-      'event_category': 'USDT payment',
-      'event_label': plan
-    });
     if (!user.id || !wallet.accounts[0]) {
       message(dispatch, { type: 'danger', text: 'Please connect your wallet first' })
       e.preventDefault()

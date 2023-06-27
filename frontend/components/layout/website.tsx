@@ -61,6 +61,20 @@ export default function WebsiteLayout({
       <Global18PlusContextProvider>
         <Head>
           <title>{title}</title>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `window.dataLayer = window.dataLayer || [];`,
+            }}
+          ></script>
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','GTM-MX6NDHL');`,
+            }}
+          ></script>
           <meta name="description" content={description} />
           <meta name="og:title" property="og:title" content={title} />
           <meta name="twitter:title" property="twitter:title" content={title} />
@@ -74,7 +88,7 @@ export default function WebsiteLayout({
           <meta name="twitter:image" content={imgURL} />
           <meta name="twitter:site" content="@getimg_ai" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="og:type" property="og:type" content="website" />]
+          <meta name="og:type" property="og:type" content="website" />
           <link
             rel="apple-touch-icon"
             sizes="180x180"
@@ -110,31 +124,6 @@ export default function WebsiteLayout({
             content="width=device-width, initial-scale=1.0,  maximum-scale=1.0"
           />
           {robots ? <meta name="robots" content={robots} /> : null}
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `window.dataLayer = window.dataLayer || [];`,
-            }}
-          ></script>
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script','dataLayer','GTM-MX6NDHL');`,
-            }}
-          ></script>
-          {/* <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEYE7M0G1Y"></script>
-          <script dangerouslySetInnerHTML={{
-            __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-
-          gtag('config', 'G-EEYE7M0G1Y');
-          `
-          }}>
-          </script> */}
         </Head>
         <WebsiteHeader fixed />
         {user.id && (user.status === "verify" || user.status === "created") ? (

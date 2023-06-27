@@ -67,8 +67,6 @@ interface StateI {
   skipControlnetProcessing: string;
 }
 
-let hasUpdatePrompt = false
-
 export default function AiGenerator(): JSX.Element {
   const dispatch = useAppDispatch();
   const user = useAppSelector(selectUser);
@@ -175,13 +173,6 @@ export default function AiGenerator(): JSX.Element {
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
     >
   ) {
-    if (e?.target?.name === 'prompt' && !hasUpdatePrompt) {
-      window && typeof (window as any).gtag === 'function' && (window as any)?.gtag('event', 'update_prompt', {
-        'event_category': '',
-        'event_label': ''
-      });
-      hasUpdatePrompt = true
-    }
     setState({
       ...state,
       [e.target.name]: e.target.value,
@@ -729,20 +720,6 @@ export default function AiGenerator(): JSX.Element {
 
     const model_version_id = urlParams.get("model_version_id");
     const utm_source = urlParams.get("utm_source");
-    if (model_version_id != null && model_version_id !== "") {
-      window && typeof (window as any).gtag === 'function' && (window as any)?.gtag("event", "model_version_id", {
-          event_category: "model_version_id",
-          event_label: model_version_id,
-          value: 1,
-        });
-    }
-    if (utm_source != null && utm_source !== "") {
-      window && typeof (window as any).gtag === 'function' && (window as any)?.gtag("event", "utm_source", {
-          event_category: "utm_source",
-          event_label: utm_source,
-          value: 1,
-        });
-    }
 
     const img = urlParams.get("img") || urlParams.get("init-img");
     if (!img) return;
@@ -1074,12 +1051,6 @@ export default function AiGenerator(): JSX.Element {
               loading={loader}
               size="lg"
               errorFor={["prompt"]}
-              onClick={(e) => {
-                window && typeof (window as any).gtag === 'function' && (window as any)?.gtag("event", "generate", {
-                    event_category: "consume",
-                    event_label: "",
-                  });
-              }}
             >
               {user.id ? (
                 <>

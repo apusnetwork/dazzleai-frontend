@@ -206,14 +206,6 @@ function App({ children }: Props): JSX.Element {
   }, []);
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://accounts.google.com/gsi/client";
-    // script.onload = () => {
-    //   const google = (window as any).google // Now you can access window.google
-    //   initGoogle() // Assuming this is defined somewhere else
-    // }
-    document.body.appendChild(script);
-
     if (user.requestStatus === "idle" || user.requestStatus === "failed") {
       dispatch(getUser());
     }
@@ -253,13 +245,6 @@ function App({ children }: Props): JSX.Element {
             </a>
           </p>
           <br />
-          {/* <div id='google-login' /> */}
-
-          {/* <div className="mobile_link_cta" style={{ marginTop: 14 }}>
-            <Button size="md" type="primary" fullWidth onClick={loginWithGoogleOneTap}>
-              <img src={GoogleLogo.src} className="h-6 w-6" />Google
-            </Button>
-          </div> */}
           <div
             id="g_id_signin"
             className="g_id_signin"
@@ -386,7 +371,6 @@ function Frontend({ Component, pageProps }: AppProps): JSX.Element {
           }}
         ></iframe>
       </noscript>
-      <Script src="https://accounts.google.com/gsi/client" defer async></Script>
       <MetaMaskContextProvider>
         <App>
           <Component {...pageProps} />
