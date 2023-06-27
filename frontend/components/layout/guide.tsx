@@ -77,7 +77,6 @@ export default function GuideLayout({ children, title, description, robots, cano
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {robots ? <meta name="robots" content={robots} /> : null}
-        <Script src="https://accounts.google.com/gsi/client"></Script>
 
       </Head>
       <WebsiteHeader fixed />

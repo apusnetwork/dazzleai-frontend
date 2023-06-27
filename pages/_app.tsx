@@ -206,13 +206,13 @@ function App({ children }: Props): JSX.Element {
   }, []);
 
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://accounts.google.com/gsi/client";
+    // const script = document.createElement("script");
+    // script.src = "https://accounts.google.com/gsi/client";
     // script.onload = () => {
     //   const google = (window as any).google // Now you can access window.google
     //   initGoogle() // Assuming this is defined somewhere else
     // }
-    document.body.appendChild(script);
+    // document.body.appendChild(script);
 
     if (user.requestStatus === "idle" || user.requestStatus === "failed") {
       dispatch(getUser());
@@ -386,7 +386,6 @@ function Frontend({ Component, pageProps }: AppProps): JSX.Element {
           }}
         ></iframe>
       </noscript>
-      <Script src="https://accounts.google.com/gsi/client" defer async></Script>
       <MetaMaskContextProvider>
         <App>
           <Component {...pageProps} />
