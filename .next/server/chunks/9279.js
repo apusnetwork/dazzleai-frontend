@@ -290,7 +290,7 @@ const modelsMap = {
     "stable-diffusion-img2img-v2.1": "Stable Diffusion v2.1 (Text to Image)",
     "stable-diffusion-inpaint-v1.5": "Stable Diffusion Inpainting v1.5",
     "real-esrgan": "Real-ESRGAN ",
-    "gfpgan": "GFPGAN ",
+    gfpgan: "GFPGAN ",
     "image-mixer": "Image Mixer",
     "instruct-pix2pix": "Instruct Pix2Pix"
 };
@@ -611,7 +611,7 @@ function ImageView(props) {
                                         className: (_image_module_scss__WEBPACK_IMPORTED_MODULE_13___default().value),
                                         children: [
                                             params.enhance_face ? "Faces" : "",
-                                            params.upscale ? params.upscale + "x Upscale" : ""
+                                            params.upscale ? params.upscale + "x Upscale" : "", 
                                         ].filter((x)=>x).join(", ")
                                     })
                                 ]

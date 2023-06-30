@@ -8,6 +8,14 @@ import EyeInvisibleOutlined from "@ant-design/icons/EyeInvisibleOutlined";
 import { useGlobal18Plus } from "@/frontend/context/18puls";
 import DefaultAvatar from "./default_avatar.webp";
 import classnames from "classnames";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
+import Favorite from "@mui/icons-material/Favorite";
+import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
+import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
+import { useAppDispatch, useAppSelector } from "@/frontend/redux/hooks";
+import { selectUser } from "@/frontend/redux/user/slice";
+import { oapi } from "@/frontend/utils/axios";
+import { message } from "@/frontend/redux/info/slice";
 
 interface ImageGridVisualProps {
   images: ModelI[];
@@ -18,17 +26,58 @@ export const SimpleImage = ({
   model,
   onClick,
   showRun,
+  hasFavorite = false,
+  hasLike = false,
+  hideFavorite,
+  hideLike,
 }: {
   model: ModelI;
   onClick?: any;
   showRun?: boolean;
+  hasFavorite?: boolean;
+  hasLike?: boolean;
+  hideLike?: boolean;
+  hideFavorite?: boolean;
 }) => {
+  const dispatch = useAppDispatch();
+  const user = useAppSelector(selectUser);
   const { show18Plus: gloablShow18Plus } = useGlobal18Plus();
   const [show18Plus, setShow18Plus] = useState(false);
   useEffect(() => {
     setShow18Plus(gloablShow18Plus);
   }, [gloablShow18Plus]);
+  const [isFavorite, setIsFavorite] = useState(false);
+  const [isLike, setIsLike] = useState(false);
   const is18Plus = model.nsfw;
+
+  useEffect(() => {
+    setIsLike(hasLike);
+  }, [hasLike]);
+
+  useEffect(() => {
+    setIsFavorite(hasFavorite);
+  }, [hasFavorite]);
+
+  async function toggleFavorite(image_id: string) {
+    if (!user.id) return;
+    try {
+      await oapi.post(`/images/update`, { image_id, is_favorite: !isFavorite });
+      setIsFavorite((is) => !is);
+    } catch (e) {
+      message(dispatch, { text: "Failed to update favorite", type: "danger" });
+    }
+  }
+
+  async function toggleLike(image_id: string) {
+    if (!user.id) return;
+    try {
+      await oapi.post(`/images/update`, { image_id, is_like: !isLike });
+      setIsLike((is) => !is);
+    } catch (e) {
+      message(dispatch, { text: "Failed to update like", type: "danger" });
+    }
+  }
+
   return (
     <div className={styles.column} onClick={onClick}>
       <div className={styles.image_wrapper_2}>
@@ -61,43 +110,53 @@ export const SimpleImage = ({
             styles.image_badge_left_top
           )}
         >
+          {is18Plus && (
+            <div
+              className={classnames(styles.image_badge, styles.image_badge_18)}
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                setShow18Plus((show) => !show);
+              }}
+            >
+              18+{" "}
+              {show18Plus ? (
+                <EyeInvisibleOutlined className="leading-0 ml-1" rev="" />
+              ) : (
+                <EyeOutlined className="leading-0 ml-1" rev="" />
+              )}
+            </div>
+          )}
+        </div>
+        {user.id && (
           <div
             className={classnames(
               styles.image_badge_wrapper,
-              styles.image_badge_left_top
+              "right-0.5 bottom-2 p-1 cursor-pointer"
             )}
           >
-            {is18Plus && (
+            {!hideFavorite && (
               <div
-                className={classnames(
-                  styles.image_badge,
-                  styles.image_badge_18
-                )}
                 onClick={(e) => {
-                  e.preventDefault();
                   e.stopPropagation();
-                  setShow18Plus((show) => !show);
+                  toggleFavorite(model.id);
                 }}
               >
-                18+{" "}
-                {show18Plus ? (
-                  <EyeInvisibleOutlined className="leading-0 ml-1" rev="" />
-                ) : (
-                  <EyeOutlined className="leading-0 ml-1" rev="" />
-                )}
+                {isFavorite ? <Favorite /> : <FavoriteBorderIcon />}
               </div>
             )}
-            {model.type && (
+            {!hideLike && (
               <div
-                className={[styles.image_badge, styles.image_badge_type].join(
-                  " "
-                )}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleLike(model.id);
+                }}
               >
-                {model.type}
+                {isLike ? <ThumbUpAltIcon /> : <ThumbUpOffAltIcon />}
               </div>
             )}
           </div>
-        </div>
+        )}
       </div>
     </div>
   );
@@ -200,17 +259,6 @@ export const ImageGridVisual = forwardRef<HTMLDivElement, ImageGridVisualProps>(
             <Image key={index} model={model} />
           ))}
         </Masonry>
-        {/* <Masonry
-        breakpointCols={{
-          default: columns,
-          1100: 2,
-          800: 2,
-        }}
-        className={styles.grid}
-        columnClassName={styles.column}
-      >
-        {images.map((model) => <Image model={model} />)}
-      </Masonry> */}
       </div>
     );
   }

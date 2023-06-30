@@ -98,11 +98,9 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_fro
 async function handler(req, res) {
     try {
         const token = (0,_frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .getCookie */ .ej)(req, _frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .AuthHeaderKey */ .qf);
-        const imagesRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .ZP.get("/api/images", {
+        const imagesRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .ZP.get("/api/image", {
             params: {
-                ids: req.query.id,
-                limit: req.query.take,
-                offset: req.query.skip
+                ids: req.query.id
             },
             headers: {
                 Authorization: `Bearer ${token}`

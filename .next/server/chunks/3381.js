@@ -40,7 +40,9 @@ module.exports = {
 	"modal": "ai-generator_modal__6guHM",
 	"slide-in": "ai-generator_slide-in__y8Ds1",
 	"modal_image": "ai-generator_modal_image__3tswV",
-	"close": "ai-generator_close__O05CU"
+	"close": "ai-generator_close__O05CU",
+	"_hero": "ai-generator__hero__jef_V",
+	"hero": "ai-generator_hero__TioId"
 };
 
 
