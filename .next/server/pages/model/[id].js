@@ -317,6 +317,13 @@ module.exports = require("@mui/icons-material/FavoriteBorder");
 
 /***/ }),
 
+/***/ 4449:
+/***/ ((module) => {
+
+module.exports = require("@mui/icons-material/PersonOutline");
+
+/***/ }),
+
 /***/ 4881:
 /***/ ((module) => {
 

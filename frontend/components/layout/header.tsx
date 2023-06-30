@@ -25,6 +25,7 @@ import Modal from "../modal/modal";
 import axiosInstance, { oapi } from "@/frontend/utils/axios";
 import dayjs from "dayjs";
 import { useRouter } from "next/router";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 
 declare global {
   interface Window {
@@ -257,6 +258,18 @@ function HeaderUser(): JSX.Element {
                     </a>
                   </Link>
                 </li> */}
+              <li>
+                <Link href="/user/profile">
+                  <a>
+                    <PersonOutlineIcon
+                      style={{
+                        fontSize: 16,
+                      }}
+                    />
+                    Profile
+                  </a>
+                </Link>
+              </li>
               <li>
                 <Link href="/legal/privacy-policy">
                   <a>
