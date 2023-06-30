@@ -64,13 +64,13 @@ function ImageGallery() {
     }
   }
 
-  const [favorite, setFavorite] = useState([]);
+  const [favourite, setFavorite] = useState([]);
   const [like, setLike] = useState([]);
 
   async function getFavoriteLike() {
     try {
       const res = await oapi.get("/images/list/action");
-      setFavorite(res.data.favorite ?? []);
+      setFavorite(res.data.favourite ?? []);
       setLike(res.data.like ?? []);
     } catch (e) {
       console.log(e);
@@ -177,7 +177,7 @@ function ImageGallery() {
                   }}
                   hasLike={like.find((item) => item === i.id) !== undefined}
                   hasFavorite={
-                    favorite.find((item) => item === i.id) !== undefined
+                    favourite.find((item) => item === i.id) !== undefined
                   }
                   showRun
                 />

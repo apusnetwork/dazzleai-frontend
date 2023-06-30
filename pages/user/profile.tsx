@@ -41,7 +41,7 @@ function ImageGallery() {
   async function getFavoriteLike() {
     try {
       const res = await oapi.get("/images/list/action");
-      setFavorite(res.data.favorite ?? []);
+      setFavorite(res.data.favourite ?? []);
       setLike(res.data.like ?? []);
     } catch (e) {
       console.log(e);

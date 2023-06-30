@@ -61,7 +61,10 @@ export const SimpleImage = ({
   async function toggleFavorite(image_id: string) {
     if (!user.id) return;
     try {
-      await oapi.post(`/images/update`, { image_id, is_favorite: !isFavorite });
+      await oapi.post(`/images/update`, {
+        image_id,
+        is_favourite: !isFavorite,
+      });
       setIsFavorite((is) => !is);
     } catch (e) {
       message(dispatch, { text: "Failed to update favorite", type: "danger" });

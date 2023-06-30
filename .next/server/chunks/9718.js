@@ -152,7 +152,7 @@ const SimpleImage = ({ model , onClick , showRun , hasFavorite =false , hasLike 
         try {
             await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_15__/* .oapi.post */ .xP.post(`/images/update`, {
                 image_id,
-                is_favorite: !isFavorite
+                is_favourite: !isFavorite
             });
             setIsFavorite((is)=>!is);
         } catch (e) {
