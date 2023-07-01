@@ -149,7 +149,7 @@ function App({ children  }) {
     function initGoogle() {
         const login_btn_wrapper_register = document.getElementById("login_btn_wrapper_register");
         const login_btn_wrapper_signin = document.getElementById("login_btn_wrapper_signin");
-        const clientWidth = (login_btn_wrapper_register?.clientWidth ?? login_btn_wrapper_signin?.clientWidth) ?? 328;
+        const clientWidth = login_btn_wrapper_register?.clientWidth || login_btn_wrapper_signin?.clientWidth || 328;
         const google = window.google;
         if (!window.google) return;
         google.accounts.id.initialize({
@@ -159,7 +159,12 @@ function App({ children  }) {
         });
         google.accounts.id.renderButton(document.getElementById("g_id_signin"), {
             width: clientWidth,
-            logo_alignment: "center"
+            logo_alignment: "center",
+            type: "standard",
+            size: "large",
+            theme: "outline",
+            text: "sign_in_with",
+            shape: "rectangular"
         });
     }
     function handleChange(e) {

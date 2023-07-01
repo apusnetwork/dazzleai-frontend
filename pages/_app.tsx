@@ -74,8 +74,8 @@ function App({ children }: Props): JSX.Element {
       "login_btn_wrapper_signin"
     );
     const clientWidth =
-      login_btn_wrapper_register?.clientWidth ??
-      login_btn_wrapper_signin?.clientWidth ??
+      login_btn_wrapper_register?.clientWidth ||
+      login_btn_wrapper_signin?.clientWidth ||
       328;
     const google = (window as any).google;
     if (!(window as any).google) return;
@@ -88,6 +88,11 @@ function App({ children }: Props): JSX.Element {
     google.accounts.id.renderButton(document.getElementById("g_id_signin"), {
       width: clientWidth,
       logo_alignment: "center",
+      type: "standard",
+      size: "large",
+      theme: "outline",
+      text: "sign_in_with",
+      shape: "rectangular",
     });
   }
 
