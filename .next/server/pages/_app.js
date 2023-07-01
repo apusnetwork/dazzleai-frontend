@@ -1,4 +1,3 @@
-"use strict";
 (() => {
 var exports = {};
 exports.id = 2888;
@@ -8,6 +7,7 @@ exports.modules = {
 /***/ 1247:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
@@ -18,6 +18,7 @@ exports.modules = {
 /***/ 8054:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Z": () => (__WEBPACK_DEFAULT_EXPORT__)
@@ -53,6 +54,7 @@ __webpack_async_result__();
 /***/ 5656:
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -63,32 +65,34 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8054);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1853);
 /* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6689);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6022);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _frontend_images_metamask_logo_png__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(1247);
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(9648);
-/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(1635);
-/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_7__);
-/* harmony import */ var dayjs_plugin_relativeTime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(4195);
-/* harmony import */ var dayjs_plugin_relativeTime__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(dayjs_plugin_relativeTime__WEBPACK_IMPORTED_MODULE_8__);
-/* harmony import */ var _frontend_components_button_button__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(4820);
-/* harmony import */ var _frontend_components_modal_modal__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(3907);
-/* harmony import */ var _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(2970);
-/* harmony import */ var _frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(3464);
-/* harmony import */ var _frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(3137);
-/* harmony import */ var _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(2080);
-/* harmony import */ var _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(3779);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(2423);
-/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_16___default = /*#__PURE__*/__webpack_require__.n(lucide_react__WEBPACK_IMPORTED_MODULE_16__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(1664);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_17__);
-/* harmony import */ var _frontend_components_message_message__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(3919);
-/* harmony import */ var ethers__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(8844);
-/* harmony import */ var _frontend_context_metamask__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(1842);
-var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__, axios__WEBPACK_IMPORTED_MODULE_6__, _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_11__, _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_15__, ethers__WEBPACK_IMPORTED_MODULE_19__]);
-([_frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__, axios__WEBPACK_IMPORTED_MODULE_6__, _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_11__, _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_15__, ethers__WEBPACK_IMPORTED_MODULE_19__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
+/* harmony import */ var next_script__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4298);
+/* harmony import */ var next_script__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_script__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(6689);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(6022);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react_redux__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _frontend_images_metamask_logo_png__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(1247);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(9648);
+/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(1635);
+/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var dayjs_plugin_relativeTime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(4195);
+/* harmony import */ var dayjs_plugin_relativeTime__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(dayjs_plugin_relativeTime__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _frontend_components_button_button__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(4820);
+/* harmony import */ var _frontend_components_modal_modal__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(3907);
+/* harmony import */ var _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(2970);
+/* harmony import */ var _frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(3464);
+/* harmony import */ var _frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(3137);
+/* harmony import */ var _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(2080);
+/* harmony import */ var _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(3779);
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(2423);
+/* harmony import */ var lucide_react__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(lucide_react__WEBPACK_IMPORTED_MODULE_17__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(1664);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_18___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_18__);
+/* harmony import */ var _frontend_components_message_message__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(3919);
+/* harmony import */ var ethers__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(8844);
+/* harmony import */ var _frontend_context_metamask__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(1842);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__, axios__WEBPACK_IMPORTED_MODULE_7__, _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_12__, _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_15__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_16__, ethers__WEBPACK_IMPORTED_MODULE_20__]);
+([_frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__, axios__WEBPACK_IMPORTED_MODULE_7__, _frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_12__, _frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_15__, _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_16__, ethers__WEBPACK_IMPORTED_MODULE_20__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 
 
@@ -117,23 +121,24 @@ var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_fro
 
 
 
-dayjs__WEBPACK_IMPORTED_MODULE_7___default().extend((dayjs_plugin_relativeTime__WEBPACK_IMPORTED_MODULE_8___default()));
+
+dayjs__WEBPACK_IMPORTED_MODULE_8___default().extend((dayjs_plugin_relativeTime__WEBPACK_IMPORTED_MODULE_9___default()));
 function App({ children  }) {
-    const dispatch = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_12__/* .useAppDispatch */ .T)();
+    const dispatch = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_13__/* .useAppDispatch */ .T)();
     const router = (0,next_router__WEBPACK_IMPORTED_MODULE_2__.useRouter)();
-    const authState = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_12__/* .useAppSelector */ .C)(_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .selectAuthState */ ._9);
-    const user = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_12__/* .useAppSelector */ .C)(_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_15__/* .selectUser */ .dy);
-    const status = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_12__/* .useAppSelector */ .C)(_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_15__/* .selectUserStatus */ .ss);
-    const { 0: state , 1: setState  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)({
+    const authState = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_13__/* .useAppSelector */ .C)(_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .selectAuthState */ ._9);
+    const user = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_13__/* .useAppSelector */ .C)(_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_16__/* .selectUser */ .dy);
+    const status = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_13__/* .useAppSelector */ .C)(_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_16__/* .selectUserStatus */ .ss);
+    const { 0: state , 1: setState  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)({
         name: "",
         email: "",
         password: ""
     });
-    const { 0: referral , 1: setReferral  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)("");
-    const { wallet , hasProvider , isConnecting , connectMetaMask , errorMessage  } = (0,_frontend_context_metamask__WEBPACK_IMPORTED_MODULE_20__/* .useMetaMask */ ._$)();
-    (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
+    const { 0: referral , 1: setReferral  } = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)("");
+    const { wallet , hasProvider , isConnecting , connectMetaMask , errorMessage  } = (0,_frontend_context_metamask__WEBPACK_IMPORTED_MODULE_21__/* .useMetaMask */ ._$)();
+    (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
         if (errorMessage) {
-            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
                 type: "danger",
                 text: errorMessage
             });
@@ -145,7 +150,6 @@ function App({ children  }) {
         const login_btn_wrapper_register = document.getElementById("login_btn_wrapper_register");
         const login_btn_wrapper_signin = document.getElementById("login_btn_wrapper_signin");
         const clientWidth = (login_btn_wrapper_register?.clientWidth ?? login_btn_wrapper_signin?.clientWidth) ?? 328;
-        console.log(clientWidth);
         const google = window.google;
         if (!window.google) return;
         google.accounts.id.initialize({
@@ -172,11 +176,11 @@ function App({ children  }) {
                 from_user: sessionStorage.getItem("from_user") || undefined
             };
         }
-        const res = await dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__/* .loginGoogle */ .z3)(getLoginRequest()));
+        const res = await dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_15__/* .loginGoogle */ .z3)(getLoginRequest()));
         if (res.meta.requestStatus === "fulfilled") {
-            dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .updateAuthState */ .FA)(undefined));
-            dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__/* .getUser */ .PR)());
-            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
+            dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .updateAuthState */ .FA)(undefined));
+            dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_15__/* .getUser */ .PR)());
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
                 type: "success",
                 text: "Sucesfully Logged In!"
             });
@@ -186,9 +190,8 @@ function App({ children  }) {
         }
     }
     async function metaMaskLogin() {
-        console.log(hasProvider);
         if (!hasProvider) {
-            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
                 type: "danger",
                 text: "Redirecting to MetaMask..."
             });
@@ -201,18 +204,18 @@ function App({ children  }) {
             connectMetaMask();
         }
         if (!wallet.accounts[0]) {
-            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
                 type: "danger",
                 text: "Please connect to MetaMask"
             });
             return;
         }
-        const account = ethers__WEBPACK_IMPORTED_MODULE_19__.ethers.getAddress(wallet.accounts[0]);
-        const nonceRes = await axios__WEBPACK_IMPORTED_MODULE_6__["default"].post("/api/auth/nonce", {
+        const account = ethers__WEBPACK_IMPORTED_MODULE_20__.ethers.getAddress(wallet.accounts[0]);
+        const nonceRes = await axios__WEBPACK_IMPORTED_MODULE_7__["default"].post("/api/auth/nonce", {
             address: account
         });
         if (!nonceRes.data.nonce) {
-            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
                 type: "danger",
                 text: "Get Nonce Failed!"
             });
@@ -227,13 +230,13 @@ function App({ children  }) {
             ]
         });
         if (!signature) {
-            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
                 type: "danger",
                 text: "Signature Failed!"
             });
             return;
         }
-        const loginRes = await dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__/* .loginMetaMask */ .CB)({
+        const loginRes = await dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_15__/* .loginMetaMask */ .CB)({
             address: account,
             signature,
             nonce,
@@ -241,9 +244,9 @@ function App({ children  }) {
             from_user: sessionStorage.getItem("from_user") || undefined
         }));
         if (loginRes.meta.requestStatus === "fulfilled") {
-            dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .updateAuthState */ .FA)(undefined));
-            dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__/* .getUser */ .PR)());
-            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
+            dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .updateAuthState */ .FA)(undefined));
+            dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_15__/* .getUser */ .PR)());
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
                 type: "success",
                 text: "Sucesfully Logged In!"
             });
@@ -252,21 +255,13 @@ function App({ children  }) {
             });
         }
     }
-    function loginWithGoogleOneTap() {
-        window?.google.accounts.id.prompt((notification)=>{
-            if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-                (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
-                    type: "danger",
-                    text: "You have refused google login, try again later or use MetaMask Login."
-                });
-            }
-        });
-    }
-    (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
-        if (authState === "login" || authState === "register") initGoogle();
+    (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
+        if (authState === "login" || authState === "register") {
+            initGoogle();
+        }
         if (authState === undefined && user.id) {
             const autoRefreshAccount = setInterval(()=>{
-                dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__/* .getUser */ .PR)());
+                dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_15__/* .getUser */ .PR)());
             }, 30000);
             return ()=>clearInterval(autoRefreshAccount);
         }
@@ -274,14 +269,14 @@ function App({ children  }) {
         authState,
         user
     ]);
-    (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
+    (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
         // Add a response interceptor
-        axios__WEBPACK_IMPORTED_MODULE_6__["default"].interceptors.response.use(function(response) {
+        axios__WEBPACK_IMPORTED_MODULE_7__["default"].interceptors.response.use(function(response) {
             return response;
         }, function(error) {
             if (error && error.code === "ERR_NETWORK") {
                 console.warn(error);
-                (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .message */ .yw)(dispatch, {
+                (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .message */ .yw)(dispatch, {
                     type: "danger",
                     text: "Network error! Check your connection."
                 });
@@ -289,16 +284,16 @@ function App({ children  }) {
             return Promise.reject(error);
         });
     }, []);
-    (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
+    (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(()=>{
         if (user.requestStatus === "idle" || user.requestStatus === "failed") {
-            dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_14__/* .getUser */ .PR)());
+            dispatch((0,_frontend_redux_user_actions__WEBPACK_IMPORTED_MODULE_15__/* .getUser */ .PR)());
         }
         function handleRouteChange() {
         // posthog.capture('$pageview')
         }
         next_router__WEBPACK_IMPORTED_MODULE_2___default().events.on("routeChangeComplete", handleRouteChange);
         if (router.asPath && router.asPath.includes("#signup")) {
-            dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .updateAuthState */ .FA)("register"));
+            dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .updateAuthState */ .FA)("register"));
         }
         return ()=>{
             next_router__WEBPACK_IMPORTED_MODULE_2___default().events.off("routeChangeComplete", handleRouteChange);
@@ -306,11 +301,17 @@ function App({ children  }) {
     }, []);
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_message_message__WEBPACK_IMPORTED_MODULE_18__/* ["default"] */ .Z, {}),
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_script__WEBPACK_IMPORTED_MODULE_3___default()), {
+                src: "https://accounts.google.com/gsi/client",
+                async: true,
+                defer: true,
+                onLoad: initGoogle
+            }),
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_message_message__WEBPACK_IMPORTED_MODULE_19__/* ["default"] */ .Z, {}),
             children,
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_modal_modal__WEBPACK_IMPORTED_MODULE_10__/* .AuthModal */ .Q, {
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_modal_modal__WEBPACK_IMPORTED_MODULE_11__/* .AuthModal */ .Q, {
                 show: authState === "login",
-                onClose: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .updateAuthState */ .FA)(undefined)),
+                onClose: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .updateAuthState */ .FA)(undefined)),
                 actions: [],
                 title: "",
                 children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -327,7 +328,7 @@ function App({ children  }) {
                                 " ",
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("a", {
                                     href: "#",
-                                    onClick: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .updateAuthState */ .FA)("register")),
+                                    onClick: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .updateAuthState */ .FA)("register")),
                                     children: "Create it now"
                                 })
                             ]
@@ -349,14 +350,14 @@ function App({ children  }) {
                             style: {
                                 marginTop: 14
                             },
-                            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_frontend_components_button_button__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
+                            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_frontend_components_button_button__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {
                                 size: "md",
                                 type: "primary",
                                 fullWidth: true,
                                 onClick: metaMaskLogin,
                                 children: [
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
-                                        src: _frontend_images_metamask_logo_png__WEBPACK_IMPORTED_MODULE_5__/* ["default"].src */ .Z.src,
+                                        src: _frontend_images_metamask_logo_png__WEBPACK_IMPORTED_MODULE_6__/* ["default"].src */ .Z.src,
                                         className: "h-6 w-6"
                                     }),
                                     "MetaMask"
@@ -366,9 +367,9 @@ function App({ children  }) {
                     ]
                 })
             }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_modal_modal__WEBPACK_IMPORTED_MODULE_10__/* .AuthModal */ .Q, {
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_modal_modal__WEBPACK_IMPORTED_MODULE_11__/* .AuthModal */ .Q, {
                 show: authState === "register",
-                onClose: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .updateAuthState */ .FA)(undefined)),
+                onClose: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .updateAuthState */ .FA)(undefined)),
                 actions: [],
                 title: "",
                 children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
@@ -398,14 +399,14 @@ function App({ children  }) {
                             style: {
                                 marginTop: 14
                             },
-                            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_frontend_components_button_button__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
+                            children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(_frontend_components_button_button__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {
                                 size: "md",
                                 type: "primary",
                                 fullWidth: true,
                                 onClick: metaMaskLogin,
                                 children: [
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
-                                        src: _frontend_images_metamask_logo_png__WEBPACK_IMPORTED_MODULE_5__/* ["default"].src */ .Z.src,
+                                        src: _frontend_images_metamask_logo_png__WEBPACK_IMPORTED_MODULE_6__/* ["default"].src */ .Z.src,
                                         className: "h-6 w-6"
                                     }),
                                     "MetaMask"
@@ -436,9 +437,9 @@ function App({ children  }) {
                     ]
                 })
             }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_modal_modal__WEBPACK_IMPORTED_MODULE_10__/* .AuthModal */ .Q, {
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_modal_modal__WEBPACK_IMPORTED_MODULE_11__/* .AuthModal */ .Q, {
                 show: authState === "credits",
-                onClose: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .updateAuthState */ .FA)(undefined)),
+                onClose: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .updateAuthState */ .FA)(undefined)),
                 actions: [],
                 title: "",
                 size: "xl",
@@ -463,7 +464,7 @@ function App({ children  }) {
                                 height: 9
                             }
                         }),
-                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
+                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_components_plans_plans__WEBPACK_IMPORTED_MODULE_12__/* ["default"] */ .Z, {
                             type: "pricing"
                         }),
                         /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
@@ -472,12 +473,12 @@ function App({ children  }) {
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                     children: "Don't want to upgrade?"
                                 }),
-                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_17___default()), {
+                                /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_18___default()), {
                                     href: "/referrals",
                                     children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
-                                        onClick: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .updateAuthState */ .FA)(undefined)),
+                                        onClick: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .updateAuthState */ .FA)(undefined)),
                                         children: [
-                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_16__.Gift, {
+                                            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_17__.Gift, {
                                                 size: 14,
                                                 strokeWidth: 1
                                             }),
@@ -487,9 +488,9 @@ function App({ children  }) {
                                 }),
                                 /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
                                     href: `/api/billing/checkout${referral ? `?referral=${referral}` : ""}`,
-                                    onClick: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_13__/* .updateAuthState */ .FA)(undefined)),
+                                    onClick: ()=>dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_14__/* .updateAuthState */ .FA)(undefined)),
                                     children: [
-                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_16__.Coins, {
+                                        /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(lucide_react__WEBPACK_IMPORTED_MODULE_17__.Coins, {
                                             size: 14,
                                             strokeWidth: 1
                                         }),
@@ -505,7 +506,7 @@ function App({ children  }) {
     });
 }
 function Frontend({ Component , pageProps  }) {
-    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_redux__WEBPACK_IMPORTED_MODULE_4__.Provider, {
+    return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_redux__WEBPACK_IMPORTED_MODULE_5__.Provider, {
         store: _frontend_redux_store__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z,
         children: [
             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("noscript", {
@@ -519,7 +520,7 @@ function Frontend({ Component , pageProps  }) {
                     }
                 })
             }),
-            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_context_metamask__WEBPACK_IMPORTED_MODULE_20__/* .MetaMaskContextProvider */ .e4, {
+            /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_frontend_context_metamask__WEBPACK_IMPORTED_MODULE_21__/* .MetaMaskContextProvider */ .e4, {
                 children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(App, {
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(Component, {
                         ...pageProps
@@ -536,9 +537,18 @@ __webpack_async_result__();
 
 /***/ }),
 
+/***/ 4298:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__(699)
+
+
+/***/ }),
+
 /***/ 3427:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("@metamask/detect-provider");
 
 /***/ }),
@@ -546,6 +556,7 @@ module.exports = require("@metamask/detect-provider");
 /***/ 5184:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("@reduxjs/toolkit");
 
 /***/ }),
@@ -553,6 +564,7 @@ module.exports = require("@reduxjs/toolkit");
 /***/ 1635:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("dayjs");
 
 /***/ }),
@@ -560,6 +572,7 @@ module.exports = require("dayjs");
 /***/ 4195:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("dayjs/plugin/relativeTime");
 
 /***/ }),
@@ -567,6 +580,7 @@ module.exports = require("dayjs/plugin/relativeTime");
 /***/ 2423:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("lucide-react");
 
 /***/ }),
@@ -574,6 +588,7 @@ module.exports = require("lucide-react");
 /***/ 3280:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/app-router-context.js");
 
 /***/ }),
@@ -581,6 +596,7 @@ module.exports = require("next/dist/shared/lib/app-router-context.js");
 /***/ 2796:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/head-manager-context.js");
 
 /***/ }),
@@ -588,6 +604,7 @@ module.exports = require("next/dist/shared/lib/head-manager-context.js");
 /***/ 4014:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/i18n/normalize-locale-path.js");
 
 /***/ }),
@@ -595,6 +612,7 @@ module.exports = require("next/dist/shared/lib/i18n/normalize-locale-path.js");
 /***/ 8524:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/is-plain-object.js");
 
 /***/ }),
@@ -602,6 +620,7 @@ module.exports = require("next/dist/shared/lib/is-plain-object.js");
 /***/ 8020:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/mitt.js");
 
 /***/ }),
@@ -609,6 +628,7 @@ module.exports = require("next/dist/shared/lib/mitt.js");
 /***/ 4406:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/page-path/denormalize-page-path.js");
 
 /***/ }),
@@ -616,6 +636,7 @@ module.exports = require("next/dist/shared/lib/page-path/denormalize-page-path.j
 /***/ 4964:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router-context.js");
 
 /***/ }),
@@ -623,6 +644,7 @@ module.exports = require("next/dist/shared/lib/router-context.js");
 /***/ 1751:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix.js");
 
 /***/ }),
@@ -630,6 +652,7 @@ module.exports = require("next/dist/shared/lib/router/utils/add-path-prefix.js")
 /***/ 299:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/format-next-pathname-info.js");
 
 /***/ }),
@@ -637,6 +660,7 @@ module.exports = require("next/dist/shared/lib/router/utils/format-next-pathname
 /***/ 3938:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/format-url.js");
 
 /***/ }),
@@ -644,6 +668,7 @@ module.exports = require("next/dist/shared/lib/router/utils/format-url.js");
 /***/ 9565:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/get-asset-path-from-route.js");
 
 /***/ }),
@@ -651,6 +676,7 @@ module.exports = require("next/dist/shared/lib/router/utils/get-asset-path-from-
 /***/ 5789:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/get-next-pathname-info.js");
 
 /***/ }),
@@ -658,6 +684,7 @@ module.exports = require("next/dist/shared/lib/router/utils/get-next-pathname-in
 /***/ 1428:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/is-dynamic.js");
 
 /***/ }),
@@ -665,6 +692,7 @@ module.exports = require("next/dist/shared/lib/router/utils/is-dynamic.js");
 /***/ 8854:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/parse-path.js");
 
 /***/ }),
@@ -672,6 +700,7 @@ module.exports = require("next/dist/shared/lib/router/utils/parse-path.js");
 /***/ 1292:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/parse-relative-url.js");
 
 /***/ }),
@@ -679,6 +708,7 @@ module.exports = require("next/dist/shared/lib/router/utils/parse-relative-url.j
 /***/ 4567:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/path-has-prefix.js");
 
 /***/ }),
@@ -686,6 +716,7 @@ module.exports = require("next/dist/shared/lib/router/utils/path-has-prefix.js")
 /***/ 979:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/querystring.js");
 
 /***/ }),
@@ -693,6 +724,7 @@ module.exports = require("next/dist/shared/lib/router/utils/querystring.js");
 /***/ 3297:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slash.js");
 
 /***/ }),
@@ -700,6 +732,7 @@ module.exports = require("next/dist/shared/lib/router/utils/remove-trailing-slas
 /***/ 6052:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/resolve-rewrites.js");
 
 /***/ }),
@@ -707,6 +740,7 @@ module.exports = require("next/dist/shared/lib/router/utils/resolve-rewrites.js"
 /***/ 4226:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/route-matcher.js");
 
 /***/ }),
@@ -714,6 +748,7 @@ module.exports = require("next/dist/shared/lib/router/utils/route-matcher.js");
 /***/ 5052:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/router/utils/route-regex.js");
 
 /***/ }),
@@ -721,6 +756,7 @@ module.exports = require("next/dist/shared/lib/router/utils/route-regex.js");
 /***/ 9232:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/dist/shared/lib/utils.js");
 
 /***/ }),
@@ -728,6 +764,7 @@ module.exports = require("next/dist/shared/lib/utils.js");
 /***/ 1853:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("next/router");
 
 /***/ }),
@@ -735,6 +772,7 @@ module.exports = require("next/router");
 /***/ 6689:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("react");
 
 /***/ }),
@@ -742,6 +780,7 @@ module.exports = require("react");
 /***/ 6405:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("react-dom");
 
 /***/ }),
@@ -749,6 +788,7 @@ module.exports = require("react-dom");
 /***/ 2279:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("react-outside-click-handler");
 
 /***/ }),
@@ -756,6 +796,7 @@ module.exports = require("react-outside-click-handler");
 /***/ 6022:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("react-redux");
 
 /***/ }),
@@ -763,6 +804,7 @@ module.exports = require("react-redux");
 /***/ 997:
 /***/ ((module) => {
 
+"use strict";
 module.exports = require("react/jsx-runtime");
 
 /***/ }),
@@ -770,6 +812,7 @@ module.exports = require("react/jsx-runtime");
 /***/ 9648:
 /***/ ((module) => {
 
+"use strict";
 module.exports = import("axios");;
 
 /***/ }),
@@ -777,6 +820,7 @@ module.exports = import("axios");;
 /***/ 8844:
 /***/ ((module) => {
 
+"use strict";
 module.exports = import("ethers");;
 
 /***/ }),
@@ -784,6 +828,7 @@ module.exports = import("ethers");;
 /***/ 9915:
 /***/ ((module) => {
 
+"use strict";
 module.exports = import("js-cookie");;
 
 /***/ })

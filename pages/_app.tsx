@@ -77,7 +77,6 @@ function App({ children }: Props): JSX.Element {
       login_btn_wrapper_register?.clientWidth ??
       login_btn_wrapper_signin?.clientWidth ??
       328;
-    console.log(clientWidth);
     const google = (window as any).google;
     if (!(window as any).google) return;
     google.accounts.id.initialize({
@@ -117,7 +116,6 @@ function App({ children }: Props): JSX.Element {
   }
 
   async function metaMaskLogin() {
-    console.log(hasProvider);
     if (!hasProvider) {
       message(dispatch, { type: "danger", text: "Redirecting to MetaMask..." });
       setTimeout(() => {
@@ -165,19 +163,10 @@ function App({ children }: Props): JSX.Element {
     }
   }
 
-  function loginWithGoogleOneTap() {
-    window?.google.accounts.id.prompt((notification: any) => {
-      if (notification.isNotDisplayed() || notification.isSkippedMoment()) {
-        message(dispatch, {
-          type: "danger",
-          text: "You have refused google login, try again later or use MetaMask Login.",
-        });
-      }
-    });
-  }
-
   useEffect(() => {
-    if (authState === "login" || authState === "register") initGoogle();
+    if (authState === "login" || authState === "register") {
+      initGoogle();
+    }
     if (authState === undefined && user.id) {
       const autoRefreshAccount = setInterval(() => {
         dispatch(getUser());
@@ -227,6 +216,12 @@ function App({ children }: Props): JSX.Element {
 
   return (
     <>
+      <Script
+        src="https://accounts.google.com/gsi/client"
+        async
+        defer
+        onLoad={initGoogle}
+      />
       <Messages />
       {children}
 
