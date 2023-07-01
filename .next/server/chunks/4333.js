@@ -328,7 +328,8 @@ function WebsiteHeader({ fixed =false  }) {
                                 setShow18Plus((t)=>!t);
                             },
                             children: [
-                                "18+ ",
+                                "18+",
+                                " ",
                                 show18Plus ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((_ant_design_icons_EyeInvisibleOutlined__WEBPACK_IMPORTED_MODULE_14___default()), {
                                     className: "leading-0 ml-1",
                                     rev: ""
@@ -400,6 +401,9 @@ function WebsiteHeader({ fixed =false  }) {
                                 }),
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                     className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_21___default().mobile_link_cta),
+                                    onClick: ()=>{
+                                        dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .updateAuthState */ .FA)("register"));
+                                    },
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
                                         children: "Create free account"
                                     })
@@ -425,8 +429,7 @@ function getUTCMidnightLocaleTimeString() {
         minute: "2-digit",
         hour12: false
     });
-    return localeTimeString // Output: "00:00"
-    ;
+    return localeTimeString; // Output: "00:00"
 }
 function HeaderUser() {
     const { 0: open , 1: setOpen  } = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(false);
@@ -612,7 +615,8 @@ function HeaderUser() {
                             }),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
                                 children: [
-                                    "Simply sign in every day and receive ",
+                                    "Simply sign in every day and receive",
+                                    " ",
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                         style: {
                                             fontWeight: 500,
@@ -620,7 +624,8 @@ function HeaderUser() {
                                         },
                                         children: "2 Credits"
                                     }),
-                                    " as a reward."
+                                    " ",
+                                    "as a reward."
                                 ]
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
@@ -628,7 +633,8 @@ function HeaderUser() {
                             }),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
                                 children: [
-                                    "Keep an eye on the clock, as a new day starts at ",
+                                    "Keep an eye on the clock, as a new day starts at",
+                                    " ",
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
                                         style: {
                                             fontWeight: 500,
