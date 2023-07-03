@@ -142,7 +142,9 @@ export function WebsiteHeader({ fixed = false }): JSX.Element {
                 Log in
               </a>
               <div className={styles.mobile_link_cta}>
-                <Button>Create free account</Button>
+                <Button onClick={() => {
+                  dispatch(updateAuthState('register'))
+                }}>Create free account</Button>
               </div>
             </>
           )}
@@ -350,6 +352,7 @@ function HeaderUser(): JSX.Element {
               those rewards today!
             </p>
             <Button
+              id="ga_btn_checkin"
               onClick={checkIn}
               type={hasCheckedIn ? "default" : "primary"}
             >

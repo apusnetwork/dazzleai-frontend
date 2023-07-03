@@ -132,6 +132,7 @@ function ImageGallery() {
           />
           <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
           <IconButton
+            id="ga_btn_search"
             size="small"
             type="button"
             onClick={() => setReq({ ...req, search: searchCache })}

@@ -10262,7 +10262,7 @@ function QuestionCircle_Puzzle({ color ="currentColor" , size =24 , fill ="none"
 
 
 
-function Button({ openInNewTab =false , type ="primary" , htmlType , size ="md" , href , loading , disabled , fullWidth , children , onClick , errorFor =[] , title , download  }) {
+function Button({ id , openInNewTab =false , type ="primary" , htmlType , size ="md" , href , loading , disabled , fullWidth , children , onClick , errorFor =[] , title , download  }) {
     const { 0: hrefStr , 1: setHrefStr  } = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)("");
     (0,react__WEBPACK_IMPORTED_MODULE_5__.useEffect)(()=>{
         if (href) {
@@ -10324,6 +10324,7 @@ function Button({ openInNewTab =false , type ="primary" , htmlType , size ="md" 
                 children: children
             })
         }) : /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("button", {
+            id: id,
             className: className,
             onClick: onClick,
             type: htmlType,

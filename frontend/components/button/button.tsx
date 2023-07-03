@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 
 
 interface ButtonProps {
+  id?: string
   openInNewTab?: boolean
   type?: "primary" | "default" | "danger" | "icon" | "accent" | "accent-border" | "google" | "link" | "icon-active" | "transparent";
   htmlType?: "button" | "submit" | "reset";
@@ -23,7 +24,7 @@ interface ButtonProps {
 }
 
 
-export default function Button({ openInNewTab = false, type = "primary", htmlType, size = "md", href, loading,
+export default function Button({ id, openInNewTab = false, type = "primary", htmlType, size = "md", href, loading,
   disabled, fullWidth, children, onClick, errorFor = [], title, download }: ButtonProps): JSX.Element {
   const [hrefStr, setHrefStr] = useState<string>("")
 
@@ -81,6 +82,7 @@ export default function Button({ openInNewTab = false, type = "primary", htmlTyp
               </a>
             </Link>
             : <button
+              id={id}
               className={className}
               onClick={onClick}
               type={htmlType}

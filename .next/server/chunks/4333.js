@@ -405,6 +405,9 @@ function WebsiteHeader({ fixed =false  }) {
                                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                     className: (_layout_module_scss__WEBPACK_IMPORTED_MODULE_22___default().mobile_link_cta),
                                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
+                                        onClick: ()=>{
+                                            dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_2__/* .updateAuthState */ .FA)("register"));
+                                        },
                                         children: "Create free account"
                                     })
                                 })
@@ -667,6 +670,7 @@ function HeaderUser() {
                                 children: "Don't miss out on your daily dose of credits - sign in and rack up those rewards today!"
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_button_button__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
+                                id: "ga_btn_checkin",
                                 onClick: checkIn,
                                 type: hasCheckedIn ? "default" : "primary",
                                 children: hasCheckedIn ? "Completed" : "Claim"
