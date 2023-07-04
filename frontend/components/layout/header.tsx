@@ -25,6 +25,7 @@ import Modal from "../modal/modal";
 import axiosInstance, { oapi } from "@/frontend/utils/axios";
 import dayjs from "dayjs";
 import { useRouter } from "next/router";
+import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 
 declare global {
   interface Window {
@@ -69,7 +70,7 @@ export function WebsiteHeader({ fixed = false }): JSX.Element {
           )}
         >
           {/* {/* <ActiveLink activeClassName={styles.active} href="/editor"><a className={styles.header_link}>AI Editor</a></ActiveLink> */}
-          <ActiveLink activeClassName={styles.active} href="/?scrollToModal">
+          <ActiveLink activeClassName={styles.active} href="/models">
             <a className={styles.header_link}>Model List</a>
           </ActiveLink>
           <ActiveLink activeClassName={styles.active} href="/generate">
@@ -140,13 +141,10 @@ export function WebsiteHeader({ fixed = false }): JSX.Element {
               >
                 Log in
               </a>
-              <div
-                className={styles.mobile_link_cta}
-                onClick={() => {
-                  dispatch(updateAuthState("register"));
-                }}
-              >
-                <Button>Create free account</Button>
+              <div className={styles.mobile_link_cta}>
+                <Button onClick={() => {
+                  dispatch(updateAuthState('register'))
+                }}>Create free account</Button>
               </div>
             </>
           )}
@@ -263,6 +261,18 @@ function HeaderUser(): JSX.Element {
                   </Link>
                 </li> */}
               <li>
+                <Link href="/user/profile">
+                  <a>
+                    <PersonOutlineIcon
+                      style={{
+                        fontSize: 16,
+                      }}
+                    />
+                    Profile
+                  </a>
+                </Link>
+              </li>
+              <li>
                 <Link href="/legal/privacy-policy">
                   <a>
                     <SecurityShield size={16} />
@@ -342,6 +352,7 @@ function HeaderUser(): JSX.Element {
               those rewards today!
             </p>
             <Button
+              id="ga_btn_checkin"
               onClick={checkIn}
               type={hasCheckedIn ? "default" : "primary"}
             >

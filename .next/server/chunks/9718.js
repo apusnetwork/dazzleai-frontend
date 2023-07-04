@@ -65,9 +65,10 @@ module.exports = {
 /***/ }),
 
 /***/ 9718:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
+__webpack_require__.a(module, async (__webpack_handle_async_dependencies__, __webpack_async_result__) => { try {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "E": () => (/* binding */ SimpleImage),
 /* harmony export */   "m": () => (/* binding */ ImageGridVisual)
@@ -76,8 +77,8 @@ module.exports = {
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _mui_lab_Masonry__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1584);
 /* harmony import */ var _mui_lab_Masonry__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_mui_lab_Masonry__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _website_module_scss__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(3499);
-/* harmony import */ var _website_module_scss__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_website_module_scss__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _website_module_scss__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(3499);
+/* harmony import */ var _website_module_scss__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(_website_module_scss__WEBPACK_IMPORTED_MODULE_17__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(1664);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(6689);
@@ -90,6 +91,20 @@ module.exports = {
 /* harmony import */ var _default_avatar_webp__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(4836);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(9003);
 /* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_8__);
+/* harmony import */ var _mui_icons_material_FavoriteBorder__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(6910);
+/* harmony import */ var _mui_icons_material_FavoriteBorder__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_mui_icons_material_FavoriteBorder__WEBPACK_IMPORTED_MODULE_9__);
+/* harmony import */ var _mui_icons_material_Favorite__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(7372);
+/* harmony import */ var _mui_icons_material_Favorite__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(_mui_icons_material_Favorite__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _mui_icons_material_ThumbUpOffAlt__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(5929);
+/* harmony import */ var _mui_icons_material_ThumbUpOffAlt__WEBPACK_IMPORTED_MODULE_11___default = /*#__PURE__*/__webpack_require__.n(_mui_icons_material_ThumbUpOffAlt__WEBPACK_IMPORTED_MODULE_11__);
+/* harmony import */ var _mui_icons_material_ThumbUpAlt__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(4881);
+/* harmony import */ var _mui_icons_material_ThumbUpAlt__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(_mui_icons_material_ThumbUpAlt__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(3464);
+/* harmony import */ var _frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(3779);
+/* harmony import */ var _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(4969);
+/* harmony import */ var _frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(3137);
+var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_14__, _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_15__]);
+([_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_14__, _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_15__] = __webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__);
 
 // import Masonry from "react-masonry-css";
 
@@ -101,7 +116,17 @@ module.exports = {
 
 
 
-const SimpleImage = ({ model , onClick , showRun  })=>{
+
+
+
+
+
+
+
+
+const SimpleImage = ({ model , onClick , showRun , hasFavorite =false , hasLike =false , hideFavorite , hideLike  })=>{
+    const dispatch = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_13__/* .useAppDispatch */ .T)();
+    const user = (0,_frontend_redux_hooks__WEBPACK_IMPORTED_MODULE_13__/* .useAppSelector */ .C)(_frontend_redux_user_slice__WEBPACK_IMPORTED_MODULE_14__/* .selectUser */ .dy);
     const { show18Plus: gloablShow18Plus  } = (0,_frontend_context_18puls__WEBPACK_IMPORTED_MODULE_6__/* .useGlobal18Plus */ .W)();
     const { 0: show18Plus , 1: setShow18Plus  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
     (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
@@ -109,12 +134,54 @@ const SimpleImage = ({ model , onClick , showRun  })=>{
     }, [
         gloablShow18Plus
     ]);
+    const { 0: isFavorite , 1: setIsFavorite  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
+    const { 0: isLike , 1: setIsLike  } = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(false);
     const is18Plus = model.nsfw;
+    (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
+        setIsLike(hasLike);
+    }, [
+        hasLike
+    ]);
+    (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(()=>{
+        setIsFavorite(hasFavorite);
+    }, [
+        hasFavorite
+    ]);
+    async function toggleFavorite(image_id) {
+        if (!user.id) return;
+        try {
+            await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_15__/* .oapi.post */ .xP.post(`/images/update`, {
+                image_id,
+                is_favourite: !isFavorite
+            });
+            setIsFavorite((is)=>!is);
+        } catch (e) {
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_16__/* .message */ .yw)(dispatch, {
+                text: "Failed to update favorite",
+                type: "danger"
+            });
+        }
+    }
+    async function toggleLike(image_id) {
+        if (!user.id) return;
+        try {
+            await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_15__/* .oapi.post */ .xP.post(`/images/update`, {
+                image_id,
+                is_like: !isLike
+            });
+            setIsLike((is)=>!is);
+        } catch (e) {
+            (0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_16__/* .message */ .yw)(dispatch, {
+                text: "Failed to update like",
+                type: "danger"
+            });
+        }
+    }
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-        className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().column),
+        className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().column),
         onClick: onClick,
         children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-            className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_wrapper_2),
+            className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_wrapper_2),
             children: [
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                     src: model.reuse_img_url ?? "https://s3.apus.network/" + model.reuse_img,
@@ -127,7 +194,7 @@ const SimpleImage = ({ model , onClick , showRun  })=>{
                 showRun && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
                     href: `/generate?img=${model.reuse_img}&shared=true`,
                     children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_try_badge_2),
+                        className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_try_badge_2),
                         onClick: (e)=>{
                             e.stopPropagation();
                         },
@@ -135,38 +202,45 @@ const SimpleImage = ({ model , onClick , showRun  })=>{
                     })
                 }),
                 /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                    className: classnames__WEBPACK_IMPORTED_MODULE_8___default()((_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_badge_wrapper), (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_badge_left_top)),
-                    children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: classnames__WEBPACK_IMPORTED_MODULE_8___default()((_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_badge_wrapper), (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_badge_left_top)),
+                    className: classnames__WEBPACK_IMPORTED_MODULE_8___default()((_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_badge_wrapper), (_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_badge_left_top)),
+                    children: is18Plus && /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                        className: classnames__WEBPACK_IMPORTED_MODULE_8___default()((_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_badge), (_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_badge_18)),
+                        onClick: (e)=>{
+                            e.preventDefault();
+                            e.stopPropagation();
+                            setShow18Plus((show)=>!show);
+                        },
                         children: [
-                            is18Plus && /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                className: classnames__WEBPACK_IMPORTED_MODULE_8___default()((_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_badge), (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_badge_18)),
-                                onClick: (e)=>{
-                                    e.preventDefault();
-                                    e.stopPropagation();
-                                    setShow18Plus((show)=>!show);
-                                },
-                                children: [
-                                    "18+",
-                                    " ",
-                                    show18Plus ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((_ant_design_icons_EyeInvisibleOutlined__WEBPACK_IMPORTED_MODULE_5___default()), {
-                                        className: "leading-0 ml-1",
-                                        rev: ""
-                                    }) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((_ant_design_icons_EyeOutlined__WEBPACK_IMPORTED_MODULE_4___default()), {
-                                        className: "leading-0 ml-1",
-                                        rev: ""
-                                    })
-                                ]
-                            }),
-                            model.type && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: [
-                                    (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_badge),
-                                    (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_badge_type)
-                                ].join(" "),
-                                children: model.type
+                            "18+",
+                            " ",
+                            show18Plus ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((_ant_design_icons_EyeInvisibleOutlined__WEBPACK_IMPORTED_MODULE_5___default()), {
+                                className: "leading-0 ml-1",
+                                rev: ""
+                            }) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((_ant_design_icons_EyeOutlined__WEBPACK_IMPORTED_MODULE_4___default()), {
+                                className: "leading-0 ml-1",
+                                rev: ""
                             })
                         ]
                     })
+                }),
+                user.id && /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                    className: classnames__WEBPACK_IMPORTED_MODULE_8___default()((_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_badge_wrapper), "right-0.5 bottom-2 p-1 cursor-pointer"),
+                    children: [
+                        !hideFavorite && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                            onClick: (e)=>{
+                                e.stopPropagation();
+                                toggleFavorite(model.id);
+                            },
+                            children: isFavorite ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((_mui_icons_material_Favorite__WEBPACK_IMPORTED_MODULE_10___default()), {}) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((_mui_icons_material_FavoriteBorder__WEBPACK_IMPORTED_MODULE_9___default()), {})
+                        }),
+                        !hideLike && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
+                            onClick: (e)=>{
+                                e.stopPropagation();
+                                toggleLike(model.id);
+                            },
+                            children: isLike ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((_mui_icons_material_ThumbUpAlt__WEBPACK_IMPORTED_MODULE_12___default()), {}) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((_mui_icons_material_ThumbUpOffAlt__WEBPACK_IMPORTED_MODULE_11___default()), {})
+                        })
+                    ]
                 })
             ]
         })
@@ -183,9 +257,9 @@ const Image = ({ model  })=>{
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
         href: `/model/${model.id}`,
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-            className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().column),
+            className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().column),
             children: /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_wrapper),
+                className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_wrapper),
                 children: [
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
                         src: model.reuse_img_url ?? "https://s3.apus.network/" + model.reuse_img,
@@ -196,7 +270,7 @@ const Image = ({ model  })=>{
                         className: "z-0"
                     }, model.id),
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_badge_runs),
+                        className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_badge_runs),
                         children: [
                             model.useCount,
                             " runs"
@@ -205,15 +279,15 @@ const Image = ({ model  })=>{
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
                         href: `/generate?img=${model.reuse_img}&shared=true`,
                         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                            className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_try_badge),
+                            className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_try_badge),
                             children: "Run"
                         })
                     }),
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: classnames__WEBPACK_IMPORTED_MODULE_8___default()((_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_badge_wrapper), (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_badge_left_top)),
+                        className: classnames__WEBPACK_IMPORTED_MODULE_8___default()((_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_badge_wrapper), (_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_badge_left_top)),
                         children: [
                             model.nsfw && /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                                className: classnames__WEBPACK_IMPORTED_MODULE_8___default()((_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_badge), (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_badge_18)),
+                                className: classnames__WEBPACK_IMPORTED_MODULE_8___default()((_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_badge), (_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_badge_18)),
                                 onClick: (e)=>{
                                     e.preventDefault();
                                     e.stopPropagation();
@@ -233,19 +307,19 @@ const Image = ({ model  })=>{
                             }),
                             model.type && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                                 className: [
-                                    (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_badge),
-                                    (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_badge_type)
+                                    (_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_badge),
+                                    (_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_badge_type)
                                 ].join(" "),
                                 children: model.type
                             })
                         ]
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                        className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_name),
+                        className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_name),
                         children: model.name
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("img", {
-                        className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_avatar_url),
+                        className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_avatar_url),
                         src: model.params.author_avatar || _default_avatar_webp__WEBPACK_IMPORTED_MODULE_7__/* ["default"].src */ .Z.src
                     })
                 ]
@@ -270,7 +344,7 @@ const ImageGridVisual = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_3__.forw
         };
     }, []);
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-        className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_9___default().image_grid_visual),
+        className: (_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_grid_visual),
         ref: ref,
         children: /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((_mui_lab_Masonry__WEBPACK_IMPORTED_MODULE_1___default()), {
             columns: columns,
@@ -282,6 +356,8 @@ const ImageGridVisual = /*#__PURE__*/ (0,react__WEBPACK_IMPORTED_MODULE_3__.forw
     });
 });
 
+__webpack_async_result__();
+} catch(e) { __webpack_async_result__(e); } });
 
 /***/ })
 

@@ -1,30 +1,34 @@
-import axiosInstance, { handleApiError } from '@/frontend/utils/axios';
-import { AuthHeaderKey, getCookie } from '@/frontend/utils/cookie';
-import type { NextApiRequest, NextApiResponse } from 'next'
-import { RemoteImage } from '../images';
-import fetch from 'node-fetch';
-import stream from 'stream';
+import axiosInstance, { handleApiError } from "@/frontend/utils/axios";
+import { AuthHeaderKey, getCookie } from "@/frontend/utils/cookie";
+import type { NextApiRequest, NextApiResponse } from "next";
+import { RemoteImage } from "../images";
+import fetch from "node-fetch";
+import stream from "stream";
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   try {
-    const token = getCookie(req, AuthHeaderKey)
-    const imagesRes = await axiosInstance.get<RemoteImage[]>('/api/images', {
+    const token = getCookie(req, AuthHeaderKey);
+    const imagesRes = await axiosInstance.get<RemoteImage[]>("/api/image", {
       params: {
         ids: req.query.id,
-        limit: req.query.take,
-        offset: req.query.skip,
       },
       headers: {
         Authorization: `Bearer ${token}`,
-      }
-    })
+      },
+    });
     if (imagesRes.data.length === 0) {
-      res.status(404).json({ message: 'Image not found' })
-      return
+      res.status(404).json({ message: "Image not found" });
+      return;
     }
-    const fileUrl = imagesRes.data[0].image_url
-    res.setHeader('Content-Disposition', `attachment; filename="${fileUrl.split('/').pop() ?? 'default'}.png"`);
-    res.setHeader('Content-Type', 'image/jpeg');
+    const fileUrl = imagesRes.data[0].image_url;
+    res.setHeader(
+      "Content-Disposition",
+      `attachment; filename="${fileUrl.split("/").pop() ?? "default"}.png"`
+    );
+    res.setHeader("Content-Type", "image/jpeg");
 
     // Stream the file to the response
     const response = await fetch(fileUrl);
@@ -37,7 +41,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
       });
     }
   } catch (e: any) {
-    const { status, message } = handleApiError(e)
-    res.status(status).json({ message })
+    const { status, message } = handleApiError(e);
+    res.status(status).json({ message });
   }
 }
