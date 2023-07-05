@@ -15,7 +15,7 @@ import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import { useAppDispatch, useAppSelector } from "@/frontend/redux/hooks";
 import { selectUser } from "@/frontend/redux/user/slice";
 import { oapi } from "@/frontend/utils/axios";
-import { message } from "@/frontend/redux/info/slice";
+import { message, updateAuthState } from "@/frontend/redux/info/slice";
 
 interface ImageGridVisualProps {
   images: ModelI[];
@@ -131,7 +131,6 @@ export const SimpleImage = ({
             </div>
           )}
         </div>
-        {user.id && (
           <div
             className={classnames(
               styles.image_badge_wrapper,
@@ -142,6 +141,9 @@ export const SimpleImage = ({
               <div
                 onClick={(e) => {
                   e.stopPropagation();
+                  if (!user.id) {
+                    dispatch(updateAuthState('login'))
+                  }
                   toggleFavorite(model.id);
                 }}
               >
@@ -152,6 +154,9 @@ export const SimpleImage = ({
               <div
                 onClick={(e) => {
                   e.stopPropagation();
+                  if (!user.id) {
+                    dispatch(updateAuthState('login'))
+                  }
                   toggleLike(model.id);
                 }}
               >
@@ -159,7 +164,6 @@ export const SimpleImage = ({
               </div>
             )}
           </div>
-        )}
       </div>
     </div>
   );

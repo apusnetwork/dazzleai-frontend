@@ -20,11 +20,11 @@ function ImageGallery() {
   const [favorite, setFavorite] = useState([]);
   const [like, setLike] = useState([]);
 
-  async function getImages(reset: boolean = false) {
+  async function getImages(reset: boolean = false, favlikeL: string = favlike, favoriteL: any[] = favorite, likeL: any[] = like) {
     try {
       const res = await oapi.get("/shared/images", {
         params: {
-          ids: favlike === "Favorite" ? favorite.join(",") : like.join(","),
+          ids: favlikeL === "Favorite" ? favoriteL.join(",") : likeL.join(","),
         },
       });
       setImages(
@@ -43,37 +43,20 @@ function ImageGallery() {
       const res = await oapi.get("/images/list/action");
       setFavorite(res.data.favourite ?? []);
       setLike(res.data.like ?? []);
+      return res.data
     } catch (e) {
       console.log(e);
-    } finally {
-      setLoaded(true);
     }
   }
 
-  useEffect(() => {
-    if (user.id) {
-      getFavoriteLike();
-    }
-  }, [user.id]);
-
   const [favlike, setFavLike] = useState("Favorite");
+
   useEffect(() => {
-    if (!loaded) return;
-    if (favlike === "Favorite") {
-      if (!favorite.length) {
-        setImages([]);
-      } else {
-        getImages();
-      }
+    if (user.id && favlike) {
+      getFavoriteLike();
+      getImages(true);
     }
-    if (favlike === "Like") {
-      if (!like.length) {
-        setImages([]);
-      } else {
-        getImages();
-      }
-    }
-  }, [loaded, favlike, favorite, like]);
+  }, [user.id, favlike]);
 
   return (
     <div className={styles._hero}>
@@ -85,8 +68,15 @@ function ImageGallery() {
                 key={v}
                 size="sm"
                 type={v === favlike ? "accent" : "accent-border"}
-                onClick={() => {
+                onClick={async () => {
                   setFavLike(v);
+                  setImages([]);
+                  const favlikeData = await getFavoriteLike()
+                  if (v === "Favorite" && favlikeData.favourite.length) {
+                      getImages(true, v, favlikeData.favourite, []);
+                  } else if (v === "Like" && favlikeData.like.length) {
+                      getImages(true, v, [], favlikeData.like);
+                  }
                 }}
               >
                 {v}
