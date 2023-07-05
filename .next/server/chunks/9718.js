@@ -223,12 +223,15 @@ const SimpleImage = ({ model , onClick , showRun , hasFavorite =false , hasLike 
                         ]
                     })
                 }),
-                user.id && /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                     className: classnames__WEBPACK_IMPORTED_MODULE_8___default()((_website_module_scss__WEBPACK_IMPORTED_MODULE_17___default().image_badge_wrapper), "right-0.5 bottom-2 p-1 cursor-pointer"),
                     children: [
                         !hideFavorite && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                             onClick: (e)=>{
                                 e.stopPropagation();
+                                if (!user.id) {
+                                    dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_16__/* .updateAuthState */ .FA)("login"));
+                                }
                                 toggleFavorite(model.id);
                             },
                             children: isFavorite ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((_mui_icons_material_Favorite__WEBPACK_IMPORTED_MODULE_10___default()), {}) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((_mui_icons_material_FavoriteBorder__WEBPACK_IMPORTED_MODULE_9___default()), {})
@@ -236,6 +239,9 @@ const SimpleImage = ({ model , onClick , showRun , hasFavorite =false , hasLike 
                         !hideLike && /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
                             onClick: (e)=>{
                                 e.stopPropagation();
+                                if (!user.id) {
+                                    dispatch((0,_frontend_redux_info_slice__WEBPACK_IMPORTED_MODULE_16__/* .updateAuthState */ .FA)("login"));
+                                }
                                 toggleLike(model.id);
                             },
                             children: isLike ? /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((_mui_icons_material_ThumbUpAlt__WEBPACK_IMPORTED_MODULE_12___default()), {}) : /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((_mui_icons_material_ThumbUpOffAlt__WEBPACK_IMPORTED_MODULE_11___default()), {})
