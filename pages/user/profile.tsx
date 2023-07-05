@@ -20,7 +20,12 @@ function ImageGallery() {
   const [favorite, setFavorite] = useState([]);
   const [like, setLike] = useState([]);
 
-  async function getImages(reset: boolean = false, favlikeL: string = favlike, favoriteL: any[] = favorite, likeL: any[] = like) {
+  async function getImages(
+    reset: boolean = false,
+    favlikeL: string = favlike,
+    favoriteL: any[] = favorite,
+    likeL: any[] = like
+  ) {
     try {
       const res = await oapi.get("/shared/images", {
         params: {
@@ -43,7 +48,7 @@ function ImageGallery() {
       const res = await oapi.get("/images/list/action");
       setFavorite(res.data.favourite ?? []);
       setLike(res.data.like ?? []);
-      return res.data
+      return res.data;
     } catch (e) {
       console.log(e);
     }
@@ -53,8 +58,10 @@ function ImageGallery() {
 
   useEffect(() => {
     if (user.id && favlike) {
-      getFavoriteLike();
-      getImages(true);
+      (async function () {
+        const favlikeData = await getFavoriteLike();
+        getImages(true, "Favorite", favlikeData.favourite, []);
+      })();
     }
   }, [user.id, favlike]);
 
@@ -71,11 +78,11 @@ function ImageGallery() {
                 onClick={async () => {
                   setFavLike(v);
                   setImages([]);
-                  const favlikeData = await getFavoriteLike()
+                  const favlikeData = await getFavoriteLike();
                   if (v === "Favorite" && favlikeData.favourite.length) {
-                      getImages(true, v, favlikeData.favourite, []);
+                    getImages(true, v, favlikeData.favourite, []);
                   } else if (v === "Like" && favlikeData.like.length) {
-                      getImages(true, v, [], favlikeData.like);
+                    getImages(true, v, [], favlikeData.like);
                   }
                 }}
               >
