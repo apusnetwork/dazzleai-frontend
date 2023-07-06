@@ -107,6 +107,9 @@ function transformModelsResponse(models) {
 async function handler(req, res) {
     try {
         const token = (0,_frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .getCookie */ .ej)(req, _frontend_utils_cookie__WEBPACK_IMPORTED_MODULE_1__/* .AuthHeaderKey */ .qf);
+        // if (process.env.NODE_ENV === "development") {
+        //   res.status(200).json(transformModelsResponse(require("./models.json")));
+        // }
         const modelRes = await _frontend_utils_axios__WEBPACK_IMPORTED_MODULE_0__/* ["default"].get */ .ZP.get("/api/models", {
             headers: {
                 Authorization: `Bearer ${token}`

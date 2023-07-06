@@ -1,6 +1,6 @@
-import axiosInstance, { handleApiError } from '@/frontend/utils/axios'
-import { AuthHeaderKey, getCookie } from '@/frontend/utils/cookie';
-import type { NextApiRequest, NextApiResponse } from 'next'
+import axiosInstance, { handleApiError } from "@/frontend/utils/axios";
+import { AuthHeaderKey, getCookie } from "@/frontend/utils/cookie";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 interface Model {
   id: string;
@@ -48,45 +48,56 @@ interface RemoteModel {
 type RemoteModelList = RemoteModel[];
 
 export function transformModelsResponse(models: RemoteModelList): ModelList {
-  return models.filter(v => v.type === "checkpoint" || v.type === "lora").map((model) => ({
-    ...model,
-    id: model.type === "checkpoint" || model.type === "lora" ? model.model_file_name : model.model_id,
-    userId: null,
-    name: model.name,
-    type: model.type,
-    checkpoint: model.checkpoint_file_name,
-    status: '',
-    public: false,
-    params: {
-      author: model.author,
-      images: model.images.split(','),
-      author_url: model.author_url,
-      description: model.description,
-      instance_prompt: '',
-      author_avatar: model.author_avatar,
-    },
-    createdAt: '',
-    trainingStartedAt: null,
-    trainingFinishedAt: null,
-    lastUsedAt: '',
-    useCount: model.use_count,
-    nsfw: model.nsfw,
-    reuse_img: model.reuse_img,
-  }))
+  return models
+    .filter((v) => v.type === "checkpoint" || v.type === "lora")
+    .map((model) => ({
+      ...model,
+      id:
+        model.type === "checkpoint" || model.type === "lora"
+          ? model.model_file_name
+          : model.model_id,
+      userId: null,
+      name: model.name,
+      type: model.type,
+      checkpoint: model.checkpoint_file_name,
+      status: "",
+      public: false,
+      params: {
+        author: model.author,
+        images: model.images.split(","),
+        author_url: model.author_url,
+        description: model.description,
+        instance_prompt: "",
+        author_avatar: model.author_avatar,
+      },
+      createdAt: "",
+      trainingStartedAt: null,
+      trainingFinishedAt: null,
+      lastUsedAt: "",
+      useCount: model.use_count,
+      nsfw: model.nsfw,
+      reuse_img: model.reuse_img,
+    }));
 }
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
   try {
-    const token = getCookie(req, AuthHeaderKey)
-    const modelRes = await axiosInstance.get<RemoteModelList>('/api/models', {
+    const token = getCookie(req, AuthHeaderKey);
+    // if (process.env.NODE_ENV === "development") {
+    //   res.status(200).json(transformModelsResponse(require("./models.json")));
+    // }
+    const modelRes = await axiosInstance.get<RemoteModelList>("/api/models", {
       headers: {
         Authorization: `Bearer ${token}`,
-      }
-    })
-    const resData: ModelList = transformModelsResponse(modelRes.data)
-    res.status(200).json(resData)
+      },
+    });
+    const resData: ModelList = transformModelsResponse(modelRes.data);
+    res.status(200).json(resData);
   } catch (e: any) {
-    const { status, message } = handleApiError(e)
-    res.status(status).json({ message })
+    const { status, message } = handleApiError(e);
+    res.status(status).json({ message });
   }
 }
