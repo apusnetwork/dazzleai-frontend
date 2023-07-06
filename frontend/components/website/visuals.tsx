@@ -2,7 +2,7 @@
 import Masonry from "@mui/lab/Masonry";
 import styles from "./website.module.scss";
 import Link from "next/link";
-import { LegacyRef, forwardRef, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import EyeOutlined from "@ant-design/icons/EyeOutlined";
 import EyeInvisibleOutlined from "@ant-design/icons/EyeInvisibleOutlined";
 import { useGlobal18Plus } from "@/frontend/context/18puls";
@@ -16,6 +16,7 @@ import { useAppDispatch, useAppSelector } from "@/frontend/redux/hooks";
 import { selectUser } from "@/frontend/redux/user/slice";
 import { oapi } from "@/frontend/utils/axios";
 import { message, updateAuthState } from "@/frontend/redux/info/slice";
+import { debounce } from "lodash";
 
 interface ImageGridVisualProps {
   images: ModelI[];
@@ -131,39 +132,39 @@ export const SimpleImage = ({
             </div>
           )}
         </div>
-          <div
-            className={classnames(
-              styles.image_badge_wrapper,
-              "right-0.5 bottom-2 p-1 cursor-pointer"
-            )}
-          >
-            {!hideFavorite && (
-              <div
-                onClick={(e) => {
-                  e.stopPropagation();
-                  if (!user.id) {
-                    dispatch(updateAuthState('login'))
-                  }
-                  toggleFavorite(model.id);
-                }}
-              >
-                {isFavorite ? <Favorite /> : <FavoriteBorderIcon />}
-              </div>
-            )}
-            {!hideLike && (
-              <div
-                onClick={(e) => {
-                  e.stopPropagation();
-                  if (!user.id) {
-                    dispatch(updateAuthState('login'))
-                  }
-                  toggleLike(model.id);
-                }}
-              >
-                {isLike ? <ThumbUpAltIcon /> : <ThumbUpOffAltIcon />}
-              </div>
-            )}
-          </div>
+        <div
+          className={classnames(
+            styles.image_badge_wrapper,
+            "right-0.5 bottom-2 p-1 cursor-pointer"
+          )}
+        >
+          {!hideFavorite && (
+            <div
+              onClick={(e) => {
+                e.stopPropagation();
+                if (!user.id) {
+                  dispatch(updateAuthState("login"));
+                }
+                toggleFavorite(model.id);
+              }}
+            >
+              {isFavorite ? <Favorite /> : <FavoriteBorderIcon />}
+            </div>
+          )}
+          {!hideLike && (
+            <div
+              onClick={(e) => {
+                e.stopPropagation();
+                if (!user.id) {
+                  dispatch(updateAuthState("login"));
+                }
+                toggleLike(model.id);
+              }}
+            >
+              {isLike ? <ThumbUpAltIcon /> : <ThumbUpOffAltIcon />}
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
@@ -242,31 +243,64 @@ const Image = ({ model }: { model: ModelI }) => {
   );
 };
 
-export const ImageGridVisual = forwardRef<HTMLDivElement, ImageGridVisualProps>(
-  function ImageGridVisual({ images }: ImageGridVisualProps, ref): JSX.Element {
-    const [columns, setColumns] = useState(4);
-    useEffect(() => {
-      const handleResize = () => {
-        if (window.innerWidth > 768) {
-          setColumns(4);
-        } else {
-          setColumns(2);
+export function ImageGridVisual({ images }: ImageGridVisualProps): JSX.Element {
+  const [columns, setColumns] = useState(4);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 768) {
+        setColumns(4);
+      } else {
+        setColumns(2);
+      }
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  const [currentPage, setCurrentPage] = useState(1);
+  const imageItems = images.slice(0, currentPage * 20);
+  const [hasMoreElements, setHasMoreElements] = useState(true);
+  useEffect(() => {
+    if (!images.length) return;
+    const handleScroll = debounce(
+      () => {
+        const { scrollTop, clientHeight, scrollHeight } =
+          document.documentElement;
+        if (scrollTop + clientHeight >= scrollHeight - 1000) {
+          if (!hasMoreElements) {
+            return;
+          }
+          setCurrentPage((currentPage) => {
+            if ((currentPage + 1) * 20 > images.length) {
+              setHasMoreElements(false);
+            }
+            return currentPage + 1;
+          });
         }
-      };
-      handleResize();
-      window.addEventListener("resize", handleResize);
-      return () => {
-        window.removeEventListener("resize", handleResize);
-      };
-    }, []);
-    return (
-      <div className={styles.image_grid_visual} ref={ref}>
-        <Masonry columns={columns} spacing={2}>
-          {images.map((model, index) => (
-            <Image key={index} model={model} />
-          ))}
-        </Masonry>
-      </div>
+      },
+      200,
+      {
+        leading: false,
+        trailing: true,
+      }
     );
-  }
-);
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [images, currentPage]);
+  return (
+    <div id="masonry_container" className={styles.image_grid_visual}>
+      <Masonry columns={columns} spacing={2}>
+        {imageItems.map((model, index) => (
+          <Image key={index} model={model} />
+        ))}
+      </Masonry>
+    </div>
+  );
+}

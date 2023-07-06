@@ -11,9 +11,6 @@ export default function HomePage({
   exampleArt: ImageI[];
 }): JSX.Element {
   const [models, setModels] = useState<ModelI[]>([]);
-  const router = useRouter();
-  const imageRef = createRef<HTMLDivElement>();
-  const [scrolled, setScrolled] = useState(false);
 
   async function getModels() {
     const res = await axios.get("/api/models?status=active&public=true");
@@ -26,17 +23,6 @@ export default function HomePage({
     getModels();
   }, []);
 
-  useEffect(() => {
-    if (
-      router.query?.scrollToModal !== undefined &&
-      models.length > 0 &&
-      !scrolled
-    ) {
-      imageRef.current?.scrollIntoView({ behavior: "smooth" });
-      setScrolled(true);
-    }
-  }, [models, scrolled]);
-
   return (
     <WebsiteLayout
       title="Everything you need to create images with AI"
@@ -47,7 +33,6 @@ export default function HomePage({
       <div className={styles._hero}>
         <div className={styles.hero}>
           <ImageGridVisual
-            ref={imageRef}
             images={models.filter((v) => Boolean(v.reuse_img))}
           />
         </div>
